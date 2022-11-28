@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: nschloe/action-checkout-with-lfs-cache@v1
       - name: Publish
         run: aws s3 sync . s3://lohimg --endpoint-url ${{ secrets.AWS_ENDPOINT_URL }} --delete --exclude ".*" --exclude "*/.*"
         env:
