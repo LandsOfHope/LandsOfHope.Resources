@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:358d742f990d40cc16a0bdedc12d773f7235e9b6b331a381b3bacb0a688774ea
-size 197
+.panel_wrapper div.current {
+	height: 290px;
+}
+
+#id, #style, #title, #dir, #hreflang, #lang, #classlist, #tabindex, #accesskey {
+	width: 200px;
+}
+
+#events_panel input {
+	width: 200px;
+}

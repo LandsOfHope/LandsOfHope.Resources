@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b6210efbda434b1d6c40946f9daaaab9e90063b9fe6e1ea0d13f6a45ec2f9d20
-size 170
+/* CSS file for table dialog in the table plugin */
+
+.panel_wrapper div.current {
+	height: 245px;
+}
+
+.advfield {
+	width: 200px;
+}
+
+#class {
+	width: 150px;
+}

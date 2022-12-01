@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9589f23bd2cec83f24edcd45dd025fcd01388721dbf3723dd2e9fb296b31a205
-size 541
+tinyMCEPopup.requireLangPack();
+
+var EmotionsDialog = {
+	init : function(ed) {
+		tinyMCEPopup.resizeToInnerSize();
+	},
+
+	insert : function(file, title) {
+		var ed = tinyMCEPopup.editor, dom = ed.dom;
+
+		tinyMCEPopup.execCommand('mceInsertContent', false, dom.createHTML('img', {
+			src : tinyMCEPopup.getWindowArg('plugin_url') + '/img/' + file,
+			alt : ed.getLang(title),
+			title : ed.getLang(title),
+			border : 0
+		}));
+
+		tinyMCEPopup.close();
+	}
+};
+
+tinyMCEPopup.onInit.add(EmotionsDialog.init, EmotionsDialog);

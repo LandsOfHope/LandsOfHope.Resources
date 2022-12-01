@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:34a68f52bf74ee115d9375c7fce229ded2bea23b79f60aba491d5f833f0be7e6
-size 513
+body, td, pre {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+body {
+	background-color: #FFFFFF;
+}
+
+.mceVisualAid {
+	border: 1px dashed #BBBBBB;
+}
+
+/* MSIE specific */
+
+* html body {
+	scrollbar-3dlight-color: #F0F0EE;
+	scrollbar-arrow-color: #676662;
+	scrollbar-base-color: #F0F0EE;
+	scrollbar-darkshadow-color: #DDDDDD;
+	scrollbar-face-color: #E0E0DD;
+	scrollbar-highlight-color: #F0F0EE;
+	scrollbar-shadow-color: #F0F0EE;
+	scrollbar-track-color: #F5F5F5;	
+}

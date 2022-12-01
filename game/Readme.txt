@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1f76b90ddaa0982106f5bb7701bf3ced6a544ec463ea8951bda4ffe52f5393c3
-size 347
+LANDS OF HOPE IMAGE PACK
+------------------------
+
+These images are for Lands of Hope and Lands of Hope only.
+
+You do not have permission to use or distribute these images except to allow someone else to play Lands of Hope.
+
+Your use of these images is subject to this requirement.
+
+All images are Copyright Daniel Paull or other artists.

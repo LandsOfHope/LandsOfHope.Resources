@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:41af0369ff07f73485de66a2b7695b3be3b0af8162192ee11784e889fdac1a5c
-size 480
+.mceLinkList, .mceAnchorList, #targetlist {width:280px;}
+.mceActionPanel {margin-top:7px;}
+.panel_wrapper div.current {height:320px;}
+#classlist, #title, #href {width:280px;}
+#popupurl, #popupname {width:200px;}
+#popupwidth, #popupheight, #popupleft, #popuptop {width:30px;vertical-align:middle;text-align:center;}
+#id, #style, #classes, #target, #dir, #hreflang, #lang, #charset, #type, #rel, #rev, #tabindex, #accesskey {width:200px;}
+#events_panel input {width:200px;}

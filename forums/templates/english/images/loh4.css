@@ -1,3 +1,248 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7469a6362309798d4368a7e715ffe76f4a2a775a1b9d86624ef918e532aefcd6
-size 4544
+body {
+	background-color: RGB(41, 28, 17); color: white; font-family: Verdana, Helvetica, Tahoma; font-size: 8pt;
+	background-image: URL(/forums/templates/english/images/background4.jpg);
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+
+#bigback, #headerx {
+	border-left: 1px dotted RGB(175, 153, 93);
+	border-right: 1px dotted RGB(175, 153, 93);
+}
+
+#headerlogo {
+	width: 800;
+	height: 140px;
+	background-image: URL(/forums/templates/english/images/newheaderlook.jpg);
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+
+h5 {
+	font-size: 12pt;
+	padding-left: 30px;
+	font-family: Tahoma;
+	font-weight: bold;
+	border-bottom: 1px dotted RGB(175, 153, 93);
+	padding-top: 5px;
+	margin-top: 5px;
+}
+
+/**
+ * POPUP CONTAINER STYLES
+ */
+#popupMask {
+	position: absolute;
+	z-index: 200;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: .4;
+	filter: alpha(opacity=40);
+	/* this hack is so it works in IE
+	 * I find setting the color in the css gives me more flexibility 
+	 * than the PNG solution.
+	 */
+	background-color:transparent !important;
+	background-color: #333333;
+	/* this hack is for opera support
+	 * you can uncomment the background-image if you don't care about opera.
+	 * this gives you the flexibility to use any bg color that you want, instead of the png
+	 */
+	background-image/**/: url("/maskBG.png") !important; // For browsers Moz, Opera, etc.
+	background-image:none;
+	background-repeat: repeat;
+	display:none;
+}
+#popupContainer {
+	position: absolute;
+	z-index: 201;
+	top: 0px;
+	left: 0px;
+	display:none;
+	padding: 0px;
+}
+#popupInner {
+	border: 2px solid #000000;
+}
+
+#popupFrame {
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 202;
+}
+#popupControls {
+	float: right;
+	cursor: pointer;
+}
+
+.navborderx {
+	height: 22px;
+	background-Color: RGB(45, 24, 1);
+	border: 0px;
+	color:white;
+	font-weight: bold;
+	font-family: Helvetica;
+	font-size: 11px;
+	vertical-align:top;
+}
+
+button {
+	color: #E6DABF;
+	cursor: pointer;
+	background-color:#423223;
+	border-width: 1px;
+	border-color: RGB(175, 153, 93);
+	font-family: Verdana;
+	font-size: 8pt;
+}
+
+input, textarea, select {
+	font-family: Verdana;
+	font-size: 8pt;
+	color: white; 
+	background-color: RGB(71,59,44);
+}
+
+.input {
+	border: 1px solid RGB(175, 153, 93);
+}
+
+div.boxx {
+     border: 1px solid RGB(175, 153, 93);
+     position: relative;
+     width: 100%;
+	height: 100%;
+}
+
+div.boxx_contents {
+     background-color:transparent;
+     color: white;
+     height: 100%;
+     position: relative;
+     width: 100%;
+	padding: 5px;
+}
+div.boxx_background {
+     background-color: black;
+     color: white;
+     height: 100%;
+     left: 0px;
+     position: absolute;
+     top: 0px;
+     width: 100%;
+     filter:alpha(opacity=60);
+     opacity: 0.40;
+}
+
+.header, .title {
+	font-size: 12pt;
+	padding-left: 30px;
+	font-family: Tahoma;
+	font-weight: bold;
+	border-bottom: 1px dotted RGB(175, 153, 93);
+	padding-top: 5px;
+	margin-top: 5px;
+}
+
+.theader {
+	
+	font-size: 11pt;
+	padding-left: 20px;
+	font-family: Tahoma;
+	font-weight: bold;
+	border-bottom: 1px dotted RGB(175, 153, 93);
+	padding-top: 2px;
+	margin-top: 2px;
+}
+
+.menu {
+	font-family: Verdana, Helvetica;
+	font-size: 8pt;
+}
+
+table {
+	font-size: 8pt;
+}
+
+#tred {
+	color: #ff6666;
+}
+#tgreen {
+	color: #66ff66;
+}
+
+.special {
+	padding-bottom: 5px;
+	border-bottom: 2px inset RGB(204, 179, 103);
+	margin-bottom: 5px;
+}
+
+.specialb {
+	padding-bottom: 5px;
+	border-top: 2px inset RGB(204, 179, 103);
+	margin-bottom: 5px;
+}
+
+.boxblock {
+	color: white;
+	font-size: 8pt;
+}
+
+.small {
+	font-size: 8pt;
+}
+
+.boxblock2 {
+	color: white;
+	font-size: 8pt;
+}
+
+.theaderbox {
+	width: 100%;
+	height: 18px;
+	background-repeat: repeat-x;
+}
+
+
+.headerbox {
+	width: 100%;
+	height: 38px;
+	background-repeat: repeat-x;
+}
+
+.box2 {
+	background-color: black;
+	border: 1px solid #993300;
+	font-size: 8pt;
+}
+
+.box3 {
+	background-color: #110000;
+	border: 1px solid #330000;
+	font-size: 8pt;
+}
+
+.color1 {
+	background-color: black;
+	border: 1px solid #993300;
+	font-size: 8pt;
+}
+.color2 {
+	background-color: #110000;
+	border: 1px solid #330000;
+	font-size: 8pt;
+
+}
+
+ba {color:#DCC397; text-decoration:none;}
+a {color:#E6DABF; text-decoration:none; cursor: pointer;}
+a:hover{color:#E9BA68; text-decoration:underline;}
+
+#pages {
+	font-size: 8pt;
+	color: #775D40;
+}

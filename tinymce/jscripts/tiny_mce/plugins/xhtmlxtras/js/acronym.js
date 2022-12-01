@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:131c4fcbf056194d4a5c4d36d04ff2857b9429e0ffd05212864870c0385cac39
-size 556
+ /**
+ * $Id: editor_plugin_src.js 42 2006-08-08 14:32:24Z spocke $
+ *
+ * @author Moxiecode - based on work by Andrew Tetlaw
+ * @copyright Copyright © 2004-2008, Moxiecode Systems AB, All rights reserved.
+ */
+
+function init() {
+	SXE.initElementDialog('acronym');
+	if (SXE.currentAction == "update") {
+		SXE.showRemoveButton();
+	}
+}
+
+function insertAcronym() {
+	SXE.insertElement('acronym');
+	tinyMCEPopup.close();
+}
+
+function removeAcronym() {
+	SXE.removeElement('acronym');
+	tinyMCEPopup.close();
+}
+
+tinyMCEPopup.onInit.add(init);

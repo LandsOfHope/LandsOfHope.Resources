@@ -1,3 +1,219 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d44271e7a14719f7e653fae1d5d7861510fed920271400bc05d5cbccab0748ad
-size 3865
+body {
+	background-color: black; color: white; font-family: Verdana, Helvetica, Tahoma; font-size: 8pt;
+}
+
+/**
+ * POPUP CONTAINER STYLES
+ */
+#popupMask {
+	position: absolute;
+	z-index: 200;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: .4;
+	filter: alpha(opacity=40);
+	/* this hack is so it works in IE
+	 * I find setting the color in the css gives me more flexibility 
+	 * than the PNG solution.
+	 */
+	background-color:transparent !important;
+	background-color: #333333;
+	/* this hack is for opera support
+	 * you can uncomment the background-image if you don't care about opera.
+	 * this gives you the flexibility to use any bg color that you want, instead of the png
+	 */
+	background-image/**/: url("/maskBG.png") !important; // For browsers Moz, Opera, etc.
+	background-image:none;
+	background-repeat: repeat;
+	display:none;
+}
+#popupContainer {
+	position: absolute;
+	z-index: 201;
+	top: 0px;
+	left: 0px;
+	display:none;
+	padding: 0px;
+}
+#popupInner {
+	border: 2px solid #000000;
+}
+
+#popupFrame {
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 202;
+}
+#popupControls {
+	float: right;
+	cursor: pointer;
+}
+
+.navborderx {
+	height: 22px;
+	background-Color: RGB(45, 24, 1);
+	border: 0px;
+	color:white;
+	font-weight: bold;
+	font-family: Helvetica;
+	font-size: 11px;
+	vertical-align:top;
+}
+
+button {
+	color: #E6DABF;
+	cursor: pointer;
+	background-color:#423223;
+	border-width: 1px;
+	border-color: #CC9933;
+	font-family: Verdana;
+	font-size: 8pt;
+}
+
+input, textarea, select {
+	font-family: Verdana;
+	font-size: 8pt;
+	color: #DCC397; 
+	border-width: 1px;
+	border-color: #CC9933;
+	background-color: RGB(71,59,44);
+}
+
+div.boxx {
+     border: 1px solid #993300;
+     position: relative;
+     width: 100%;
+	height: 100%;
+}
+
+div.boxx_contents {
+     background-color:transparent; color: RGB(255, 241, 194);
+     height: 100%;
+     position: relative;
+     width: 100%;
+     z-index: 101;
+}
+div.boxx_background {
+     background-color: black; color: RGB(237, 214, 139);
+     height: 100%;
+     filter:alpha(opacity=60); /* IE's opacity*/
+     left: 0px;
+     opacity: 0.60;
+     position: absolute;
+     top: 0px;
+     width: 100%;
+     z-index: 99;
+}
+
+.header, .title {
+	color:white; 
+	font-weight: bold;
+	font-family: Verdana, Helvetica;
+	margin: 0px;
+	padding: 0px;
+	height: 16px;
+	padding-left: 30px;
+}
+
+.theader {
+	
+	color:white; 
+	font-weight: bold;
+	font-family: Verdana, Helvetica;
+	margin: 0px;
+	padding: 0px;
+	height: 12px;
+	padding-left: 5px;
+}
+
+.menu {
+	font-family: Verdana, Helvetica;
+	font-size: 8pt;
+}
+
+table {
+	font-size: 8pt;
+}
+
+#tred {
+	color: #ff6666;
+}
+#tgreen {
+	color: #66ff66;
+}
+
+.special {
+	padding-bottom: 5px;
+	border-bottom: 2px inset RGB(204, 179, 103);
+	margin-bottom: 5px;
+}
+
+.specialb {
+	padding-bottom: 5px;
+	border-top: 2px inset RGB(204, 179, 103);
+	margin-bottom: 5px;
+}
+
+.boxblock {
+	color: white;
+	font-size: 8pt;
+}
+
+.small {
+	font-size: 8pt;
+}
+
+.boxblock2 {
+	color: white;
+	font-size: 8pt;
+}
+
+.theaderbox {
+	width: 100%;
+	height: 18px;
+	background-repeat: repeat-x;
+}
+
+
+.headerbox {
+	width: 100%;
+	height: 38px;
+	background-repeat: repeat-x;
+}
+
+.box2 {
+	background-color: black;
+	border: 1px solid #993300;
+	font-size: 8pt;
+}
+
+.box3 {
+	background-color: #110000;
+	border: 1px solid #330000;
+	font-size: 8pt;
+}
+
+.color1 {
+	background-color: black;
+	border: 1px solid #993300;
+	font-size: 8pt;
+}
+.color2 {
+	background-color: #110000;
+	border: 1px solid #330000;
+	font-size: 8pt;
+
+}
+
+ba {color:#DCC397; text-decoration:none;}
+a {color:#E6DABF; text-decoration:none; cursor: pointer;}
+a:hover{color:#E9BA68; text-decoration:underline;}
+
+#pages {
+	font-size: 8pt;
+	color: #775D40;
+}

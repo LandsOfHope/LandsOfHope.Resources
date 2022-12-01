@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9667c6f9f260cb4ee12a0b1b24a5799c2714ed2487cbacfc7f45683ef3c2259a
-size 469
+tinyMCE.addI18n('en.searchreplace_dlg',{
+searchnext_desc:"Find again",
+notfound:"The search has been completed. The search string could not be found.",
+search_title:"Find",
+replace_title:"Find/Replace",
+allreplaced:"All occurrences of the search string were replaced.",
+findwhat:"Find what",
+replacewith:"Replace with",
+direction:"Direction",
+up:"Up",
+down:"Down",
+mcase:"Match case",
+findnext:"Find next",
+replace:"Replace",
+replaceall:"Replace all"
+});

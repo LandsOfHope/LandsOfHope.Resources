@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4d4a639ad7d5b78c7716f03e5779ff70cc61bff9ff4fdbd6d72c0eaaa0e2f538
-size 672
+#src_list, #over_list, #out_list {width:280px;}
+.mceActionPanel {margin-top:7px;}
+.alignPreview {border:1px solid #000; width:140px; height:140px; overflow:hidden; padding:5px;}
+.checkbox {border:0;}
+.panel_wrapper div.current {height:305px;}
+#prev {margin:0; border:1px solid #000; width:428px; height:150px; overflow:auto;}
+#align, #classlist {width:150px;}
+#width, #height {vertical-align:middle; width:50px; text-align:center;}
+#vspace, #hspace, #border {vertical-align:middle; width:30px; text-align:center;}
+#class_list {width:180px;}
+input {width: 280px;}
+#constrain, #onmousemovecheck {width:auto;}
+#id, #dir, #lang, #usemap, #longdesc {width:200px;}

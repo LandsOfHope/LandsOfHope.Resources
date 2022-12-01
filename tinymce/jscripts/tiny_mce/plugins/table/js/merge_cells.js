@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e4cdd9d126defbf0beea15ce5ee63d8137d1c1aede03e3c8f112afdb880772a2
-size 677
+tinyMCEPopup.requireLangPack();
+
+function init() {
+	var f = document.forms[0], v;
+
+	tinyMCEPopup.resizeToInnerSize();
+
+	f.numcols.value = tinyMCEPopup.getWindowArg('numcols', 1);
+	f.numrows.value = tinyMCEPopup.getWindowArg('numrows', 1);
+}
+
+function mergeCells() {
+	var args = [], f = document.forms[0];
+
+	tinyMCEPopup.restoreSelection();
+
+	if (!AutoValidator.validate(f)) {
+		tinyMCEPopup.alert(tinyMCEPopup.getLang('invalid_data'));
+		return false;
+	}
+
+	args["numcols"] = f.numcols.value;
+	args["numrows"] = f.numrows.value;
+
+	tinyMCEPopup.execCommand("mceTableMergeCells", false, args);
+	tinyMCEPopup.close();
+}
+
+tinyMCEPopup.onInit.add(init);

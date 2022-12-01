@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1faefc165402bf57132a9e416a183af60af4a69481c7deea4b5c5ca036aecb7b
-size 609
+tinyMCEPopup.requireLangPack();
+
+var ExampleDialog = {
+	init : function() {
+		var f = document.forms[0];
+
+		// Get the selected contents as text and place it in the input
+		f.someval.value = tinyMCEPopup.editor.selection.getContent({format : 'text'});
+		f.somearg.value = tinyMCEPopup.getWindowArg('some_custom_arg');
+	},
+
+	insert : function() {
+		// Insert the contents from the input into the document
+		tinyMCEPopup.editor.execCommand('mceInsertContent', false, document.forms[0].someval.value);
+		tinyMCEPopup.close();
+	}
+};
+
+tinyMCEPopup.onInit.add(ExampleDialog.init, ExampleDialog);

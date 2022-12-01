@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cbfdf1417a083f827a679d73a6d6d7ad315af520d282472aeddbf77037b18ebe
-size 404
+tinyMCE.addI18n('en.emotions_dlg',{
+title:"Insert emotion",
+desc:"Emotions",
+cool:"Cool",
+cry:"Cry",
+embarassed:"Embarassed",
+foot_in_mouth:"Foot in mouth",
+frown:"Frown",
+innocent:"Innocent",
+kiss:"Kiss",
+laughing:"Laughing",
+money_mouth:"Money mouth",
+sealed:"Sealed",
+smile:"Smile",
+surprised:"Surprised",
+tongue_out:"Tongue out",
+undecided:"Undecided",
+wink:"Wink",
+yell:"Yell"
+});

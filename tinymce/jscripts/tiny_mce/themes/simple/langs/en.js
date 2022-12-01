@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:26d7508a61c215ae762f7957e6df6d3958eac0e24411f59c0267e94bf775397b
-size 321
+tinyMCE.addI18n('en.simple',{
+bold_desc:"Bold (Ctrl+B)",
+italic_desc:"Italic (Ctrl+I)",
+underline_desc:"Underline (Ctrl+U)",
+striketrough_desc:"Strikethrough",
+bullist_desc:"Unordered list",
+numlist_desc:"Ordered list",
+undo_desc:"Undo (Ctrl+Z)",
+redo_desc:"Redo (Ctrl+Y)",
+cleanup_desc:"Cleanup messy code"
+});

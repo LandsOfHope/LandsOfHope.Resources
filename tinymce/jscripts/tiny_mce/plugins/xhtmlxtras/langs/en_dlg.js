@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4218386ecc8104c4f79766f5a25f6f3566b663cb315ddebf71c5b5426dd4d08a
-size 1096
+tinyMCE.addI18n('en.xhtmlxtras_dlg',{
+attribute_label_title:"Title",
+attribute_label_id:"ID",
+attribute_label_class:"Class",
+attribute_label_style:"Style",
+attribute_label_cite:"Cite",
+attribute_label_datetime:"Date/Time",
+attribute_label_langdir:"Text Direction",
+attribute_option_ltr:"Left to right",
+attribute_option_rtl:"Right to left",
+attribute_label_langcode:"Language",
+attribute_label_tabindex:"TabIndex",
+attribute_label_accesskey:"AccessKey",
+attribute_events_tab:"Events",
+attribute_attrib_tab:"Attributes",
+general_tab:"General",
+attrib_tab:"Attributes",
+events_tab:"Events",
+fieldset_general_tab:"General Settings",
+fieldset_attrib_tab:"Element Attributes",
+fieldset_events_tab:"Element Events",
+title_ins_element:"Insertion Element",
+title_del_element:"Deletion Element",
+title_acronym_element:"Acronym Element",
+title_abbr_element:"Abbreviation Element",
+title_cite_element:"Citation Element",
+remove:"Remove",
+insert_date:"Insert current date/time",
+option_ltr:"Left to right",
+option_rtl:"Right to left",
+attribs_title:"Insert/Edit Attributes"
+});
