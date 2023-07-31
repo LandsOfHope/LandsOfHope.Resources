@@ -31,16 +31,16 @@ function adsm(nodename, nodeurl, nodeframe, nodeparent, nodeimage, nodecolor) {
 }
 
 function NewMenu(lm, nodename, nodeurl, nodeframe, nodeparent, popup, nodeimage, nodecolor) {
-this.lm = lm;
-this.nodename = nodename;
-this.nodeurl = nodeurl;
-this.nodeframe = nodeframe;
-this.nodeparent = nodeparent;
-this.popup = popup;
-this.nc = 0;
-this.nodeimage = nodeimage;
-this.c = nodecolor;
-this.shown = 0;
+	this.lm = lm;
+	this.nodename = nodename;
+	this.nodeurl = nodeurl;
+	this.nodeframe = nodeframe;
+	this.nodeparent = nodeparent;
+	this.popup = popup;
+	this.nc = 0;
+	this.nodeimage = nodeimage;
+	this.c = nodecolor;
+	this.shown = 0;
 }
 
 function HM(stuff) {
@@ -87,10 +87,10 @@ function GetMenu(menu) {
 	if (menu.nodeframe == "_blank" && menu.nodeurl != "") {
 		clickurl = "window.open('" + menu.nodeurl + "');"
 	} else if (menu.nodeurl != "") {
-		clickurl = "window.location.replace('"  + menu.nodeurl + "');"
+		clickurl = "window.location.replace('" + menu.nodeurl + "');"
 	}
-	var OnStuff = ' onclick="' + clickurl + '" ' + (menu.nodename != '' ? ' onmouseover="SM(this);" onmouseout="HM(this);"' : '') + ' id="mnu' + menu.lm + '" p="' + (menu.popup != 0 ? menu.nodeparent : menu.lm) + '" style="background-image: URL(https://res.landsofhope.com/dot.gif); color: ' + menu.c + '"';
-	tmp = '<tr ' + (menu.nodename != '' ? '' : 'style="height:1px"') + OnStuff + '><td colspan=2 width="150px">' + (menu.nodename == '' ? '' : '' + menu.nodename) + '</td>'  + (menu.nc != 0 ? '<td width=15><img src="https://res.landsofhope.com/images/' + Theme + '/test_m1ia.gif"></td>' : '') + '<tr>';	
+	var OnStuff = ' onclick="' + clickurl + '" ' + (menu.nodename != '' ? ' onmouseover="SM(this);" onmouseout="HM(this);"' : '') + ' id="mnu' + menu.lm + '" p="' + (menu.popup != 0 ? menu.nodeparent : menu.lm) + '" style="background-image: URL(https://lohcdn.com/dot.gif); color: ' + menu.c + '"';
+	tmp = '<tr ' + (menu.nodename != '' ? '' : 'style="height:1px"') + OnStuff + '><td colspan=2 width="150px">' + (menu.nodename == '' ? '' : '' + menu.nodename) + '</td>' + (menu.nc != 0 ? '<td width=15><img src="https://lohcdn.com/images/' + Theme + '/test_m1ia.gif"></td>' : '') + '<tr>';
 	return tmp;
 }
 

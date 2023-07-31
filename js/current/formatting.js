@@ -393,11 +393,11 @@ function RF(in1, in2) {
 }
 
 function DrawImage(imgpath, imgw, imgh) {
-	return '<img src=\'' + imgpath + '\' onerror=\'this.src="https://res.landsofhope.com/na.gif"\'>';
+	return '<img src=\'' + imgpath + '\' onerror=\'this.src="https://lohcdn.com/na.gif"\'>';
 }
 
 function DrawImage2(imgpath, imgw, imgh) {
-	return "<img src='" + imgpath + "' onerror='this.src=\"https://res.landsofhope.com/na.gif\"'>";
+	return "<img src='" + imgpath + "' onerror='this.src=\"https://lohcdn.com/na.gif\"'>";
 }
 
 function PopupMonsterInfo(MID) {

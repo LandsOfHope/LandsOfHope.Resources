@@ -1,5 +1,5 @@
 var AA = AA;
-var IPath = "https://res.landsofhope.com/game/i/"
+var IPath = "https://lohcdn.com/game/i/"
 
 document.write('<script src="js/formatting.js" language="JavaScript"></script>');
 

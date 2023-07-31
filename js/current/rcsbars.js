@@ -105,7 +105,7 @@ function ShowSubMenu(b, divx, mv) {
 	var x = 0;
 	if (b != -1) {
 		for (x = 0; x < rcsbuttons[b].submenus.length; x++) {
-			strout += '<div id="rcssm' + x + '" style="margin: 2px; padding: 1px; border: 1px solid RGB(86, 78, 76); background-Color: RGB(86, 78, 76); cursor: pointer;" onmouseover="RCSSMOver(' + b + ',' + x + ');" onclick="RCSSMClick(' + b + ',' + x + ');" onmouseout="RCSSMOut(' + b + ',' + x + ');"><table cellpadding=0 cellspacing=0 style="font-family: Helvetica; font-size: 8pt;"><tr><td style="width: 20px;" id="prcssm' + x + '"><img src=\'https://res.landsofhope.com/images/circle0a.png\' width=12 height=12></td><td style="color:white;">' + rcsbuttons[b].submenus[x].text + '</td></tr></table></div>'
+			strout += '<div id="rcssm' + x + '" style="margin: 2px; padding: 1px; border: 1px solid RGB(86, 78, 76); background-Color: RGB(86, 78, 76); cursor: pointer;" onmouseover="RCSSMOver(' + b + ',' + x + ');" onclick="RCSSMClick(' + b + ',' + x + ');" onmouseout="RCSSMOut(' + b + ',' + x + ');"><table cellpadding=0 cellspacing=0 style="font-family: Helvetica; font-size: 8pt;"><tr><td style="width: 20px;" id="prcssm' + x + '"><img src=\'https://lohcdn.com/images/circle0a.png\' width=12 height=12></td><td style="color:white;">' + rcsbuttons[b].submenus[x].text + '</td></tr></table></div>'
 		}
 	}
 	strout += ''
@@ -194,7 +194,7 @@ function RCSSMOver(b, x) {
 		bb = null;
 		var bb2 = getObj('prcssm' + x);
 		if (bb2 != null) {
-			bb2.innerHTML = '<img src=\'https://res.landsofhope.com/images/circle6.png\' width=12 height=12>'
+			bb2.innerHTML = '<img src=\'https://lohcdn.com/images/circle6.png\' width=12 height=12>'
 		}
 		bb2 = null;
 
@@ -212,7 +212,7 @@ function RCSSMOut(b, x) {
 		}
 		var bb2 = getObj('prcssm' + x);
 		if (bb2 != null) {
-			bb2.innerHTML = '<img src=\'https://res.landsofhope.com/images/circle0a.png\' width=12 height=12>'
+			bb2.innerHTML = '<img src=\'https://lohcdn.com/images/circle0a.png\' width=12 height=12>'
 		}
 		bb2 = null;
 
@@ -237,7 +237,7 @@ function RCSSMClick(b, x) {
 		}
 		var bb2 = getObj('prcssm' + x);
 		if (bb2 != null) {
-			bb2.innerHTML = '<img src=\'https://res.landsofhope.com/images/circle3.png\' width=12 height=12>'
+			bb2.innerHTML = '<img src=\'https://lohcdn.com/images/circle3.png\' width=12 height=12>'
 		}
 		bb2 = null;
 

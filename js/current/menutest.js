@@ -1,5 +1,5 @@
 var Theme = Theme;
-var ThemeP = 'https://res.landsofhope.com/images/' + Theme + '/';
+var ThemeP = 'https://lohcdn.com/images/' + Theme + '/';
 var lastmenu = 0;
 var mymenu = new Array();
 var verticalmenu = 0;
@@ -45,21 +45,21 @@ function adsm(nodename, nodeurl, nodeframe, nodeparent, nodeimage) {
 }
 
 function NewMenu(lm, nodename, nodeurl, nodeframe, nodeparent, popup, nodeimage) {
-this.lm = lm;
-this.nodename = nodename;
-this.nodeurl = nodeurl;
-this.nodeframe = nodeframe;
-this.nodeparent = nodeparent;
-this.popup = popup;
-this.nc = 0;
-this.nodeimage = nodeimage;
-this.shown = 0;
+	this.lm = lm;
+	this.nodename = nodename;
+	this.nodeurl = nodeurl;
+	this.nodeframe = nodeframe;
+	this.nodeparent = nodeparent;
+	this.popup = popup;
+	this.nc = 0;
+	this.nodeimage = nodeimage;
+	this.shown = 0;
 }
 
 function HM(stuff, lm) {
 	stuff.style.color = COLOR1_S;
 	stuff.style.cursor = '';
-	stuff.style.backgroundColor='';
+	stuff.style.backgroundColor = '';
 }
 
 function Getmymenu(lm, v) {
@@ -96,13 +96,13 @@ function GetMenu(menu) {
 	if (menu.nodeframe == "_blank" && menu.nodeurl != "") {
 		clickurl = "window.open('" + menu.nodeurl + "');"
 	} else if (menu.nodeurl != "") {
-		clickurl = "window.Interface.location.replace('"  + menu.nodeurl + "');"
+		clickurl = "window.Interface.location.replace('" + menu.nodeurl + "');"
 	}
 	var mmenuw = (menu.popup == 0 ? (menu.nodename.length * 8) : '150');
 
 	menuwidth = menuwidth + mmenuw;
 	var OnStuff = ' onclick="HM3(0,0, 0);' + clickurl + '" ' + (menu.nodename != '' ? ' onmouseover="SM(this, ' + menu.lm + ', ' + menu.popup + ',' + (menu.popup != 0 ? menu.nodeparent : menu.lm) + ');" onmouseout="HM(this, ' + menu.lm + ');"' : '') + ' id="mnu' + menu.lm + '" style="background-image: URL(dot.gif); color: ' + COLOR1_S + (menu.nodename != '' ? '' : '; background-color: ' + COLOR1) + '; width: ' + mmenuw + 'px;"'; // filter: glow(color=' + ShadowColor + ', strength=2)
-	tmp = (menu.popup != 0 ? '<tr ' + (menu.nodename != '' ? '' : 'style="height:1px"') + OnStuff + '><td colspan=2' : '<td') + '' + OnStuff + '>' + (menu.nodename == '' ? '' : '' + menu.nodename) + '</td>'  + (menu.nc != 0 ? '<td width=15><img src="https://res.landsofhope.com/images/' + Theme + '/' + (menu.nodeparent == null ? 'test_m1iad.gif' : 'test_m1ia.gif') + '"></td>' : '') + (menu.popup != 0 ? '<tr>' : '');	
+	tmp = (menu.popup != 0 ? '<tr ' + (menu.nodename != '' ? '' : 'style="height:1px"') + OnStuff + '><td colspan=2' : '<td') + '' + OnStuff + '>' + (menu.nodename == '' ? '' : '' + menu.nodename) + '</td>' + (menu.nc != 0 ? '<td width=15><img src="https://lohcdn.com/images/' + Theme + '/' + (menu.nodeparent == null ? 'test_m1iad.gif' : 'test_m1ia.gif') + '"></td>' : '') + (menu.popup != 0 ? '<tr>' : '');
 	return tmp;
 }
 
@@ -110,7 +110,7 @@ function SM(stuff, lm, popup, p) {
 	var tmp = '';
 	stuff.style.color = COLOR1;
 	stuff.style.cursor = 'pointer';
-	stuff.style.backgroundColor=BGCOLOR_S;
+	stuff.style.backgroundColor = BGCOLOR_S;
 	if (mymenu[lm].nc != 0) {
 		if (getObj("smn" + lm) == null) {
 			var element = document.createElement("DIV");
@@ -137,7 +137,7 @@ function SM(stuff, lm, popup, p) {
 		myMenu.style.width = '160px';
 		myMenu.style.cursor = 'pointer';
 
-		tmp = Getmymenu(lm, 0) ;
+		tmp = Getmymenu(lm, 0);
 		myMenu.innerHTML = "" + MenuBox("<table width='100%' style='font-size: 10px; padding-left:9px;' cellspacing=1 cellpadding=1 oncontextmenu='HM3(0,0,0);'>" + tmp + "</table>", 170, '') + "";
 		mymenu[lm].shown = 1;
 		myMenu.style.display = "";
@@ -146,10 +146,10 @@ function SM(stuff, lm, popup, p) {
 			//Parent node, top bar
 			HM3(lm, 0, 0);
 		} else if (mymenu[lm].nc > 0) {
-			HM3(lm, mymenu[lm].nodeparent,  mymenu[mymenu[lm].nodeparent].nodeparent);
+			HM3(lm, mymenu[lm].nodeparent, mymenu[mymenu[lm].nodeparent].nodeparent);
 		}
 	} else {
-		HM3(lm, mymenu[lm].nodeparent,  mymenu[mymenu[lm].nodeparent].nodeparent);
+		HM3(lm, mymenu[lm].nodeparent, mymenu[mymenu[lm].nodeparent].nodeparent);
 	}
 }
 
@@ -160,7 +160,7 @@ function HM3(lm, lm2, lm3) {
 		if (mymenu[x].shown == 1 && x != lm && x != lm2 && x != lm3) {
 			HM2(x);
 		}
-	}	
+	}
 }
 
 function HM2(lm) {
@@ -174,7 +174,7 @@ function HM2(lm) {
 }
 
 function MenuBox(content, width, height) {
-	return "<table border='0' align='center' cellpadding='0' cellspacing='0' style='background-image: URL(https://res.landsofhope.com/" + ThemeP + "darkback.gif); width: " + width + ";" + (height != '' ? "height: " + height : "") + "'><tr height=11 valign=top><td colspan=3 width='100%'><table cellpadding='0' cellspacing='0' style='background-image: URL(https://res.landsofhope.com/" + ThemeP + "top.gif); height: 11px; width: 100%; background-repeat: repeat-x;'><td><img src='https://res.landsofhope.com/" + ThemeP + "tlc.gif'></td><td width='100%' colspan=3></td><td align=right><img src='" + ThemeP + "trc.gif'></td></tr></table></td></tr><tr><td style='background-image: URL(https://res.landsofhope.com/" + ThemeP + "left.gif); width: 11px;background-repeat: repeat-y; background-position: left;'></td><td valign=top>" + content + "</td><td style='background-image: URL(https://res.landsofhope.com/" + ThemeP + "right.gif); width: 11px;background-repeat: repeat-y; background-position: right;'></td></tr><tr height=11 valign=bottom><td colspan=3><table style='background-image: URL(https://res.landsofhope.com/" + ThemeP + "bottom.gif); height: 11px; width: 100%; background-repeat: repeat-x;background-position: bottom;' cellpadding='0' cellspacing='0'><td><img src='https://res.landsofhope.com/" + ThemeP + "blc.gif'></td><td width='100%'></td><td><img src='" + ThemeP + "brc.gif'></td></tr></table></td></tr></table>";
+	return "<table border='0' align='center' cellpadding='0' cellspacing='0' style='background-image: URL(https://lohcdn.com/" + ThemeP + "darkback.gif); width: " + width + ";" + (height != '' ? "height: " + height : "") + "'><tr height=11 valign=top><td colspan=3 width='100%'><table cellpadding='0' cellspacing='0' style='background-image: URL(https://lohcdn.com/" + ThemeP + "top.gif); height: 11px; width: 100%; background-repeat: repeat-x;'><td><img src='https://lohcdn.com/" + ThemeP + "tlc.gif'></td><td width='100%' colspan=3></td><td align=right><img src='" + ThemeP + "trc.gif'></td></tr></table></td></tr><tr><td style='background-image: URL(https://lohcdn.com/" + ThemeP + "left.gif); width: 11px;background-repeat: repeat-y; background-position: left;'></td><td valign=top>" + content + "</td><td style='background-image: URL(https://lohcdn.com/" + ThemeP + "right.gif); width: 11px;background-repeat: repeat-y; background-position: right;'></td></tr><tr height=11 valign=bottom><td colspan=3><table style='background-image: URL(https://lohcdn.com/" + ThemeP + "bottom.gif); height: 11px; width: 100%; background-repeat: repeat-x;background-position: bottom;' cellpadding='0' cellspacing='0'><td><img src='https://lohcdn.com/" + ThemeP + "blc.gif'></td><td width='100%'></td><td><img src='" + ThemeP + "brc.gif'></td></tr></table></td></tr></table>";
 }
 
 function admi(nodename, nodeurl, nodeframe, nodeparent, nodeimage) {

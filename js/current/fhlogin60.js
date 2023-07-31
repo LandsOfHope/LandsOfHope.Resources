@@ -567,21 +567,21 @@ function PercentBoxSmall(pwidth, PercentValue, Color, caption) {
 	if (caption == '') {
 		caption = PercentValue + '%';
 	}
-	return '<div style="width: ' + pwidth + 'px; height: 10px; position: relative; background: URL(https://res.landsofhope.com/images/black.gif) repeat-x"><div style="width: ' + ((pwidth / 100) * PercentValue) + 'px;height: 10px; position: static; background: URL(https://res.landsofhope.com/images/' + Color + (Color.indexOf('.') > 0 ? '' : '.gif') + ') repeat-x"><div class=perc style="position: absolute; width:' + pwidth + 'px;">' + caption + '</div></div></div>';
+	return '<div style="width: ' + pwidth + 'px; height: 10px; position: relative; background: URL(https://lohcdn.com/images/black.gif) repeat-x"><div style="width: ' + ((pwidth / 100) * PercentValue) + 'px;height: 10px; position: static; background: URL(https://lohcdn.com/images/' + Color + (Color.indexOf('.') > 0 ? '' : '.gif') + ') repeat-x"><div class=perc style="position: absolute; width:' + pwidth + 'px;">' + caption + '</div></div></div>';
 }
 
 function PercentBoxSmallx(pwidth, PercentValue, Color, caption) {
 	if (caption == '') {
 		caption = PercentValue + '%';
 	}
-	return '<div style="width: ' + pwidth + 'px; height: 15px; position: relative; background: URL(https://res.landsofhope.com/images/black.gif) repeat-x"><div style="width: ' + ((pwidth / 100) * PercentValue) + 'px;height: 15px; position: static; background: URL(https://res.landsofhope.com/images/' + Color + (Color.indexOf('.') > 0 ? '' : '.gif') + ') repeat-x"><div class=perc style="position: absolute; width:' + pwidth + 'px;">' + caption + '</div></div></div>';
+	return '<div style="width: ' + pwidth + 'px; height: 15px; position: relative; background: URL(https://lohcdn.com/images/black.gif) repeat-x"><div style="width: ' + ((pwidth / 100) * PercentValue) + 'px;height: 15px; position: static; background: URL(https://lohcdn.com/images/' + Color + (Color.indexOf('.') > 0 ? '' : '.gif') + ') repeat-x"><div class=perc style="position: absolute; width:' + pwidth + 'px;">' + caption + '</div></div></div>';
 }
 
 function PercentBoxS(pwidth, PercentValue, Color, caption) {
 	if (caption == '') {
 		caption = PercentValue + '%';
 	}
-	return '<div style="width: ' + pwidth + 'px; height: 12px; position: relative; background: URL(https://res.landsofhope.com/images/black.gif) repeat-x"><div style="width: ' + ((pwidth / 100) * PercentValue) + 'px;height: 12px; position: static; background: URL(https://res.landsofhope.com/images/' + Color + '.gif) repeat-x"><div class=perc style="position: absolute; width:' + pwidth + 'px">' + caption + '</div></div></div>';
+	return '<div style="width: ' + pwidth + 'px; height: 12px; position: relative; background: URL(https://lohcdn.com/images/black.gif) repeat-x"><div style="width: ' + ((pwidth / 100) * PercentValue) + 'px;height: 12px; position: static; background: URL(https://lohcdn.com/images/' + Color + '.gif) repeat-x"><div class=perc style="position: absolute; width:' + pwidth + 'px">' + caption + '</div></div></div>';
 }
 
 function SetMoney(mmin) {
@@ -909,7 +909,7 @@ function Adac(Actions, Titles, Names, classx, imgx, fl, img2) {
 		img2 = '';
 	}
 	imgx = (fl != null ? 'float: left;' : '')
-	return "<a class=\"" + classx + "\" style=\"" + imgx + "\" href=\"javascript:void(0);\"  onclick=\"" + Actions + ";\" title=\"" + Titles + "\">" + (img2 != "" ? "<div style=\"width: 28; height: 28; background-position: 5 5; " + (Actions != "" ? "cursor: pointer;" : "") + " background-image: url(https://res.landsofhope.com/game/icons/" + img2 + "); background-repeat: no-repeat;\">" + ASCII2(Names) + "</div>" : "<center>" + ASCII2(Names) + "</center>") + "</a>";
+	return "<a class=\"" + classx + "\" style=\"" + imgx + "\" href=\"javascript:void(0);\"  onclick=\"" + Actions + ";\" title=\"" + Titles + "\">" + (img2 != "" ? "<div style=\"width: 28; height: 28; background-position: 5 5; " + (Actions != "" ? "cursor: pointer;" : "") + " background-image: url(https://lohcdn.com/game/icons/" + img2 + "); background-repeat: no-repeat;\">" + ASCII2(Names) + "</div>" : "<center>" + ASCII2(Names) + "</center>") + "</a>";
 }
 
 function getAColor(c) {
@@ -1111,7 +1111,7 @@ function LoadB(lngwidth, isjailed, lngcolx, lngtiles, tests, lngstartx, lngstart
 		tmpbp = tmpbp + 1;
 	}
 
-	strmap += "<div id=fog style='position: absolute; left: 0px; top: 0px;z-index: 100; width: 780; height: 580; background-image: URL(https://res.landsofhope.com/images/fog4.png); background-color: transparent; background-repeat: repeat;background-Position:" + (((mx - window.top.MapStartX) * 20) - 110) + "px " + (((my - window.top.MapStartY) * 20) - 110) + "px;" + (fogon == 0 || hidefog == 1 ? "display: none;" : "") + "' onmousemove='Moving(event);' onclick='Clicking(event);'></div>";
+	strmap += "<div id=fog style='position: absolute; left: 0px; top: 0px;z-index: 100; width: 780; height: 580; background-image: URL(https://lohcdn.com/images/fog4.png); background-color: transparent; background-repeat: repeat;background-Position:" + (((mx - window.top.MapStartX) * 20) - 110) + "px " + (((my - window.top.MapStartY) * 20) - 110) + "px;" + (fogon == 0 || hidefog == 1 ? "display: none;" : "") + "' onmousemove='Moving(event);' onclick='Clicking(event);'></div>";
 	strmap = strmap1 + strmap;
 	getObj('Map3').style.display = '';
 	getObj('Map2').style.display = '';
@@ -1955,7 +1955,7 @@ function MoveView(ew, ns) {
 }
 
 function GetResultBox() {
-	return '<tr><td colspan=2><center><div style="background-image: URL(https://res.landsofhope.com/game/icons/bar_tab3.png); width: 120px; text-align: center;font-weight: bold; cursor: pointer;" title="Toggle Result List" onclick="if (getObj(\'PlotResults\').style.display==\'\') {getObj(\'PlotResults\').style.display=\'none\';} else {getObj(\'PlotResults\').style.display=\'\';}">' + ASCII('List Results', 6) + '</div></center><div style="display: none; width: 185px;" id=PlotResults></div></td></tr>';
+	return '<tr><td colspan=2><center><div style="background-image: URL(https://lohcdn.com/game/icons/bar_tab3.png); width: 120px; text-align: center;font-weight: bold; cursor: pointer;" title="Toggle Result List" onclick="if (getObj(\'PlotResults\').style.display==\'\') {getObj(\'PlotResults\').style.display=\'none\';} else {getObj(\'PlotResults\').style.display=\'\';}">' + ASCII('List Results', 6) + '</div></center><div style="display: none; width: 185px;" id=PlotResults></div></td></tr>';
 }
 
 function ShowQuestElements() {
@@ -2141,7 +2141,7 @@ function ShowElements() {
 				} else if (b.nmc == 0 && PlayersShown == 0) {
 				} else {
 					var charfil = '';
-					var CharImage2 = '' + (b.afid != 0 ? '<img title="Faction" src="https://res.landsofhope.com/game/h/' + b.afid + '.gif" width=20 height=20><br>' : '');;
+					var CharImage2 = '' + (b.afid != 0 ? '<img title="Faction" src="https://lohcdn.com/game/h/' + b.afid + '.gif" width=20 height=20><br>' : '');;
 					var CharImage = '' + (b.d != '' ? '' : (b.k == '-1' ? '<img title="Active Criminal" src="' + FHIPO + 'bomb.png"><br>' : (b.k == '1' ? '<img title="PVP Enabled" src="' + FHIPO + 'heart.png"><br>' : '')) + '' + (b.agc != '' ? '<img title="' + b.agct + '" src="' + b.agc + '" style="filter: Glow(Color=#000000, Strength=2);"><br>' : '')) + (b.f > 0 ? '<img title="Wanted Criminal" src="' + FHIPO + 'money.png">' : '')
 
 					if (b.ap != 'na.gif' && b.ap != '') {
@@ -2183,7 +2183,7 @@ function ShowElements() {
 			var b = window.top.Vessels[y];
 			if (b != null) {
 				var Itty2 = b.i.substr(0, 30);
-				var CharTD = '<td width="40" height="40" style="background-image: url(' + FHIPV + b.vpid + '); background-Position: left; background-Repeat: no-repeat; ' + ('' + b.vd != '' && '' + b.vd != '0' ? 'filter:gray' : '') + '">' + (b.vflag != 't.png' ? '<table><tr height=24><td colspan=2></td></tr><tr><td width=24></td><td width=16 bgcolor=\'' + b.vflagc + '\'><img src=\'https://res.landsofhope.com/game/flags/' + b.vflag + '\' width=16 height=16></td></table>' : '<table><tr><td width=40 heigh=40></td></tr></table>') + '</td>'
+				var CharTD = '<td width="40" height="40" style="background-image: url(' + FHIPV + b.vpid + '); background-Position: left; background-Repeat: no-repeat; ' + ('' + b.vd != '' && '' + b.vd != '0' ? 'filter:gray' : '') + '">' + (b.vflag != 't.png' ? '<table><tr height=24><td colspan=2></td></tr><tr><td width=24></td><td width=16 bgcolor=\'' + b.vflagc + '\'><img src=\'https://lohcdn.com/game/flags/' + b.vflag + '\' width=16 height=16></td></table>' : '<table><tr><td width=40 heigh=40></td></tr></table>') + '</td>'
 				strout += '<table cellpadding=0 cellspacing=0 width="100%"><tr><td width=10 id="aV' + y + '"><div onmouseover="VV_popup(' + y + ');" style="height: 15;background-color: ' + ('' + b.vd != '' && '' + b.vd != '0' ? 'gray' : 'red') + '; color: black; cursor: pointer; opacity: 0.5;filter:alpha(opacity=50); font-weight: bold; text-align: center;" class="transparent">&#187;</div></td><td width="100%"><table cellpadding=1 cellspacing=1 width="100%"><tr id="V' + y + '" onmousedown="VV_m(' + y + ', event);" onmouseover="VV(' + y + ');" onmouseout="VO(' + y + ');">' + CharTD + '<td style="color: ' + b.c + ';padding: 2px" valign=top><table class="itemText" cellspacing=0 cellpadding=0><tr><td style="color: ' + b.c + '"><b>' + Itty2 + (b.anchor != 0 ? ' (A)' : '') + '</b></td></tr><tr><td>' + b.Extra + '</td></tr></table></td></tr></table></td></tr></table>';
 				if (ImprovedMouse != 0 && b.vcid <= 0 && b.npc != 1) {
 					var Testit = getObj('yourmonster');

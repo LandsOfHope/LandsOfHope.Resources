@@ -1,6 +1,6 @@
-var IPath = 'https://res.landsofhope.com/game/r/';
+var IPath = 'https://lohcdn.com/game/r/';
 var LastID = '';
-var OPath = 'https://res.landsofhope.com/game/icons/';
+var OPath = 'https://lohcdn.com/game/icons/';
 document.write('<script src="js/simpleformatting.js" language="JavaScript"></script>');
 
 /**
@@ -11,27 +11,27 @@ document.write('<script src="js/simpleformatting.js" language="JavaScript"></scr
  * @argument evType - name of the event - DONT ADD "on", pass only "mouseover", etc
  * @argument fn - function to call
  */
-function addEvent(obj, evType, fn){
- if (obj.addEventListener){
-    obj.addEventListener(evType, fn, false);
-    return true;
- } else if (obj.attachEvent){
-    var r = obj.attachEvent("on"+evType, fn);
-    return r;
- } else {
-    return false;
- }
+function addEvent(obj, evType, fn) {
+	if (obj.addEventListener) {
+		obj.addEventListener(evType, fn, false);
+		return true;
+	} else if (obj.attachEvent) {
+		var r = obj.attachEvent("on" + evType, fn);
+		return r;
+	} else {
+		return false;
+	}
 }
-function removeEvent(obj, evType, fn, useCapture){
-  if (obj.removeEventListener){
-    obj.removeEventListener(evType, fn, useCapture);
-    return true;
-  } else if (obj.detachEvent){
-    var r = obj.detachEvent("on"+evType, fn);
-    return r;
-  } else {
-    alert("Handler could not be removed");
-  }
+function removeEvent(obj, evType, fn, useCapture) {
+	if (obj.removeEventListener) {
+		obj.removeEventListener(evType, fn, useCapture);
+		return true;
+	} else if (obj.detachEvent) {
+		var r = obj.detachEvent("on" + evType, fn);
+		return r;
+	} else {
+		alert("Handler could not be removed");
+	}
 }
 
 /**
@@ -42,18 +42,18 @@ function removeEvent(obj, evType, fn, useCapture){
  * Gets the full width/height because it's different for most browsers.
  */
 function getViewportHeight() {
-	if (window.innerHeight!=window.undefined) return window.innerHeight;
-	if (document.compatMode=='CSS1Compat') return document.documentElement.clientHeight;
-	if (document.body) return document.body.clientHeight; 
+	if (window.innerHeight != window.undefined) return window.innerHeight;
+	if (document.compatMode == 'CSS1Compat') return document.documentElement.clientHeight;
+	if (document.body) return document.body.clientHeight;
 
-	return window.undefined; 
+	return window.undefined;
 }
 function getViewportWidth() {
 	var offset = 17;
 	var width = null;
-	if (window.innerWidth!=window.undefined) return window.innerWidth; 
-	if (document.compatMode=='CSS1Compat') return document.documentElement.clientWidth; 
-	if (document.body) return document.body.clientWidth; 
+	if (window.innerWidth != window.undefined) return window.innerWidth;
+	if (document.compatMode == 'CSS1Compat') return document.documentElement.clientWidth;
+	if (document.body) return document.body.clientWidth;
 }
 
 /**
@@ -65,7 +65,7 @@ function getScrollTop() {
 		return self.pageYOffset;
 	}
 	else if (document.documentElement && document.documentElement.scrollTop)
-		// Explorer 6 Strict
+	// Explorer 6 Strict
 	{
 		return document.documentElement.scrollTop;
 	}
@@ -80,7 +80,7 @@ function getScrollLeft() {
 		return self.pageXOffset;
 	}
 	else if (document.documentElement && document.documentElement.scrollLeft)
-		// Explorer 6 Strict
+	// Explorer 6 Strict
 	{
 		return document.documentElement.scrollLeft;
 	}
@@ -93,7 +93,7 @@ function getScrollLeft() {
 
 function popupcolor(strID) {
 	LastID = strID;
-	window.top.showPopWin("colorpicker.asp", 550, 340, PromptReturnx, null,"Choose Color", 1);
+	window.top.showPopWin("colorpicker.asp", 550, 340, PromptReturnx, null, "Choose Color", 1);
 }
 
 function PromptReturnx(returnVal, postback) {

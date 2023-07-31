@@ -1,6 +1,6 @@
 var FID = FID;
 var CharsAt = CharsAt;
-var FHIP = 'https://res.landsofhope.com/game/'
+var FHIP = 'https://lohcdn.com/game/'
 var IPath = FHIP + "r/"
 var IPath2 = FHIP + "i/"
 var IPath4 = FHIP + "m/"
@@ -45,89 +45,90 @@ function InitGame(gamename, IPathM, headx, markerx, blankx, terrainx1, terrain2x
 	head = IPath3 + headx;
 	marker = IPath3 + markerx;
 	blank = IPath3 + blankx;
-	terrain =  terrainx;
+	terrain = terrainx;
 	terrain2 = terrain2x;
 	tilec = tilecx2;
-	terrainx =  terrainx1;
+	terrainx = terrainx1;
 	terrainx2 = terrain2x1;
 	tilecx = tilecx1;
 	Start(w, h);
 }
 
 function Start(w, h) {
-var a = 0;
-var b = 0;
-end ='';
-file = '';
-k = 0
-speed = 130;
-points = 0;
-o = 0;
-i = 0;
-di = 0;
-x = 0;
-charges = 5;
-prizesfound = 0;
-y = 0;
-n = 0;
-d = 0;
-length = 1;
-food = 0;
-width = w;
-//20
-height = h;
-//14
-hw = (height * width);
-width += 2;
-var tilenum = 0;
-var strblank2;
-var strout = '';
-for (b = 0; b < height+2; b++) {
-	strout += "<tr>";
-	var strFile = IPath3 + terrainx;
-	var strB = IPath3 + terrainx2;
-	strblank2 = "<td class='c" + tilecx + "' style=\"background-Image: URL('" + strFile + "')\"><img src='" + blank + "'  style=\"background-Image: URL('" + strB + "')\" width=20 height=20></td>";
-	strout += strblank2;
+	var a = 0;
+	var b = 0;
+	end = '';
+	file = '';
+	k = 0
+	speed = 130;
+	points = 0;
+	o = 0;
+	i = 0;
+	di = 0;
+	x = 0;
+	charges = 5;
+	prizesfound = 0;
+	y = 0;
+	n = 0;
+	d = 0;
+	length = 1;
+	food = 0;
+	width = w;
+	//20
+	height = h;
+	//14
+	hw = (height * width);
+	width += 2;
+	var tilenum = 0;
+	var strblank2;
+	var strout = '';
+	for (b = 0; b < height + 2; b++) {
+		strout += "<tr>";
+		var strFile = IPath3 + terrainx;
+		var strB = IPath3 + terrainx2;
+		strblank2 = "<td class='c" + tilecx + "' style=\"background-Image: URL('" + strFile + "')\"><img src='" + blank + "'  style=\"background-Image: URL('" + strB + "')\" width=20 height=20></td>";
+		strout += strblank2;
 
-	for (a = 0; a < width- 2; a++) {
-		if ((b == 0) || (b == height+1)) {
+		for (a = 0; a < width - 2; a++) {
+			if ((b == 0) || (b == height + 1)) {
 
-			strout += strblank2;
-		}
-		else {
-			var rndnum = Math.floor((Math.random() * 3));
-			if (rndnum == 0) {rndnum = ''}
-			var strFile = IPath3 + terrain + rndnum + ".gif";
+				strout += strblank2;
+			}
+			else {
+				var rndnum = Math.floor((Math.random() * 3));
+				if (rndnum == 0) { rndnum = '' }
+				var strFile = IPath3 + terrain + rndnum + ".gif";
 
-			var strB = blank;
-			var rndnum = Math.floor((Math.random() * 10));
-			if (rndnum <= 1) {rndnum = '';
-				var strB = IPath3 + terrain2 + rndnum + ".gif";
-			} else {
-				if (rndnum <= 5) {
+				var strB = blank;
+				var rndnum = Math.floor((Math.random() * 10));
+				if (rndnum <= 1) {
+					rndnum = '';
 					var strB = IPath3 + terrain2 + rndnum + ".gif";
+				} else {
+					if (rndnum <= 5) {
+						var strB = IPath3 + terrain2 + rndnum + ".gif";
+					}
 				}
+				tilenum = tilenum + 1;
+				prizes[tilenum] = 0;
+				var Prize = Math.floor(Math.random() * hw);
+				if (Prize == 1 || Prize == hw - 5) {
+					//var strB = head;
+					prizes[tilenum] = 1;
+					prizecount = prizecount + 1
+				}
+				// t=" + tilenum + "
+				strout += "<td onclick='Search(this," + tilenum + ")' class='c" + tilec + "' style=\"background-Image: URL('" + strFile + "')\"><img src='" + blank + "'  style=\"background-Image: URL('" + strB + "')\" width=20 height=20></td>";
 			}
-			tilenum = tilenum + 1;
-			prizes[tilenum] = 0;
-			var Prize = Math.floor(Math.random() * hw);
-			if (Prize == 1 || Prize == hw - 5) {
-				//var strB = head;
-				prizes[tilenum] = 1;
-				prizecount = prizecount + 1
-			}
-			// t=" + tilenum + "
-			strout += "<td onclick='Search(this," + tilenum + ")' class='c" + tilec + "' style=\"background-Image: URL('" + strFile + "')\"><img src='" + blank + "'  style=\"background-Image: URL('" + strB + "')\" width=20 height=20></td>";
 		}
-	}
-	strout += strblank2;
+		strout += strblank2;
 
-	strout += "</tr>" //";
-}
-getObj("Inv").innerHTML = "<table cellspacing=0 align=center cellpadding=0>" + strout + "</table>";
-getObj("Stuff2").innerHTML = "<form name=info id=info method=post action='fhseeker.asp' style='margin: 0px;'><input name=FID id=FID type=hidden value=" + FID + "><input name=CharsAt id=CharsAt type=hidden value=" + CharsAt + "><input name=score id=score type=hidden value=0><input type=button size=28 name=fakescore id=fakescore value='" + charges + " attempts remain' class=worm1><br><img src='" + marker + "' width=15 height=15> : <input type=button size=28 id=fakescore2 name=fakescore2 value='0 Prizes Found' class=worm1></form><br><font size=-2>Click on any Tile to start</font><br><br><b>Objectives</b><br>Locate the hidden <img src='" + marker + "' width=15 height=15> by clicking on any tile in the central area of the map.";
-document.images[1].src = blank; 
-blank = document.images[1].src;
+		strout += "</tr>" //";
+	}
+	getObj("Inv").innerHTML = "<table cellspacing=0 align=center cellpadding=0>" + strout + "</table>";
+	getObj("Stuff2").innerHTML = "<form name=info id=info method=post action='fhseeker.asp' style='margin: 0px;'><input name=FID id=FID type=hidden value=" + FID + "><input name=CharsAt id=CharsAt type=hidden value=" + CharsAt + "><input name=score id=score type=hidden value=0><input type=button size=28 name=fakescore id=fakescore value='" + charges + " attempts remain' class=worm1><br><img src='" + marker + "' width=15 height=15> : <input type=button size=28 id=fakescore2 name=fakescore2 value='0 Prizes Found' class=worm1></form><br><font size=-2>Click on any Tile to start</font><br><br><b>Objectives</b><br>Locate the hidden <img src='" + marker + "' width=15 height=15> by clicking on any tile in the central area of the map.";
+	document.images[1].src = blank;
+	blank = document.images[1].src;
 }
 
 function Search(stuff, t) {
