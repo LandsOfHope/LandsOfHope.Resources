@@ -13,7 +13,7 @@ var RRC = 0;
 var Races = new Array();
 var Processing = 0;
 document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
-document.write('<script src="js/races.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/races.js" language="JavaScript"></script>');
 
 function CS(vin2, vin) {
 	if (Processing == 0) {

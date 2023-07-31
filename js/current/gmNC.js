@@ -10,8 +10,8 @@ var Races = new Array();
 var PC = 0;
 var Profs = new Array();
 document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
-document.write('<script src="js/races.js" language="JavaScript"></script>');
-document.write('<script src="js/professions.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/races.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/professions.js" language="JavaScript"></script>');
 
 function DCR(v) {
 	RPicM = Races[v].m;

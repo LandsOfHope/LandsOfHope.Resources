@@ -6,7 +6,7 @@ var OPath = 'https://lohcdn.com/game/icons/';
 var gVersion = gVersion;
 var CharsArray = new Array(12)
 var CurrentMapID = 0;
-document.write('<script src="js/simpleformatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/simpleformatting.js" language="JavaScript"></script>');
 
 function FinishMap() {
 	window.FH.document.getElementById('Loading').innerHTML = 'Loading Map ' + CurrentMapID;

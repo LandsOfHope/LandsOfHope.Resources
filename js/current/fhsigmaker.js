@@ -1,7 +1,7 @@
 var IPath = 'https://lohcdn.com/game/r/';
 var LastID = '';
 var OPath = 'https://lohcdn.com/game/icons/';
-document.write('<script src="js/simpleformatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/simpleformatting.js" language="JavaScript"></script>');
 
 /**
  * X-browser event handler attachment and detachment

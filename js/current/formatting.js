@@ -41,12 +41,9 @@ if (window.top.BGCOLOR != null) {
 	var DARK = 'black';
 }
 
-
-
-//document.write('<script src="js/' + Theme + '.js" language="JavaScript"></script>');
-document.write('<script src="js/tooltip.js?v=1" language="JavaScript"></script>');
-document.write('<script src="js/keystroke.js" language="JavaScript"></script>');
-document.write('<script src="js/prompts.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/tooltip.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/keystroke.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/prompts.js" language="JavaScript"></script>');
 
 var strButtonF = "font-weight: normal; font-family: Helvetica; font-size: 11px; vertical-align:top"
 var strButtonx = "cursor: pointer; " + strButtonF;
