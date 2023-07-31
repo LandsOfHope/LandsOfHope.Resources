@@ -1,0 +1,10 @@
+AddHelper('Interface','This is the loot screen, if you have defeated a monster this is the screen you will see to enable you to claim the items/money it was carrying.', 0);
+AddHelper('Inv','To loot an item click the bag symbol to the right of the item name to send it to a specific bag, or double click the item to send it to the sell bag.', 1);
+AddHelper('Inv','You can also click the Loot All button at the bottom of the screen to take everything in one go.', 1);
+AddHelper('Inv','After looting all the items you should Destroy the corpse, if you do not other people will have to wait 5minutes for that corpse to despawn before a new monster spawns.', 1,'#ff6666');
+AddHelper('Inv','Skin Corpse - This only works if you have Skinning skill, you can get the Skinning skill from Kaelia Kaka at 31, 59.', 1);
+AddHelper('Inv','Drain Blood - This is a Reaper only option.', 1);
+AddHelper('Inv','Soul Trap - This is a Shaman/Spirit Magic ability.', 1);
+AddHelper('Inv','Intercede - This is an Arch Priest/Intercession ability.', 1);
+AddHelper('Inv','Destroy Corpse - The default way of destroying a corpse that everyone can use.', 1);
+HelperB(0);

@@ -1,0 +1,10 @@
+AddHelper('ragdoll','This is the equipment screen, it is this screen that lets you equip and unequip items you have in your inventory.', 1);
+AddHelper('Head94','To equip an item first click on a slot such as this one the <b>Bonus 1</b> slot.', 1);
+AddHelper('Head94','<i>A special item the Drakos Brand can be equipped here (assuming you completed the first Guide Derwa quest).</i>.', 1, 'gold');
+AddHelper('EquipItems','After clicking on the slot you will notice the right of the screen updates to show you the items that can go here.', 1);
+AddHelper('EquipItems','Purple/magenta colored items indicate that the item is currently equipped, clicking on another item will equip that new item instead.', 1, 'magenta');
+AddHelper('Bag6','Sometimes you may wish to equip items that are in a specific bag you are holding, to do this click on one of the bag icons on the far right.', 1);
+AddHelper('EquipItems','The list of available items will then use the contents of the bag.', 1);
+AddHelper('ragdoll','If you have more than Drakos Brand in your inventory, try clicking on some of the other slots to see what you can equip.', 1);
+AddHelper('hp1','After changing your equipment if you notice your Health/Mana/Stamina bars are less than full go to the World menu and click on Rest.', 0);
+HelperB(0, 'fhequip.asp');

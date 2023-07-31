@@ -1,0 +1,10 @@
+AddHelper('Interface','This is the dragon fight screen, this screen is only available in the Dragons of the East expansion pack realm.', 0);
+AddHelper('Inv','Your picture and stats show up on the left of the screen.', 1);
+AddHelper('Inv2','Your opponents picture and stats show up on the right of the screen.', 1);
+AddHelper('Fighter0','To take a turn select the fighter you wish to use (the first fighter is automatically selected).', 1, 'gold');
+AddHelper('Fighter0','Below your fighter picture is a bunch of buttons that correspond to the action or power you wish to have your fighter perform.', 1);
+AddHelper('Fighter0','The list of available fight powers depends entirely on your chosen faction in this conflict. To use a power simply click on that button.', 1);
+AddHelper('Fighter0','Each power will require a certain amount of power points to execute, your power points as well as your health at the start of a fight are dependant on your current faction fame..', 1);
+AddHelper('StatusText','After taking a turn you will notice the fight results show up here, and your health or your enemies health will alter to display the changes.', 1);
+AddHelper('StatusText','Eventually when you or your opponent reaches 0 health the fight ends, if you won you will be taken to a loot screen otherwise you will become a ghost.', 1);
+HelperB(0);
