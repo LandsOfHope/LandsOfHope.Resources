@@ -10,49 +10,49 @@ var Infos = new Array();
 var LC = 0;
 var Locks = new Array();
 
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function AC(ItemID, e, l, PictureID, Itty) {
-if (PictureID == '0') {PictureID = ''}
-var Color = LITE;
-if (Infos[IC] == null) {
-	Infos[IC] = new Array();
-}
-Infos[IC] = new newInfo(Color, ItemID, e, l, PictureID, Itty);
-document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')" onclick="DC(' + IC + ')" style="color: ' +  Color + '; padding-left: 5px;"><td width=15><img src=\'' + IPath + (PictureID == '' ? 'na.gif' : PictureID) + '\' width=15 height=15></td><td width=\'100%\'>' + Itty + '</td><td>' + l + '</td></tr>');
-IC = IC + 1;
+	if (PictureID == '0') { PictureID = '' }
+	var Color = LITE;
+	if (Infos[IC] == null) {
+		Infos[IC] = new Array();
+	}
+	Infos[IC] = new newInfo(Color, ItemID, e, l, PictureID, Itty);
+	document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')" onclick="DC(' + IC + ')" style="color: ' + Color + '; padding-left: 5px;"><td width=15><img src=\'' + IPath + (PictureID == '' ? 'na.gif' : PictureID) + '\' width=15 height=15></td><td width=\'100%\'>' + Itty + '</td><td>' + l + '</td></tr>');
+	IC = IC + 1;
 }
 
 function newInfo(Color, ItemID, e, l, PictureID, Itty) {
-this.c = Color;
-this.e = e;
-this.p = PictureID;
-this.t = Itty;
-this.l = l;
-this.z = ItemID;
+	this.c = Color;
+	this.e = e;
+	this.p = PictureID;
+	this.t = Itty;
+	this.l = l;
+	this.z = ItemID;
 }
 
 function AC2(ItemID, l, PictureID, Itty) {
-if (PictureID == '0') {PictureID = ''}
-var Color = 'white'
-if (Locks[LC] == null) {
-	Locks[LC] = new Array();
-}
-Locks[LC] = new newLock(Color, ItemID, l, PictureID, Itty);
-strLocks += '<tr id="L' + LC + '" onmouseover="PC2(' + LC + ')" onmouseout="RC2(' + LC + ')" onclick="DC2(' + LC + ')" style="color: ' +  Color + '; padding-left: 5px;"><td width=15><img src=\'' + IPath2 + (PictureID == '' ? 'na.gif' : PictureID) + '\' width=15 height=15></td><td width=\'100%\'>' + Itty + '</td><td>' + l + '</td></tr>';
-LC = LC + 1;
+	if (PictureID == '0') { PictureID = '' }
+	var Color = 'white'
+	if (Locks[LC] == null) {
+		Locks[LC] = new Array();
+	}
+	Locks[LC] = new newLock(Color, ItemID, l, PictureID, Itty);
+	strLocks += '<tr id="L' + LC + '" onmouseover="PC2(' + LC + ')" onmouseout="RC2(' + LC + ')" onclick="DC2(' + LC + ')" style="color: ' + Color + '; padding-left: 5px;"><td width=15><img src=\'' + IPath2 + (PictureID == '' ? 'na.gif' : PictureID) + '\' width=15 height=15></td><td width=\'100%\'>' + Itty + '</td><td>' + l + '</td></tr>';
+	LC = LC + 1;
 }
 
 function newLock(Color, ItemID, l, PictureID, Itty) {
-this.c = Color;
-this.p = PictureID;
-this.t = Itty;
-this.l = l;
-this.z = ItemID;
+	this.c = Color;
+	this.p = PictureID;
+	this.t = Itty;
+	this.l = l;
+	this.z = ItemID;
 }
 
 function GoP(PageNo) {
-window.location.replace('?P=' + PageNo + '');
+	window.location.replace('?P=' + PageNo + '');
 }
 
 function DC(v) {
@@ -62,7 +62,8 @@ function DC(v) {
 	if (strLocks == '') {
 		strLocks = '<tr><td id=tred>To lock a Room you need to have a tinker crafted lock in your inventory.<br><br>It will then show up here !</td></tr>'
 	}
-	getObj('Buttons').innerHTML = '<table class="weakcell">' + strLocks + '</table>'}
+	getObj('Buttons').innerHTML = '<table class="weakcell">' + strLocks + '</table>'
+}
 
 function DC2(v) {
 	if (Processing == 0) {
@@ -81,23 +82,23 @@ function PromptReturn(returnVal, pb) {
 }
 
 function RC(v) {
-getObj('I' + v).style.cursor = '';
-getObj('I' + v).style.backgroundColor='';
+	getObj('I' + v).style.cursor = '';
+	getObj('I' + v).style.backgroundColor = '';
 }
 
 function PC(v) {
-window.top.InfoTip(IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p), '<b>' + Infos[v].t + '</b><br>Current Lock Level: ' + Infos[v].l);
-getObj('I' + v).style.cursor = 'pointer';
-getObj('I' + v).style.backgroundColor=BGCOLOR_S
+	window.top.InfoTip(IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p), '<b>' + Infos[v].t + '</b><br>Current Lock Level: ' + Infos[v].l);
+	getObj('I' + v).style.cursor = 'pointer';
+	getObj('I' + v).style.backgroundColor = BGCOLOR_S
 }
 
 function RC2(v) {
-getObj('L' + v).style.cursor = '';
-getObj('L' + v).style.backgroundColor='';
+	getObj('L' + v).style.cursor = '';
+	getObj('L' + v).style.backgroundColor = '';
 }
 
 function PC2(v) {
-window.top.InfoTip(IPath2 + (Locks[v].p == '' ? 'na.gif' : Locks[v].p),'<b>' + Locks[v].t + '</b><br>Lock Level: ' + Locks[v].l);
-getObj('L' + v).style.cursor = 'pointer';
-getObj('L' + v).style.backgroundColor=BGCOLOR_S
+	window.top.InfoTip(IPath2 + (Locks[v].p == '' ? 'na.gif' : Locks[v].p), '<b>' + Locks[v].t + '</b><br>Lock Level: ' + Locks[v].l);
+	getObj('L' + v).style.cursor = 'pointer';
+	getObj('L' + v).style.backgroundColor = BGCOLOR_S
 }

@@ -1,32 +1,32 @@
 var Mask = Mask;
 var PageNo = PageNo;
-var CharsAt= CharsAt;
+var CharsAt = CharsAt;
 var IPath = window.top.FHIPI;
 var IC = 0;
 var Infos = new Array();
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function AM(v, PictureID, Itty, d) {
-var Color = '#66ff66';
-if (Infos[IC] == null) {
-	Infos[IC] = new Array();
-}
-Infos[IC] = new newInfo(Color, v, PictureID, Itty, d);
+	var Color = '#66ff66';
+	if (Infos[IC] == null) {
+		Infos[IC] = new Array();
+	}
+	Infos[IC] = new newInfo(Color, v, PictureID, Itty, d);
 
-document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')"  onclick="DC(' + IC + ')" style="color: ' +  Color + '; padding-left: 5px"><td width=15><img width=15 height=15 src="' + IPath + (PictureID == '' || PictureID == '0' ? 'na.gif' : PictureID) + '"></td><td width=\'100%\'>' + Itty + '</td><td>' + d + '</td><td>' + v + '</td></tr>');
-IC = IC + 1;
+	document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')"  onclick="DC(' + IC + ')" style="color: ' + Color + '; padding-left: 5px"><td width=15><img width=15 height=15 src="' + IPath + (PictureID == '' || PictureID == '0' ? 'na.gif' : PictureID) + '"></td><td width=\'100%\'>' + Itty + '</td><td>' + d + '</td><td>' + v + '</td></tr>');
+	IC = IC + 1;
 }
 
 function newInfo(Color, v, PictureID, Itty, d) {
-this.c = Color;
-this.t = Itty;
-this.p = PictureID;
-this.v = v;
-this.d = d;
+	this.c = Color;
+	this.t = Itty;
+	this.p = PictureID;
+	this.v = v;
+	this.d = d;
 }
 
 function GoP(PageNo) {
-window.location.replace('?Mask=' + Mask + '&CharsAt=' + CharsAt + '&P=' + PageNo + '');
+	window.location.replace('?Mask=' + Mask + '&CharsAt=' + CharsAt + '&P=' + PageNo + '');
 }
 
 function DC(v) {
@@ -38,13 +38,13 @@ function DC(v) {
 
 function RC(v) {
 	getObj('I' + v).style.cursor = '';
-	getObj('I' + v).style.backgroundColor='';
+	getObj('I' + v).style.backgroundColor = '';
 }
 
 function PC(v) {
-	window.top.InfoTip('' + IPath + Infos[v].p,'' + Infos[v].t);
+	window.top.InfoTip('' + IPath + Infos[v].p, '' + Infos[v].t);
 	getObj('I' + v).style.cursor = 'pointer';
-	getObj('I' + v).style.backgroundColor=BGCOLOR_S
+	getObj('I' + v).style.backgroundColor = BGCOLOR_S
 }
 
 

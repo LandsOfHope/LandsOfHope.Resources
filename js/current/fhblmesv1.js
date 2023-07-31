@@ -6,41 +6,41 @@ var IC = 0;
 var Infos = new Array();
 var Processing = 0;
 var PageNo = PageNo;
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function AC(ItemID, q, IVID, RID, Itty, a, mp, fp) {
-var PictureID = '';
-var Color = LITE;
-if (a == 0) {
-	Color = 'yellow'
-} else if (a < 0) {
-	Color = '#ff6666'
-} else {
-	Color = '#66ff66'
-}
-if (Infos[IC] == null) {
-	Infos[IC] = new Array();
-}
-Infos[IC] = new newInfo(Color, ItemID, q, IVID, RID, Itty, a, mp, fp);
-document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')" onclick="DC(' + IC + ')" style="color: ' +  Color + '; padding-left: 5px;"><td width=30><img src=\'' + IPath2 + mp + '\' width=15 height=15><img src=\'' + IPath2 + fp + '\' width=15 height=15></td><td width=\'200\'>' + Itty + '</td><td>' +  q +'</td></tr>');
-IC = IC + 1;
+	var PictureID = '';
+	var Color = LITE;
+	if (a == 0) {
+		Color = 'yellow'
+	} else if (a < 0) {
+		Color = '#ff6666'
+	} else {
+		Color = '#66ff66'
+	}
+	if (Infos[IC] == null) {
+		Infos[IC] = new Array();
+	}
+	Infos[IC] = new newInfo(Color, ItemID, q, IVID, RID, Itty, a, mp, fp);
+	document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')" onclick="DC(' + IC + ')" style="color: ' + Color + '; padding-left: 5px;"><td width=30><img src=\'' + IPath2 + mp + '\' width=15 height=15><img src=\'' + IPath2 + fp + '\' width=15 height=15></td><td width=\'200\'>' + Itty + '</td><td>' + q + '</td></tr>');
+	IC = IC + 1;
 }
 
 function newInfo(Color, ItemID, q, IVID, RID, Itty, a, mp, fp) {
-this.c = Color;
-this.z = ItemID;
-this.i = Itty;
-this.q = q;
-this.a = a;
-this.v = IVID;
-this.m = RID;
-this.mp = mp;
-this.fp = fp;
+	this.c = Color;
+	this.z = ItemID;
+	this.i = Itty;
+	this.q = q;
+	this.a = a;
+	this.v = IVID;
+	this.m = RID;
+	this.mp = mp;
+	this.fp = fp;
 }
 
 
 function GoP(p) {
-window.location.replace('fhblmes.asp?P=' + p + '&CharsAt=' + CharsAt + '&Special=' + Special);
+	window.location.replace('fhblmes.asp?P=' + p + '&CharsAt=' + CharsAt + '&Special=' + Special);
 }
 
 function Tipz(v) {
@@ -54,12 +54,12 @@ function DC(v) {
 }
 
 function RC(v) {
-getObj('I' + v).style.cursor = '';
-getObj('I' + v).style.backgroundColor='';
+	getObj('I' + v).style.cursor = '';
+	getObj('I' + v).style.backgroundColor = '';
 }
 
 function PC(v) {
 	Tipz(v);
-getObj('I' + v).style.cursor = 'pointer';
-getObj('I' + v).style.backgroundColor=BGCOLOR_S
+	getObj('I' + v).style.cursor = 'pointer';
+	getObj('I' + v).style.backgroundColor = BGCOLOR_S
 }

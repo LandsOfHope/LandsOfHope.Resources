@@ -11,7 +11,7 @@ var LastV = -1;
 var LastDefault = '';
 var LastForward = '';
 
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function AC(m, d, p2, c, v, b, l, r, p, Itty, a, ri, pi, z, la, type, hc) {
 	var Color = GetAColor(a)

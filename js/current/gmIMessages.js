@@ -8,33 +8,33 @@ var counter = 0;
 var IPath = window.top.FHIPR;
 var IC = 0;
 var Infos = new Array();
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function AM(Unread, For, From, PictureID, MDate, Subject, MID, mes) {
-counter = counter + 1
-var bg = ''
-var Color = LITE;
-if ((counter / 2) == Math.round(counter / 2)) {bg = BGCOLOR}
+	counter = counter + 1
+	var bg = ''
+	var Color = LITE;
+	if ((counter / 2) == Math.round(counter / 2)) { bg = BGCOLOR }
 
-if (Infos[IC] == null) {
-	Infos[IC] = new Array();
-}
-Infos[IC] = new newInfo(Color, Unread, For, From, PictureID, MDate, Subject, MID, mes, bg);
-//m="' + Subject + '" md="' + MDate + '" f="' + For + '" fm="' + From + '" v=' + MID + '
-document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')" onclick="DC(' + IC + ')" ' + (bg != '' ? 'style="background-color: ' + bg + '"' : '') + '><td><img src="' + IPath + PictureID + '" width=10 height=10></td><td width="200">' + (Unread == 1 ? '<b>' : '') + Subject + (Unread == 1 ? '</b>' : '') + '</td><td width="160">' + MDate + '</td></tr>');
-IC = IC + 1;
+	if (Infos[IC] == null) {
+		Infos[IC] = new Array();
+	}
+	Infos[IC] = new newInfo(Color, Unread, For, From, PictureID, MDate, Subject, MID, mes, bg);
+	//m="' + Subject + '" md="' + MDate + '" f="' + For + '" fm="' + From + '" v=' + MID + '
+	document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')" onclick="DC(' + IC + ')" ' + (bg != '' ? 'style="background-color: ' + bg + '"' : '') + '><td><img src="' + IPath + PictureID + '" width=10 height=10></td><td width="200">' + (Unread == 1 ? '<b>' : '') + Subject + (Unread == 1 ? '</b>' : '') + '</td><td width="160">' + MDate + '</td></tr>');
+	IC = IC + 1;
 }
 
 function newInfo(Color, Unread, For, From, PictureID, MDate, Subject, MID, mes, bg) {
-this.color = Color;
-this.p = PictureID;
-this.bg = bg;
-this.mes = mes;
-this.m = Subject;
-this.md = MDate;
-this.f = For;
-this.fm = From;
-this.v = MID;
+	this.color = Color;
+	this.p = PictureID;
+	this.bg = bg;
+	this.mes = mes;
+	this.m = Subject;
+	this.md = MDate;
+	this.f = For;
+	this.fm = From;
+	this.v = MID;
 }
 
 
@@ -48,7 +48,7 @@ function CH(strdisplay, ob1) {
 
 
 function GoP(PageNo) {
-window.location.replace('?Mask=' + Mask + '&CharsAt=' + CharsAt + '&OB=' + OB + '&Type=' + Type2 + '&P=' + PageNo + '');
+	window.location.replace('?Mask=' + Mask + '&CharsAt=' + CharsAt + '&OB=' + OB + '&Type=' + Type2 + '&P=' + PageNo + '');
 }
 
 function DC(v) {
@@ -58,12 +58,12 @@ function DC(v) {
 
 
 function RC(v) {
-getObj('I' + v).style.cursor = '';
-getObj('I' + v).style.backgroundColor=Infos[v].bg;
+	getObj('I' + v).style.cursor = '';
+	getObj('I' + v).style.backgroundColor = Infos[v].bg;
 }
 
 function PC(v) {
-window.top.InfoTip(IPath + Infos[v].p,Infos[v].m);
-getObj('I' + v).style.cursor = 'pointer';
-getObj('I' + v).style.backgroundColor=BGCOLOR_S
+	window.top.InfoTip(IPath + Infos[v].p, Infos[v].m);
+	getObj('I' + v).style.cursor = 'pointer';
+	getObj('I' + v).style.backgroundColor = BGCOLOR_S
 }

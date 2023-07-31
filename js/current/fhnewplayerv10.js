@@ -13,7 +13,7 @@ var IPath = 'https://lohcdn.com/game/r/';
 var FormProcessing = 0;
 var returnVal = null;
 
-//document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+//document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function TabName(i) {
 	return (i == 1 ? "Step 1" : (i == 2 ? "Step 2" : (i == 3 ? "Step 3" : "Finish")))

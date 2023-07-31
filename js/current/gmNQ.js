@@ -2,10 +2,10 @@ var CharsAt = CharsAt;
 var Processing = 0;
 var IPath = window.top.FHIPR;
 
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function SetQuest(Newmode) {
-	
+
 	if (Newmode == 'Item') {
 		getObj('Specialx').innerHTML = '<table class=\'weakcell\'><tr><td>Item Name:</td><td><input value=\'\' Name=\'ItemName\'></td><td>Quantity:</td><td><input value=\'1\' Name=\'Quality\' size=3 maxlength=3></td></tr></table>';
 		getObj('QuestDescription').innerHTML = 'Please go and find [ItemQuantity] * [ItemName] for me!'

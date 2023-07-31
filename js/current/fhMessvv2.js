@@ -1,6 +1,6 @@
 
 var IPath = window.top.FHIPR;
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function AM(Shop2, RDate, Mess, FID, Color, Recipient, PictureID, MDate, Message, MID, xpd, giftid, giftname, giftpicture) {
 	var bg = ''

@@ -1,13 +1,13 @@
 var YourTimers = new Array();
 var tc = 0;
 var times = 0;
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 AddTimer('Testing', 60000, 'It is time!', 0);
 AddTimer('Testing 2', 180000, 'It is time 2!', 1);
 
 function ToggleOnOff(x) {
 	var yt = YourTimers[x];
-	if (yt != null) {	
+	if (yt != null) {
 		if (yt.on == 0) {
 			yt.counter2 = Math.abs(yt.time / 60000);
 			yt.on = 1;
@@ -54,9 +54,9 @@ function Timers2() {
 			if (yt.on != 0) {
 				yt.counter = yt.counter + 1;
 				yt.counter2 = yt.counter2 - 1;
-				if (yt.counter2 <= 0 ) {
+				if (yt.counter2 <= 0) {
 					if (yt.repeat != 0) {
-						yt.counter2 = Math.abs(yt.time / 60000)				
+						yt.counter2 = Math.abs(yt.time / 60000)
 					} else {
 						yt.on = 0;
 					}

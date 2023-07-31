@@ -9,7 +9,7 @@ var CPath = FHIPPER + "r/"
 var IPath = FHIPPER + "i/"
 var BPath = FHIPPER + "b/"
 
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function ACS(Statty, sv, sv2, bonus, mv) {
 	var Color = LITE;

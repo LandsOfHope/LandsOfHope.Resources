@@ -7,11 +7,11 @@ var ln = ln;
 var MC = 0;
 var Markers = new Array();
 
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function DBX(fid, fn, fc) {
-//fid=" + fid + " fn='" + fn + "' c='" + fc + "' fc='" + fc + "' 
-document.write("<tr><td style=\"" + strButtonx + "; width: 110; color: " + fc + "\" " + strClicksns + " onclick=\"DB(" + fid + ");\">" + fn + "</td></tr>");
+	//fid=" + fid + " fn='" + fn + "' c='" + fc + "' fc='" + fc + "' 
+	document.write("<tr><td style=\"" + strButtonx + "; width: 110; color: " + fc + "\" " + strClicksns + " onclick=\"DB(" + fid + ");\">" + fn + "</td></tr>");
 }
 
 function DrawLT() {
@@ -22,7 +22,7 @@ function DrawLT() {
 	DBX(3, 'Player Town', '#ff66ff')
 	DBX(4, 'NPC Town', '#ff66ff')
 	DBX(5, 'Place of Interest', 'white')
-//	DBX(6, 'Allegiance', '#ff66ff')
+	//	DBX(6, 'Allegiance', '#ff66ff')
 	DBX(7, 'NPC Outpost', 'orange')
 }
 
@@ -34,41 +34,41 @@ function DB(fid) {
 	}
 }
 
-function AC(d, ItemName, ItemID, GameID, mapx, mapy, lt, r, a ,s, l,ml, PictureID, Color) {
-if (Markers[MC] == null) {
-	Markers[MC] = new Array();
-}
-Markers[MC] = new newMarker(PictureID, Color, d, ItemName, ItemID, GameID, mapx, mapy, lt, 0, a, s, l, ml);
+function AC(d, ItemName, ItemID, GameID, mapx, mapy, lt, r, a, s, l, ml, PictureID, Color) {
+	if (Markers[MC] == null) {
+		Markers[MC] = new Array();
+	}
+	Markers[MC] = new newMarker(PictureID, Color, d, ItemName, ItemID, GameID, mapx, mapy, lt, 0, a, s, l, ml);
 
-document.write('<tr id="M' + MC + '" onmouseover="PC(' + MC + ')" onmouseout="RC(' + MC + ')"  onclick="DC(' + MC + ')" style="color: ' +  Color + '; padding-left: 5px"><td width=15><img src=\'' + IPath + (PictureID == '' ? 'na.gif' : PictureID) + '\' width=15 height=15></td><td width=\'160\'>' + (lt != 1 && lt != 3 ? '<b>' : '') +  ItemName + (lt != 1 && lt != 3 ? '</b>' : '') + '</td><td>' + (l > 0 ?  l + (ml > l ? ' - ' + ml : '') : '') + '</td></tr>');
-MC = MC + 1;
+	document.write('<tr id="M' + MC + '" onmouseover="PC(' + MC + ')" onmouseout="RC(' + MC + ')"  onclick="DC(' + MC + ')" style="color: ' + Color + '; padding-left: 5px"><td width=15><img src=\'' + IPath + (PictureID == '' ? 'na.gif' : PictureID) + '\' width=15 height=15></td><td width=\'160\'>' + (lt != 1 && lt != 3 ? '<b>' : '') + ItemName + (lt != 1 && lt != 3 ? '</b>' : '') + '</td><td>' + (l > 0 ? l + (ml > l ? ' - ' + ml : '') : '') + '</td></tr>');
+	MC = MC + 1;
 }
 
-function AC2(d, ItemName, ItemID, GameID, mapx, mapy, lt, r, a ,s, l,ml, PictureID, Color) {
-if (Markers[MC] == null) {
-	Markers[MC] = new Array();
-}
-Markers[MC] = new newMarker(PictureID, Color, d, ItemName, ItemID, GameID, mapx, mapy, lt, 1, a, s, l, ml);
+function AC2(d, ItemName, ItemID, GameID, mapx, mapy, lt, r, a, s, l, ml, PictureID, Color) {
+	if (Markers[MC] == null) {
+		Markers[MC] = new Array();
+	}
+	Markers[MC] = new newMarker(PictureID, Color, d, ItemName, ItemID, GameID, mapx, mapy, lt, 1, a, s, l, ml);
 
-document.write('<tr id="M' + MC + '" onmouseover="PC(' + MC + ')" onmouseout="RC(' + MC + ')"  onclick="DC(' + MC + ')" style="color: ' +  Color + '; padding-left: 5px"><td width=15><img src=\'' + IPath + (PictureID == '' ? 'na.gif' : PictureID) + '\' width=15 height=15></td><td width=\'160\'>' + (lt != 1 && lt != 3 ? '<b>' : '') +  ItemName + (lt != 1 && lt != 3 ? '</b>' : '') + '</td><td>' + (l > 0 ?  l + (ml > l ? ' - ' + ml : '') : '') + '</td></tr>');
-MC = MC + 1;
+	document.write('<tr id="M' + MC + '" onmouseover="PC(' + MC + ')" onmouseout="RC(' + MC + ')"  onclick="DC(' + MC + ')" style="color: ' + Color + '; padding-left: 5px"><td width=15><img src=\'' + IPath + (PictureID == '' ? 'na.gif' : PictureID) + '\' width=15 height=15></td><td width=\'160\'>' + (lt != 1 && lt != 3 ? '<b>' : '') + ItemName + (lt != 1 && lt != 3 ? '</b>' : '') + '</td><td>' + (l > 0 ? l + (ml > l ? ' - ' + ml : '') : '') + '</td></tr>');
+	MC = MC + 1;
 }
 
 function newMarker(PictureID, Color, d, ItemName, ItemID, GameID, mapx, mapy, lt, u, a, s, l, ml) {
-this.c = Color;
-this.tn = ItemName;
-this.p = PictureID;
-this.d = d;
-this.v = ItemID;
-this.t = lt;
-this.g = GameID;
-this.x = mapx;
-this.y = mapy;
-this.u = u;
-this.a = a;
-this.s = s;
-this.l = l;
-this.ml = ml;
+	this.c = Color;
+	this.tn = ItemName;
+	this.p = PictureID;
+	this.d = d;
+	this.v = ItemID;
+	this.t = lt;
+	this.g = GameID;
+	this.x = mapx;
+	this.y = mapy;
+	this.u = u;
+	this.a = a;
+	this.s = s;
+	this.l = l;
+	this.ml = ml;
 }
 
 
@@ -90,7 +90,7 @@ function DC(v) {
 	}
 	getObj('Stuff2').innerHTML = '<b style=\"color: ' + Markers[v].c + '\">' + Markers[v].tn + '</b><br><b>' + GetLT(Math.abs(Markers[v].t)) + '</b><br>Recommended for: ' + strx + (Markers[v].a != 0 ? '<br>Monster Allegiance: ' + GetAName(Markers[v].a) : '') + '<br>Level: ' + Markers[v].l + (Markers[v].ml > Markers[v].l ? ' - ' + Markers[v].ml : '') + '<br>Location: ' + Markers[v].x + ', ' + Markers[v].y + ' ' + GetRealm(Markers[v].g) + (Markers[v].u == 0 ? '<br>' + Markers[v].d : '');
 	getObj('Pic').innerHTML = "<img src='" + IPath + (Markers[v].p == '' ? 'na.gif' : Markers[v].p) + "'>";
-	getObj('Buttons').innerHTML = "" +  (Markers[v].u == 1 ? "<table class=\"weakcell\"><tr><td><input type='hidden' name=li id=li value='" + Markers[v].v + "'>Min Level: </td><td><input name=ll id=ll size=4 maxlength=4 value='" + Markers[v].l + "'></td><Td>Max: </td><td><input name=ml id=ml size=4 maxlength=4 value='" + Markers[v].ml + "'></td></tr><tr><td colspan=4>Description:</td></tr><tr><td colspan=4><textarea id=ld name=ld cols='30' rows='5'>" + Markers[v].d  + "</textarea></td></tr><tr><td colspan=4>" + Adf2("","Save changes","Change") + Adr('getObj(\'ld\').value = \'DELETE\';this.form.submit();','Delete Landmark','Delete') + "": "") + Adr('if (Processing == 0) {Processing = 1; window.top.HideInterface(); window.top.Ninja.location.replace(\'fh.asp?Redraw=1&x=' + Markers[v].x + '&y=' + Markers[v].y + '&MapNum=' + Markers[v].g + '\');};','Recall','Recall') + (Markers[v].c == "red" ? Adr('window.open(\'http://www.landsofhope.com/dungeons/' + Markers[v].tn + '.html\',\'_new\',\'\');','Info','Info') : "") + "</td></tr></table>"; 
+	getObj('Buttons').innerHTML = "" + (Markers[v].u == 1 ? "<table class=\"weakcell\"><tr><td><input type='hidden' name=li id=li value='" + Markers[v].v + "'>Min Level: </td><td><input name=ll id=ll size=4 maxlength=4 value='" + Markers[v].l + "'></td><Td>Max: </td><td><input name=ml id=ml size=4 maxlength=4 value='" + Markers[v].ml + "'></td></tr><tr><td colspan=4>Description:</td></tr><tr><td colspan=4><textarea id=ld name=ld cols='30' rows='5'>" + Markers[v].d + "</textarea></td></tr><tr><td colspan=4>" + Adf2("", "Save changes", "Change") + Adr('getObj(\'ld\').value = \'DELETE\';this.form.submit();', 'Delete Landmark', 'Delete') + "" : "") + Adr('if (Processing == 0) {Processing = 1; window.top.HideInterface(); window.top.Ninja.location.replace(\'fh.asp?Redraw=1&x=' + Markers[v].x + '&y=' + Markers[v].y + '&MapNum=' + Markers[v].g + '\');};', 'Recall', 'Recall') + (Markers[v].c == "red" ? Adr('window.open(\'http://www.landsofhope.com/dungeons/' + Markers[v].tn + '.html\',\'_new\',\'\');', 'Info', 'Info') : "") + "</td></tr></table>";
 }
 
 function GetLT(x) {
@@ -117,18 +117,18 @@ function GetLT(x) {
 }
 
 function GoP(PageNo) {
-window.location.replace('?lg=' + lg + '&lat=' + lt + '&P=' + PageNo + '');
+	window.location.replace('?lg=' + lg + '&lat=' + lt + '&P=' + PageNo + '');
 }
 
 
 function RC(v) {
 	getObj('M' + v).style.cursor = '';
-	getObj('M' + v).style.backgroundColor='';
+	getObj('M' + v).style.backgroundColor = '';
 	window.top.hideTip();
 }
 
 function PC(v) {
 	window.top.InfoTip('', '' + Markers[v].tn + '');
 	getObj('M' + v).style.cursor = 'pointer';
-	getObj('M' + v).style.backgroundColor=BGCOLOR_S;
+	getObj('M' + v).style.backgroundColor = BGCOLOR_S;
 }

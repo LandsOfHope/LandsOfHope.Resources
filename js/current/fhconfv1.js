@@ -7,7 +7,7 @@ var CQID = 0;
 var IPath = "https://lohcdn.com/game/r/"
 var IC = 0;
 var Infos = new Array();
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function AH(QN, Q) {
 	var Color = 'gold';

@@ -3,7 +3,7 @@ var IPath = window.top.FHIP
 var Infos = new Array();
 var ShopC = -1;
 var IC = 0;
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function AMX(PictureID, PP, Color, ItemName, Cost1, Cost2, v, Desc, x, t) {
 	if (PictureID == '') { PictureID = 'na.gif' }

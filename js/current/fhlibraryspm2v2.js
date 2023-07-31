@@ -7,7 +7,7 @@ var IPath = window.top.FHIPS;
 var IPath2 = window.top.FHIPR;
 var Infos = new Array();
 var PetID = PetID;
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function GoP(PageNo) {
 	window.location.replace('?CharsAt=' + CharsAt + '&PetID=' + PetID + '&P=' + PageNo + '&SN=' + SN);

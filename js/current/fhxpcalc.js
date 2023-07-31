@@ -1,16 +1,16 @@
 var Level = Level;
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function Calc1() {
-document.write('<table valign=top><tr><td colspan=2 class=\'boldcell\'>Level to XP Calculator</td></tr><tr><td>Start Level:</td><td><input size=4 maxlength=4 value=1 id=Calc1Box1 name=Calc1Box1></td></tr><tr><td>End Level:</td><td><input size=4 maxlength=4 value=' + Level + ' id=Calc1Box2 name=Calc1Box2></td></tr><tr><td><' + strClicky + ' onclick="document.getElementById(\'Calc1Results\').innerHTML = \'XP Required:<br>\' + GETLEVELXP(document.getElementById(\'Calc1Box1\').value, document.getElementById(\'Calc1Box2\').value)" style=\'width: 100\'>Calculate</button></td></tr><tr><td colspan=2 id=Calc1Results name=Calc1Results></td></tr></table>');
+	document.write('<table valign=top><tr><td colspan=2 class=\'boldcell\'>Level to XP Calculator</td></tr><tr><td>Start Level:</td><td><input size=4 maxlength=4 value=1 id=Calc1Box1 name=Calc1Box1></td></tr><tr><td>End Level:</td><td><input size=4 maxlength=4 value=' + Level + ' id=Calc1Box2 name=Calc1Box2></td></tr><tr><td><' + strClicky + ' onclick="document.getElementById(\'Calc1Results\').innerHTML = \'XP Required:<br>\' + GETLEVELXP(document.getElementById(\'Calc1Box1\').value, document.getElementById(\'Calc1Box2\').value)" style=\'width: 100\'>Calculate</button></td></tr><tr><td colspan=2 id=Calc1Results name=Calc1Results></td></tr></table>');
 }
 
 function Calc2() {
-document.write('<table valign=top><tr><td colspan=2 class=\'boldcell\'>XP to Level Calculator</td></tr><tr><td>Experience:</td><td><input size=10 maxlength=10 value=2000 id=Calc2Box1 name=Calc2Box1></td></tr><tr><td>Current Level:</td><td><input size=3 maxlength=3 value=' + Level + ' id=Calc2Box2 name=Calc2Box2></td></tr><tr><td><' + strClicky + ' onclick="document.getElementById(\'Calc2Results\').innerHTML = \'\' + GETLEVEL(document.getElementById(\'Calc2Box1\').value, document.getElementById(\'Calc2Box2\').value)" style=\'width: 100\'>Calculate</button></td></tr><tr><td colspan=2 id=Calc2Results name=Calc2Results></td></tr></table>');
+	document.write('<table valign=top><tr><td colspan=2 class=\'boldcell\'>XP to Level Calculator</td></tr><tr><td>Experience:</td><td><input size=10 maxlength=10 value=2000 id=Calc2Box1 name=Calc2Box1></td></tr><tr><td>Current Level:</td><td><input size=3 maxlength=3 value=' + Level + ' id=Calc2Box2 name=Calc2Box2></td></tr><tr><td><' + strClicky + ' onclick="document.getElementById(\'Calc2Results\').innerHTML = \'\' + GETLEVEL(document.getElementById(\'Calc2Box1\').value, document.getElementById(\'Calc2Box2\').value)" style=\'width: 100\'>Calculate</button></td></tr><tr><td colspan=2 id=Calc2Results name=Calc2Results></td></tr></table>');
 }
 
 function Calc3() {
-document.write('');
+	document.write('');
 }
 
 
@@ -18,14 +18,14 @@ function GETLEVELXP(L1, L2) {
 	var XP2 = 0;
 	var XP3 = 0;
 	L1 = Math.abs(L1) - 1;
-	if (L1 <= 0) {L1 = 0};
-	if (L2 <= 0) {L2 = 0};
+	if (L1 <= 0) { L1 = 0 };
+	if (L2 <= 0) { L2 = 0 };
 	L2 = Math.abs(L2) - 1;
 	XP2 = ((L1) * (L1 - 1) * 1000);
 	XP3 = ((L2 + 1) * L2) * 1000;
 	XP2 = XP3 - XP2;
 
-	if (XP2 < 0) {XP2 = 0}
+	if (XP2 < 0) { XP2 = 0 }
 	return XP2;
 }
 
@@ -37,7 +37,7 @@ function GETLEVEL(XP, L) {
 	XP = Math.abs(XP);
 	L = Math.abs(L);
 	L2 = L + 1;
-	if (L <= 0) {L = 0};
+	if (L <= 0) { L = 0 };
 
 	if (L >= 1000) {
 		var strr = '1000 (Level Limit)';
@@ -52,7 +52,7 @@ function GETLEVEL(XP, L) {
 				if (XP2 >= XP3) {
 					loop = loop + 1;
 				}
-	
+
 				XP2 = XP2 - XP3;
 				L2 = L2 + 1;
 			}

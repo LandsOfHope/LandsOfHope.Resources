@@ -7,7 +7,7 @@ var IC = 0;
 var Infos = new Array();
 var Processing = 0;
 var LastV = -1;
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function GoP(PageNo) {
 	window.location.replace('?P=' + PageNo + '&Filter=' + Filter + '');

@@ -3,27 +3,27 @@ var IC = 0;
 var strWhat = strWhat;
 var CharacterID = CharacterID;
 var IPath = window.top.FHIPI;
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function AM(v, Color, ItemName, Cost, v2, Desc) {
-var PictureID = 'na.gif';
-if (Infos[IC] == null) {
-	Infos[IC] = new Array();
-}
-Infos[IC] = new newInfo(v, Color, ItemName, Cost, v2, Desc, PictureID);
-document.write('<tr width="150" id="I' + IC + '" onclick="DC(' + IC + ')" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')"><td width="15"><img src=\'' + IPath + PictureID + '\' width=15 height=15></td><Td width=\'100%\' style=\'color: ' + Color + '\'>' + ItemName + '</td></tr>');
-IC = IC + 1;
+	var PictureID = 'na.gif';
+	if (Infos[IC] == null) {
+		Infos[IC] = new Array();
+	}
+	Infos[IC] = new newInfo(v, Color, ItemName, Cost, v2, Desc, PictureID);
+	document.write('<tr width="150" id="I' + IC + '" onclick="DC(' + IC + ')" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')"><td width="15"><img src=\'' + IPath + PictureID + '\' width=15 height=15></td><Td width=\'100%\' style=\'color: ' + Color + '\'>' + ItemName + '</td></tr>');
+	IC = IC + 1;
 }
 
 
 function newInfo(v, Color, ItemName, Cost, v2, Desc, PictureID) {
-this.c = Color;
-this.p = PictureID;
-this.s = ItemName;
-this.d = Cost;
-this.e = Desc;
-this.v = v;
-this.v2 = v2;
+	this.c = Color;
+	this.p = PictureID;
+	this.s = ItemName;
+	this.d = Cost;
+	this.e = Desc;
+	this.v = v;
+	this.v2 = v2;
 }
 
 function DC(v) {
@@ -34,10 +34,10 @@ function DC(v) {
 
 function PC(v) {
 	getObj('I' + v).style.cursor = 'pointer';
-	getObj('I' + v).style.backgroundColor=BGCOLOR_S
+	getObj('I' + v).style.backgroundColor = BGCOLOR_S
 }
 
 function RC(v) {
 	getObj('I' + v).style.cursor = '';
-	getObj('I' + v).style.backgroundColor='';
+	getObj('I' + v).style.backgroundColor = '';
 }

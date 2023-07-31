@@ -5,7 +5,7 @@ var ImageType = new Array();
 var ImageCount = 0;
 var ImageTypeCount = 0;
 
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function AIM(Iii) {
 	Images[ImageCount] = Iii;
@@ -34,7 +34,7 @@ function DrawImageTypes(BuildingID, ImageTypex) {
 			v = 0;
 		} else {
 			v = v + 1;
-		}	
+		}
 	}
 
 	document.write("<tr height='100%'><td colspan=10 width='100%'>&nbsp;</td></tr></table>");
@@ -42,7 +42,7 @@ function DrawImageTypes(BuildingID, ImageTypex) {
 
 function DrawImages(BuildingID, ImageTypex) {
 	var MyType = ImageTypex;
-	var i  = 0;
+	var i = 0;
 	var v = 0;
 	var strBG = '';
 	document.write("<table height=265 width=\"100%\" cellspacing=0 cellpadding=1>");
@@ -59,7 +59,7 @@ function DrawImages(BuildingID, ImageTypex) {
 			v = 0;
 		} else {
 			v = v + 1;
-		}	
+		}
 	}
 
 
@@ -71,7 +71,7 @@ function ChangeType(v) {
 	BuildingID = getObj("CharsAt").value
 	//NewType= replace(NewType, " & ","%20%26%20")
 
-	window.location.replace("?CharsAt=" + BuildingID + "&Type=" +  NewType);
+	window.location.replace("?CharsAt=" + BuildingID + "&Type=" + NewType);
 }
 
 function ChangeImage(e, v) {
@@ -82,7 +82,7 @@ function ChangeImage(e, v) {
 	} else {
 		var strImg = 'np.jpg';
 	}
-	if (strImg == "") {strImg = "np.jpg"}
+	if (strImg == "") { strImg = "np.jpg" }
 
 	getObj("Type").value = MyType
 	getObj("RIMG").value = strImg

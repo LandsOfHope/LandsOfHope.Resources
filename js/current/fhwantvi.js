@@ -8,36 +8,36 @@ var IPath = window.top.FHIPI;
 var Processing = 0;
 var LastV = -1;
 var turnin = turnin;
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function AC(IID, ItemName, PictureID, q, l) {
-if (PictureID == '0') {PictureID = ''}
-var Color = LITE;
-if (Infos[IC] == null) {
-	Infos[IC] = new Array();
-}
-Infos[IC] = new newInfo(Color, IID, ItemName, PictureID, q, l);
-document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')" onclick="DC(' + IC + ')"><td width=15><img src=\'' + IPath + (PictureID == '' ? 'na.gif' : PictureID) + '\' width=15 height=15></td><td width=\'250px\' style="color: ' +  Color + '; padding-left: 5px">' + ItemName + (q > 1 ? ' * ' + q : '') + '</td><td>' + l + '</td></tr>');
-IC = IC + 1;
+	if (PictureID == '0') { PictureID = '' }
+	var Color = LITE;
+	if (Infos[IC] == null) {
+		Infos[IC] = new Array();
+	}
+	Infos[IC] = new newInfo(Color, IID, ItemName, PictureID, q, l);
+	document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')" onclick="DC(' + IC + ')"><td width=15><img src=\'' + IPath + (PictureID == '' ? 'na.gif' : PictureID) + '\' width=15 height=15></td><td width=\'250px\' style="color: ' + Color + '; padding-left: 5px">' + ItemName + (q > 1 ? ' * ' + q : '') + '</td><td>' + l + '</td></tr>');
+	IC = IC + 1;
 }
 
 function newInfo(Color, IID, ItemName, PictureID, q, l) {
-this.c = Color;
-this.v = IID;
-this.p = PictureID;
-this.q = q;
-this.l = l;
-this.i = ItemName;
+	this.c = Color;
+	this.v = IID;
+	this.p = PictureID;
+	this.q = q;
+	this.l = l;
+	this.i = ItemName;
 }
 
 function ACN(PictureID, Color, Notice) {
-if (PictureID == '0') {PictureID = ''}
-document.write('<tr><td width=15><img src=\'' + IPath + (PictureID == '' ? 'na.gif' : PictureID) + '\' width=15 height=15></td><td width=\'250px\' style="color: ' +  Color + '; padding-left: 5px">' + Notice + '</td></tr>');
+	if (PictureID == '0') { PictureID = '' }
+	document.write('<tr><td width=15><img src=\'' + IPath + (PictureID == '' ? 'na.gif' : PictureID) + '\' width=15 height=15></td><td width=\'250px\' style="color: ' + Color + '; padding-left: 5px">' + Notice + '</td></tr>');
 }
 
 
 function GoP(PageNo) {
-window.location.replace('fhwantvi.asp?CharsAt=' + CharsAt + '&P=' + PageNo + '');
+	window.location.replace('fhwantvi.asp?CharsAt=' + CharsAt + '&P=' + PageNo + '');
 }
 
 function DC(v) {
@@ -58,13 +58,13 @@ function DC(v) {
 
 function RC(v) {
 	getObj('I' + v).style.cursor = '';
-	getObj('I' + v).style.backgroundColor='';
+	getObj('I' + v).style.backgroundColor = '';
 }
 
 function PC(v) {
 	window.top.InfoTip('' + IPath + Infos[v].p, '' + Infos[v].i + '<br>Quantity: ' + Infos[v].q + '<br>Level: ' + Infos[v].l);
 	getObj('I' + v).style.cursor = 'pointer';
-	getObj('I' + v).style.backgroundColor=BGCOLOR_S
+	getObj('I' + v).style.backgroundColor = BGCOLOR_S
 }
 
 function PromptReturn(returnVal, pb) {

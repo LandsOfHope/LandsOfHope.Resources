@@ -4,12 +4,12 @@ var IPath = window.top.FHIPR;
 var IPath2 = window.top.FHIPI;
 var Processing = 0;
 var ItemCount = 1;
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
-function AC( ItemName, PictureID) {
-if (PictureID == '0') {PictureID = ''}
-var Color = LITE;
-document.write('<tr><td width=15><img src=\'' + IPath + (PictureID == '' ? 'na.gif' : PictureID) + '\' width=15 height=15></td><td width=\'100%\' style="color: ' +  Color + '; padding-left: 5px;">' + ItemName + '</td><td></tD><td></td></tr>');
+function AC(ItemName, PictureID) {
+	if (PictureID == '0') { PictureID = '' }
+	var Color = LITE;
+	document.write('<tr><td width=15><img src=\'' + IPath + (PictureID == '' ? 'na.gif' : PictureID) + '\' width=15 height=15></td><td width=\'100%\' style="color: ' + Color + '; padding-left: 5px;">' + ItemName + '</td><td></tD><td></td></tr>');
 }
 
 
@@ -24,37 +24,37 @@ function DC(v) {
 }
 
 function AC2(PictureID, ItemName, ItemID, ICX) {
-if (PictureID == '0') {PictureID = ''}
-if (IC < ItemCount) {
-	var Color = '#ff6666';
-} else {
-	var Color = LITE;
-}
-if (Infos[IC] == null) {
-	Infos[IC] = new Array();
-}
-Infos[IC] = new newInfo(Color, PictureID, ItemName, ItemID, ICX);
-document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')" onclick="DC(' + IC + ')"><td width=15><img src=\'' + IPath + (PictureID == '' ? 'na.gif' : PictureID) + '\' width=15 height=15></td><td width=\'100%\' style="color: ' +  Color + '; padding-left: 5px;">' + ItemName + '</td><td width=\'25\'>' + ICX + '</td></tr>');
-IC = IC + 1;
+	if (PictureID == '0') { PictureID = '' }
+	if (IC < ItemCount) {
+		var Color = '#ff6666';
+	} else {
+		var Color = LITE;
+	}
+	if (Infos[IC] == null) {
+		Infos[IC] = new Array();
+	}
+	Infos[IC] = new newInfo(Color, PictureID, ItemName, ItemID, ICX);
+	document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')" onclick="DC(' + IC + ')"><td width=15><img src=\'' + IPath + (PictureID == '' ? 'na.gif' : PictureID) + '\' width=15 height=15></td><td width=\'100%\' style="color: ' + Color + '; padding-left: 5px;">' + ItemName + '</td><td width=\'25\'>' + ICX + '</td></tr>');
+	IC = IC + 1;
 }
 
 function RC(v) {
-getObj('I' + v).style.cursor = '';
-getObj('I' + v).style.backgroundColor='';
+	getObj('I' + v).style.cursor = '';
+	getObj('I' + v).style.backgroundColor = '';
 }
 
 function PC(v) {
-window.top.InfoTip(IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p),Infos[v].i);
-getObj('I' + v).style.cursor = 'pointer';
-getObj('I' + v).style.backgroundColor=BGCOLOR_S
+	window.top.InfoTip(IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p), Infos[v].i);
+	getObj('I' + v).style.cursor = 'pointer';
+	getObj('I' + v).style.backgroundColor = BGCOLOR_S
 }
 
 function newInfo(Color, PictureID, ItemName, ItemID, IC) {
-this.c = Color;
-this.v = ItemID;
-this.p = PictureID;
-this.i = ItemName;
-this.ic = IC;
+	this.c = Color;
+	this.v = ItemID;
+	this.p = PictureID;
+	this.i = ItemName;
+	this.ic = IC;
 }
 
 function PromptReturn(returnVal, pb) {

@@ -4,7 +4,7 @@ var IC = 0;
 var SPath = window.top.FHIP + 'pi/';
 var IPath = window.top.FHIPI;
 var xPath = window.top.FHIP;
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function DrawImages(currentimage, page) {
 	var x = 0;
@@ -22,8 +22,8 @@ function DrawImages(currentimage, page) {
 }
 
 function setimage(newimg) {
-//	getObj('ImgSource').value = newimg;
-	window.parent.getObj('Menu2').style.backgroundImage='url(' + SPath + newimg + ')';
+	//	getObj('ImgSource').value = newimg;
+	window.parent.getObj('Menu2').style.backgroundImage = 'url(' + SPath + newimg + ')';
 	window.location.replace('?IID=1&P=' + PageNo + '&img=' + newimg);
 
 }
@@ -33,11 +33,11 @@ function GoP(p) {
 }
 
 function DC1(stuff, c) {
-stuff.style.cursor = '';
-stuff.style.border='1px solid ' + c;
+	stuff.style.cursor = '';
+	stuff.style.border = '1px solid ' + c;
 }
 
 function DC2(stuff) {
-stuff.style.cursor = 'pointer';
-stuff.style.border='1px solid #A2A2A2';
+	stuff.style.cursor = 'pointer';
+	stuff.style.border = '1px solid #A2A2A2';
 }

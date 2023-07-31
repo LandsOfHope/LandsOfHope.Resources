@@ -4,7 +4,7 @@ var IPath = window.top.FHIPI;
 var Processing = 0;
 var TC = 0;
 var Infos = new Array();
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 
 function AvC(tid, tin, tip, tpc) {

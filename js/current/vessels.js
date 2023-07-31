@@ -5,7 +5,7 @@ var Countx = 0;
 
 var LastTab = 0;
 
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function GoP(PageNo) {
 	window.location.replace('?MT=' + MT + '&P=' + PageNo + '');

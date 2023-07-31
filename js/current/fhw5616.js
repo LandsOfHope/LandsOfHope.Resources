@@ -14,18 +14,18 @@ Wms[7] = '%you2% Forgive me, but where am i supposed to go ?';
 Wms[8] = '%name% Follow the path to the big house by the lake you cant miss it.';
 Wms[9] = '%you2% Thank you for your help i will be right there.';
 
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function ShowStoryx() {
 	var strS = '';
-	Welcome2 = Welcome2  -1
+	Welcome2 = Welcome2 - 1
 	strS = ReturnStory();
 	if (strS != '') {
-		getObj('xx').innerHTML = '' + getObj('xx').innerHTML + '<br><br>' + strS 
+		getObj('xx').innerHTML = '' + getObj('xx').innerHTML + '<br><br>' + strS
 		Welcome2 = Welcome2 + 1
 		strS = ReturnStory();
 		if (strS != '') {
-			getObj('xx').innerHTML = '' + getObj('xx').innerHTML + '<br><br>' + strS 
+			getObj('xx').innerHTML = '' + getObj('xx').innerHTML + '<br><br>' + strS
 			Welcome2 = Welcome2 + 1
 			getObj('Buttons').innerHTML = '<center><button style=\'width:134px; height: 40px;\' class=\'tbtn\' onmouseover=\'this.className = \"tbtn btnhov\";\' onmouseout=\'this.className = \"tbtn\";\' onclick=\'javascript:ShowStoryx()\'><b style=\'color: #66ff66; font-size: 14px;\'>Continue &gt;&gt;' + '</b></button></center>';
 			Welcome2 = Welcome2 + 1
@@ -40,7 +40,7 @@ function ShowStory() {
 	var strS = '';
 	strS = ReturnStory();
 	if (strS != '') {
-		getObj('xx').innerHTML = '' + strS 
+		getObj('xx').innerHTML = '' + strS
 		Welcome2 = Welcome2 + 1
 		getObj('Buttons').innerHTML = '<center><button style=\'width:134px; height: 40px;\' class=\'tbtn\' onmouseover=\'this.className = \"tbtn btnhov\";\' onmouseout=\'this.className = \"tbtn\";\' onclick=\'javascript:ShowStoryx()\'><b style=\'color: #66ff66; font-size: 14px;\'>Continue &gt;&gt;' + '</b></button></center>';
 		Welcome2 = Welcome2 + 1
@@ -55,9 +55,9 @@ function ReturnStory() {
 		var re = /\%name\%/i;
 		var re2 = /\%you\%/i;
 		var re3 = /\%you2\%/i;
-		strWelcome=strWelcome.replace(re, '<b>' + cn + '</b>: ')
-		strWelcome=strWelcome.replace(re2, '<b>' + yn + '</b>: ')
-		strWelcome=strWelcome.replace(re3, '<b>Me</b>: ')
+		strWelcome = strWelcome.replace(re, '<b>' + cn + '</b>: ')
+		strWelcome = strWelcome.replace(re2, '<b>' + yn + '</b>: ')
+		strWelcome = strWelcome.replace(re3, '<b>Me</b>: ')
 		return strWelcome
 	} else {
 		confirm('Are you ready to continue ?', 1);

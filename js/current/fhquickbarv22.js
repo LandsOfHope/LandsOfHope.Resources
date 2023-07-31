@@ -17,7 +17,7 @@ var PageNo2 = PageNo2;
 
 window.top.Quick = new Array();
 
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function Adirtemp(Actions, Titles, PictureID, Names) {
 	var returnx = '';

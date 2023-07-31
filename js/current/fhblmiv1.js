@@ -26,23 +26,23 @@ var FHIPR = FHIP + 'r/';
 var FHIPS = FHIP + 's/';
 
 
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function bMenu(BID, NameB, ColorB, ImgB1, ImgB2, ObjectM, GoB, HiB, OB, dun, bowner, nc, nm, ls) {
-this.Color = ColorB;
-this.Caption = NameB;
-this.Picture = ImgB1;
-this.Picture2 = ImgB2;
-this.ObjectM = ObjectM;
-this.BuildingID = BID;
-this.Go2B = GoB;
-this.Hidden = 0;
-this.OB = OB;
-this.Dungeon = dun;
-this.Owner = bowner;
-this.nc = nc;
-this.nm = nm;
-this.light = ls;
+	this.Color = ColorB;
+	this.Caption = NameB;
+	this.Picture = ImgB1;
+	this.Picture2 = ImgB2;
+	this.ObjectM = ObjectM;
+	this.BuildingID = BID;
+	this.Go2B = GoB;
+	this.Hidden = 0;
+	this.OB = OB;
+	this.Dungeon = dun;
+	this.Owner = bowner;
+	this.nc = nc;
+	this.nm = nm;
+	this.light = ls;
 }
 
 function BMP(BID, NameB, ColorB, ImgB1, ImgB2, ObjectM, GoB, HiB, OB, xm, ym, dun, bowner, nc, nm, ls) {
@@ -87,21 +87,21 @@ function LoadB3() {
 }
 
 function LoadB2() {
-var strmap = '';
-var lngwidth = lastlw;
-var lngtiles = lastlt;
-var lngstartx = lastlx;
-var lngstarty = lastly;
-var lngstartz = lastlz;
-var strmap = '';
-var strmap1 = '';
-var y = 0;
-var x= 0;
-var p = 0;
-var e = 0;
+	var strmap = '';
+	var lngwidth = lastlw;
+	var lngtiles = lastlt;
+	var lngstartx = lastlx;
+	var lngstarty = lastly;
+	var lngstartz = lastlz;
+	var strmap = '';
+	var strmap1 = '';
+	var y = 0;
+	var x = 0;
+	var p = 0;
+	var e = 0;
 	for (y = lngstarty; y < ((lngstarty + lngtiles)); y++) {
 		e = 0;
-	        strmap += "<tr>";
+		strmap += "<tr>";
 		for (x = lngstartx; x <= ((lngstartx + lngtiles)); x++) {
 			if (Bz[x] != null && Bz[x][y] != null) {
 				strmap += DrawRoom(x, y, lngstartz, e, p);
@@ -111,7 +111,7 @@ var e = 0;
 			}
 			e = e + 1;
 		}
-	        strmap += "</tr>";
+		strmap += "</tr>";
 		p = p + 1;
 	}
 	strmap += "</table>"
@@ -125,50 +125,49 @@ var e = 0;
 function DrawRoom(x, y, z, e, p) {
 	var strmap = '';
 	strmap += "<td x=" + x + " y=" + y + " e=" + e + " p=" + p + " class=\"mapcolb\" l=" + Bz[x][y].light + " n=" + Bz[x][y].nc + " id=B" + Bz[x][y].BuildingID;
-	strmap += " bgcolor=\"" + Bz[x][y].Color + "\" style=\"cursor:pointer\" i=\"" + Bz[x][y].Caption + "\" onmouseover=\"InfoMap('" + Bz[x][y].Picture + "','"  + Bz[x][y].ObjectM + "','" + Bz[x][y].Color + "','<b>" + Bz[x][y].Caption + "</b><br>X: " + x + " Y: " + y + " Floor: " + z + "');\" onmouseout=\"window.top.hideTip();\" ";
+	strmap += " bgcolor=\"" + Bz[x][y].Color + "\" style=\"cursor:pointer\" i=\"" + Bz[x][y].Caption + "\" onmouseover=\"InfoMap('" + Bz[x][y].Picture + "','" + Bz[x][y].ObjectM + "','" + Bz[x][y].Color + "','<b>" + Bz[x][y].Caption + "</b><br>X: " + x + " Y: " + y + " Floor: " + z + "');\" onmouseout=\"window.top.hideTip();\" ";
 	if (Bz[x][y].Picture != '') {
 		strmap += "background=\"" + FHIPM + Bz[x][y].Picture + "\" ";
 	}
 	var strImgb1 = (Bz[x][y].nc > 0 ? FHIPM + "nyou.gif" : "");
 	var strImgb2 = "";
 	if (Bz[x][y].ObjectM != "") {
-		if (Bz[x][y].nc > 0 ) {
-			strImgb2= FHIPM + Bz[x][y].ObjectM;
+		if (Bz[x][y].nc > 0) {
+			strImgb2 = FHIPM + Bz[x][y].ObjectM;
 			strImgb1 = FHIPM + "nyou.gif";
 		} else {
-			strImgb1= FHIPM + Bz[x][y].ObjectM;
+			strImgb1 = FHIPM + Bz[x][y].ObjectM;
 			strImgb2 = "";
 		}
 	}
 
-	strmap += " i1=\"" + strImgb1 + "\" i2=\"" + strImgb2 + "\" align=center valign=center>" + (Bz[x][y].ObjectM != "" ? "<img src='" + strImgb1 + "' style='background-Image: URL(\"" + strImgb2 + "\")'>" : (Bz[x][y].nc > 0 ? "<img src='" + strImgb1 + "'>" :  "")) + "</td>";
+	strmap += " i1=\"" + strImgb1 + "\" i2=\"" + strImgb2 + "\" align=center valign=center>" + (Bz[x][y].ObjectM != "" ? "<img src='" + strImgb1 + "' style='background-Image: URL(\"" + strImgb2 + "\")'>" : (Bz[x][y].nc > 0 ? "<img src='" + strImgb1 + "'>" : "")) + "</td>";
 	return strmap;
 }
 
 function Floors(Count, CurPage) {
-var strTest = '';
-var v = 0;
-var i = 0;
-strTest += '<tr><td colspan=2><table>';        
-for (i = 0; i <= Count; i++) 
-{         
-	strTest += '<tr><td class="btn" ' + (CurPage != i ? 'onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" style="width:20" onclick="GoP(' + i + ')"' : ' style="width:13; background-Color: ' + BGCOLOR_S + '; border: 1px outset ' + BORDER1_S + '; font-weight: bold"') + '>' + i + '</td></tr>';        
-}
-//alert(y)
-strTest += '</table></td></tr>'
-strTest += '</tr><tr><td colspan=2><table class="itemtext" cellpadding=0 cellspacing=0>';        
-strTest += '<tr><td align=center colspan=3 class="btn" ' + (Math.abs(yy) > 1 ? 'onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" onclick="GoXY(' + xx + ',' + (yy - t) + ')"' : ' style="background-Color: ' + BGCOLOR_S + '; border: 1px outset ' + BORDER1_S + '; font-weight: bold"') + '><img src="' + FHIPO + 'Up.png"></td></tr>';        
-strTest += '<tr><td class="btn" ' + (Math.abs(xx) > 1 ? 'onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" style="width:15" onclick="GoXY(' + (xx - t) + ',' + yy + ')"' : ' style="width:15; background-Color: ' + BGCOLOR_S + '; border: 1px outset ' + BORDER1_S + '; font-weight: bold"') + ' align=center><img src="' + FHIPO + 'lt.png"></td><td></td><td class="btn" ' + (Math.abs(xx) < 100 ? 'onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" style="width:15" onclick="GoXY(' + (xx + t) + ',' + yy + ')"' : ' style="width:15; background-Color: ' + BGCOLOR_S + '; border: 1px outset ' + BORDER1_S + '; font-weight: bold"') + ' align=center><img src="' + FHIPO + 'Rt.png"></td></tr>';        
-strTest += '<tr><td align=center colspan=3 class="btn" ' + (Math.abs(yy) < 100 ? 'onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" onclick="GoXY(' + xx + ',' + (yy + t) + ')"' : ' style="background-Color: ' + BGCOLOR_S + '; border: 1px outset ' + BORDER1_S + '; font-weight: bold"') + '><img src="' + FHIPO + 'Dn.png"></td></tr>';        
-strTest += '</table></td></tr>'
-getObj('Pages').innerHTML = '<table class="copyright" cellpadding=1 cellspacing=0 height="100%">' + strTest + '</table>';
+	var strTest = '';
+	var v = 0;
+	var i = 0;
+	strTest += '<tr><td colspan=2><table>';
+	for (i = 0; i <= Count; i++) {
+		strTest += '<tr><td class="btn" ' + (CurPage != i ? 'onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" style="width:20" onclick="GoP(' + i + ')"' : ' style="width:13; background-Color: ' + BGCOLOR_S + '; border: 1px outset ' + BORDER1_S + '; font-weight: bold"') + '>' + i + '</td></tr>';
+	}
+	//alert(y)
+	strTest += '</table></td></tr>'
+	strTest += '</tr><tr><td colspan=2><table class="itemtext" cellpadding=0 cellspacing=0>';
+	strTest += '<tr><td align=center colspan=3 class="btn" ' + (Math.abs(yy) > 1 ? 'onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" onclick="GoXY(' + xx + ',' + (yy - t) + ')"' : ' style="background-Color: ' + BGCOLOR_S + '; border: 1px outset ' + BORDER1_S + '; font-weight: bold"') + '><img src="' + FHIPO + 'Up.png"></td></tr>';
+	strTest += '<tr><td class="btn" ' + (Math.abs(xx) > 1 ? 'onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" style="width:15" onclick="GoXY(' + (xx - t) + ',' + yy + ')"' : ' style="width:15; background-Color: ' + BGCOLOR_S + '; border: 1px outset ' + BORDER1_S + '; font-weight: bold"') + ' align=center><img src="' + FHIPO + 'lt.png"></td><td></td><td class="btn" ' + (Math.abs(xx) < 100 ? 'onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" style="width:15" onclick="GoXY(' + (xx + t) + ',' + yy + ')"' : ' style="width:15; background-Color: ' + BGCOLOR_S + '; border: 1px outset ' + BORDER1_S + '; font-weight: bold"') + ' align=center><img src="' + FHIPO + 'Rt.png"></td></tr>';
+	strTest += '<tr><td align=center colspan=3 class="btn" ' + (Math.abs(yy) < 100 ? 'onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" onclick="GoXY(' + xx + ',' + (yy + t) + ')"' : ' style="background-Color: ' + BGCOLOR_S + '; border: 1px outset ' + BORDER1_S + '; font-weight: bold"') + '><img src="' + FHIPO + 'Dn.png"></td></tr>';
+	strTest += '</table></td></tr>'
+	getObj('Pages').innerHTML = '<table class="copyright" cellpadding=1 cellspacing=0 height="100%">' + strTest + '</table>';
 }
 
 function GoP(PageNo) {
 	window.location.replace("fhblmi.asp?CharsAt=" + CharsAt + "&Special=" + (Special >= 10 ? 10 : 0) + "&StartX=" + xx + "&StartY=" + yy + "&TestZ=" + PageNo);
 }
 
-function GoXY(xx,yy) {
+function GoXY(xx, yy) {
 	if (xx <= 0) {
 		xx = 1
 	}
@@ -187,12 +186,12 @@ function GoXY(xx,yy) {
 
 function RC(stuff) {
 	stuff.style.cursor = '';
-	stuff.style.backgroundColor='';
+	stuff.style.backgroundColor = '';
 }
 
 function PC(stuff) {
 	stuff.style.cursor = 'pointer';
-	stuff.style.backgroundColor=BGCOLOR_S
+	stuff.style.backgroundColor = BGCOLOR_S
 }
 
 

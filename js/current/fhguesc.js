@@ -2,7 +2,7 @@ var PageNo = PageNo;
 var SPath = window.top.FHIPS;
 var IPath = window.top.FHIPI;
 var Countt = 0;
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function DrawImages(currentimage) {
 	var x = 0;
@@ -36,20 +36,20 @@ function ADC(Itty, Color) {
 }
 
 function GoP(PageNo) {
-window.location.replace('?P=' + PageNo + '');
+	window.location.replace('?P=' + PageNo + '');
 }
 
 function setimage(newimg) {
-	window.parent.getObj('Menu2').style.backgroundColor=newimg;
+	window.parent.getObj('Menu2').style.backgroundColor = newimg;
 	window.location.replace('?IID=1&img=' + newimg);
 }
 
 function DC1(stuff) {
-stuff.style.cursor = '';
-stuff.style.border='1px solid black';
+	stuff.style.cursor = '';
+	stuff.style.border = '1px solid black';
 }
 
 function DC2(stuff) {
-stuff.style.cursor = 'pointer';
-stuff.style.border='1px solid ' + BGCOLOR_S;
+	stuff.style.cursor = 'pointer';
+	stuff.style.border = '1px solid ' + BGCOLOR_S;
 }

@@ -6,7 +6,7 @@ var PageNo2 = PageNo2;
 var counter = 0;
 var IPath = window.top.FHIPR;
 
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function GoP(PageNox) {
 	window.location.replace('?CharsAt=' + CharsAt + '&Type=' + Type2 + '&P=' + PageNo + '&P2=' + PageNox + '&Search=' + Search);

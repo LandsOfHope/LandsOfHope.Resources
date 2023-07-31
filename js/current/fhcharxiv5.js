@@ -5,42 +5,42 @@ var ShopC = -1;
 var IC = 0;
 var PageNo = PageNo;
 var LastClickedItem = -1;
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function AMX(PictureID, PP, Color, ItemName, Cost, v, Desc, x, xm) {
-if (PictureID == '') {PictureID = 'na.gif'}
-PictureID = PP + "/" + PictureID;
-if (Infos[IC] == null) {
-	Infos[IC] = new Array();
-}
-Infos[IC] = new newInfo(PictureID, PP, Color, ItemName, Cost, v, Desc, x, xm);
+	if (PictureID == '') { PictureID = 'na.gif' }
+	PictureID = PP + "/" + PictureID;
+	if (Infos[IC] == null) {
+		Infos[IC] = new Array();
+	}
+	Infos[IC] = new newInfo(PictureID, PP, Color, ItemName, Cost, v, Desc, x, xm);
 
-IC = IC + 1;
+	IC = IC + 1;
 }
 
 function newInfo(PictureID, PP, Color, ItemName, Cost, v, Desc, x, xm) {
-this.c = Color;
-this.p = PictureID;
-this.s = ItemName;
-this.d = Cost;
-this.v = v;
-this.x = x;
-this.e = Desc;
-this.h = ShopC;
-this.xm = xm;
+	this.c = Color;
+	this.p = PictureID;
+	this.s = ItemName;
+	this.d = Cost;
+	this.v = v;
+	this.x = x;
+	this.e = Desc;
+	this.h = ShopC;
+	this.xm = xm;
 }
 
 function GoP(PageNo) {
-window.location.replace('fhcharxi.asp?P=' + PageNo + '');
+	window.location.replace('fhcharxi.asp?P=' + PageNo + '');
 }
 
 function AH(SkillGroup) {
-ShopC = ShopC + 1;
-document.write("<tr><td colspan=2 style=\"" + strButtonx + "\" " + strClicksns + " onclick=\"tgl(" + ShopC + ")\">" + SkillGroup + "</td></tr><tr><td colspan=2 id=Shop" + ShopC + "></td></tr>");
+	ShopC = ShopC + 1;
+	document.write("<tr><td colspan=2 style=\"" + strButtonx + "\" " + strClicksns + " onclick=\"tgl(" + ShopC + ")\">" + SkillGroup + "</td></tr><tr><td colspan=2 id=Shop" + ShopC + "></td></tr>");
 }
 
 function AHOLD(Header) {
-document.write("<div style=\"filter: Glow(Color=#000000, Strength=1);" + strButtonx + "; width: 215; color: gold; font-weight: bold\">" + Header + "</div>");
+	document.write("<div style=\"filter: Glow(Color=#000000, Strength=1);" + strButtonx + "; width: 215; color: gold; font-weight: bold\">" + Header + "</div>");
 }
 
 function DC(v) {
@@ -66,38 +66,37 @@ function PromptReturn(returnVal, postback) {
 function PC(v) {
 	window.top.InfoTip('' + IPath + Infos[v].p, '<b>' + Infos[v].s + '</b><Br>Cost: $' + (Infos[v].d * 5) + '/ ' + Infos[v].d + 'hc');
 	getObj('I' + v).style.cursor = 'pointer';
-	getObj('I' + v).style.backgroundColor=BGCOLOR_S
+	getObj('I' + v).style.backgroundColor = BGCOLOR_S
 }
 
 function RC(v) {
 	getObj('I' + v).style.cursor = '';
-	getObj('I' + v).style.backgroundColor=Infos[v].c
+	getObj('I' + v).style.backgroundColor = Infos[v].c
 }
 
 function tgl(ShopNum) {
-if (getObj('Shop' + ShopNum).innerHTML == '') {
-	DrawShop(ShopNum);
-}
-else
-{
-	getObj('Shop' + ShopNum).innerHTML = '';
-}
+	if (getObj('Shop' + ShopNum).innerHTML == '') {
+		DrawShop(ShopNum);
+	}
+	else {
+		getObj('Shop' + ShopNum).innerHTML = '';
+	}
 }
 
 function DrawShop(ShopNum) {
-var strout = '';
-var y = 0;
-for (y = 0; y < Infos.length; y++) {
-	if (Infos[y].h == ShopNum) {
-		strout = strout + '<div id="I' + y + '" onmouseover="PC(' + y + ');" onmouseout="RC(' + y + ');" title="' + Infos[y].s + '"  onclick="DC(' + y + ');" style="float: left; padding: 1px; margin: 1px; border: 1px dotted ' + Infos[y].c + '; width: 41px; height: 58px; background-color:' + Infos[y].c + '; background-position: top center; background-repeat: no-repeat; background-image: URL(' + IPath + Infos[y].p + ');" valign=bottom><table class="weakercell" style="filter: Glow(Color=#000000, Strength=1);" height="58px"><tr height="40"><td></td></tr><tr><td>' + ('$' + (Infos[y].d * 5)) + '</td></tr></table></div>';
+	var strout = '';
+	var y = 0;
+	for (y = 0; y < Infos.length; y++) {
+		if (Infos[y].h == ShopNum) {
+			strout = strout + '<div id="I' + y + '" onmouseover="PC(' + y + ');" onmouseout="RC(' + y + ');" title="' + Infos[y].s + '"  onclick="DC(' + y + ');" style="float: left; padding: 1px; margin: 1px; border: 1px dotted ' + Infos[y].c + '; width: 41px; height: 58px; background-color:' + Infos[y].c + '; background-position: top center; background-repeat: no-repeat; background-image: URL(' + IPath + Infos[y].p + ');" valign=bottom><table class="weakercell" style="filter: Glow(Color=#000000, Strength=1);" height="58px"><tr height="40"><td></td></tr><tr><td>' + ('$' + (Infos[y].d * 5)) + '</td></tr></table></div>';
+		}
 	}
-}
-getObj('Shop' + ShopNum).innerHTML = '' + strout + '';
+	getObj('Shop' + ShopNum).innerHTML = '' + strout + '';
 }
 
 function OpenShops() {
-var y = 0;
-for (y = 0; y <= ShopC; y++) {
-	DrawShop(y);
-}	
+	var y = 0;
+	for (y = 0; y <= ShopC; y++) {
+		DrawShop(y);
+	}
 }

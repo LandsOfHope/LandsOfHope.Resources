@@ -30,7 +30,7 @@ var tilec = 1280602;
 var terrain2 = '';
 
 //document.onkeydown= function anonymous() {keyDown()};
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 function InitGame(gamename, IPathM, headx, markerx, blankx, terrainx, terrain2x, tilecx) {
 	getObj("Bob").rows[0].cells[0].innerHTML = "<font class='title'>" + gamename + "</font>";
 	IPath3 = "https://lohcdn.com/game/" + IPathM + "/";

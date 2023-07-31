@@ -6,34 +6,34 @@ var Processing = 0;
 var IC = 0;
 var Infos = new Array();
 var LastClick = 0;
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function AC(Color, PictureID, v, Itty, q, l) {
-if (PictureID == '') {
-	PictureID = 'na.gif'
-}
-if (Infos[IC] == null) {
-	Infos[IC] = new Array();
-}
-Infos[IC] = new newInfo(Color, PictureID, v, Itty, q, l);
+	if (PictureID == '') {
+		PictureID = 'na.gif'
+	}
+	if (Infos[IC] == null) {
+		Infos[IC] = new Array();
+	}
+	Infos[IC] = new newInfo(Color, PictureID, v, Itty, q, l);
 
-//q=' + q + ' i="' + Itty + '" l='+ l + ' v=' + v + ' p="' + PictureID + '"
-document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')"  onclick="DC(' + IC + ')"><td width=15><img width=15 height=15 src="' + IPath  + (PictureID == '' || PictureID == '0' ? 'na.gif' : PictureID) + '"></td><td width="200" style="color: ' + Color + '; padding-left: 5px">' + Itty + '</td><td width="100">' + window.top.PercentBoxR(window.top.GetPerc(l, q),Color,'' + q + ' of ' + l + '') + '</td></tr>');
-IC = IC + 1;
+	//q=' + q + ' i="' + Itty + '" l='+ l + ' v=' + v + ' p="' + PictureID + '"
+	document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')"  onclick="DC(' + IC + ')"><td width=15><img width=15 height=15 src="' + IPath + (PictureID == '' || PictureID == '0' ? 'na.gif' : PictureID) + '"></td><td width="200" style="color: ' + Color + '; padding-left: 5px">' + Itty + '</td><td width="100">' + window.top.PercentBoxR(window.top.GetPerc(l, q), Color, '' + q + ' of ' + l + '') + '</td></tr>');
+	IC = IC + 1;
 }
 
 function newInfo(Color, PictureID, v, Itty, q, l) {
-this.c = Color;
-this.i = Itty;
-this.p = PictureID;
-this.v = v;
-this.q = q;
-this.l = l;
+	this.c = Color;
+	this.i = Itty;
+	this.p = PictureID;
+	this.v = v;
+	this.q = q;
+	this.l = l;
 }
 
 
 function GoP(PageNo) {
-window.location.replace('?P=' + PageNo + '');
+	window.location.replace('?P=' + PageNo + '');
 }
 
 
@@ -47,13 +47,13 @@ function DC(v) {
 
 function RC(v) {
 	getObj('I' + v).style.cursor = '';
-	getObj('I' + v).style.backgroundColor='';
+	getObj('I' + v).style.backgroundColor = '';
 }
 
 function PC(v) {
 	window.top.InfoTip('' + IPath + Infos[v].p, '<b>' + Infos[v].i + '</b><br>Items Held: ' + Infos[v].q + '<br>Capacity: ' + Infos[v].l + '<br>Free Slots: ' + (Infos[v].l - Infos[v].q));
 	getObj('I' + v).style.cursor = 'pointer';
-	getObj('I' + v).style.backgroundColor=BGCOLOR_S
+	getObj('I' + v).style.backgroundColor = BGCOLOR_S
 }
 
 
@@ -61,7 +61,7 @@ function PromptReturn(returnVal, pb) {
 	var v = LastClick;
 	if (returnVal != null) {
 		if (pb == 1) {
-			window.top.Interface.location.replace('fhbags.asp?ItemName=' + returnVal + '&ItemID=' +Infos[v].v);
+			window.top.Interface.location.replace('fhbags.asp?ItemName=' + returnVal + '&ItemID=' + Infos[v].v);
 		} else if (pb == 2 && returnVal == true) {
 			window.top.Interface.location.replace('fhbags.asp?ItemID=-' + Math.abs(Infos[v].v) + '&name=' + Infos[v].i + '&l2=' + (Infos[v].p) + '&d1=' + Infos[v].q + '&d2=' + Infos[v].l);
 		}

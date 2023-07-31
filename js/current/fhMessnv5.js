@@ -4,42 +4,42 @@ var IPath = window.top.FHIPR;
 var Mask = Mask;
 var IC = 0;
 var Infos = new Array();
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function AR(Value, Name, PictureID, l, a, s) {
-var Color = LITE;
-if (l < 0) {
-	if (s != 0) {
-		Color = '#66ff66'
-	} else if (Value == 0) {
+	var Color = LITE;
+	if (l < 0) {
+		if (s != 0) {
+			Color = '#66ff66'
+		} else if (Value == 0) {
+		} else {
+			Color = '#6666ff';
+		}
 	} else {
-		Color = '#6666ff';
+		Color = GetAColor(a);
 	}
-} else {
-	Color = GetAColor(a);
-}
-if (Color == '') {
-	Color = 'yellow';
-}
-if (Infos[IC] == null) {
-	Infos[IC] = new Array();
-}
-Infos[IC] = new newInfo(Color, Value, Name, PictureID, l, a, s);
-document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')" onclick="DC2(' + IC + ')"><td width=20><img src="' + IPath + PictureID + '" width=20 height=20></td><td style="width:180; color: ' + Color + ';"><b>' + Name + '</b><br>' + (s == 0 ? (l > 0 ? 'Level: ' + l : (Value == 0 ? 'Choose another recipient' : 'Your Guild Leader'))  : '- Support -') + '</td></tr>');
-IC = IC + 1;
+	if (Color == '') {
+		Color = 'yellow';
+	}
+	if (Infos[IC] == null) {
+		Infos[IC] = new Array();
+	}
+	Infos[IC] = new newInfo(Color, Value, Name, PictureID, l, a, s);
+	document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')" onclick="DC2(' + IC + ')"><td width=20><img src="' + IPath + PictureID + '" width=20 height=20></td><td style="width:180; color: ' + Color + ';"><b>' + Name + '</b><br>' + (s == 0 ? (l > 0 ? 'Level: ' + l : (Value == 0 ? 'Choose another recipient' : 'Your Guild Leader')) : '- Support -') + '</td></tr>');
+	IC = IC + 1;
 }
 
 function newInfo(Color, Value, Name, PictureID, l, a, s) {
-this.c = Color;
-this.value = Value;
-this.p = PictureID;
-this.i = Name;
-this.l = l;
-this.a = a;
-this.s = s;
+	this.c = Color;
+	this.value = Value;
+	this.p = PictureID;
+	this.i = Name;
+	this.l = l;
+	this.a = a;
+	this.s = s;
 }
 function GoP(PageNo) {
-window.location.replace('?P=' + PageNo + '&Mask=' + Mask + '&CharsAt=' + CharsAt);
+	window.location.replace('?P=' + PageNo + '&Mask=' + Mask + '&CharsAt=' + CharsAt);
 }
 
 function DC2(v) {
@@ -63,14 +63,14 @@ function DB(stuff) {
 }
 
 function RC(v) {
-getObj('I' + v).style.cursor = '';
-getObj('I' + v).style.backgroundColor='';
+	getObj('I' + v).style.cursor = '';
+	getObj('I' + v).style.backgroundColor = '';
 }
 
 function PC(v) {
-window.top.InfoTip(IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p),Infos[v].i);
-getObj('I' + v).style.cursor = 'pointer';
-getObj('I' + v).style.backgroundColor=BGCOLOR_S
+	window.top.InfoTip(IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p), Infos[v].i);
+	getObj('I' + v).style.cursor = 'pointer';
+	getObj('I' + v).style.backgroundColor = BGCOLOR_S
 }
 
 function CItemPicker(message, pb, defaultvalue, title, icon, style) {
@@ -100,7 +100,7 @@ function PromptReturn(returnVal, pb, returnVal2) {
 				}
 				getObj('tradeitemidb').innerHTML = returnVal2;
 			} else {
-				window.top.Interface.location.replace('fhmessb.asp?CharsAt=' + Math.abs(Special));				
+				window.top.Interface.location.replace('fhmessb.asp?CharsAt=' + Math.abs(Special));
 			}
 		}
 	} else if (pb == 2) {

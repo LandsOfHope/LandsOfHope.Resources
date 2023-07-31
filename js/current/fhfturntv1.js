@@ -2,7 +2,7 @@ var sc = 0;
 var Choices = new Array();
 var IPath = window.top.FHIPS;
 var Processing = 0;
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function DC(v) {
 	var fr1 = window.parent.fr1;
@@ -19,52 +19,52 @@ function DC(v) {
 }
 
 function AC(v, Picture, Itty, q, m, g, rs, dot) {
-var Color = '';
-if (g != 0) {
-	Color = 'olive';
-}
-if (dot != 0) {
-	Color = 'silver';
-}
-if (rs != 0) {
-	Color = 'gold';
-}
-if (Picture == '') {
-	Picture = '18.png';
-} else {
-	Picture = '' + Picture + '.png';
-}
+	var Color = '';
+	if (g != 0) {
+		Color = 'olive';
+	}
+	if (dot != 0) {
+		Color = 'silver';
+	}
+	if (rs != 0) {
+		Color = 'gold';
+	}
+	if (Picture == '') {
+		Picture = '18.png';
+	} else {
+		Picture = '' + Picture + '.png';
+	}
 
-if (Choices[sc] == null) {
-	Choices[sc] = new Array();
-}
-Choices[sc] = new Choice(v, Picture, Itty, q, m, g, rs, Color);
+	if (Choices[sc] == null) {
+		Choices[sc] = new Array();
+	}
+	Choices[sc] = new Choice(v, Picture, Itty, q, m, g, rs, Color);
 
 
-document.write('<div id="Choice' + sc + '" title="' + Itty + '" style="width: 16px; height: 16px; padding: 1px; margin: 1px; background-color: ' + Color + '; float: left;" onclick="DC(' + sc + ')" onmouseover="PC(' + sc + ')" onmouseout="RC(' + sc + ')"><img src="' + IPath + (Picture == '' ? 'na.gif' : Picture) + '" width=16 height=16></div>');
-sc = sc + 1;
+	document.write('<div id="Choice' + sc + '" title="' + Itty + '" style="width: 16px; height: 16px; padding: 1px; margin: 1px; background-color: ' + Color + '; float: left;" onclick="DC(' + sc + ')" onmouseover="PC(' + sc + ')" onmouseout="RC(' + sc + ')"><img src="' + IPath + (Picture == '' ? 'na.gif' : Picture) + '" width=16 height=16></div>');
+	sc = sc + 1;
 }
 
 function Choice(v, Picture, Itty, q, m, g, rs, Color, dot) {
-this.v = v;
-this.p = Picture;
-this.i = Itty;
-this.q = q;
-this.m = m;
-this.dot = dot;
-this.g = g;
-this.rs = rs;
-this.Color = Color;
+	this.v = v;
+	this.p = Picture;
+	this.i = Itty;
+	this.q = q;
+	this.m = m;
+	this.dot = dot;
+	this.g = g;
+	this.rs = rs;
+	this.Color = Color;
 }
 
 function RC(v) {
-window.top.hideTip();
-getObj('Choice' + v).style.cursor = '';
-getObj('Choice' + v).style.backgroundColor=Choices[v].Color;
+	window.top.hideTip();
+	getObj('Choice' + v).style.cursor = '';
+	getObj('Choice' + v).style.backgroundColor = Choices[v].Color;
 }
 
 function PC(v) {
-window.top.InfoTip('', '<b>' + Choices[v].i + '</b><br>' + Choices[v].q);
-getObj('Choice' + v).style.cursor = 'pointer';
-getObj('Choice' + v).style.backgroundColor=BGCOLOR_S
+	window.top.InfoTip('', '<b>' + Choices[v].i + '</b><br>' + Choices[v].q);
+	getObj('Choice' + v).style.cursor = 'pointer';
+	getObj('Choice' + v).style.backgroundColor = BGCOLOR_S
 }

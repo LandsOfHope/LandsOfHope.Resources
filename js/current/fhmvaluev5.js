@@ -6,7 +6,7 @@ var PageNo = PageNo;
 var IC = 0;
 var Infos = new Array();
 
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 
 function DC(v) {
@@ -17,47 +17,47 @@ function DC(v) {
 }
 
 function RC(v) {
-getObj('I' + v).style.cursor = '';
-getObj('I' + v).style.backgroundColor='';
+	getObj('I' + v).style.cursor = '';
+	getObj('I' + v).style.backgroundColor = '';
 }
 
 function PC(v) {
-window.top.InfoTip(IPath + Infos[v].p,Infos[v].t);
-getObj('I' + v).style.cursor = 'pointer';
-getObj('I' + v).style.backgroundColor=BGCOLOR_S
+	window.top.InfoTip(IPath + Infos[v].p, Infos[v].t);
+	getObj('I' + v).style.cursor = 'pointer';
+	getObj('I' + v).style.backgroundColor = BGCOLOR_S
 }
 
 function GoP(PageNo) {
-window.location.replace('?CharsAt=' + CharsAt + '&P=' + PageNo + '');
+	window.location.replace('?CharsAt=' + CharsAt + '&P=' + PageNo + '');
 }
 
 function AC(f, value, v, v2, r, p2, l, PictureID, Itty) {
-if (f == 0) {
-	var Color = LITE;
-} else {
-	var Color = 'gold';
-}
-if (Infos[IC] == null) {
-	Infos[IC] = new Array();
-}
-Infos[IC] = new newInfo(Color, f, value, v, v2, r, p2, l, PictureID, Itty);
-document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')" onclick="DC(' + IC + ')"><td><img width=15 height=15 src="' + IPath + (PictureID == '' || PictureID == '0' ? 'na.gif' : PictureID) + '"></td><td width="200" style="color: ' + Color + '; padding-left: 5px;">' + Itty + '</td><td width=\'100\'>' + window.top.BSGM(v) + '</td></tr>');
-IC = IC + 1;
+	if (f == 0) {
+		var Color = LITE;
+	} else {
+		var Color = 'gold';
+	}
+	if (Infos[IC] == null) {
+		Infos[IC] = new Array();
+	}
+	Infos[IC] = new newInfo(Color, f, value, v, v2, r, p2, l, PictureID, Itty);
+	document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')" onclick="DC(' + IC + ')"><td><img width=15 height=15 src="' + IPath + (PictureID == '' || PictureID == '0' ? 'na.gif' : PictureID) + '"></td><td width="200" style="color: ' + Color + '; padding-left: 5px;">' + Itty + '</td><td width=\'100\'>' + window.top.BSGM(v) + '</td></tr>');
+	IC = IC + 1;
 }
 
 function newInfo(Color, f, value, v, v2, r, p2, l, PictureID, Itty) {
-this.c = Color;
-this.f = f;
-this.p = PictureID;
-this.v2 = v2;
-this.v = v;
-this.value = value;
-this.f = f;
-this.r = r;
-this.p2 = p2;
-this.l = l;
-this.t = Itty;
-}		
+	this.c = Color;
+	this.f = f;
+	this.p = PictureID;
+	this.v2 = v2;
+	this.v = v;
+	this.value = value;
+	this.f = f;
+	this.r = r;
+	this.p2 = p2;
+	this.l = l;
+	this.t = Itty;
+}
 
 function FairPrice(l) {
 	var outp = 0;

@@ -9,41 +9,41 @@ var IPath = window.top.FHIPR;
 var Processing = 0;
 var IC = 0;
 var Infos = new Array();
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function AvC(v, PictureID, Itty, at) {
-var Color = '#D9FB96';
-if (Infos[IC] == null) {
-	Infos[IC] = new Array();
-}
-Infos[IC] = new newInfo(Color, v, PictureID, Itty, at);
-document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')" onclick="DC(' + IC + ')"><td width="300" c="' + Color + '" style="color: ' + Color + '; padding-left: 5px">' + Itty + '</td><td width=15><img width=15 height=15 src="' + IPath  + (M == '' || M == '0' ? 'na.gif' : M) + '"></td><td width=15><img width=15 height=15 src="' + IPath + (F == '' || F == '0' ? 'na.gif' : F) + '"></td><td width=15><img width=15 height=15 src="' + IPath + (U == '' || U == '0' ? 'na.gif' : U) + '"></td></tr>');
-IC = IC + 1;
+	var Color = '#D9FB96';
+	if (Infos[IC] == null) {
+		Infos[IC] = new Array();
+	}
+	Infos[IC] = new newInfo(Color, v, PictureID, Itty, at);
+	document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')" onclick="DC(' + IC + ')"><td width="300" c="' + Color + '" style="color: ' + Color + '; padding-left: 5px">' + Itty + '</td><td width=15><img width=15 height=15 src="' + IPath + (M == '' || M == '0' ? 'na.gif' : M) + '"></td><td width=15><img width=15 height=15 src="' + IPath + (F == '' || F == '0' ? 'na.gif' : F) + '"></td><td width=15><img width=15 height=15 src="' + IPath + (U == '' || U == '0' ? 'na.gif' : U) + '"></td></tr>');
+	IC = IC + 1;
 }
 
 function newInfo(Color, v, PictureID, Itty, at) {
-this.c = Color;
-this.at = at;
-this.p = PictureID;
-this.t = Itty;
-this.v = v;
+	this.c = Color;
+	this.at = at;
+	this.p = PictureID;
+	this.t = Itty;
+	this.v = v;
 }
 
 
 
 function GoP(PageNo) {
-window.location.replace('?InventoryItemID=' + ItemID + '&P=' + PageNo + '');
+	window.location.replace('?InventoryItemID=' + ItemID + '&P=' + PageNo + '');
 }
 
 function RC(v) {
-getObj('I' + v).style.cursor = '';
-getObj('I' + v).style.backgroundColor='';
+	getObj('I' + v).style.cursor = '';
+	getObj('I' + v).style.backgroundColor = '';
 }
 
 function PC(v) {
-window.top.InfoTip(IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p),Infos[v].t + '<br>Armor: ' + GetAT(Infos[v].at));
-getObj('I' + v).style.cursor = 'pointer';
-getObj('I' + v).style.backgroundColor=BGCOLOR_S
+	window.top.InfoTip(IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p), Infos[v].t + '<br>Armor: ' + GetAT(Infos[v].at));
+	getObj('I' + v).style.cursor = 'pointer';
+	getObj('I' + v).style.backgroundColor = BGCOLOR_S
 }
 
 function GetAT(q) {

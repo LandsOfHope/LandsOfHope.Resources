@@ -12,7 +12,7 @@ var Pictures = new Array();
 var Equipping = '';
 var IPath = window.top.FHIPI;
 var LPath = window.top.FHIPL;
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function tgl(ShopNum) {
 	if (Processing == 0) {

@@ -5,25 +5,25 @@ var CharsAt = CharsAt;
 var Special = Special;
 var IC = 0;
 var Infos = new Array();
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function AC(ItemID, PictureID, Itty, q) {
-if (PictureID == '0') {PictureID = ''}
-var Color = LITE;
-if (Infos[IC] == null) {
-	Infos[IC] = new Array();
-}
-Infos[IC] = new newInfo(Color, ItemID, PictureID, Itty, q);
-document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')" onclick="DC(' + IC + ')" style="color: ' +  Color + '; padding-left: 5px;"><td width=15><img src=\'' + IPath + (PictureID == '' ? 'na.gif' : PictureID) + '\' width=15 height=15></td><td width=\'100%\'>' + Itty + '</td></tr>');
-IC = IC + 1;
+	if (PictureID == '0') { PictureID = '' }
+	var Color = LITE;
+	if (Infos[IC] == null) {
+		Infos[IC] = new Array();
+	}
+	Infos[IC] = new newInfo(Color, ItemID, PictureID, Itty, q);
+	document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')" onclick="DC(' + IC + ')" style="color: ' + Color + '; padding-left: 5px;"><td width=15><img src=\'' + IPath + (PictureID == '' ? 'na.gif' : PictureID) + '\' width=15 height=15></td><td width=\'100%\'>' + Itty + '</td></tr>');
+	IC = IC + 1;
 }
 
 function newInfo(Color, ItemID, PictureID, Itty, q) {
-this.c = Color;
-this.value = ItemID;
-this.p = PictureID;
-this.t = Itty;
-this.q = q;
+	this.c = Color;
+	this.value = ItemID;
+	this.p = PictureID;
+	this.t = Itty;
+	this.q = q;
 }
 
 function DC(v) {
@@ -31,7 +31,7 @@ function DC(v) {
 	var bl = getObj('Note').value.length;
 
 	if (bl > 500) {
-		alert('This note is too long, please reduce it from ' +  bl + ' to 500 chars.');
+		alert('This note is too long, please reduce it from ' + bl + ' to 500 chars.');
 	} else {
 		getObj('Dest').value = Infos[v].value;
 		confirm('Send these items to ' + Infos[v].t + ' via parrot post??', 1)
@@ -47,14 +47,14 @@ function PromptReturn(returnVal, pb) {
 }
 
 function RC(v) {
-getObj('I' + v).style.cursor = '';
-getObj('I' + v).style.backgroundColor='';
+	getObj('I' + v).style.cursor = '';
+	getObj('I' + v).style.backgroundColor = '';
 }
 
 function PC(v) {
-window.top.InfoTip(IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p),Infos[v].t);
-getObj('I' + v).style.cursor = 'pointer';
-getObj('I' + v).style.backgroundColor=BGCOLOR_S
+	window.top.InfoTip(IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p), Infos[v].t);
+	getObj('I' + v).style.cursor = 'pointer';
+	getObj('I' + v).style.backgroundColor = BGCOLOR_S
 }
 
 function GoP(P) {

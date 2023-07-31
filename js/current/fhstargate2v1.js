@@ -30,38 +30,38 @@ var FHIPS = FHIP + 's/';
 var FHIPP = FHIPP;
 var deffun = deffun;
 
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function bMenu(BID, NameB, ColorB, ImgB1, ImgB2, ObjectM, GoB, HiB, OB, dun, bowner, nc, nm, ls) {
-this.Color = ColorB;
-this.Caption = NameB;
-this.Picture = ImgB1;
-this.Picture2 = ImgB2;
-this.ObjectM = ObjectM;
-this.BuildingID = BID;
-this.Go2B = GoB;
-this.Hidden = 0;
-this.OB = OB;
-this.Dungeon = dun;
-this.Owner = bowner;
-this.nc = nc;
-this.nm = nm;
-this.light = ls;
-this.backimage = '';
-this.foreimage = '';
+	this.Color = ColorB;
+	this.Caption = NameB;
+	this.Picture = ImgB1;
+	this.Picture2 = ImgB2;
+	this.ObjectM = ObjectM;
+	this.BuildingID = BID;
+	this.Go2B = GoB;
+	this.Hidden = 0;
+	this.OB = OB;
+	this.Dungeon = dun;
+	this.Owner = bowner;
+	this.nc = nc;
+	this.nm = nm;
+	this.light = ls;
+	this.backimage = '';
+	this.foreimage = '';
 }
 
 function BMD(BID) {
 	FindB(BID, 1)
-	
+
 }
 
 function FindB(b, dodelete) {
-var y = 0;
-var x= 0;
-var lngtiles = lastlt;
-var lngstartx = lastlx;
-var lngstarty = lastly;
+	var y = 0;
+	var x = 0;
+	var lngtiles = lastlt;
+	var lngstartx = lastlx;
+	var lngstarty = lastly;
 
 	for (y = lngstarty; y < ((lngstarty + lngtiles)); y++) {
 		for (x = lngstartx; x < (lngstartx + lngtiles); x++) {
@@ -133,21 +133,21 @@ function LoadB3(lob) {
 }
 
 function LoadB2() {
-var strmap = '';
-var lngwidth = lastlw;
-var lngtiles = lastlt;
-var lngstartx = lastlx;
-var lngstarty = lastly;
-var lngstartz = lastlz;
-var strmap = '';
-var strmap1 = '';
-var y = 0;
-var x= 0;
-var p = 0;
-var e = 0;
+	var strmap = '';
+	var lngwidth = lastlw;
+	var lngtiles = lastlt;
+	var lngstartx = lastlx;
+	var lngstarty = lastly;
+	var lngstartz = lastlz;
+	var strmap = '';
+	var strmap1 = '';
+	var y = 0;
+	var x = 0;
+	var p = 0;
+	var e = 0;
 	for (y = lngstarty; y < ((lngstarty + lngtiles)); y++) {
 		e = 0;
-	        strmap += "<tr>";
+		strmap += "<tr>";
 		for (x = lngstartx; x < (lngstartx + lngtiles); x++) {
 			if (Bz[x] != null && Bz[x][y] != null) {
 				strmap += DrawRoom(x, y, lngstartz, e, p);
@@ -157,7 +157,7 @@ var e = 0;
 			}
 			e = e + 1;
 		}
-	        strmap += "</tr>";
+		strmap += "</tr>";
 		p = p + 1;
 	}
 	strmap += "</table>"
@@ -169,7 +169,7 @@ var e = 0;
 }
 
 
-function SetPicture(x,y,strPic) {
+function SetPicture(x, y, strPic) {
 	if (Bz[x][y] != null) {
 		if (strPic == 'na.gif') {
 			strPic = '';
@@ -181,18 +181,18 @@ function SetPicture(x,y,strPic) {
 	}
 }
 
-function SetColor(x,y,strColor) {
+function SetColor(x, y, strColor) {
 	if (Bz[x][y] != null) {
 		getObj("B" + Bz[x][y].BuildingID).style.backgroundColor = strColor;
 	}
 }
 
-function SetColor2(x,y,strColor) {
+function SetColor2(x, y, strColor) {
 	Bz[x][y].Color = strColor;
 	getObj("B" + Bz[x][y].BuildingID).style.backgroundColor = strColor;
 }
 
-function SetPictureM(x,y,strPic) {
+function SetPictureM(x, y, strPic) {
 	if (strPic == 'na.gif') {
 		strPic = '';
 	}
@@ -201,17 +201,17 @@ function SetPictureM(x,y,strPic) {
 	var strImgb1 = "";
 
 	if (Bz[x][y].ObjectM != "") {
-		if (Bz[x][y].nc > 0 ) {
-			strImgb2= FHIPM + Bz[x][y].ObjectM;
+		if (Bz[x][y].nc > 0) {
+			strImgb2 = FHIPM + Bz[x][y].ObjectM;
 			strImgb1 = FHIPM + "nyou.gif";
 		} else {
-			strImgb1= FHIPM + Bz[x][y].ObjectM;
+			strImgb1 = FHIPM + Bz[x][y].ObjectM;
 			strImgb2 = "";
 		}
 	}
 	Bz[x][y].backimage = strImgb1;
 	Bz[x][y].foreimage = strImgb2;
-	getObj("B" + Bz[x][y].BuildingID).innerHTML = (Bz[x][y].ObjectM != "" ? "<img src='" + strImgb1 + "' style='background-Image: URL(\"" + strImgb2 + "\")'>" : (Bz[x][y].nc > 0 ? "<img src='" + strImgb1 + "'>" :  ""))
+	getObj("B" + Bz[x][y].BuildingID).innerHTML = (Bz[x][y].ObjectM != "" ? "<img src='" + strImgb1 + "' style='background-Image: URL(\"" + strImgb2 + "\")'>" : (Bz[x][y].nc > 0 ? "<img src='" + strImgb1 + "'>" : ""))
 }
 
 function DrawRoom(x, y, z, e, p) {
@@ -219,7 +219,7 @@ function DrawRoom(x, y, z, e, p) {
 	var lngstartz = lastlz;
 	strmap += "<td " + (Bz[x][y].Hidden != 0 ? " class=\"mapcolh\"" : " class=\"mapcolb\"") + " id=B" + Bz[x][y].BuildingID;
 	if (Bz[x][y].nm == 0 || Bz[x][y].nm == 2) {
-		strmap += " " + (Bz[x][y].nm == 0 ? "style=\"background-color: " + (Bz[x][y].Go2B != 0 ?  'gold' : Bz[x][y].Color) + ";cursor:pointer;\" onmouseover=\"InfoMap('" + Bz[x][y].Picture + "','"  + Bz[x][y].ObjectM + "','" + Bz[x][y].Color + "','<b>" + Bz[x][y].Caption + "</b>" + (Bz[x][y].Hidden != 0 ? "<br>Stealth: " + Bz[x][y].Hidden : "") + "<br>X: " + x + " Y: " + y + " Floor: " + lngstartz + "');\" onmouseout=\"hideTip();\" " : "style=\"background-color: " + Bz[x][y].Color + ";\" ");
+		strmap += " " + (Bz[x][y].nm == 0 ? "style=\"background-color: " + (Bz[x][y].Go2B != 0 ? 'gold' : Bz[x][y].Color) + ";cursor:pointer;\" onmouseover=\"InfoMap('" + Bz[x][y].Picture + "','" + Bz[x][y].ObjectM + "','" + Bz[x][y].Color + "','<b>" + Bz[x][y].Caption + "</b>" + (Bz[x][y].Hidden != 0 ? "<br>Stealth: " + Bz[x][y].Hidden : "") + "<br>X: " + x + " Y: " + y + " Floor: " + lngstartz + "');\" onmouseout=\"hideTip();\" " : "style=\"background-color: " + Bz[x][y].Color + ";\" ");
 	} else {
 		strmap += " ";
 	}
@@ -227,28 +227,28 @@ function DrawRoom(x, y, z, e, p) {
 		strmap += "background=\"" + FHIPM + Bz[x][y].Picture + "\" ";
 	}
 
-        strmap += " onclick=\"MBg(" + Bz[x][y].BuildingID + ", " + x + ", " + y + " , " + Bz[x][y].Go2B + ", " + p + ", " + e + ")\"";
+	strmap += " onclick=\"MBg(" + Bz[x][y].BuildingID + ", " + x + ", " + y + " , " + Bz[x][y].Go2B + ", " + p + ", " + e + ")\"";
 	var strImgb1 = (Bz[x][y].nc > 0 ? FHIPM + "nyou.gif" : "");
 	var strImgb2 = "";
 	if (Bz[x][y].ObjectM != "") {
-		if (Bz[x][y].nc > 0 ) {
-			strImgb2= FHIPM + Bz[x][y].ObjectM;
+		if (Bz[x][y].nc > 0) {
+			strImgb2 = FHIPM + Bz[x][y].ObjectM;
 			strImgb1 = FHIPM + "nyou.gif";
 		} else {
-			strImgb1= FHIPM + Bz[x][y].ObjectM;
+			strImgb1 = FHIPM + Bz[x][y].ObjectM;
 			strImgb2 = "";
 		}
 	}
 	Bz[x][y].backimage = strImgb1
 	Bz[x][y].foreimage = strImgb2
-	strmap += " align=center valign=center>" + (Bz[x][y].ObjectM != "" ? "<img src='" + strImgb1 + "' style='background-Image: URL(\"" + strImgb2 + "\")'>" : (Bz[x][y].nc > 0 ? "<img src='" + strImgb1 + "' width=20 height=20>" :  "")) + "</td>";
+	strmap += " align=center valign=center>" + (Bz[x][y].ObjectM != "" ? "<img src='" + strImgb1 + "' style='background-Image: URL(\"" + strImgb2 + "\")'>" : (Bz[x][y].nc > 0 ? "<img src='" + strImgb1 + "' width=20 height=20>" : "")) + "</td>";
 	return strmap;
 }
-function MBg(BuildingID2,x,y ,go2b, p, e) {
+function MBg(BuildingID2, x, y, go2b, p, e) {
 	//Clicked on the remodel map
 
 	if (BuildingID2 > 0) {
-		var Testit = getObj('B'+BuildingID2)
+		var Testit = getObj('B' + BuildingID2)
 		var pph = 20;
 		var strImgb1 = '<img src=\'' + (UseArrow != 0 ? FHIPM + 'ayou.gif' : FHIPP) + '\' border=0 width=' + pph + ' height=' + pph + '>';
 		if (Bz[x][y].backimage != '') {
@@ -257,17 +257,17 @@ function MBg(BuildingID2,x,y ,go2b, p, e) {
 		Testit.innerHTML = strImgb1;
 		TileName = Testit.title;
 	}
-	if (lastb!=0 && lastb != BuildingID2 && lastx > 0 && lasty > 0) {
-		var Testit2 = getObj('B'+lastb);
-		Testit2.innerHTML = '' + (Bz[lastx][lasty].backimage != '' ? '<img src=\'' + Bz[lastx][lasty].backimage + '\' width=20 height=20' + (Bz[lastx][lasty].foreimage != '' ? ' style=\'background-Image: URL("' + Bz[lastx][lasty].foreimage + '")\'' : '') + '>' :'');
+	if (lastb != 0 && lastb != BuildingID2 && lastx > 0 && lasty > 0) {
+		var Testit2 = getObj('B' + lastb);
+		Testit2.innerHTML = '' + (Bz[lastx][lasty].backimage != '' ? '<img src=\'' + Bz[lastx][lasty].backimage + '\' width=20 height=20' + (Bz[lastx][lasty].foreimage != '' ? ' style=\'background-Image: URL("' + Bz[lastx][lasty].foreimage + '")\'' : '') + '>' : '');
 	} else if (lastb == 0 && lastx > 0 && lasty > 0) {
 		var Testit2 = getObj("B" + lastx + "-" + lasty);
 		if (Bz[lastx] == null) {
 			Testit2.innerHTML = '';
-		} else if (Bz[lastx][lasty] == null) { 
+		} else if (Bz[lastx][lasty] == null) {
 			Testit2.innerHTML = '';
 		} else {
-			Testit2.innerHTML = '' + (Bz[lastx][lasty].backimage != '' ? '<img src=\'' + Bz[lastx][lasty].backimage + '\' width=20 height=20' + (Bz[lastx][lasty].foreimage != '' ? ' style=\'background-Image: URL("' + Bz[lastx][lasty].foreimage + '")\'' : '') + '>' :'');
+			Testit2.innerHTML = '' + (Bz[lastx][lasty].backimage != '' ? '<img src=\'' + Bz[lastx][lasty].backimage + '\' width=20 height=20' + (Bz[lastx][lasty].foreimage != '' ? ' style=\'background-Image: URL("' + Bz[lastx][lasty].foreimage + '")\'' : '') + '>' : '');
 		}
 	}
 
@@ -277,7 +277,7 @@ function MBg(BuildingID2,x,y ,go2b, p, e) {
 	lastz = Floor;
 
 	if (BuildingID2 == 0) {
-		InfoTip('', 'Clicked Empty tile at ' + x + ', ' + y);	
+		InfoTip('', 'Clicked Empty tile at ' + x + ', ' + y);
 		var Testit2 = getObj("B" + x + "-" + y);
 		Testit2.innerHTML = '<img src=\'' + (UseArrow != 0 ? FHIPM + 'ayou.gif' : FHIPP) + '\' border=0 width=20 height=20>';
 	} else if (CharsAt == BuildingID2) {
@@ -293,38 +293,37 @@ function MBg(BuildingID2,x,y ,go2b, p, e) {
 }
 
 function Floors(Count, CurPage) {
-var strTest = '';
-var v = 0;
-var i = 0;
-strTest += '<tr><td colspan=2 class="navmenu2" style="font-size: 9px; height: 12; padding: 0px; margin: 0px">Floors</td></tr>';   
-strTest += '<tr><td colspan=2><table cellpadding=0 cellspacing=0><tr><td><table cellpadding=0 cellspacing=0>';        
-for (i = 0; i <= Count; i++) 
-{         
-	if (v == 0) {
-		strTest += '<tr>'
-	}
-	strTest += '<td title="Show Floor ' + i + '" class="btn" ' + (CurPage != i ? 'onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" style="width:20" onclick="GoP(' + i + ')"' : ' style="width:13; background-Color: ' + BGCOLOR_S + '; border: 1px outset ' + BORDER1_S + '; font-weight: bold"') + '>' + i + '</td>';        
-	v = v + 1
-	if (v == 2) {
-		strTest += '</tr>'
-		v = 0
+	var strTest = '';
+	var v = 0;
+	var i = 0;
+	strTest += '<tr><td colspan=2 class="navmenu2" style="font-size: 9px; height: 12; padding: 0px; margin: 0px">Floors</td></tr>';
+	strTest += '<tr><td colspan=2><table cellpadding=0 cellspacing=0><tr><td><table cellpadding=0 cellspacing=0>';
+	for (i = 0; i <= Count; i++) {
+		if (v == 0) {
+			strTest += '<tr>'
+		}
+		strTest += '<td title="Show Floor ' + i + '" class="btn" ' + (CurPage != i ? 'onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" style="width:20" onclick="GoP(' + i + ')"' : ' style="width:13; background-Color: ' + BGCOLOR_S + '; border: 1px outset ' + BORDER1_S + '; font-weight: bold"') + '>' + i + '</td>';
+		v = v + 1
+		if (v == 2) {
+			strTest += '</tr>'
+			v = 0
 
+		}
 	}
-}
-strTest += '</table></td></tr><tr><td colspan=2 class="navmenu2" style="font-size: 9px; height: 12; padding: 0px; margin: 0px">View</td></tr><tr><td colspan=2><table class="itemtext" cellpadding=0 cellspacing=0>';        
-strTest += '<tr><td title="Move North" align=center colspan=3 class="btn" ' + (Math.abs(yy) > 1 ? 'onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" style="padding-left: 10; width:7" onclick="GoXY(' + xx + ',' + (yy - t) + ')"' : ' style="padding-left: 7; width:15; background-Color: ' + BGCOLOR_S + '; border: 1px outset ' + BORDER1_S + '; font-weight: bold"') + '><img src="' + FHIPO + 'Up.gif"></td></tr>';        
-strTest += '<tr><td title="Move West" class="btn" ' + (Math.abs(xx) > 1 ? 'onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" style="width:15" onclick="GoXY(' + (xx - t) + ',' + yy + ')"' : ' style="width:15; background-Color: ' + BGCOLOR_S + '; border: 1px outset ' + BORDER1_S + '; font-weight: bold"') + '><img src="' + FHIPO + 'Lt.gif"></td><td></td><td title="Move East" class="btn" ' + (Math.abs(xx) < 100 ? 'onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" style="width:15" onclick="GoXY(' + (xx + t) + ',' + yy + ')"' : ' style="width:15; background-Color: ' + BGCOLOR_S + '; border: 1px outset ' + BORDER1_S + '; font-weight: bold"') + '><img src="' + FHIPO + 'rt.gif"></td></tr>';        
-strTest += '<tr><td title="Move South" align=center colspan=3 class="btn" ' + (Math.abs(yy) < 100 ? 'onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" style="padding-left: 10; width:7" onclick="GoXY(' + xx + ',' + (yy + t) + ')"' : ' style="padding-left: 7; width:15; background-Color: ' + BGCOLOR_S + '; border: 1px outset ' + BORDER1_S + '; font-weight: bold"') + '><img src="' + FHIPO + 'Dn.gif"></td></tr>';        
-strTest += '</table></td></tr></table></td></tr>'
-strTest += '<tr height="100%"><td colspan=2>&nbsp;</td></tr>';
-getObj('Pages').innerHTML = '<table class="copyright" cellpadding=0 cellspacing=0 height="100%">' + strTest + '</table>';
+	strTest += '</table></td></tr><tr><td colspan=2 class="navmenu2" style="font-size: 9px; height: 12; padding: 0px; margin: 0px">View</td></tr><tr><td colspan=2><table class="itemtext" cellpadding=0 cellspacing=0>';
+	strTest += '<tr><td title="Move North" align=center colspan=3 class="btn" ' + (Math.abs(yy) > 1 ? 'onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" style="padding-left: 10; width:7" onclick="GoXY(' + xx + ',' + (yy - t) + ')"' : ' style="padding-left: 7; width:15; background-Color: ' + BGCOLOR_S + '; border: 1px outset ' + BORDER1_S + '; font-weight: bold"') + '><img src="' + FHIPO + 'Up.gif"></td></tr>';
+	strTest += '<tr><td title="Move West" class="btn" ' + (Math.abs(xx) > 1 ? 'onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" style="width:15" onclick="GoXY(' + (xx - t) + ',' + yy + ')"' : ' style="width:15; background-Color: ' + BGCOLOR_S + '; border: 1px outset ' + BORDER1_S + '; font-weight: bold"') + '><img src="' + FHIPO + 'Lt.gif"></td><td></td><td title="Move East" class="btn" ' + (Math.abs(xx) < 100 ? 'onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" style="width:15" onclick="GoXY(' + (xx + t) + ',' + yy + ')"' : ' style="width:15; background-Color: ' + BGCOLOR_S + '; border: 1px outset ' + BORDER1_S + '; font-weight: bold"') + '><img src="' + FHIPO + 'rt.gif"></td></tr>';
+	strTest += '<tr><td title="Move South" align=center colspan=3 class="btn" ' + (Math.abs(yy) < 100 ? 'onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" style="padding-left: 10; width:7" onclick="GoXY(' + xx + ',' + (yy + t) + ')"' : ' style="padding-left: 7; width:15; background-Color: ' + BGCOLOR_S + '; border: 1px outset ' + BORDER1_S + '; font-weight: bold"') + '><img src="' + FHIPO + 'Dn.gif"></td></tr>';
+	strTest += '</table></td></tr></table></td></tr>'
+	strTest += '<tr height="100%"><td colspan=2>&nbsp;</td></tr>';
+	getObj('Pages').innerHTML = '<table class="copyright" cellpadding=0 cellspacing=0 height="100%">' + strTest + '</table>';
 }
 
 function GoP(PageNo) {
 	window.location.replace("fhstargate2.asp?CharsAt=" + CharsAt + "&Special=" + (Special >= 10 ? 10 : 0) + "&StartX=" + xx + "&StartY=" + yy + "&TestZ=" + PageNo);
 }
 
-function GoXY(xx,yy) {
+function GoXY(xx, yy) {
 	if (xx <= 0) {
 		xx = 1
 	}

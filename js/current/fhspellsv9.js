@@ -15,7 +15,7 @@ var SC = 0;
 var Processing = 0;
 var Spells = new Array();
 
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function GoP(PageNo) {
 	window.location.replace('?T=' + Type3 + '&Type=' + Type2 + '&P=' + PageNo + '');

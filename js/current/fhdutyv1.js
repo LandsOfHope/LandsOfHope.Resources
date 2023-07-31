@@ -38,7 +38,7 @@ var terrainx2 = '';
 var totalprizes = 0;
 var digspot = 'hole.gif';
 
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 function InitGame(IPathM, markerx, blankx, terrainx1, terrain2x1, tilecx1, terrainx, terrain2x, tilecx2, w, h, tries, tp, digp) {
 	charges = tries;
 	digspot = digp;

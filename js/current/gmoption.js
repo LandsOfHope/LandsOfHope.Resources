@@ -7,7 +7,7 @@ var P = '';
 var Group = '';
 var OC = 0;
 var Options = new Array();
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 
 function CheckValue(Val1, Val2) {

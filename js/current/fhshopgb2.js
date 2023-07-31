@@ -10,22 +10,22 @@ var IC = 0;
 var Infos = new Array();
 var guildfame = guildfame;
 var LastV = -1;
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function DC(v) {
-LastV = v;
-getObj('Stuff2').innerHTML = Tips(v, 0)
-getObj('Buttons').innerHTML = '' + (Processing == 0 ? Adr('if (Processing == 0) {Processing = 1;window.location.replace(\'?CharsAt=' + CharsAt + '&P=' + PageNo + '&ItemID=' +Infos[v].value + '\');};','Take','Take') : '') + Adr('window.top.loadwindow2(\'im3.asp?Test=' + Infos[v].value + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].i + '\');','Info','Info');
-getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + "'>";
+	LastV = v;
+	getObj('Stuff2').innerHTML = Tips(v, 0)
+	getObj('Buttons').innerHTML = '' + (Processing == 0 ? Adr('if (Processing == 0) {Processing = 1;window.location.replace(\'?CharsAt=' + CharsAt + '&P=' + PageNo + '&ItemID=' + Infos[v].value + '\');};', 'Take', 'Take') : '') + Adr('window.top.loadwindow2(\'im3.asp?Test=' + Infos[v].value + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].i + '\');', 'Info', 'Info');
+	getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + "'>";
 }
 
 function RC(v) {
-getObj('I' + v).style.cursor = '';
-getObj('I' + v).style.backgroundColor='';
+	getObj('I' + v).style.cursor = '';
+	getObj('I' + v).style.backgroundColor = '';
 }
 
 function GoP(PageNo) {
-window.location.replace('?CharsAt=' + CharsAt + '&P=' + PageNo + '');
+	window.location.replace('?CharsAt=' + CharsAt + '&P=' + PageNo + '');
 }
 
 
@@ -34,9 +34,9 @@ function Tips(v, tt) {
 }
 
 function PC(v) {
-window.top.InfoTip('' + IPath + (Infos[v].p == '' ? 'na.gif' : '' + Infos[v].p), Tips(v,1));
-getObj('I' + v).style.cursor = 'pointer';
-getObj('I' + v).style.backgroundColor=BGCOLOR_S
+	window.top.InfoTip('' + IPath + (Infos[v].p == '' ? 'na.gif' : '' + Infos[v].p), Tips(v, 1));
+	getObj('I' + v).style.cursor = 'pointer';
+	getObj('I' + v).style.backgroundColor = BGCOLOR_S
 }
 
 function GetAT(aa) {
@@ -44,49 +44,48 @@ function GetAT(aa) {
 }
 
 function tgl(ShopNum) {
-if (getObj('Shop' + ShopNum).innerHTML == '') {
-	DrawShop(ShopNum);
-}
-else
-{
-	getObj('Shop' + ShopNum).innerHTML = '';
-}
+	if (getObj('Shop' + ShopNum).innerHTML == '') {
+		DrawShop(ShopNum);
+	}
+	else {
+		getObj('Shop' + ShopNum).innerHTML = '';
+	}
 }
 
 function DrawShop(ShopNum) {
-var strout = '';
-var y = 0;
-for (y = 0; y < IC; y++) {
-	if (Infos[y].shop == ShopNum) {
-		strout = strout + GetRow(y);
+	var strout = '';
+	var y = 0;
+	for (y = 0; y < IC; y++) {
+		if (Infos[y].shop == ShopNum) {
+			strout = strout + GetRow(y);
+		}
 	}
-}
-getObj('Shop' + ShopNum).innerHTML = '<table width="100%" cellspacing=0 cellpadding=1 class=\'itemText\'>' + strout + '</table>';
+	getObj('Shop' + ShopNum).innerHTML = '<table width="100%" cellspacing=0 cellpadding=1 class=\'itemText\'>' + strout + '</table>';
 }
 
 function AH(ShopC, SkillGroup) {
-document.write("<tr><td colspan=2 style=\"" + strButtonx + "\" " + strClicksns + " onclick=\"tgl(" + ShopC + ")\">" + SkillGroup + "</td></tr><tr><td colspan=2 id=Shop" + ShopC + "></td></tr>");
+	document.write("<tr><td colspan=2 style=\"" + strButtonx + "\" " + strClicksns + " onclick=\"tgl(" + ShopC + ")\">" + SkillGroup + "</td></tr><tr><td colspan=2 id=Shop" + ShopC + "></td></tr>");
 }
 
 function AM(Color, Named, ShopID, Picture, l, a) {
-if (Infos[IC] == null) {
-	Infos[IC] = new Array();
-}
-Infos[IC] = new newInfo(Color, Named, ShopID, Picture, l, a);
-IC = IC + 1;
+	if (Infos[IC] == null) {
+		Infos[IC] = new Array();
+	}
+	Infos[IC] = new newInfo(Color, Named, ShopID, Picture, l, a);
+	IC = IC + 1;
 }
 
 
 function GetRow(v) {
-	return '<tr id="I' + v + '" onmouseover="PC(' + v + ')" onmouseout="RC(' + v + ')" onclick="DC(' + v + ')"><td><img src=\'' + IPath + Infos[v].p + '\' width=15 height=15></td><td width="245" style="color: ' + Infos[v].c + ';">' + Infos[v].i  + '</td><td width="120px">Level: ' + guildfame + '</td></tr>';
+	return '<tr id="I' + v + '" onmouseover="PC(' + v + ')" onmouseout="RC(' + v + ')" onclick="DC(' + v + ')"><td><img src=\'' + IPath + Infos[v].p + '\' width=15 height=15></td><td width="245" style="color: ' + Infos[v].c + ';">' + Infos[v].i + '</td><td width="120px">Level: ' + guildfame + '</td></tr>';
 }
 
 function newInfo(Color, Named, ShopID, Picture, l, a) {
-this.c = Color;
-this.l = l;
-this.p = Picture;
-this.i = Named;
-this.a = a;
-this.value = ShopID;
-this.shop = Shop;
+	this.c = Color;
+	this.l = l;
+	this.p = Picture;
+	this.i = Named;
+	this.a = a;
+	this.value = ShopID;
+	this.shop = Shop;
 }

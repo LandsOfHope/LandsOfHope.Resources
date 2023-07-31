@@ -5,22 +5,22 @@ var IPath = window.top.FHIPB;
 var Processing = 0;
 var MC = 0;
 var Markers = new Array();
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function GoP(PageNo) {
-window.location.replace('?P=' + PageNo + '');
+	window.location.replace('?P=' + PageNo + '');
 }
 
 function RC(v) {
-getObj('M' + v).style.cursor = '';
-getObj('M' + v).style.backgroundColor='';
-window.top.hideTip();
+	getObj('M' + v).style.cursor = '';
+	getObj('M' + v).style.backgroundColor = '';
+	window.top.hideTip();
 }
 
 function PC(v) {
-window.top.InfoTip('' + IPath + Markers[v].p, '' + Markers[v].t + '');
-getObj('M' + v).style.cursor = 'pointer';
-getObj('M' + v).style.backgroundColor=BGCOLOR_S
+	window.top.InfoTip('' + IPath + Markers[v].p, '' + Markers[v].t + '');
+	getObj('M' + v).style.cursor = 'pointer';
+	getObj('M' + v).style.backgroundColor = BGCOLOR_S
 }
 
 function GS(in3, in2) {
@@ -48,23 +48,23 @@ function PromptReturn(returnVal, pb) {
 }
 
 function AB(PictureID, ItemName, ItemID, Color, h, x, y, g, c) {
-if (PictureID == '0') {PictureID = ''}
-if (Markers[MC] == null) {
-	Markers[MC] = new Array();
-}
-Markers[MC] = new newMarker(PictureID, ItemName, ItemID, Color, h, x, y, g, c);
-document.write('<tr id="M' + MC + '" onclick="DC(' + MC  + ')" onmouseout="RC(' + MC  + ')" onmouseover="PC(' + MC  + ')" style="color: ' +  Color + '; padding-left: 5px"><td width=15><img src=\'' + IPath + (PictureID == '' ? 'na.gif' : PictureID) + '\' width=15 height=15></td><td width=\'100%\'>' + ItemName + '</td></tr>');
-MC = MC + 1;
+	if (PictureID == '0') { PictureID = '' }
+	if (Markers[MC] == null) {
+		Markers[MC] = new Array();
+	}
+	Markers[MC] = new newMarker(PictureID, ItemName, ItemID, Color, h, x, y, g, c);
+	document.write('<tr id="M' + MC + '" onclick="DC(' + MC + ')" onmouseout="RC(' + MC + ')" onmouseover="PC(' + MC + ')" style="color: ' + Color + '; padding-left: 5px"><td width=15><img src=\'' + IPath + (PictureID == '' ? 'na.gif' : PictureID) + '\' width=15 height=15></td><td width=\'100%\'>' + ItemName + '</td></tr>');
+	MC = MC + 1;
 }
 
 function newMarker(PictureID, ItemName, ItemID, Color, h, x, y, g, c) {
-this.c = Color;
-this.t = ItemName;
-this.v = ItemID;
-this.p = PictureID;
-this.h = h;
-this.a = c;
-this.x = x;
-this.y = y;
-this.g = g;
+	this.c = Color;
+	this.t = ItemName;
+	this.v = ItemID;
+	this.p = PictureID;
+	this.h = h;
+	this.a = c;
+	this.x = x;
+	this.y = y;
+	this.g = g;
 }

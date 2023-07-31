@@ -4,7 +4,7 @@ var PageNo = PageNo;
 var counter = 0;
 var IPath = window.top.FHIPI;
 
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 
 function KP(stuff) {
@@ -24,24 +24,24 @@ function CH(strdisplay, ob1) {
 }
 
 function GoP(PageNo) {
-window.location.replace('?CharsAt=' + CharsAt + '&P=' + PageNo + '');
+	window.location.replace('?CharsAt=' + CharsAt + '&P=' + PageNo + '');
 }
 
 function AM(n, ct, Message) {
-var BID = CharsAt;
-counter = counter + 1
-var bg = ''
-var PictureID = 'fl1.gif';
-var Color = LITE;
-var ctt = '';
-if (ct == 1) {
-	Color = '#6666ff';
-	PictureID = 'fl3.gif';
-	ctt = ' - Support Member'
-}
-if ((counter / 2) == Math.round(counter / 2)) {bg = BGCOLOR_S}
-document.write('<tr width="400" style="color: ' + Color + ';font-weight: bold"><td><img src="' + IPath + PictureID + '" width=10 height=10></td><td width=\'100%\'>' +n + ctt + '</td></tr>');
-document.write('<tr width="400" style="color: white;background-color: ' + bg + ';"><td></td><td>' + Message + '</td></tr>');
+	var BID = CharsAt;
+	counter = counter + 1
+	var bg = ''
+	var PictureID = 'fl1.gif';
+	var Color = LITE;
+	var ctt = '';
+	if (ct == 1) {
+		Color = '#6666ff';
+		PictureID = 'fl3.gif';
+		ctt = ' - Support Member'
+	}
+	if ((counter / 2) == Math.round(counter / 2)) { bg = BGCOLOR_S }
+	document.write('<tr width="400" style="color: ' + Color + ';font-weight: bold"><td><img src="' + IPath + PictureID + '" width=10 height=10></td><td width=\'100%\'>' + n + ctt + '</td></tr>');
+	document.write('<tr width="400" style="color: white;background-color: ' + bg + ';"><td></td><td>' + Message + '</td></tr>');
 }
 
 function DC(v) {
@@ -59,12 +59,12 @@ function DB(stuff) {
 
 function PC(stuff) {
 	stuff.style.cursor = 'pointer';
-	stuff.style.backgroundColor=BGCOLOR_S
+	stuff.style.backgroundColor = BGCOLOR_S
 }
 
 function RC(stuff) {
 	stuff.style.cursor = '';
-	stuff.style.backgroundColor='';
+	stuff.style.backgroundColor = '';
 }
 
 function PromptReturn(returnVal, pb) {

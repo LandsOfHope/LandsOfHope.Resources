@@ -18,18 +18,18 @@ Wms[11] = '%you2% I get the picture, i am not sure how i got here but know i wil
 Wms[12] = '%name% Good luck with that, i think you will find that Drako is not as mean as some masters and if you serve him well he will reward you.<br><br>Now that you are up to speed please equip the tools and items your master has seen to give you.<br><br>I have a task for you to do as well!';
 Wms[13] = '%you2% That would be great!';
 
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function ShowStoryx() {
 	var strS = '';
-	Welcome2 = Welcome2  -1
+	Welcome2 = Welcome2 - 1
 	strS = ReturnStory();
 	if (strS != '') {
-		getObj('xx').innerHTML = '' + getObj('xx').innerHTML + '<br><br>' + strS 
+		getObj('xx').innerHTML = '' + getObj('xx').innerHTML + '<br><br>' + strS
 		Welcome2 = Welcome2 + 1
 		strS = ReturnStory();
 		if (strS != '') {
-			getObj('xx').innerHTML = '' + getObj('xx').innerHTML + '<br><br>' + strS 
+			getObj('xx').innerHTML = '' + getObj('xx').innerHTML + '<br><br>' + strS
 			Welcome2 = Welcome2 + 1
 			getObj('Buttons').innerHTML = '<center><button style=\'width:134px; height: 40px;\' class=\'tbtn\' onmouseover=\'this.className = \"tbtn btnhov\";\' onmouseout=\'this.className = \"tbtn\";\' onclick=\'javascript:ShowStoryx()\'><b style=\'color: #66ff66; font-size: 14px;\'>Continue &gt;&gt;' + '</b></button></center>';
 			Welcome2 = Welcome2 + 1
@@ -43,7 +43,7 @@ function ShowStory() {
 	var strS = '';
 	strS = ReturnStory();
 	if (strS != '') {
-		getObj('xx').innerHTML = '' + strS 
+		getObj('xx').innerHTML = '' + strS
 		Welcome2 = Welcome2 + 1
 		getObj('Buttons').innerHTML = '<center><button style=\'width:134px; height: 40px;\' class=\'tbtn\' onmouseover=\'this.className = \"tbtn btnhov\";\' onmouseout=\'this.className = \"tbtn\";\' onclick=\'javascript:ShowStoryx()\'><b style=\'color: #66ff66; font-size: 14px;\'>Continue &gt;&gt;' + '</b></button></center>';
 		Welcome2 = Welcome2 + 1
@@ -58,9 +58,9 @@ function ReturnStory() {
 		var re = /\%name\%/i;
 		var re2 = /\%you\%/i;
 		var re3 = /\%you2\%/i;
-		strWelcome=strWelcome.replace(re, '<b>' + cn + '</b>: ')
-		strWelcome=strWelcome.replace(re2, '<b>' + yn + '</b>: ')
-		strWelcome=strWelcome.replace(re3, '<b>Me</b>: ')
+		strWelcome = strWelcome.replace(re, '<b>' + cn + '</b>: ')
+		strWelcome = strWelcome.replace(re2, '<b>' + yn + '</b>: ')
+		strWelcome = strWelcome.replace(re3, '<b>Me</b>: ')
 		return strWelcome
 	} else {
 		confirm('Are you ready to continue ?', 1);

@@ -37,7 +37,7 @@ var terrainx = '';
 var tilecx = 1280602;
 var terrainx2 = '';
 
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 function InitGame(gamename, IPathM, headx, markerx, blankx, terrainx1, terrain2x1, tilecx1, terrainx, terrain2x, tilecx2, w, h) {
 	window.top.getObj('framedivtitle').innerHTML = gamename;
 	//getObj("Bob").rows[0].cells[0].innerHTML = "<table width='100%' cellpadding=0 cellspacing=0><tr><td class='menul'>&nbsp;&nbsp;&nbsp;</td><td class='title' width='100%'>" + gamename + "</td><td class='menur'>&nbsp;&nbsp;&nbsp;</td></tr></table>";

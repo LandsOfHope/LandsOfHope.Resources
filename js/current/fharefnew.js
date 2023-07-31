@@ -1,7 +1,7 @@
 var counter = 0;
 var rp = rp;
 var rgp = rgp;
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function AC(ItemID, Itty, PictureID, points, points2, d) {
 	var Color = (rgp >= points2 && rp >= points ? 'gold' : '#ff6666');

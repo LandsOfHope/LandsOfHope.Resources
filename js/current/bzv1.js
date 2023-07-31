@@ -28,7 +28,7 @@ var FHIPR = FHIP + 'r/';
 var FHIPS = FHIP + 's/';
 //var FHIPP = FHIPP;
 
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function bMenu(BID, NameB, ColorB, ImgB1, ImgB2, ObjectM, GoB, HiB, OB, dun, bowner, nc, nm, ls) {
 	this.Color = ColorB;

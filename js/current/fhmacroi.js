@@ -3,25 +3,25 @@ var IC = 0;
 var SPath = window.top.FHIPS;
 var IPath = window.top.FHIPI;
 var xPath = window.top.FHIP;
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function AM(Named, ItemID, pp, PictureID) {
-if (PictureID == '0') {PictureID = ''}
-var Color = LITE;
-if (Infos[IC] == null) {
-	Infos[IC] = new Array();
-}
-Infos[IC] = new newInfo(Named, ItemID, pp, PictureID, Color);
-document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(this)"  onclick="DC(' + IC + ')" style="color: ' +  Color + '; padding-left: 5px"><td width=15><img src=\''+ xPath + pp + '/' + (PictureID == '' ?  'na.gif' : PictureID) + '\' width=15 height=15></td><td width=\'100%\'>' + Named + '</td></tr>');
-IC = IC + 1;
+	if (PictureID == '0') { PictureID = '' }
+	var Color = LITE;
+	if (Infos[IC] == null) {
+		Infos[IC] = new Array();
+	}
+	Infos[IC] = new newInfo(Named, ItemID, pp, PictureID, Color);
+	document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(this)"  onclick="DC(' + IC + ')" style="color: ' + Color + '; padding-left: 5px"><td width=15><img src=\'' + xPath + pp + '/' + (PictureID == '' ? 'na.gif' : PictureID) + '\' width=15 height=15></td><td width=\'100%\'>' + Named + '</td></tr>');
+	IC = IC + 1;
 }
 
 function newInfo(Named, ItemID, pp, PictureID, Color) {
-this.c = Color;
-this.pp = pp;
-this.v = ItemID;
-this.p = PictureID;
-this.n = Named;
+	this.c = Color;
+	this.pp = pp;
+	this.v = ItemID;
+	this.p = PictureID;
+	this.n = Named;
 }
 
 
@@ -52,13 +52,13 @@ function setimage(newimg) {
 }
 
 function DC1(stuff, c) {
-stuff.style.cursor = '';
-stuff.style.border='1px solid ' + c;
+	stuff.style.cursor = '';
+	stuff.style.border = '1px solid ' + c;
 }
 
 function DC2(stuff) {
-stuff.style.cursor = 'pointer';
-stuff.style.border='1px solid #A2A2A2';
+	stuff.style.cursor = 'pointer';
+	stuff.style.border = '1px solid #A2A2A2';
 }
 
 function Buttons2() {
@@ -73,15 +73,15 @@ function CheckStuff() {
 
 
 function GoP(PageNo) {
-window.location.replace('?P=' + PageNo + '');
+	window.location.replace('?P=' + PageNo + '');
 }
 
 function RC(stuff) {
 	stuff.style.cursor = '';
-	stuff.style.backgroundColor='';
+	stuff.style.backgroundColor = '';
 }
 
 function PC(v) {
 	getObj('I' + v).style.cursor = 'pointer';
-	getObj('I' + v).style.backgroundColor=BGCOLOR_S
+	getObj('I' + v).style.backgroundColor = BGCOLOR_S
 }

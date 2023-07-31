@@ -3,7 +3,7 @@ var CharsAt = CharsAt;
 var Processing = 0;
 var IPath = 'https://lohcdn.com/game/i/';
 
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function xCStatus(g, cr, v, tc, tf, tg, tt, ti) {
 	var strout = '';

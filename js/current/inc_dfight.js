@@ -22,7 +22,7 @@ var FightCounter = 0;
 var lngsel0 = -1;
 var lngsel1 = -1;
 var AbilityCount = 0;
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 var OKDOKE = 1;
 var CheckTurnTimer = 0;

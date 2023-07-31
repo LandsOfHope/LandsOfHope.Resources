@@ -18,7 +18,7 @@ var Sides = new Array(1);
 Sides[0] = new Array();
 Sides[1] = new Array();
 
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 
 var OKDOKE = 1;

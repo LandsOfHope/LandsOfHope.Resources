@@ -5,11 +5,11 @@ var Type2 = Type2;
 var counter = 0;
 var IPath = window.top.FHIPR;
 
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 
 function DBX(fid, fn, fpp, fp, fc) {
-document.write("<tr><td><img src='" + window.top.FHIP + fpp + "/" + fp + "' width=15 height=15></td><td style=\"" + strButtonx + "; width: 125; color: " + fc + "\" " + strClicksns + " c='" + fc + "' onclick=\"DB('" + fid + "');\">" + fn + "</td></tr>");
+	document.write("<tr><td><img src='" + window.top.FHIP + fpp + "/" + fp + "' width=15 height=15></td><td style=\"" + strButtonx + "; width: 125; color: " + fc + "\" " + strClicksns + " c='" + fc + "' onclick=\"DB('" + fid + "');\">" + fn + "</td></tr>");
 }
 
 function DB(stuff) {
@@ -19,10 +19,10 @@ function DB(stuff) {
 
 function PC(stuff) {
 	stuff.style.cursor = 'pointer';
-	stuff.style.backgroundColor=BGCOLOR_S
+	stuff.style.backgroundColor = BGCOLOR_S
 }
 
 function RC(stuff) {
 	stuff.style.cursor = '';
-	stuff.style.backgroundColor='';
+	stuff.style.backgroundColor = '';
 }

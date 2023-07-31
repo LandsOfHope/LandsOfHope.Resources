@@ -1,7 +1,7 @@
 var AA = AA;
 var IPath = "https://lohcdn.com/game/i/"
 
-document.write('<script src="js/formatting.js" language="JavaScript"></script>');
+document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
 
 function Adix(Itty, PictureID, Itty2, Automation) {
     var Color = LITE;
