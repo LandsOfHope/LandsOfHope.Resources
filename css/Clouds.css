@@ -120,7 +120,7 @@
 	 * this gives you the flexibility to use any bg color that you want, instead of the png
 	 */
 	/* For browsers Moz, Opera, etc. */
-	background-image: url("https://res.landsofhope.com/maskBG.png") !important;
+	background-image: url("https://lohcdn.com/maskBG.png") !important;
 	background-image: none;
 	background-repeat: repeat;
 	display: none;
@@ -195,7 +195,7 @@ select {
 	height: 18px;
 	border: 0;
 	border-right: 2px solid RGB(66, 50, 54);
-	background-image: URL(https://res.landsofhope.com/images/text-input.png);
+	background-image: URL(https://lohcdn.com/images/text-input.png);
 	border-radius: 5px;
 
 }
@@ -280,7 +280,7 @@ select {
 }
 
 .menu {
-	background-image: url(https://res.landsofhope.com/images/Hope/bg.jpg);
+	background-image: url(https://lohcdn.com/images/Hope/bg.jpg);
 	color: white;
 	font-size: 11px;
 	z-index: 10000;
@@ -338,7 +338,7 @@ a {
 	color: #DCC397;
 	border: 1px inset rgb(60, 60, 60);
 	border-radius: 5px;
-	background-image: url(https://res.landsofhope.com/images/Hope/c_leftblank.jpg);
+	background-image: url(https://lohcdn.com/images/Hope/c_leftblank.jpg);
 	background-repeat: repeat-x;
 }
 
@@ -348,7 +348,7 @@ a {
 }
 
 .woodeffect {
-	background-image: url(https://res.landsofhope.com/images/Hope/bg.jpg);
+	background-image: url(https://lohcdn.com/images/Hope/bg.jpg);
 	border: 1px solid rgb(60, 60, 60);
 	border-radius: 5px;
 
@@ -420,7 +420,7 @@ a {
 
 .navborderx,
 .navmenu2 {
-	background-image: url(https://res.landsofhope.com/images/Hope/c_leftblank.jpg);
+	background-image: url(https://lohcdn.com/images/Hope/c_leftblank.jpg);
 	background-repeat: repeat-x;
 	height: 22px;
 	background: rgba(99, 99, 99, .5) !important;
@@ -603,7 +603,7 @@ a {
 	height: 20;
 	background-color: rgb(203, 23, 3);
 	cursor: pointer;
-	background-image: URL(https://res.landsofhope.com/game/m/lava.gif);
+	background-image: URL(https://lohcdn.com/game/m/lava.gif);
 }
 
 .c388893 {
@@ -611,7 +611,7 @@ a {
 	height: 20;
 	background-color: rgb(29, 239, 5);
 	cursor: pointer;
-	background-image: URL(https://res.landsofhope.com/game/m/grass.gif);
+	background-image: URL(https://lohcdn.com/game/m/grass.gif);
 }
 
 .c1280602 {
@@ -640,7 +640,7 @@ a {
 	height: 20;
 	background-color: rgb(255, 84, 34);
 	cursor: pointer;
-	background-image: URL(https://res.landsofhope.com/game/m/magma.gif);
+	background-image: URL(https://lohcdn.com/game/m/magma.gif);
 }
 
 .c2651456 {
@@ -648,7 +648,7 @@ a {
 	height: 20;
 	background-color: rgb(64, 117, 40);
 	cursor: pointer;
-	background-image: URL(https://res.landsofhope.com/game/m/tallgrass.gif);
+	background-image: URL(https://lohcdn.com/game/m/tallgrass.gif);
 }
 
 .c3239982 {
@@ -656,7 +656,7 @@ a {
 	height: 20;
 	background-color: rgb(46, 112, 49);
 	cursor: pointer;
-	background-image: URL(https://res.landsofhope.com/game/m/forest.gif);
+	background-image: URL(https://lohcdn.com/game/m/forest.gif);
 }
 
 .c3835190 {
@@ -741,7 +741,7 @@ a {
 	height: 20;
 	background-color: rgb(239, 209, 88);
 	cursor: pointer;
-	background-image: URL(https://res.landsofhope.com/game/m/sandx.gif);
+	background-image: URL(https://lohcdn.com/game/m/sandx.gif);
 }
 
 .c5871160 {
@@ -896,7 +896,7 @@ a {
 	height: 20;
 	background-color: rgb(176, 253, 249);
 	cursor: pointer;
-	background-image: URL(https://res.landsofhope.com/game/m/ice.gif);
+	background-image: URL(https://lohcdn.com/game/m/ice.gif);
 }
 
 .c16383969 {
@@ -904,7 +904,7 @@ a {
 	height: 20;
 	background-color: rgb(225, 255, 249);
 	cursor: pointer;
-	background-image: URL(https://res.landsofhope.com/game/m/ice.gif);
+	background-image: URL(https://lohcdn.com/game/m/ice.gif);
 }
 
 .c16708047 {
@@ -926,7 +926,7 @@ a {
 	height: 20;
 	background-color: rgb(255, 255, 255);
 	cursor: pointer;
-	background-image: URL(https://res.landsofhope.com/game/m/snowx.gif);
+	background-image: URL(https://lohcdn.com/game/m/snowx.gif);
 }
 
 .c9219240 {
@@ -998,7 +998,7 @@ a.buttonc2 {
 	display: block;
 	float: left;
 	text-align: center;
-	background-image: url(https://res.landsofhope.com/images/bar_button2.png);
+	background-image: url(https://lohcdn.com/images/bar_button2.png);
 	background-repeat: no-repeat;
 	background-position: top left;
 	color: white;
@@ -1009,7 +1009,7 @@ a.buttonc2 {
 
 a.buttonc2:hover {
 	color: white;
-	background-image: url(https://res.landsofhope.com/images/bar_button.png);
+	background-image: url(https://lohcdn.com/images/bar_button.png);
 	background-repeat: no-repeat;
 	background-position: top left;
 	background-position: 0 0;
@@ -1035,7 +1035,7 @@ a.buttonc {
 
 a.buttonc:hover {
 	color: white;
-	background-image: url(https://res.landsofhope.com/images/bar_button.png);
+	background-image: url(https://lohcdn.com/images/bar_button.png);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-position: 0 0;
@@ -1059,7 +1059,7 @@ div.mp {
 }
 
 div.mp span {
-	background-image: url(https://res.landsofhope.com/gradient-shine.png);
+	background-image: url(https://lohcdn.com/gradient-shine.png);
 	position: absolute;
 	display: block;
 	width: 100%;

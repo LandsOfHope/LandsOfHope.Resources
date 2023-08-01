@@ -3,7 +3,7 @@ body {
 	color: white;
 	font-family: Verdana, Helvetica, Tahoma;
 	font-size: 8pt;
-	background-image: URL(https://res.landsofhope.com/forums/templates/english/images/background4.jpg);
+	background-image: URL(https://lohcdn.com/forums/templates/english/images/background4.jpg);
 	background-repeat: no-repeat;
 	background-position: top center;
 }
@@ -17,7 +17,7 @@ body {
 #headerlogo {
 	width: 800;
 	height: 140px;
-	background-image: URL(https://res.landsofhope.com/forums/templates/english/images/newheaderlook.jpg);
+	background-image: URL(https://lohcdn.com/forums/templates/english/images/newheaderlook.jpg);
 	background-repeat: no-repeat;
 	background-position: top center;
 }
@@ -55,7 +55,7 @@ h5 {
 	 * this gives you the flexibility to use any bg color that you want, instead of the png
 	 */
 	/* For browsers Moz, Opera, etc. */
-	background-image: url("https://res.landsofhope.com/maskBG.png") !important;
+	background-image: url("https://lohcdn.com/maskBG.png") !important;
 	background-image: none;
 	background-repeat: repeat;
 	display: none;

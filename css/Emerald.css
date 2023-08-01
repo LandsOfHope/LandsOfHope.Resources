@@ -36,7 +36,7 @@
 	 * this gives you the flexibility to use any bg color that you want, instead of the png
 	 */
 	/* For browsers Moz, Opera, etc. */
-	background-image: url("https://res.landsofhope.com/maskBG.png") !important;
+	background-image: url("https://lohcdn.com/maskBG.png") !important;
 	background-image: none;
 	background-repeat: repeat;
 	display: none;
@@ -172,7 +172,7 @@ select {
 }
 
 .menu {
-	background-image: url(https://res.landsofhope.com/images/Emerald/bg.jpg);
+	background-image: url(https://lohcdn.com/images/Emerald/bg.jpg);
 	color: white;
 	font-size: 11px;
 }
@@ -228,7 +228,7 @@ a {
 .menuCell {
 	color: #DCC397;
 	border: 1px inset rgb(47, 146, 98);
-	background-image: url(https://res.landsofhope.com/images/Emerald/c_leftblank.jpg);
+	background-image: url(https://lohcdn.com/images/Emerald/c_leftblank.jpg);
 	background-repeat: repeat-x;
 }
 
@@ -238,7 +238,7 @@ a {
 }
 
 .navmenu {
-	background-image: url(https://res.landsofhope.com/images/Emerald/bg.jpg);
+	background-image: url(https://lohcdn.com/images/Emerald/bg.jpg);
 	border: 1px solid rgb(47, 146, 98);
 	color: white;
 	font-weight: bold;
@@ -293,7 +293,7 @@ a {
 
 .navborderx,
 .navmenu2 {
-	background-image: url(https://res.landsofhope.com/images/Emerald/c_leftblank.jpg);
+	background-image: url(https://lohcdn.com/images/Emerald/c_leftblank.jpg);
 	height: 22px;
 	background-Color: RGB(31, 22, 13);
 	border: 0px;

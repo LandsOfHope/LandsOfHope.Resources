@@ -105,7 +105,7 @@ select {
 }
 
 .menu {
-   background-image: url(https://res.landsofhope.com/images/Hope/bg.jpg);
+   background-image: url(https://lohcdn.com/images/Hope/bg.jpg);
    color: white;
    font-size: 11px
 }
@@ -167,7 +167,7 @@ a {
 .menuCell {
    color: #DCC397;
    border: 1px inset rgb(60, 60, 60);
-   background-image: url(https://res.landsofhope.com/images/Hope/c_leftblank.jpg);
+   background-image: url(https://lohcdn.com/images/Hope/c_leftblank.jpg);
    background-repeat: repeat-x;
 }
 
@@ -178,7 +178,7 @@ a {
 }
 
 .navmenu {
-   background-image: url(https://res.landsofhope.com/images/Hope/bg.jpg);
+   background-image: url(https://lohcdn.com/images/Hope/bg.jpg);
    border: 1px solid rgb(60, 60, 60);
    color: white;
    font-weight: bold;
@@ -243,7 +243,7 @@ a {
 
 .navborderx,
 .navmenu2 {
-   background-image: url(https://res.landsofhope.com/images/Hope/c_leftblank.jpg);
+   background-image: url(https://lohcdn.com/images/Hope/c_leftblank.jpg);
    height: 22px;
    background-Color: RGB(31, 22, 13);
    border: 0;
@@ -294,7 +294,7 @@ a {
 }
 
 .barCell2 {
-   background-image: url(https://res.landsofhope.com/images/Hope/bg.jpg);
+   background-image: url(https://lohcdn.com/images/Hope/bg.jpg);
    background-position: top right;
    background-color: RGB(31, 22, 13);
    border: 1px solid rgb(121, 108, 92);
@@ -311,7 +311,7 @@ a {
 }
 
 .jfbb {
-   background-image: url(https://res.landsofhope.com/images/Hope/bg.jpg);
+   background-image: url(https://lohcdn.com/images/Hope/bg.jpg);
    background-Color: RGB(31, 22, 13);
    padding-left: 4;
    border: 2 outset rgb(121, 108, 92);

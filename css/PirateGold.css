@@ -183,7 +183,7 @@ select {
 }
 
 .menu {
-	background-image: url(https://res.landsofhope.com/images/PirateGold/bg.jpg);
+	background-image: url(https://lohcdn.com/images/PirateGold/bg.jpg);
 	color: white;
 	font-size: 11px;
 }
@@ -239,7 +239,7 @@ a {
 .menuCell {
 	color: #DCC397;
 	border: 1px inset RGB(176, 137, 61);
-	background-image: url(https://res.landsofhope.com/images/PirateGold/c_leftblank.png);
+	background-image: url(https://lohcdn.com/images/PirateGold/c_leftblank.png);
 	background-repeat: repeat-x;
 }
 
@@ -249,7 +249,7 @@ a {
 }
 
 .navmenu {
-	background-image: url(https://res.landsofhope.com/images/PirateGold/bg.jpg);
+	background-image: url(https://lohcdn.com/images/PirateGold/bg.jpg);
 	border: 1px solid RGB(176, 137, 61);
 	color: white;
 	font-weight: bold;
@@ -304,7 +304,7 @@ a {
 
 .navborderx,
 .navmenu2 {
-	background-image: url(https://res.landsofhope.com/images/PirateGold/c_leftblank.png);
+	background-image: url(https://lohcdn.com/images/PirateGold/c_leftblank.png);
 	height: 22px;
 	background-Color: RGB(45, 24, 1);
 	border: 0px;
