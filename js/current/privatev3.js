@@ -1,5 +1,4 @@
-< !--
-	var mlohChatPrivateChat = 0;
+var mlohChatPrivateChat = 0;
 var dragapproved = false
 var minrestore = 0
 var lastprivatepage = '';
@@ -72,5 +71,3 @@ function closeok() {
 		closeit();
 	}
 }
-
-// -->
