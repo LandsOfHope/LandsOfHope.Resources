@@ -1,5 +1,8 @@
 body {
-	background-color: black; color: white; font-family: Verdana, Helvetica, Tahoma; font-size: 8pt;
+	background-color: black;
+	color: white;
+	font-family: Verdana, Helvetica, Tahoma;
+	font-size: 8pt;
 }
 
 /**
@@ -18,25 +21,28 @@ body {
 	 * I find setting the color in the css gives me more flexibility 
 	 * than the PNG solution.
 	 */
-	background-color:transparent !important;
+	background-color: transparent !important;
 	background-color: #333333;
 	/* this hack is for opera support
 	 * you can uncomment the background-image if you don't care about opera.
 	 * this gives you the flexibility to use any bg color that you want, instead of the png
 	 */
-	background-image/**/: url("/maskBG.png") !important; // For browsers Moz, Opera, etc.
-	background-image:none;
+	/* For browsers Moz, Opera, etc. */
+	background-image: url("https://res.landsofhope.com/maskBG.png") !important;
+	background-image: none;
 	background-repeat: repeat;
-	display:none;
+	display: none;
 }
+
 #popupContainer {
 	position: absolute;
 	z-index: 201;
 	top: 0px;
 	left: 0px;
-	display:none;
+	display: none;
 	padding: 0px;
 }
+
 #popupInner {
 	border: 2px solid #000000;
 }
@@ -48,6 +54,7 @@ body {
 	position: relative;
 	z-index: 202;
 }
+
 #popupControls {
 	float: right;
 	cursor: pointer;
@@ -57,60 +64,67 @@ body {
 	height: 22px;
 	background-Color: RGB(45, 24, 1);
 	border: 0px;
-	color:white;
+	color: white;
 	font-weight: bold;
 	font-family: Helvetica;
 	font-size: 11px;
-	vertical-align:top;
+	vertical-align: top;
 }
 
 button {
 	color: #E6DABF;
 	cursor: pointer;
-	background-color:#423223;
+	background-color: #423223;
 	border-width: 1px;
 	border-color: #CC9933;
 	font-family: Verdana;
 	font-size: 8pt;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
 	font-family: Verdana;
 	font-size: 8pt;
-	color: #DCC397; 
+	color: #DCC397;
 	border-width: 1px;
 	border-color: #CC9933;
-	background-color: RGB(71,59,44);
+	background-color: RGB(71, 59, 44);
 }
 
 div.boxx {
-     border: 1px solid #993300;
-     position: relative;
-     width: 100%;
+	border: 1px solid #993300;
+	position: relative;
+	width: 100%;
 	height: 100%;
 }
 
 div.boxx_contents {
-     background-color:transparent; color: RGB(255, 241, 194);
-     height: 100%;
-     position: relative;
-     width: 100%;
-     z-index: 101;
-}
-div.boxx_background {
-     background-color: black; color: RGB(237, 214, 139);
-     height: 100%;
-     filter:alpha(opacity=60); /* IE's opacity*/
-     left: 0px;
-     opacity: 0.60;
-     position: absolute;
-     top: 0px;
-     width: 100%;
-     z-index: 99;
+	background-color: transparent;
+	color: RGB(255, 241, 194);
+	height: 100%;
+	position: relative;
+	width: 100%;
+	z-index: 101;
 }
 
-.header, .title {
-	color:white; 
+div.boxx_background {
+	background-color: black;
+	color: RGB(237, 214, 139);
+	height: 100%;
+	filter: alpha(opacity=60);
+	/* IE's opacity*/
+	left: 0px;
+	opacity: 0.60;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	z-index: 99;
+}
+
+.header,
+.title {
+	color: white;
 	font-weight: bold;
 	font-family: Verdana, Helvetica;
 	margin: 0px;
@@ -120,8 +134,8 @@ div.boxx_background {
 }
 
 .theader {
-	
-	color:white; 
+
+	color: white;
 	font-weight: bold;
 	font-family: Verdana, Helvetica;
 	margin: 0px;
@@ -142,6 +156,7 @@ table {
 #tred {
 	color: #ff6666;
 }
+
 #tgreen {
 	color: #66ff66;
 }
@@ -202,6 +217,7 @@ table {
 	border: 1px solid #993300;
 	font-size: 8pt;
 }
+
 .color2 {
 	background-color: #110000;
 	border: 1px solid #330000;
@@ -209,9 +225,21 @@ table {
 
 }
 
-ba {color:#DCC397; text-decoration:none;}
-a {color:#E6DABF; text-decoration:none; cursor: pointer;}
-a:hover{color:#E9BA68; text-decoration:underline;}
+ba {
+	color: #DCC397;
+	text-decoration: none;
+}
+
+a {
+	color: #E6DABF;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a:hover {
+	color: #E9BA68;
+	text-decoration: underline;
+}
 
 #pages {
 	font-size: 8pt;

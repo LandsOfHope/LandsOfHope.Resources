@@ -1,0 +1,787 @@
+.perc {
+   color: white;
+   filter: Glow(Color=#000000, Strength=2);
+   font-family: Tahoma;
+   font-size: 8pt;
+   text-align: center;
+}
+
+.perc2 {
+   filter: Glow(Color=#000000, Strength=2);
+   font-family: Tahoma;
+   font-size: 8pt;
+   text-align: center;
+}
+
+input,
+textarea,
+select {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   color: #DCC397;
+   border: 1px inset RGB(48, 36, 22);
+   background-color: RGB(71, 59, 44);
+}
+
+.a0 {
+   color: gold;
+   font-weight: bold;
+}
+
+.a1 {
+   color: green;
+   font-weight: bold;
+}
+
+.a2 {
+   color: red;
+   font-weight: bold;
+}
+
+.zoomt {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   color: white;
+   border: 1px inset RGB(48, 36, 22);
+   background-color: RGB(71, 59, 44);
+}
+
+.pbtn {
+   color: RGB(238, 210, 173);
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   cursor: pointer;
+   font-weight: bold;
+   background-color: RGB(39, 27, 13);
+   border: 1px solid;
+   border-top-color: RGB(62, 44, 32);
+   border-left-color: RGB(62, 44, 32);
+   border-right-color: RGB(48, 36, 22);
+   border-bottom-color: RGB(48, 36, 22);
+}
+
+.btn {
+   color: RGB(238, 210, 173);
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   cursor: pointer;
+   font-weight: bold;
+   background-color: #4C3F2F;
+   border: 1px solid;
+   border-top-color: RGB(62, 44, 32);
+   border-left-color: RGB(62, 44, 32);
+   border-right-color: RGB(48, 36, 22);
+   border-bottom-color: RGB(48, 36, 22);
+   filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#4C3F2F', EndColorStr='#2C1E11');
+}
+
+.btnhov {
+   color: RGB(115, 102, 86);
+   background-color: RGB(66, 50, 35);
+   border-top-color: RGB(48, 36, 22);
+   border-left-color: RGB(48, 36, 22);
+   border-right-color: RGB(62, 44, 32);
+   border-bottom-color: RGB(62, 44, 32);
+}
+
+
+body {
+   background-color: RGB(31, 22, 13);
+   color: #DCC397;
+}
+
+body,
+textarea,
+select {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   scrollbar-face-color: RGB(41, 31, 17);
+   scrollbar-highlight-color: RGB(115, 102, 86);
+   scrollbar-shadow-color: RGB(62, 44, 32);
+
+   scrollbar-3dlight-color: RGB(62, 44, 32);
+   scrollbar-arrow-color: RGB(115, 102, 86);
+   scrollbar-track-color: RGB(31, 22, 13);
+   scrollbar-darkshadow-color: RGB(48, 36, 22);
+}
+
+.menu {
+   background-image: url(https://res.landsofhope.com/images/Hope/bg.jpg);
+}
+
+.fight {
+   padding-left: 9px;
+   font-weight: normal;
+   font-family: Verdana;
+   font-size: 9px;
+   vertical-align: top;
+   background-color: RGB(31, 22, 13);
+}
+
+
+table {
+   color: white;
+   font-weight: normal;
+   font-family: Verdana;
+   font-size: 12px
+}
+
+a:hover {
+   color: #DCC397;
+   text-decoration: underline;
+}
+
+a {
+   text-decoration: none;
+   color: #DCC397
+}
+
+.cb {
+   width: 15;
+   height: 15
+}
+
+.boldCell {
+   font-weight: bold;
+   font-family: Verdana;
+   font-size: 11px;
+   vertical-align: top
+}
+
+.weakCell {
+   font-weight: normal;
+   font-family: Verdana;
+   font-size: 11px;
+   vertical-align: top
+}
+
+.weakerCell {
+   padding-left: 9px;
+   font-weight: normal;
+   font-family: Verdana;
+   font-size: 9px;
+   vertical-align: top
+}
+
+.menuCell {
+   color: #DCC397;
+   border: 1px inset rgb(60, 60, 60);
+   background-image: url(https://res.landsofhope.com/images/Hope/c_leftblank.jpg);
+   background-repeat: repeat-x;
+}
+
+.copyright {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   color: #B88B58;
+}
+
+.navmenu {
+   background-image: url(https://res.landsofhope.com/images/Hope/bg.jpg);
+   border: 1px solid rgb(60, 60, 60);
+   color: white;
+   font-weight: bold;
+   font-family: arial;
+   font-size: 12px;
+   vertical-align: top;
+}
+
+.navmenunb {
+   background-image: url(https://res.landsofhope.com/images/Hope/bg.jpg);
+   color: white;
+   font-weight: bold;
+   font-family: arial;
+   font-size: 11px;
+   vertical-align: top
+}
+
+.Popup,
+.New {
+   border: 1px solid outset #333333;
+   background-Color: RGB(31, 22, 13);
+   color: rgb(183, 197, 206);
+   font-family: arial;
+   font-size: 11px;
+   vertical-align: top
+}
+
+.Zoom,
+.zoom {
+   background-Color: RGB(31, 22, 13);
+   color: white;
+   font-weight: bold;
+   font-family: arial;
+   font-size: 11px;
+   vertical-align: top
+}
+
+.nav2,
+.nav3 {
+   background-Color: RGB(31, 22, 13);
+   border: 1px solid rgb(60, 60, 60);
+   margin: 1px;
+   color: white;
+   font-weight: bold;
+   font-family: arial;
+   font-size: 11px;
+   vertical-align: top
+}
+
+.nav4 {
+   background-Color: RGB(31, 22, 13);
+   border: 1px solid rgb(60, 60, 60);
+   margin: 1px;
+   color: white;
+   font-weight: normal;
+   font-family: arial;
+   font-size: 11px;
+   vertical-align: top
+}
+
+.navborder {
+   background-Color: RGB(31, 22, 13);
+   padding-left: 4;
+   border: 2px outset rgb(121, 108, 92);
+   color: white;
+   font-weight: bold;
+   font-family: Helvetica;
+   font-size: 11px;
+   vertical-align: top
+}
+
+.navborderx,
+.navmenu2 {
+   background-image: url(https://res.landsofhope.com/images/Hope/c_leftblank.jpg);
+   height: 22px;
+   background-Color: RGB(31, 22, 13);
+   padding-left: 54;
+   border: 0;
+   color: white;
+   font-weight: bold;
+   font-family: Comic Sans MS;
+   font-size: 11px;
+   vertical-align: top
+}
+
+.title {
+   color: gold;
+   font-weight: bold;
+   font-family: Helvetica;
+   font-size: 11px;
+   vertical-align: top;
+}
+
+.itemText {
+   font: 11px Arial
+}
+
+.menuCell {
+   border: 1px solid rgb(60, 60, 60);
+   width: 110;
+   color: #DCC397;
+   font-size: 9px;
+   font-weight: normal;
+   font-family: Verdana;
+   vertical-align: top;
+   cursor: pointer
+}
+
+.barCell {
+   width: 110;
+   background-position: top right;
+   background-repeat: no-repeat;
+   background-color: RGB(31, 22, 13);
+   border: 1px solid rgb(121, 108, 92);
+   font-size: 9px;
+   font-weight: normal;
+   font-family: Verdana;
+   vertical-align: top;
+   cursor: pointer
+}
+
+.barCell2 {
+   background-image: url(https://res.landsofhope.com/images/Hope/bg.jpg);
+   background-position: top right;
+   background-color: RGB(31, 22, 13);
+   border: 1px solid rgb(121, 108, 92);
+   font-size: 9px;
+   font-weight: normal;
+   font-family: Verdana;
+   vertical-align: top;
+   cursor: pointer
+}
+
+.iT {
+   font: 11px Arial;
+   cursor: pointer
+}
+
+.jfbb {
+   background-image: url(https://res.landsofhope.com/images/Hope/bg.jpg);
+   background-Color: RGB(31, 22, 13);
+   padding-left: 4;
+   border: 2px outset rgb(121, 108, 92);
+   color: white;
+   font-weight: normal;
+   font-family: Helvetica;
+   font-size: 11px;
+   vertical-align: top
+}
+
+
+#ts {
+   color: #D7D7D7;
+   font-size: 9px;
+}
+
+#t {
+   color: #D7D7D7
+}
+
+#pk {
+   color: rgb(246, 75, 75)
+}
+
+#npk {
+   color: rgb(110, 143, 235)
+}
+
+#tred {
+   color: rgb(220, 81, 81)
+}
+
+#torange {
+   color: orange
+}
+
+#tgold {
+   color: gold
+}
+
+#tgreen {
+   color: rgb(81, 220, 81)
+}
+
+#treds {
+   color: rgb(220, 81, 81)
+}
+
+#tgreens {
+   color: rgb(81, 220, 81)
+}
+
+#tblue {
+   color: rgb(81, 81, 220)
+}
+
+#tcyan {
+   color: cyan
+}
+
+#tmagenta {
+   color: magenta
+}
+
+#tdemon {
+   color: #CC3366
+}
+
+#theal {
+   color: white
+}
+
+#tmagic {
+   color: #BDBCCD
+}
+
+.mapcolb {
+   width: 20;
+   height: 20;
+   background-repeat: no-repeat;
+   padding: 0;
+   margin: 0;
+}
+
+.v {
+   width: 10;
+   height: 10;
+   cursor: pointer
+}
+
+.c3325150 {
+   width: 20;
+   height: 20;
+   background-color: gold;
+   cursor: pointer;
+}
+
+.c0 {
+   width: 20;
+   height: 20;
+   background-color: rgb(0, 0, 0);
+   cursor: pointer;
+}
+
+.c162713 {
+   width: 20;
+   height: 20;
+   background-color: rgb(153, 123, 2);
+   cursor: pointer;
+}
+
+.c175272 {
+   width: 20;
+   height: 20;
+   background-color: rgb(168, 172, 2);
+   cursor: pointer;
+}
+
+.c202699 {
+   width: 20;
+   height: 20;
+   background-color: rgb(203, 23, 3);
+   cursor: pointer;
+}
+
+.c388893 {
+   width: 20;
+   height: 20;
+   background-color: rgb(29, 239, 5);
+   cursor: pointer;
+}
+
+.c1280602 {
+   width: 20;
+   height: 20;
+   background-color: rgb(90, 138, 19);
+   cursor: pointer;
+}
+
+.c1918761 {
+   width: 20;
+   height: 20;
+   background-color: rgb(41, 71, 29);
+   cursor: pointer;
+}
+
+.c2017374 {
+   width: 20;
+   height: 20;
+   background-color: rgb(94, 200, 30);
+   cursor: pointer;
+}
+
+.c2249983 {
+   width: 20;
+   height: 20;
+   background-color: rgb(255, 84, 34);
+   cursor: pointer;
+}
+
+.c2651456 {
+   width: 20;
+   height: 20;
+   background-color: rgb(64, 117, 40);
+   cursor: pointer;
+}
+
+.c3239982 {
+   width: 20;
+   height: 20;
+   background-color: rgb(46, 112, 49);
+   cursor: pointer;
+}
+
+.c3835190 {
+   width: 20;
+   height: 20;
+   background-color: rgb(54, 133, 58);
+   cursor: pointer;
+}
+
+.c4017729 {
+   width: 20;
+   height: 20;
+   background-color: rgb(65, 78, 61);
+   cursor: pointer;
+}
+
+.c4020109 {
+   width: 20;
+   height: 20;
+   background-color: rgb(141, 87, 61);
+   cursor: pointer;
+}
+
+.c4176526 {
+   width: 20;
+   height: 20;
+   background-color: rgb(142, 186, 63);
+   cursor: pointer;
+}
+
+.c4276545 {
+   width: 20;
+   height: 20;
+   background-color: rgb(65, 65, 65);
+   cursor: pointer;
+}
+
+.c4307045 {
+   width: 20;
+   height: 20;
+   background-color: rgb(101, 184, 65);
+   cursor: pointer;
+}
+
+.c4347799 {
+   width: 20;
+   height: 20;
+   background-color: rgb(151, 87, 66);
+   cursor: pointer;
+}
+
+.c4818740 {
+   width: 20;
+   height: 20;
+   background-color: rgb(52, 135, 73);
+   cursor: pointer;
+}
+
+.c4953644 {
+   width: 20;
+   height: 20;
+   background-color: rgb(44, 150, 75);
+   cursor: pointer;
+}
+
+.c4955288 {
+   width: 20;
+   height: 20;
+   background-color: rgb(152, 156, 75);
+   cursor: pointer;
+}
+
+.c5347207 {
+   width: 20;
+   height: 20;
+   background-color: rgb(135, 151, 81);
+   cursor: pointer;
+}
+
+.c5820911 {
+   width: 20;
+   height: 20;
+   background-color: rgb(239, 209, 88);
+   cursor: pointer;
+}
+
+.c5871160 {
+   width: 20;
+   height: 20;
+   background-color: rgb(56, 150, 89);
+   cursor: pointer;
+}
+
+.c6321997 {
+   width: 20;
+   height: 20;
+   background-color: rgb(77, 119, 96);
+   cursor: pointer;
+}
+
+.c6381921 {
+   width: 20;
+   height: 20;
+   background-color: rgb(97, 97, 97);
+   cursor: pointer;
+}
+
+.c6583140 {
+   width: 20;
+   height: 20;
+   background-color: rgb(100, 115, 100);
+   cursor: pointer;
+}
+
+.c6677739 {
+   width: 20;
+   height: 20;
+   background-color: rgb(235, 228, 101);
+   cursor: pointer;
+}
+
+.c6788284 {
+   width: 20;
+   height: 20;
+   background-color: rgb(188, 148, 103);
+   cursor: pointer;
+}
+
+.c7656406 {
+   width: 20;
+   height: 20;
+   background-color: rgb(214, 211, 116);
+   cursor: pointer;
+}
+
+.c8555948 {
+   width: 20;
+   height: 20;
+   background-color: rgb(172, 141, 130);
+   cursor: pointer;
+}
+
+.c8716287 {
+   width: 20;
+   height: 20;
+   background-color: rgb(255, 255, 132);
+   cursor: pointer;
+}
+
+.c8750469 {
+   width: 20;
+   height: 20;
+   background-color: rgb(133, 133, 133);
+   cursor: pointer;
+}
+
+.c8877669 {
+   width: 20;
+   height: 20;
+   background-color: rgb(101, 118, 135);
+   cursor: pointer;
+}
+
+.c9006902 {
+   width: 20;
+   height: 20;
+   background-color: rgb(54, 111, 137);
+   cursor: pointer;
+}
+
+.c9228409 {
+   width: 20;
+   height: 20;
+   background-color: rgb(121, 208, 140);
+   cursor: pointer;
+}
+
+.c9410769 {
+   width: 20;
+   height: 20;
+   background-color: rgb(209, 152, 143);
+   cursor: pointer;
+}
+
+.c9885867 {
+   width: 20;
+   height: 20;
+   background-color: rgb(171, 216, 150);
+   cursor: pointer;
+}
+
+.c10851975 {
+   width: 20;
+   height: 20;
+   background-color: rgb(135, 150, 165);
+   cursor: pointer;
+}
+
+.c12238535 {
+   width: 20;
+   height: 20;
+   background-color: rgb(199, 190, 186);
+   cursor: pointer;
+}
+
+.c12751662 {
+   width: 20;
+   height: 20;
+   background-color: rgb(46, 147, 194);
+   cursor: pointer;
+}
+
+.c13092807 {
+   width: 20;
+   height: 20;
+   background-color: rgb(199, 199, 199);
+   cursor: pointer;
+}
+
+.c13520962 {
+   width: 20;
+   height: 20;
+   background-color: rgb(66, 80, 206);
+   cursor: pointer;
+}
+
+.c15763522 {
+   width: 20;
+   height: 20;
+   background-color: rgb(66, 136, 240);
+   cursor: pointer;
+}
+
+.c16383408 {
+   width: 20;
+   height: 20;
+   background-color: rgb(176, 253, 249);
+   cursor: pointer;
+}
+
+.c16383969 {
+   width: 20;
+   height: 20;
+   background-color: rgb(225, 255, 249);
+   cursor: pointer;
+}
+
+.c16708047 {
+   width: 20;
+   height: 20;
+   background-color: rgb(207, 241, 254);
+   cursor: pointer;
+}
+
+.c16774993 {
+   width: 20;
+   height: 20;
+   background-color: rgb(81, 247, 255);
+   cursor: pointer;
+}
+
+.c16777215 {
+   width: 20;
+   height: 20;
+   background-color: rgb(255, 255, 255);
+   cursor: pointer;
+}
+
+.c9219240 {
+   width: 20;
+   height: 20;
+   background-color: RGB(168, 172, 140);
+   cursor: pointer;
+}
+
+.c10475502 {
+   width: 20;
+   height: 20;
+   background-color: RGB(238, 215, 159);
+   cursor: pointer;
+}
+
+.c14132405 {
+   width: 20;
+   height: 20;
+   background-color: RGB(181, 164, 215);
+   cursor: pointer;
+}
+
+.c14258633 {
+   width: 20;
+   height: 20;
+   background-color: RGB(201, 145, 217);
+   cursor: pointer;
+}

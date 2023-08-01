@@ -1,0 +1,351 @@
+input,
+textarea,
+select {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   color: #DCC397;
+   border: 1px inset RGB(48, 36, 22);
+   background-color: RGB(71, 59, 44);
+}
+
+.zoomt {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   color: white;
+   border: 1px inset RGB(48, 36, 22);
+   background-color: RGB(71, 59, 44);
+}
+
+.pbtn {
+   color: RGB(238, 210, 173);
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   cursor: pointer;
+   font-weight: bold;
+   background-color: RGB(39, 27, 13);
+   border: 1px solid;
+   border-top-color: RGB(62, 44, 32);
+   border-left-color: RGB(62, 44, 32);
+   border-right-color: RGB(48, 36, 22);
+   border-bottom-color: RGB(48, 36, 22);
+}
+
+.btn {
+   color: RGB(238, 210, 173);
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   cursor: pointer;
+   font-weight: bold;
+   background-color: #4C3F2F;
+   border: 1px solid;
+   border-top-color: RGB(62, 44, 32);
+   border-left-color: RGB(62, 44, 32);
+   border-right-color: RGB(48, 36, 22);
+   border-bottom-color: RGB(48, 36, 22);
+   filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#4C3F2F', EndColorStr='#2C1E11');
+}
+
+.btnhov {
+   color: RGB(115, 102, 86);
+   background-color: RGB(66, 50, 35);
+   border-top-color: RGB(48, 36, 22);
+   border-left-color: RGB(48, 36, 22);
+   border-right-color: RGB(62, 44, 32);
+   border-bottom-color: RGB(62, 44, 32);
+}
+
+
+body {
+   background-color: #706747;
+   color: #DCC397;
+}
+
+body,
+textarea,
+select {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   scrollbar-face-color: RGB(41, 31, 17);
+   scrollbar-highlight-color: RGB(115, 102, 86);
+   scrollbar-shadow-color: RGB(62, 44, 32);
+
+   scrollbar-3dlight-color: RGB(62, 44, 32);
+   scrollbar-arrow-color: RGB(115, 102, 86);
+   scrollbar-track-color: RGB(31, 22, 13);
+   scrollbar-darkshadow-color: RGB(48, 36, 22);
+}
+
+.menu {
+   background-image: url(https://res.landsofhope.com/images/Hope/bg.jpg);
+}
+
+.fight {
+   padding-left: 9px;
+   font-weight: normal;
+   font-family: Verdana;
+   font-size: 9px;
+   vertical-align: top;
+   background-color: RGB(31, 22, 13);
+}
+
+
+table {
+   color: white;
+   font-weight: normal;
+   font-family: Verdana;
+   font-size: 12px
+}
+
+a:hover {
+   color: #DCC397;
+   text-decoration: underline;
+}
+
+a {
+   text-decoration: none;
+   color: #DCC397
+}
+
+.cb {
+   width: 15;
+   height: 15
+}
+
+.weakCell {
+   font-weight: normal;
+   font-family: Verdana;
+   font-size: 11px;
+   vertical-align: top
+}
+
+.weakerCell {
+   padding-left: 9px;
+   font-weight: normal;
+   font-family: Verdana;
+   font-size: 9px;
+   vertical-align: top
+}
+
+.menuCell {
+   color: #DCC397;
+   border: 1px inset rgb(60, 60, 60);
+   background-image: url(https://res.landsofhope.com/images/Hope/c_leftblank.jpg);
+   background-repeat: repeat-x;
+}
+
+.copyright {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   color: #B88B58;
+}
+
+.navmenu {
+   background-image: url(https://res.landsofhope.com/images/Hope/bg.jpg);
+   border: 1px solid rgb(60, 60, 60);
+   color: white;
+   font-weight: bold;
+   font-family: arial;
+   font-size: 12px;
+   vertical-align: top;
+}
+
+.navmenunb {
+   background-image: url(https://res.landsofhope.com/images/Hope/bg.jpg);
+   color: white;
+   font-weight: bold;
+   font-family: arial;
+   font-size: 11px;
+   vertical-align: top
+}
+
+.Popup,
+.New {
+   border: 1px solid #333333;
+   background-Color: RGB(31, 22, 13);
+   color: rgb(183, 197, 206);
+   font-family: arial;
+   font-size: 11px;
+   vertical-align: top
+}
+
+.Zoom,
+.zoom {
+   background-Color: RGB(31, 22, 13);
+   color: white;
+   font-weight: bold;
+   font-family: arial;
+   font-size: 11px;
+   vertical-align: top
+}
+
+.nav2,
+.nav3 {
+   background-Color: RGB(31, 22, 13);
+   border: 1px solid rgb(60, 60, 60);
+   margin: 1px;
+   color: white;
+   font-weight: bold;
+   font-family: arial;
+   font-size: 11px;
+   vertical-align: top
+}
+
+.nav4 {
+   background-Color: RGB(31, 22, 13);
+   border: 1px solid rgb(60, 60, 60);
+   color: white;
+   font-weight: normal;
+   font-family: arial;
+   font-size: 11px;
+   vertical-align: top
+}
+
+.navborder {
+   background-Color: RGB(31, 22, 13);
+   padding-left: 4;
+   border: 2px outset rgb(121, 108, 92);
+   color: white;
+   font-weight: bold;
+   font-family: Helvetica;
+   font-size: 11px;
+   vertical-align: top
+}
+
+.navborderx,
+.navmenu2,
+.boldcell {
+   height: 35px;
+   padding-left: 24;
+   border: 0;
+   color: white;
+   font-weight: bold;
+   font-family: Papyrus, Helvetica;
+   font-size: 13pt;
+   vertical-align: top
+}
+
+.title,
+.boldcell {
+   color: white;
+   font-weight: bold;
+   filter: Glow(Color=#000000, Strength=2);
+   font-family: Papyrus, Helvetica;
+   font-size: 11pt;
+   vertical-align: top;
+}
+
+.perc {
+   color: white;
+   filter: Glow(Color=#000000, Strength=2);
+   font-family: Tahoma;
+   font-size: 8pt;
+   text-align: center;
+}
+
+.tab {
+   color: white;
+   filter: Glow(Color=#000000, Strength=2);
+   font-family: Papyrus, Helvetica;
+   font-size: 10pt;
+}
+
+.itemText {
+   font: 11px Arial;
+}
+
+.menuCell {
+   border: 1px solid rgb(60, 60, 60);
+   width: 110px;
+   color: #DCC397;
+   font-size: 9px;
+   font-weight: normal;
+   font-family: Verdana;
+   vertical-align: top;
+   cursor: pointer
+}
+
+.barCell {
+   width: 110;
+   background-position: top right;
+   background-repeat: no-repeat;
+   background-color: RGB(31, 22, 13);
+   border: 1px solid rgb(121, 108, 92);
+   font-size: 9px;
+   font-weight: normal;
+   font-family: Verdana;
+   vertical-align: top;
+   cursor: pointer
+}
+
+.barCell2 {
+   background-image: url(https://res.landsofhope.com/images/Hope/bg.jpg);
+   background-position: top right;
+   background-color: RGB(31, 22, 13);
+   border: 1px solid rgb(121, 108, 92);
+   font-size: 9px;
+   font-weight: normal;
+   font-family: Verdana;
+   vertical-align: top;
+   cursor: pointer
+}
+
+#ts {
+   color: #D7D7D7;
+   font-size: 9px;
+}
+
+#t {
+   color: #D7D7D7
+}
+
+#pk {
+   color: rgb(246, 75, 75)
+}
+
+#npk {
+   color: rgb(110, 143, 235)
+}
+
+#tred {
+   color: rgb(220, 81, 81)
+}
+
+#tgold {
+   color: gold
+}
+
+#tgreen {
+   color: rgb(81, 220, 81)
+}
+
+#treds {
+   color: rgb(220, 81, 81)
+}
+
+#tgreens {
+   color: rgb(81, 220, 81)
+}
+
+#tblue {
+   color: rgb(81, 81, 220)
+}
+
+#tcyan {
+   color: cyan
+}
+
+#tmagenta {
+   color: magenta
+}
+
+#tdemon {
+   color: #CC3366
+}
+
+#theal {
+   color: white
+}
+
+#tmagic {
+   color: #BDBCCD
+}
