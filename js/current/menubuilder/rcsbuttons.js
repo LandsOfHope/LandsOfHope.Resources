@@ -86,7 +86,7 @@ function ShowSubMenu(b) {
 
 	document.body.appendChild(rcspopdiv);
 	clearTimeout(rcb);
-	rcb = setTimeout('HideSubMenu();', 2500);
+	rcb = setTimeout(HideSubMenu, 2500);
 
 
 }
@@ -104,7 +104,7 @@ function findPos(obj) {
 
 function RCSSMOver(b, x) {
 	clearTimeout(rcb);
-	rcb = setTimeout('HideSubMenu();', 2500);
+	rcb = setTimeout(HideSubMenu, 2500);
 
 	var bb = getObj('rcssm' + x);
 	if (bb != null) {
@@ -141,7 +141,7 @@ function RCSSMClick(b, x) {
 
 function RCSBOver(b) {
 	clearTimeout(rcb);
-	rcb = setTimeout('HideSubMenu();', 2500);
+	rcb = setTimeout(HideSubMenu, 2500);
 	var bb = getObj('rcsbutton' + b);
 	if (bb != null) {
 		if (rcsbuttons[b] != null) {
@@ -172,7 +172,7 @@ function RCSBClick(b) {
 	if (bb != null) {
 		if (rcsbuttons[b] != null) {
 			bb.style.backgroundImage = 'URL("https://lohcdn.com/menubuilder/images/' + rcsbuttons[b].picture3 + '")';
-			rcsbuttons[b].clicktimer = setTimeout('RCSBOver(' + b + ');', 150);
+			rcsbuttons[b].clicktimer = setTimeout(() => RCSBOver(b), 150);
 			if (rcsbuttons[b].url != '') {
 				window.location.assign(rcsbuttons[b].url);
 			}

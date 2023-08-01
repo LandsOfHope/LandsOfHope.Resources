@@ -134,11 +134,11 @@ function refreshTime() {
 	}
 	var localti = window.top.timeindex;
 	if (tmok == 1) {
-		timer = setTimeout("refreshTime()", 10000);
+		timer = setTimeout(refreshTime, 10000);
 	}
 }
 
 if (timer != 0) {
 	clearTimeout(timer);
 }
-timer = setTimeout("refreshTime()", 1000);
+timer = setTimeout(refreshTime, 1000);

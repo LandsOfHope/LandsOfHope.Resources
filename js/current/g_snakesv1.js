@@ -161,7 +161,7 @@ function runTimer() {
 		document.images[i].src = head;
 		document.images[food].src = marker;
 		clearTimeout(tScroll);
-		tScroll = window.setTimeout("runTimer();", speed);
+		tScroll = window.setTimeout(runTimer, speed);
 	}
 }
 

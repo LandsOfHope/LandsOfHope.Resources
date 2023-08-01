@@ -34,7 +34,7 @@ function AC(qn, Quality, Color, MakeID, QueueID, Material, Expr2, PictureID, Ite
 	//l="' + Material + '" v=' + MakeID + ' value=' + QueueID  + ' q="' + (Quality == 'U' ? 'Useless' :(Quality == 'N' ? 'Uncommon' :(Quality == 'C' ? 'Common' :(Quality == 'U' ? 'Unique' : (Quality == 'V' ? 'Very Rare' :(Quality == 'R' ? 'Rare' :(Quality == 'A' ? 'Artifact' :'Unknown'))))))) + '" class="it" 
 
 	document.write('<tr id="Q' + Timers + '" onmouseover="PC(' + QC + ')" onmouseout="RC(' + QC + ')"  onclick="DC(' + QC + ')" style="color: ' + Color + '; padding-left: 5px"><td width=20 class=\'weakercell\' style=\'background-color:' + BGCOLOR_S + '; color: white;\'><b>' + qn + '</b>.</td><td><img src=\'' + IPath + (PictureID == '' ? 'na.gif' : PictureID) + '\' width=15 height=15></td><td>' + (Other == 1 ? 'Making' : 'Queued') + '</td><td>' + Material + ' ' + ItemName + (Quantity > 1 ? ' * ' + Quantity : '') + '</td><td>' + (Expr4 < 0 ? 'Done' : window.top.HSM(Expr4) + '') + '</td><td>' + (Xp < 0 ? 'None' : Xp) + '</td></tr>');
-	Timers2[Timers] = setTimeout('RuF(' + Timers + ')', 5000);
+	Timers2[Timers] = setTimeout(() => RuF(Timers), 5000);
 	Timers = Timers + 1;
 
 	//document.write('<tr id="M' + QC + '" onclick="DC(' + MC  + ')" onmouseout="RC(' + MC  + ')" onmouseover="PC(' + MC  + ')"><td width=40><img width=40 height=40 src="' + IPath + (PictureID == '' || PictureID == '0' ? 'na.gif' : PictureID) + '"></td><td valign=top width=250><b style="color: ' + Color + '">' + fn + '</b><br>Leader: ' + fln + '<br><center>' + ft + '</center></td></tr>');
@@ -71,7 +71,7 @@ function RuF(v) {
 		Queue[v].t = Math.abs(Queue[v].t) - 5;
 		Ref2.cells[4].innerHTML = window.top.HSM(Queue[v].t);
 		clearTimeout(Timers2[v]);
-		Timers2[v] = setTimeout('RuF(' + v + ')', 5000);
+		Timers2[v] = setTimeout(() => RuF(v), 5000);
 	}
 }
 

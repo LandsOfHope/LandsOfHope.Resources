@@ -158,7 +158,7 @@ function SM(stuff, lm, popup, p) {
 		HM3(lm, mymenu[lm].nodeparent, mymenu[mymenu[lm].nodeparent].nodeparent);
 	}
 	clearTimeout(HideGameMenu);
-	HideGameMenu = setTimeout('window.top.HM3(0,0,0);', 1500);
+	HideGameMenu = setTimeout(() => window.top.HM3(0, 0, 0), 1500);
 }
 
 function HM3(lm, lm2, lm3) {

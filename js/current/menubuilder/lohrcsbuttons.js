@@ -149,7 +149,7 @@ function RCSBClick(b) {
 	if (bb != null) {
 		if (rcsbuttons[b] != null) {
 			bb.style.backgroundImage = 'URL("https://lohcdn.com/menubuilder/images/' + rcsbuttons[b].picture3 + '")';
-			rcsbuttons[b].clicktimer = setTimeout('RCSBOver(' + b + ');', 150);
+			rcsbuttons[b].clicktimer = setTimeout(() => RCSBOver(b), 150);
 			if (rcsbuttons[b].url != '') {
 				window.location.assign(rcsbuttons[b].url);
 			}

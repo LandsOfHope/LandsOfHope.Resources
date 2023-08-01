@@ -70,7 +70,7 @@ function GoP(p) {
 function TickOn() {
 	Processing = 1;
 	TickUpdate();
-	TickTimer = window.setInterval("TickUpdate()", 2000);
+	TickTimer = window.setInterval(TickUpdate, 2000);
 }
 
 function TickOff() {

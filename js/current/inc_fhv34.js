@@ -72,7 +72,7 @@ function RDS(h, m, s) {
 	window.top.fhh = h;
 	window.top.fhm = m;
 	window.top.fhs = s;
-	AllowMove = setTimeout("RDS2()", 200);
+	AllowMove = setTimeout(RDS2, 200);
 }
 
 function RDS2() {

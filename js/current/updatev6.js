@@ -35,7 +35,7 @@ function update2(blankbox, id, html) {
 
 function updatePrivateMessages(id, html, bottom) {
 	update2('parent.messages', 'pmmessages', html);
-	setTimeout('scrollToBottom2(' + bottom + ');', 10);
+	setTimeout(() => scrollToBottom2(bottom), 10);
 }
 
 function scrollToBottom2(bottom) {

@@ -22,7 +22,7 @@ function RuF(v) {
 		Queue[v].t = Math.abs(Queue[v].t) - 5;
 		Ref2.cells[4].innerHTML = window.top.HSM(Queue[v].t);
 		clearTimeout(Timers2[v]);
-		Timers2[v] = setTimeout('RuF(' + v + ')', 5000);
+		Timers2[v] = setTimeout(() => RuF(v), 5000);
 	}
 }
 
@@ -60,7 +60,7 @@ function AC(Color, value, l, r, n, s, PictureID, Note1, ItemName, Note2, Xp, can
 	Queue[QC] = new newQueue(Color, value, l, r, n, s, PictureID, Note1, ItemName, Note2, Xp, can);
 
 	document.write('<tr id=Q' + Timers + ' onmouseover="PC(' + QC + ')" onmouseout="RC(' + QC + ')"  onclick="DC(' + QC + ')" style="color: ' + Color + '; padding-left: 5px;"><td></td><td width=15><img src=\'' + IPath + (PictureID == '' ? 'na.gif' : PictureID) + '\' width=15 height=15></td><td>' + Note1 + '</td><td>' + ItemName + '</td><td>' + (Note2 <= 0 ? 'Done' : window.top.HSM(Note2) + '') + '</td><td>' + (Xp < 0 ? 'None' : Xp) + '</td></tr>');
-	Timers2[Timers] = setTimeout('RuF(' + Timers + ')', 5000);
+	Timers2[Timers] = setTimeout(() => RuF(Timers), 5000);
 	Timers = Timers + 1;
 	QC = QC + 1;
 }

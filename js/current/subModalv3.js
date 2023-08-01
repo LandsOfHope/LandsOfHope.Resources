@@ -213,25 +213,12 @@ function hidePopWin(callReturnFunc) {
 		} else {
 			gReturnVal2 = null;
 		}
-		window.setTimeout('gReturnFunc(gReturnVal,gPostBack, gReturnVal2);', 1);
+		window.setTimeout(() => gReturnFunc(gReturnVal, gPostBack, gReturnVal2), 1);
 	}
 	gPopFrame.src = gDefaultPage;
 	// display all select boxes
 	if (gHideSelects == true) {
 		displaySelectBoxes();
-	}
-}
-
-/**
- * Sets the popup title based on the title of the html document it contains.
- * Uses a timeout to keep checking until the title is valid.
- */
-function setPopTitle() {
-	return;
-	if (window.frames["popupFrame"].document.title == null) {
-		window.setTimeout("setPopTitle();", 10);
-	} else {
-		document.getElementById("popupTitle").innerHTML = window.frames["popupFrame"].document.title;
 	}
 }
 

@@ -36,13 +36,13 @@ window.onunload = function (evt) {
 
 function CheckTurn() {
 	clearTimeout(CheckTurnTimer);
-	CheckTurnTimer = setTimeout('CheckTurn2();', 5000);
+	CheckTurnTimer = setTimeout(CheckTurn2, 5000);
 }
 
 function CheckTurn2() {
 	window.top.EnterContent2('fhfcheck.asp?s=' + fs + '&s2=' + fs2 + '&left=' + fr0 + '&right=' + fr1)
 	clearTimeout(CheckTurnTimer);
-	CheckTurnTimer = setTimeout('CheckTurn2();', 5000);
+	CheckTurnTimer = setTimeout(CheckTurn2, 5000);
 }
 
 

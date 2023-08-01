@@ -24,27 +24,26 @@ function getXmlHttpRequestObject() {
 	if (window.XMLHttpRequest) {
 		return new XMLHttpRequest();
 	} else {
-	        try{ return new ActiveXObject("MSXML3.XMLHTTP") }catch(e){}
-	        try{ return new ActiveXObject("MSXML2.XMLHTTP.3.0") }catch(e){}
-	        try{ return new ActiveXObject("Msxml2.XMLHTTP") }catch(e){}
-	        try{ return new ActiveXObject("Microsoft.XMLHTTP") }catch(e){}
+		try { return new ActiveXObject("MSXML3.XMLHTTP") } catch (e) { }
+		try { return new ActiveXObject("MSXML2.XMLHTTP.3.0") } catch (e) { }
+		try { return new ActiveXObject("Msxml2.XMLHTTP") } catch (e) { }
+		try { return new ActiveXObject("Microsoft.XMLHTTP") } catch (e) { }
 	}
 }
 
-function sendRequest(doc){
+function sendRequest(doc) {
 	if (xmlobj != null) {
 		// open socket connection
-		xmlobj.open('GET',doc,true);
+		xmlobj.open('GET', doc, true);
 		// send GET request
 		xmlobj.setRequestHeader("Cache-Control", "no-cache");
-		xmlobj.onreadystatechange = function(){
- 
+		xmlobj.onreadystatechange = function () {
+
 			if (xmlobj.readyState == 4 && xmlobj.status == 200) {
- 
-				if (xmlobj.responseText){
+
+				if (xmlobj.responseText) {
 					var r = eval(xmlobj.responseText);
 				}
-				setChatRefresh();
 			} else if (xmlobj.readyState == 4 && xmlobj.status != 200) {
 				ajaxerror(xmlobj.status, xmlobj.statusText, 'Routine 1b');
 			}
@@ -57,54 +56,18 @@ function sendRequest(doc){
 	}
 }
 
-function sendRefresh(doc){
-	if (ajaxget != null) {
-		// open socket connection
-		ajaxget.open('GET',doc + '&ws=' + window.top.getObj('WindowSize').value,true);
-		ajaxget.setRequestHeader("Cache-Control", "no-cache");
-		ajaxget.onreadystatechange = function(){
- 
-			if (ajaxget.readyState == 4) {
-				if (ajaxget.status == 200) {
- 
-					if (ajaxget.responseText){
- 	
-						var r = eval(ajaxget.responseText);
-					}
-				} else {
-					ajaxerror(ajaxget.status, ajaxget.statusText, 'Routine 2b');
-				}
-				lastchatrefresh = doc;
-				setChatRefresh();
-			}
-		};
-		ajaxget.send(null);
-	} else {
-		ajaxerror(null, null, 'Routine 2');
-	}
-}
-
-function setChatRefresh() {
-	if (chatrefresht != 0) {
-		clearTimeout(chatrefresht  )
-	}
-	if (lastchatrefresh != '') {
-		chatrefresht  = setTimeout('sendRefresh(\'' + lastchatrefresh + '\');', getChatRate());
-	}
-}
-
-function sendRequest2(doc){
+function sendRequest2(doc) {
 	if (ajaxsendpm != null) {
 		// open socket connection
 
-		ajaxsendpm.open('GET',doc,true);
+		ajaxsendpm.open('GET', doc, true);
 		ajaxsendpm.setRequestHeader("Cache-Control", "no-cache");
-		ajaxsendpm.onreadystatechange = function(){
- 
+		ajaxsendpm.onreadystatechange = function () {
+
 			if (ajaxsendpm.readyState == 4 && ajaxsendpm.status == 200) {
- 
-				if (ajaxsendpm.responseText){
- 
+
+				if (ajaxsendpm.responseText) {
+
 					var r = eval(ajaxsendpm.responseText);
 				}
 				setPMRefresh();
@@ -118,17 +81,17 @@ function sendRequest2(doc){
 	}
 }
 
-function sendPMRefresh(doc){
+function sendPMRefresh(doc) {
 	if (ajaxgetpm != null) {
 		// open socket connection
-		ajaxgetpm.open('GET',doc,true);
+		ajaxgetpm.open('GET', doc, true);
 		ajaxgetpm.setRequestHeader("Cache-Control", "no-cache");
-		ajaxgetpm.onreadystatechange = function(){
- 
+		ajaxgetpm.onreadystatechange = function () {
+
 			if (ajaxgetpm.readyState == 4) {
-				if (ajaxgetpm.status == 200) { 
-					if (ajaxgetpm.responseText){
- 	
+				if (ajaxgetpm.status == 200) {
+					if (ajaxgetpm.responseText) {
+
 						var r = eval(ajaxgetpm.responseText);
 					}
 				} else {
@@ -148,8 +111,8 @@ function setPMRefresh() {
 	if (pmrefresht != 0) {
 		clearTimeout(pmrefresht)
 	}
-	if (lastpmrefresh  != '') {
-		pmrefresht = setTimeout('sendPMRefresh(\'' + lastpmrefresh  + '\');', getChatRate());
+	if (lastpmrefresh != '') {
+		pmrefresht = setTimeout(() => sendPMRefresh(lastpmrefresh), getChatRate());
 	}
 }
 
@@ -162,6 +125,6 @@ function getChatRate() {
 	cr = cr * 1000;
 	return cr;
 }
-				
+
 //sendRequest("fetchitem.php?item_id="+itemId+"&inv_id="+invId+"&t="+type+"&p="+pid+"&uid="+1190194002);
 //savedItemData[index] = xmlobj.responseText+finalStr;

@@ -88,7 +88,7 @@ function CS(how, stuff, mc, n, cc, icx) {
 
 				lasts = icx;
 				Processing = 1;
-				setTimeout('Processing = 0;', 1500);
+				setTimeout(() => Processing = 0, 1500);
 				if (how == 0) {
 					window.top.sendRequest('ajaxspell.asp?Type=' + how + '&c=' + cc + '&CharsAt=' + stuff + (Test22 != 0 ? '&lv=' + Test22 : ''));
 				} else {

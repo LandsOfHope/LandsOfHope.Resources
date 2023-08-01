@@ -54,6 +54,6 @@ function PGS2(strfile, strfile2, timer2) {
 		PGS(strfile);
 		if (timer2 == null) { timer2 = 500 }
 		clearTimeout(SoundTimer);
-		SoundTimer = setTimeout('PGS("' + strfile2 + '");', timer2);
+		SoundTimer = setTimeout(() => PGS(strfile2), timer2);
 	}
 }

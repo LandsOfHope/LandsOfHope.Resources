@@ -163,7 +163,7 @@ function ReF(slot) {
 	} else {
 		obj.style.color = '#ff6666';
 		FC[slot] = obj.onclick;
-		setTimeout('ReF2(' + slot + ');', 5000)
+		setTimeout(() => ReF2(slot), 5000);
 		obj.onclick = null;
 	}
 }

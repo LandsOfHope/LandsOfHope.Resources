@@ -43,7 +43,7 @@ function RefreshTimers() {
 function Timers() {
 	RefreshTimers();
 	clearTimeout(times);
-	times = setTimeout('Timers2();', 60000);
+	times = setTimeout(Timers2, 60000);
 }
 
 function Timers2() {
@@ -70,7 +70,7 @@ function Timers2() {
 	//Timers();
 	RefreshTimers();
 	clearTimeout(times);
-	times = setTimeout('Timers2();', 60000);
+	times = setTimeout(Timers2, 60000);
 }
 
 function AddTimer(timername, time, reminder, repeat) {

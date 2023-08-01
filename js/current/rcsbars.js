@@ -35,7 +35,6 @@ function UpdateSubMenux(bid, text, url, picture1, js) {
 	this.js = js;
 	this.url = url;
 	this.picture1 = picture1;
-	//this.clicktimer = 0;
 }
 
 function getObj(objn) {
@@ -121,7 +120,6 @@ function ShowSubMenu(b, divx, mv) {
 	if (b == -1) {
 		rcspopdiv.style.width = "480px";
 		rcspopdiv.style.height = "70px";
-		//rcspopdiv.className = "transparent";
 		rcspopdiv.style.zIndex = 50000;
 	} else {
 		rcspopdiv.style.width = "140px";
@@ -130,7 +128,6 @@ function ShowSubMenu(b, divx, mv) {
 	//Add image width and height
 	var l = findPos(getObj(divx))[0] + 10;
 	if (b == -4) {
-		//alert(getObj(divx).offsetParent.scrollTop);
 		var t = (findPos(getObj(divx))[1] + 5) - getObj('tabs').scrollTop;
 	} else {
 		var t = (findPos(getObj(divx))[1] + 5);
@@ -144,7 +141,7 @@ function ShowSubMenu(b, divx, mv) {
 
 	if (b == -1) {
 	} else {
-		hs = setTimeout('HideSubMenu();', 2500);
+		hs = setTimeout(HideSubMenu, 2500);
 	}
 	document.body.appendChild(rcspopdiv);
 
@@ -183,7 +180,7 @@ function findPosY(obj) {
 
 function RCSSMOver(b, x) {
 	clearTimeout(hs);
-	hs = setTimeout('HideSubMenu();', 2500);
+	hs = setTimeout(HideSubMenu, 2500);
 
 	var bb = getObj('rcssm' + x);
 	if (bb != null) {
@@ -248,7 +245,7 @@ function RCSSMClick(b, x) {
 
 function RCSBOver(b) {
 	clearTimeout(hs);
-	hs = setTimeout('HideSubMenu();', 2500);
+	hs = setTimeout(HideSubMenu, 2500);
 
 	if (PageLoaded == false || PageLoaded == null) {
 	} else {
@@ -257,19 +254,12 @@ function RCSBOver(b) {
 			if (rcsbuttons[b] != null) {
 				bb.innerHTML = window.top.ASCII(rcsbuttons[b].text, 6);
 				clearTimeout(rcsbuttons[b].clicktimer);
-				//if (rcsbuttons[b].url != '' && b != 2) {
-				//	if (rcsbuttons[b].url.indexOf(';') != -1) {
-				//		eval(rcsbuttons[b].url);
-				//	}
-				//}
 			}
 		}
 	}
 }
 
 function RCSBOut(b) {
-	//if (b == 2) {
-	//} else {
 	var bb = getObj('rcsbutton' + b);
 	if (bb != null) {
 		if (rcsbuttons[b] != null) {
@@ -277,17 +267,14 @@ function RCSBOut(b) {
 			clearTimeout(rcsbuttons[b].clicktimer);
 		}
 	}
-	//}
 }
 
 function RCSBClick(b) {
-	//if (b == 2) {
-	//} else {
 	var bb = getObj('rcsbutton' + b);
 	if (bb != null) {
 		if (rcsbuttons[b] != null) {
 			bb.innerHTML = window.top.ASCII(rcsbuttons[b].text, 3);
-			rcsbuttons[b].clicktimer = setTimeout('RCSBOver(' + b + ');', 150);
+			rcsbuttons[b].clicktimer = setTimeout(() => RCSBOver(b), 150);
 			if (rcsbuttons[b].url != '') {
 				if (rcsbuttons[b].url.indexOf(';') != -1) {
 					eval(rcsbuttons[b].url);
@@ -297,6 +284,4 @@ function RCSBClick(b) {
 			}
 		}
 	}
-	//}	
-
 }

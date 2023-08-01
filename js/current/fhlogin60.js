@@ -1233,7 +1233,7 @@ function SetMainTitle(t) {
 	window.top.TileName = t;
 	window.top.document.title = "" + MyCN + " - " + t;
 	clearTimeout(titleshow);
-	titleshow = setTimeout('HideTitle();', 5000);
+	titleshow = setTimeout(HideTitle, 5000);
 }
 
 function HideTitle() {
@@ -1307,7 +1307,6 @@ function BC(v) {
 
 		HideSubMenu(-4);
 		clearTimeout(popupmenu);
-		//popupmenu = setTimeout('BC_popup(' + v + ');', 1200);
 	} else {
 		HideSubMenu(-4);
 	}
@@ -1396,8 +1395,7 @@ function IC2(v) {
 
 		HideSubMenu(-4);
 		clearTimeout(popupmenu);
-		popupmenu = setTimeout('IC2_popup(' + v + ');', 1200);
-
+		popupmenu = setTimeout(() => IC2_popup(v), 1200);
 	} else {
 		HideSubMenu(-4);
 	}
@@ -1486,7 +1484,6 @@ function VV(v) {
 
 		HideSubMenu(-4);
 		clearTimeout(popupmenu);
-		//	popupmenu = setTimeout('VV_popup(' + v + ');', 1200);
 
 		LastVessel = thev.i;
 		window.top.InfoTip(FHIPV + thev.p2, '<font color="' + ccol + '"><b>' + thev.i + '</b></font><br>Click on the vessel to initiate its default action, or use the Action buttons to trigger a specific one.' + (isNPC != 0 ? '' : ''))
@@ -1668,7 +1665,6 @@ function CC(v) {
 
 		if (isNPC != 0) {
 			window.top.InfoTip(FHIPR + c.p2, strBasic + (isNPC == 0 ? ' ' + c.o : ' NPC') + (c.d != 0 ? ' Dead' : '') + '</td></tr>' + strother);
-			//popupmenu = setTimeout('CCnpc_popup(' + v + ');', 1200);
 		} else {
 			var Tame1 = '';
 			var Tame2 = '';
@@ -1683,8 +1679,6 @@ function CC(v) {
 				actionskill = 5
 			}
 			window.top.InfoTip(FHIPR + c.p2, strBasic + (isNPC == 0 ? ' ' + c.o : ' PC') + (c.d != 0 ? ' Dead' : (c.e > 0 && Tame1 != '' ? '</td></tr><tr><td>' + Tame1 + ': ' + c.e + '' : '</td></tr>')) + (c.k == -1 ? '' : '') + (c.m != 0 && c.l > 5 ? '<tr><td>Skin/Intercede/Soul Trap: ' + actionskill + '</td></tr>' : '') + '<tr><td>' + c.t + '</td></tr>' + (c.f >= 1 ? '<tr><td>Bounty: ' + window.top.BSGM(c.f) + '</td></tr>' : '') + strother);
-			//popupmenu = setTimeout('CC_popup(' + v + ');', 1200);
-
 		}
 	} else {
 		HideSubMenu(-4);
@@ -2298,14 +2292,14 @@ function PromptReturn(returnVal, pb) {
 function ml4(URL, stuff) {
 	Processing = 1;
 	stuff.disabled = true;
-	setTimeout('getObj(\'' + stuff.id + '\').disabled=false;', 2000)
+	setTimeout(() => getObj(stuff.id).disabled = false, 2000);
 	window.parent.Interface.location.replace('fhmess.asp?CharsAt=' + URL);
 }
 
 function ml3(x, y, g, b, stuff) {
 	Processing = 1;
 	stuff.disabled = true;
-	setTimeout('getObj(\'' + stuff.id + '\').disabled=false;', 2000)
+	setTimeout(() => getObj(stuff.id).disabled = false, 2000);
 	if (b > 0) {
 		window.parent.Ninja.location.replace('fh.asp?Redraw=1&BuildingID=' + b + '');
 	} else {

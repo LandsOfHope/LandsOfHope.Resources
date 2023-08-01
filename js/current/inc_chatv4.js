@@ -30,13 +30,13 @@ function SendCommand(strMessage) {
 	var z = 50;
 	x = 0;
 	for (x = 1; x <= 50; x++) {
-		if (ChatArray[z] != '')  {
+		if (ChatArray[z] != '') {
 			ChatOut = ChatOut + ChatArray[z] + '<br>';
 		}
 		z = z - 1;
 	}
 
-	getObj('Readout').innerHTML = '' + ChatOut + ''; 
+	getObj('Readout').innerHTML = '' + ChatOut + '';
 }
 
 
@@ -58,38 +58,37 @@ function ClipboardCopy() {
 	} else {
 		getObj('holdtext').innerText = getObj('Readout').innerText;
 		Copied = getObj('holdtext').createTextRange();
-		Copied.execCommand("Copy"); 
+		Copied.execCommand("Copy");
 	}
 }
 
 function ChatSend(strSend) {
-ChatDelayed = ChatDelayed + strSend
-ChatSend2();
+	ChatDelayed = ChatDelayed + strSend
+	ChatSend2();
 }
 
 
 function ChatSend2() {
-clearTimeout(ChatSendT);
-if (window.top.ChatLoaded != 0) {
-	window.top.SendCommand('' + ChatDelayed + '')
-	ChatDelayed = '';
-} 
-if (ChatDelayed != '') {
-	ChatSendT = setTimeout("ChatSend2()", 1000);
-}
+	clearTimeout(ChatSendT);
+	if (window.top.ChatLoaded != 0) {
+		window.top.SendCommand('' + ChatDelayed + '')
+		ChatDelayed = '';
+	}
+	if (ChatDelayed != '') {
+		ChatSendT = setTimeout(ChatSend2, 1000);
+	}
 }
 
 function sH(strin) {
-	if (strin == undefined) {strin = ''}
+	if (strin == undefined) { strin = '' }
 
-	if (window.event == null)
-	{
-		window.top.Interface.event.returnValue=false;
-		if (strin == '') {strin = window.top.Interface.location.pathname};
+	if (window.event == null) {
+		window.top.Interface.event.returnValue = false;
+		if (strin == '') { strin = window.top.Interface.location.pathname };
 	}
 	else {
-		window.event.returnValue=false;
-		if (strin == '') {strin = window.location.pathname};
+		window.event.returnValue = false;
+		if (strin == '') { strin = window.location.pathname };
 	}
 	window.top.showHelp('manual.asp?Search=' + strin);
 }
