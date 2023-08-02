@@ -66,7 +66,7 @@ function Go2(strURL) {
 
 function Statty(ss) {
 	window.frames['ResultsOfit'].document.open();
-	window.frames['ResultsOfit'].document.write("<HTML><HEAD><TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='" + window.top.Theme + ".css'></HEAD><body class='fight' leftmargin=0 topmargin=0 style='padding-left: 0px;'><table class='fight' id='theal' style='padding-left: 0px;'>" + ss + "</table><div id=Info></div></body></HTML>");
+	window.frames['ResultsOfit'].document.write("<HTML><HEAD><TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='https://lohcdn.com/css/" + window.top.Theme + ".css'></HEAD><body class='fight' leftmargin=0 topmargin=0 style='padding-left: 0px;'><table class='fight' id='theal' style='padding-left: 0px;'>" + ss + "</table><div id=Info></div></body></HTML>");
 	window.frames['ResultsOfit'].document.close();
 }
 
