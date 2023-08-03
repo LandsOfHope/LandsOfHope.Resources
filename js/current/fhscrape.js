@@ -37,7 +37,7 @@ function AM(Color, z, ud, Itty, u, o, st) {
 		Infos[IC] = new Array();
 	}
 	Infos[IC] = new newInfo(Color, z, ud, Itty, u, o, st);
-	document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')" onclick="DC(' + IC + ')"><td style="padding-left: 5px; color:' + Color + ';"><b>' + Itty + '</b></td><td align=center colspan=3 class="btn" onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" onclick="GoUp(' + z + ')"><img src="' + OPath + 'Up.png"></td><td width=30>' + o + '</td><td align=center colspan=3 class="btn" onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" onclick="GoDn(' + z + ')"><img src="' + OPath + 'Dn.png"></td></tr>');
+	document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')" onclick="DC(' + IC + ')"><td style="padding-left: 5px; color:' + Color + ';"><b>' + Itty + '</b></td><td align=center colspan=3 class="btn" onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" onclick="GoUp(' + z + ')"><img src="' + OPath + 'up.png"></td><td width=30>' + o + '</td><td align=center colspan=3 class="btn" onmouseover="this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" onclick="GoDn(' + z + ')"><img src="' + OPath + 'dn.png"></td></tr>');
 	IC = IC + 1;
 }
 
