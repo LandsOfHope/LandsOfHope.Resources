@@ -18,4 +18,4 @@ jobs:
         uses: nschloe/action-checkout-with-lfs-cache@v1
       - run: pip install s3cmd
       - name: Publish
-        run: s3cmd sync -n --access_key=${{ secrets.AWS_ACCESS_KEY_ID }} --secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY }} --host=${{ secrets.AWS_ENDPOINT_URL }} --host-bucket=${{ secrets.AWS_ENDPOINT_URL }} --bucket-location=auto --delete-removed --no-preserve --recursive --rexclude "^\..*$" . 's3://lohimg'
+        run: s3cmd sync --access_key=${{ secrets.AWS_ACCESS_KEY_ID }} --secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY }} --host=${{ secrets.AWS_ENDPOINT_URL }} --host-bucket=${{ secrets.AWS_ENDPOINT_URL }} --bucket-location=auto --delete-removed --delete-after --no-preserve --recursive --reduced-redundancy --rexclude "^\..*$" . 's3://lohimg'
