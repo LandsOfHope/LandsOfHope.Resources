@@ -4,17 +4,20 @@ on:
   push:
     branches:
       - master
+      - s3cmd
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     name: Deploy
     steps:
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
       - name: Checkout code
         uses: nschloe/action-checkout-with-lfs-cache@v1
+      - run: pip install s3cmd
       - name: Publish
-        run: aws s3 sync . s3://lohimg --endpoint-url ${{ secrets.AWS_ENDPOINT_URL }} --delete --exclude ".*" --exclude "*/.*"
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: 'auto'
+        run: s3cmd sync --access_key=${{ secrets.AWS_ACCESS_KEY_ID }} --secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY }} --host=${{ secrets.AWS_ENDPOINT_URL }} --host-bucket=${{ secrets.AWS_ENDPOINT_URL }} --bucket-location=auto --delete-removed --delete-after --no-preserve --recursive --reduced-redundancy --rexclude "^\..*$" . 's3://lohimg'
+      - name: Purge cache
+        run: 'curl -X POST https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_TOKEN }}" -H "Content-Type: application/json" --data "{\"purge_everything\":true}"'
