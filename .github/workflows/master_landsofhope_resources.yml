@@ -19,3 +19,4 @@ jobs:
       - run: pip install s3cmd
       - name: Publish
         run: s3cmd sync --access_key=${{ secrets.AWS_ACCESS_KEY_ID }} --secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY }} --host=${{ secrets.AWS_ENDPOINT_URL }} --host-bucket=${{ secrets.AWS_ENDPOINT_URL }} --bucket-location=auto --delete-removed --delete-after --no-preserve --recursive --reduced-redundancy --rexclude "^\..*$" . 's3://lohimg'
+      - run: 'curl -v -X POST https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_TOKEN }}" -H "Content-Type: application/json" --data "{\"purge_everything\":true}"'
