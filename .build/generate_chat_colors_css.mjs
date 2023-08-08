@@ -9,7 +9,7 @@ const main = async () => {
     for (var i = 0; i < enumValues.length; ++i) {
         const color = enumValues[i];
 
-        css += `\r.chat-color-${color} { color: #${color}; } .bg-chat-color-${color} { background-color: #${color} }`;
+        css += `\r.chat-color-${color} { color: #${color}; }\r.bg-chat-color-${color} { background-color: #${color}; }`;
     }
 
     mkdirSync('css/chat', { recursive: true });
