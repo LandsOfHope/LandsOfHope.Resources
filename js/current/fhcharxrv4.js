@@ -30,6 +30,7 @@ function newInfo(PictureID, Color, Sex, Cost, v) {
 function Fin(r, r2, s) {
 	document.write('<tr><td colspan=\'7\'><table class="weakcell" width="300"><tr><td>Character Name:</td><td><input name=CharName id=CharName size=15 maxlength=30 value=""></td><td><td colspan=2><' + strClicky1 + ' onclick="if (getObj(\'CharName\').value != \'\') {window.open(\'fhfhd.asp?item_name=\' + getObj(\'CharName\').value + \'&item_number=67&a3=1&custom=' + CharacterID + '\', \'PP\', \'\')};">1hc</button></td></tr>');
 	document.write('<tr><td>Character Title:</td><td><input name=CharTitle id=CharTitle size=15 maxlength=30 value=""></td><td><td colspan=2><' + strClicky1 + ' onclick="if (getObj(\'CharTitle\').value != \'\') {window.open(\'fhfhd.asp?item_name=\' + getObj(\'CharTitle\').value + \'&item_number=68&a3=1&custom=' + CharacterID + '\', \'PP\', \'\')};">1hc</button></td></tr>');
+	document.write('</table></td></tr>');
 	document.write('<tr><td colspan=\'7\' class=\'weakcell\' width="300">Using the Character > Appearance Profile system you can switch backwards and forwards between different titles, names and pictures and even go back to your original.</td></tr>');
 	if (r2 == 0 || r == r2) {
 		if (s == 'U') {
