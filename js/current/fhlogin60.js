@@ -1198,34 +1198,6 @@ function UnDie() {
 	}
 }
 
-function MdrawToolbar(su, number2) {
-	if (lastmenuid != number2 || su != 0) {
-		if (number2 != 0) {
-			SwitchMenu('../menus/xmenu' + number2 + '.js')
-		} else {
-			if (su != 0) {
-				SwitchMenu('../menus/xmenu3.js')
-			} else {
-				SwitchMenu('../menus/xmenu1.js')
-			}
-		}
-	}
-}
-
-function SwitchMenu(strmenu) {
-	window.top.UnloadMenu();
-
-	var head = document.getElementsByTagName('head')[0];
-	if (getObj("menusource") != null) {
-		head.removeChild(document.getElementById("menusource"));
-	}
-	var script = document.createElement('script');
-	script.type = 'text/javascript';
-	script.src = strmenu;
-	script.id = "menusource"
-	head.appendChild(script);
-}
-
 function SetMainTitle(t) {
 	var m = window.top.getObj('MainTitle');
 	m.innerHTML = t;

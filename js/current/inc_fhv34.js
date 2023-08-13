@@ -720,7 +720,7 @@ function PF(id, varin) {
 	}
 	if (varin == 73) {
 
-		window.top.MdrawToolbar((window.top.SystemUser > 0 ? 2 : 0), 1);
+		window.top.RenderMenu((window.top.SystemUser > 0 ? 2 : 0), 1);
 		window.top.refreshTime();
 		InWin = window.top.Ninja.location;
 		InWin.replace('fh.asp?Posess=' + id + '&Redraw=1');

@@ -19,7 +19,7 @@ function DC(v) {
 
 function Posess(l, v) {
 	getObj('Stuff2').innerHTML = '<b>Loading Correct Menu - Please wait.</b>'
-	window.top.MdrawToolbar(Su, 2);
+	window.top.RenderMenu(Su, 2);
 	window.top.refreshTime();
 	window.location.replace('?Type=9&P=' + GoPage + '&L=' + l + '&CharsAt=' + v + '');
 }

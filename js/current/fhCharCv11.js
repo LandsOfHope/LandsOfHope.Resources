@@ -70,7 +70,7 @@ function ChangeChar(s, pr, v, lsu) {
 	if (Su != 0 && lsu != 0) {
 		gsux = 1;
 	}
-	window.top.MdrawToolbar(gsux, pr);
+	window.top.RenderMenu(gsux, pr);
 	window.top.refreshTime();
 	window.top.Interface.location.replace('?CharsAt=' + v);
 }
