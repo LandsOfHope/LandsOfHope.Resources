@@ -335,11 +335,3 @@ function AvT(tid, tin, tip, ot, ts) {
 	var Color = LITE;
 	document.write('<tr style="color:' + Color + '"><td width="40"><img src="https://lohcdn.com/game/i/' + tip + '"></td><td width="260" valign=top><b>' + tin + '</b><br><font id=tmagenta>' + ot + '</font></td><td>Rank ' + ts + '</td></tr>');
 }
-
-function AvBl(tid, tin, tip, cost, unlocked, tt) {
-	var Color = LITE;
-	if (tt == null) {
-		tt = '';
-	}
-	document.write('<tr style="color:' + Color + '"><td width="40"><img src="https://lohcdn.com/game/i/' + tip + '"></td><td width="160" valign=top><b>' + tin + '</b><br><i style=""color: cyan;"">' + (unlocked != 0 ? '' + tt : 'Cost: <b>' + cost + 'mc</b>') + '</i></b></td><td>' + (unlocked != 0 ? '' : '<a href="fhsocialbuy.asp?id=' + tid + '&CharsAt=' + CharsAt + '"><img src="https://lohcdn.com/images/buttons/d_buy.gif" border="0" alt="Buy Social Item!"></a>') + '</td></tr>');
-}
