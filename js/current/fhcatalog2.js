@@ -22,7 +22,7 @@ function AC(PictureID, PP, a, ItemName, s, v, l, d, ic) {
 	if (atx == '') {
 		atx = 'Neutral'
 	}
-	document.write('<tr><td width="40" class="nav3"><img src=\'' + IPath + PP + '/' + PictureID + '\' width=40 height=40></td><td><b style="Color: ' + Color + '">' + (ItemName) + '</b><br>Level: ' + l + '<br>Allegiance: ' + atx + '<br>Server: ' + s + (ic > 0 ? '<br>This character already has <b>' + ic + '</b> of these items.' : '') + '</td><td>' + Adr('window.location.replace(\'https://www.paypal.com/xclick/business=billing%40fho2.com&no_shipping=1&item_name=Extra: ' + Extra + '&item_number=' + ExtraID + '&amount=' + (d * 5) + '&custom=' + v + '&no_note=1\');', 'Buy for ' + ItemName + ' at $' + (d * 5), '$' + (d * 5)) + Adr('window.location.replace(\'fhfhd.asp?item_name=Catalog: ' + Extra + '&item_number=' + ExtraID + '&a3=' + d + '&custom=' + v + '\');', 'Buy for ' + ItemName + ' at ' + d + 'hc', d + 'hc') + '</td></tr>');
+	document.write('<tr><td width="40" class="nav3"><img src=\'' + IPath + PP + '/' + PictureID + '\' width=40 height=40></td><td><b style="Color: ' + Color + '">' + (ItemName) + '</b><br>Level: ' + l + '<br>Allegiance: ' + atx + '<br>Server: ' + s + (ic > 0 ? '<br>This character already has <b>' + ic + '</b> of these items.' : '') + '</td><td>' + Adr('window.location.replace(\'fhfhd.asp?item_name=Catalog: ' + Extra + '&item_number=' + ExtraID + '&a3=' + d + '&custom=' + v + '\');', 'Buy for ' + ItemName + ' at ' + d + 'hc', d + 'hc') + '</td></tr>');
 }
 
 function AH(Header) {

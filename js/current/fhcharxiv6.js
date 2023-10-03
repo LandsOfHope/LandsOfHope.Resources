@@ -45,7 +45,6 @@ function AHOLD(Header) {
 
 function DC(v) {
 	LastClickedItem = v;
-	//<' + strClicky3 + ' onclick="window.open(\'https://www.paypal.com/xclick/business=billing%40fho2.com&no_shipping=1&item_name=Extra: ' + Infos[v].s + '&item_number=' + Math.abs(Infos[v].x) + '&amount=' + (Infos[v].d * 5) + '&custom=' + CharacterID + '&no_note=1\', \'PP\', \'\');">Buy for $' + (Infos[v].d * 5) + '</button>
 	getObj('Stuff2').innerHTML = '<b>' + Infos[v].s + '</b><Br>Cost: $' + (Infos[v].d * 5) + '/ ' + Infos[v].d + 'hc' + (Infos[v].xm != 0 ? '<br><i>Available this month, once a year only!</i>' : '') + '<br><b>Useful Links: </b><a href=\'http://www.xe.com/ucc/\' target=\'_new\'>Currency Calculator</a>';
 	getObj('Stuff3').innerHTML = Infos[v].e + '<br>';
 	getObj('Buttons').innerHTML = '<' + strClicky3 + ' onclick="window.open(\'fhfhd.asp?item_name=Extra: ' + Infos[v].s + '&item_number=' + Infos[v].x + '&a3=' + Infos[v].d + '&custom=' + CharacterID + '\', \'PP\', \'\');">Purchase</button><' + strClicky2 + ' onclick="window.parent.loadwindow2(\'im3.asp?Test=' + Infos[v].v + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].s + '\');" style=\'width: 85\'>Info</button><' + strClicky1 + ' onclick="confirm(\'The Link button is used to send a clickable link to the Shoutbox, which allows other people to view the details of the item you have selected. Continue?\', 3);" style=\'width: 85\'>Link</button>';
