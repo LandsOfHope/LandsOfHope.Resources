@@ -344,7 +344,7 @@ function PFormMoney(fin, mmin) {
 	var harhar = mmin;
 	var m = Math.floor(harhar)
 
-	return "<img src=\"game/pirate/c4.png\"><input title=\"Doubloons\" name=cpd" + fin + " id=cpd" + fin + " value=" + m + " size=3 maxlength=10 style=\"width: 30px;\" onkeypress=\"return fxkp(event);\" onpaste=\"event.returnValue = false;\" onkeyup=\"CalcM('" + fin + "', this)\">";
+	return "<img src=\"https://lohcdn.com/game/pirate/c4.png\"><input title=\"Doubloons\" name=cpd" + fin + " id=cpd" + fin + " value=" + m + " size=3 maxlength=10 style=\"width: 30px;\" onkeypress=\"return fxkp(event);\" onpaste=\"event.returnValue = false;\" onkeyup=\"CalcM('" + fin + "', this)\">";
 }
 
 function CalcM(fin, stuff) {

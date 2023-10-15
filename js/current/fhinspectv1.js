@@ -106,9 +106,9 @@ function PSGMX(mmin, moneyformat) {
 
 	var strout = "";
 	if (moneyformat == 0) {
-		strout = "<table class=\"weakercell\" cellpadding=0 cellspacing=0 style=\"padding-left:0px; width: 150px\"><tr><td style=\"border: 1px inset " + BORDER1 + "; background-color: black;\" width=\"40\">" + addCommas(m) + "</td><td width=14><img src=\"game/pirate/c4.png\" title=\"Doubloons\"></td></tr></table>";
+		strout = "<table class=\"weakercell\" cellpadding=0 cellspacing=0 style=\"padding-left:0px; width: 150px\"><tr><td style=\"border: 1px inset " + BORDER1 + "; background-color: black;\" width=\"40\">" + addCommas(m) + "</td><td width=14><img src=\"https://lohcdn.com/game/pirate/c4.png\" title=\"Doubloons\"></td></tr></table>";
 	} else {
-		strout = "" + (m > 0 ? "" + addCommas(m) + "<img src=\"game/pirate/c4.png\" title=\"Doubloons\">" : "");
+		strout = "" + (m > 0 ? "" + addCommas(m) + "<img src=\"https://lohcdn.com/game/pirate/c4.pnggame/pirate/c4.png\" title=\"Doubloons\">" : "");
 	}
 	return strout;
 }
