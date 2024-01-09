@@ -3,6 +3,8 @@ var hs = 0;
 var mastervalue = 0;
 var PageLoaded = PageLoaded;
 
+const HIDE_TIMEOUT_MS = 5000;
+
 function AddButton(bid, text, url, picture1) {
 	rcsbuttons[bid] = new Array();
 	rcsbuttons[bid] = new UpdateButtonx(bid, text, url, picture1);
@@ -141,7 +143,7 @@ function ShowSubMenu(b, divx, mv) {
 
 	if (b == -1) {
 	} else {
-		hs = setTimeout(HideSubMenu, 5000);
+		hs = setTimeout(HideSubMenu, HIDE_TIMEOUT_MS);
 	}
 	document.body.appendChild(rcspopdiv);
 
@@ -180,7 +182,7 @@ function findPosY(obj) {
 
 function RCSSMOver(b, x) {
 	clearTimeout(hs);
-	hs = setTimeout(HideSubMenu, 2500);
+	hs = setTimeout(HideSubMenu, HIDE_TIMEOUT_MS);
 
 	var bb = getObj('rcssm' + x);
 	if (bb != null) {
@@ -245,7 +247,7 @@ function RCSSMClick(b, x) {
 
 function RCSBOver(b) {
 	clearTimeout(hs);
-	hs = setTimeout(HideSubMenu, 2500);
+	hs = setTimeout(HideSubMenu, HIDE_TIMEOUT_MS);
 
 	if (PageLoaded == false || PageLoaded == null) {
 	} else {
