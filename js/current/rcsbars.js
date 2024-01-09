@@ -141,7 +141,7 @@ function ShowSubMenu(b, divx, mv) {
 
 	if (b == -1) {
 	} else {
-		hs = setTimeout(HideSubMenu, 2500);
+		hs = setTimeout(HideSubMenu, 5000);
 	}
 	document.body.appendChild(rcspopdiv);
 
