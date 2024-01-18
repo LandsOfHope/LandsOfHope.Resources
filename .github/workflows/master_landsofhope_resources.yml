@@ -9,6 +9,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     name: Deploy
+    timeout-minutes: 10
+    container:
+      image: ghcr.io/catthehacker/ubuntu:act-latest
+      volumes:
+        - act-toolcache:/opt/hostedtoolcache
     steps:
       - uses: actions/setup-python@v4
         with:
