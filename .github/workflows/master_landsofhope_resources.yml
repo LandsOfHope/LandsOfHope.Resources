@@ -19,7 +19,9 @@ jobs:
         with:
           python-version: "3.10"
       - name: Checkout code
-        uses: nschloe/action-checkout-with-lfs-cache@v1
+        uses: nschloe/action-cached-lfs-checkout@v1
+        with:
+          token: ${{ secrets.CONTAINER_REGISTRY_TOKEN }}
       - name: npm i
         run: npm i
         working-directory: .build
