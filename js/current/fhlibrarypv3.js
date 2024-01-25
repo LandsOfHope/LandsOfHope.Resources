@@ -52,5 +52,5 @@ function Tipsfor(v) {
 function DC(v) {
 	getObj('Stuff2').innerHTML = Tipsfor(v)
 	getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + "'>";
-	getObj('Buttons').innerHTML = Adr('window.open(\'professions/' + Infos[v].i + '.htm\',\'null\',\'\');', 'View more information on ' + Infos[v].i, 'View');
+	getObj('Buttons').innerHTML = Adr('window.open(\'https://guide.landsofhope.com/Professions/' + Infos[v].i + '.htm\',\'null\',\'\');', 'View more information on ' + Infos[v].i, 'View');
 }
