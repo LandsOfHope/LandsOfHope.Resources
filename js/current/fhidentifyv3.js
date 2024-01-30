@@ -24,8 +24,9 @@ function DC(v) {
 function Identify(v) {
 	clearTimeout(Waiting);
 	getObj('IDButton').innerHTML = 'Wait ...';
+	getObj('IDButton').disabled = true;
 	window.location.replace(`?P=${PageNo}&CharsAt=${CharID}&InventoryItemID=${Infos[v].v}`);
-	Waiting = setTimeout(() => { getObj('IDButton').innerHTML = 'Identify'; Waiting = 0; }, 2000);
+	Waiting = setTimeout(() => { getObj('IDButton').innerHTML = 'Identify'; Waiting = 0; getObj('IDButton').disabled = false; }, 2000);
 }
 
 function RC(v) {
