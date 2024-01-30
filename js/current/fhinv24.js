@@ -38,7 +38,7 @@ function Identify(v) {
 	getObj('IDButton').innerHTML = 'Wait ...';
 	getObj('IDButton').disabled = true;
 	window.location.replace(`?P=${PageNo}&ItemTypeID=${ItemTypeID}&F=${Filter}&CharsAt=${CharsAt}&ItemID=4&InventoryItemID=${InvItems[v].InventoryItemID}`);
-	Waiting = setTimeout(() => { getObj('IDButton').innerHTML = 'Identify'; Waiting = 0; getObj('IDButton').disabled = true; }, 2000);
+	Waiting = setTimeout(() => { getObj('IDButton').innerHTML = 'Identify'; Waiting = 0; getObj('IDButton').disabled = false; }, 2000);
 }
 
 function PromptReturn(returnVal, postback) {
