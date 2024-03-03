@@ -57,7 +57,7 @@ function AH(ll, SkillGroup, Picture, Picture2, bix, lc, x, y, pt) {
 		EBG = '#D3D3D3';
 	}
 
-	document.write('<tr width="100%" bgcolor="' + BGCOLOR_S + '" style="border: 1px solid ' + BGCOLOR + '"><td><img width=15 height=15 src="' + (pt == 1 ? IPath : LPath) + (Picture == "" || Picture == "0" ? "na.gif" : Picture) + '"></td><td width="160" style="color: gold;font-weight: bold"><center>' + SkillGroup + '</center></td></tr>');
+	document.write('<tr width="100%" bgcolor="' + BGCOLOR_S + '" style="border: 1px solid ' + BGCOLOR + '"><td style="width:15"><img width=15 height=15 src="' + (pt == 1 ? IPath : LPath) + (Picture == "" || Picture == "0" ? "na.gif" : Picture) + '"></td><td width="160" style="color: gold;font-weight: bold"><center>' + SkillGroup + '</center></td></tr>');
 	Locations[ll] = '';
 }
 
