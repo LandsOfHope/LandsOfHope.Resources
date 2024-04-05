@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50"
+   height="50"
+   viewBox="0 0 13.229167 13.229167"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="support.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.5358305"
+     inkscape:cx="-419.64266"
+     inkscape:cy="80.738075"
+     inkscape:window-width="2560"
+     inkscape:window-height="1017"
+     inkscape:window-x="2009"
+     inkscape:window-y="39"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1070">
+      <stop
+         style="stop-color:#006b9c;stop-opacity:1;"
+         offset="0"
+         id="stop1066" />
+      <stop
+         style="stop-color:#006593;stop-opacity:1;"
+         offset="1"
+         id="stop1068" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1039">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop1035" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop1037" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1039"
+       id="linearGradient1041"
+       x1="89.023354"
+       y1="183.36401"
+       x2="125.52039"
+       y2="183.36401"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1070"
+       id="radialGradient1074"
+       cx="104.74245"
+       cy="183.64384"
+       fx="104.74245"
+       fy="183.64384"
+       r="65.119492"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.0976773,0,0,0.0976773,-3.6163756,-11.323248)" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="fill:url(#radialGradient1074);fill-opacity:1;stroke-width:0.904979;stroke-linecap:round"
+       id="path894"
+       cx="6.6145835"
+       cy="6.6145835"
+       r="6.3606958" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.3489px;line-height:1.25;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.258693;stroke-dasharray:none;stroke-opacity:0"
+       x="3.4209776"
+       y="10.356459"
+       id="text790"><tspan
+         sodipodi:role="line"
+         id="tspan788"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.3489px;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.258693;stroke-dasharray:none;stroke-opacity:0"
+         x="3.4209776"
+         y="10.356459">?</tspan></text>
+    <circle
+       style="opacity:1;fill:none;fill-opacity:0.351648;stroke:#ffffff;stroke-width:0.563;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+       id="path1155"
+       cx="6.6145835"
+       cy="6.6145835"
+       r="5.6505389" />
+  </g>
+</svg>
