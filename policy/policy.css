@@ -1,3 +1,8 @@
+body {
+    background-color: rgb(14,10,6);
+    color: white;
+}
+
 section {
     margin: 1rem;
 }
