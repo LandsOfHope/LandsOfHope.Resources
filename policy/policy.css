@@ -1,0 +1,60 @@
+section {
+    margin: 1rem;
+}
+
+h1 {
+    font-size: xx-large;
+    font-weight: bold;
+    /* border-bottom: dotted var(--loh-gold) 2; */
+    margin-top: 0.5rem;
+}
+
+h2 {
+    /*text-xl font-bold border-dotted border-loh-gold border-b-2*/
+    font-size: x-large;
+    font-weight: bold;
+    /* border-bottom: dotted var(--loh-gold) 2; */
+    margin-top: 0.5rem;
+}
+
+h3 {
+    /* text-lg font-bold mt-2 */
+    font-size: large;
+    font-weight: bold;
+    /* border-bottom: dotted white 2px; */
+    margin-top: 0.5rem;
+}
+
+h4 {
+    font-size: medium;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+a {
+    color: rgb(175,153,93);
+}
+
+p {
+    margin-top: 1rem;
+}
+
+ol {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-left: 2.5rem;
+    list-style-type: lower-alpha;
+    list-style-position: outside;
+}
+
+ol>li>ol {
+    list-style-type: lower-roman;
+}
+
+ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-left: 2.5rem;
+    list-style-type: disc;
+    list-style-position: outside;
+}
