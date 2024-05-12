@@ -247,8 +247,8 @@ function GetAbilities(f) {
 	var x = 0;
 	var retVal = '';
 	if (Fighters[f].s == Side && f == 0) {
-		retVal = retVal + '<div class="btn" onclick="FAC(' + f + ', -10)" style="float: left; width: 34px; height: 40px; background-image: URL(https://lohcdn.com/game/icons/lightning.png); background-repeat: no-repeat; background-position: center center;" title="Ask for your Gods Favor" onmouseover="PC3(this)" onmouseout="RC2(this)" align=bottom>&nbsp;</div>'
-		retVal = retVal + '<div class="btn" onclick="FAC(' + f + ', -20)" style="float: left; width: 34px; height: 40px; background-image: URL(https://lohcdn.com/game/icons/star.png); background-repeat: no-repeat; background-position: center center;" title="Entertain" onmouseover="PC3(this)" onmouseout="RC2(this)" align=bottom>&nbsp;</div>'
+		retVal = retVal + '<div class="btn" onclick="FAC(' + f + ', -10)" style="float: left; width: 34px; height: 40px; background-image: URL(https://lohcdn.com/game/icons/lightning.png); background-repeat: no-repeat; background-position: center center;" title="Ask for your Gods Favor" onmouseover="PC3(this, \'Ask for your Gods Favor\')" onmouseout="RC2(this)" align=bottom>&nbsp;</div>'
+		retVal = retVal + '<div class="btn" onclick="FAC(' + f + ', -20)" style="float: left; width: 34px; height: 40px; background-image: URL(https://lohcdn.com/game/icons/star.png); background-repeat: no-repeat; background-position: center center;" title="Entertain" onmouseover="PC3(this, \'Entertain\')" onmouseout="RC2(this)" align=bottom>&nbsp;</div>'
 
 		for (x = 0; x < Fighters[f].abilities.length; x++) {
 			retVal = retVal + '<div class="btn" onclick="FAC(' + f + ', ' + Fighters[f].abilities[x].id + ')" style="float: left; width: 34px; height: 40px; color: white;" title="' + Fighters[f].abilities[x].name + '" onmouseover="PC2(this,' + f + ',' + x + ')" onmouseout="RC2(this)" align=center valign=bottom><table cellpadding=0 cellspacing=0 width="32"><tr><td><center><img src="https://lohcdn.com/game/dp/' + Fighters[f].abilities[x].pp + '" width=20 height=20></center></td></tr><tr><td>' + GetPower2(Fighters[f].cf, Fighters[f].abilities[x].cost) + '</td></tr></table></div>'
@@ -297,8 +297,8 @@ function PC2(stuff, f, x) {
 	stuff.style.backgroundColor = BGCOLOR_S
 }
 
-function PC3(stuff) {
-	window.top.InfoTip('', 'Use Dragon Item');
+function PC3(stuff, message) {
+	window.top.InfoTip('', message);
 	stuff.style.cursor = 'pointer';
 	stuff.style.backgroundColor = BGCOLOR_S
 }
