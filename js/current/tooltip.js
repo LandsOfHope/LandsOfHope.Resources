@@ -44,7 +44,7 @@ function InfoTip(TImg, TContent) {
 				TImg = '';
 			}
 		}
-		ContentInfo = '<div class="weakercell" style="height: 100%; overflow: auto">' + (TImg != '' && TImg != null ? '<img src="' + TImg + '" style="float: left;">' : '') +
+		ContentInfo = '<div class="weakercell" style="height: 100%; overflow: hidden">' + (TImg != '' && TImg != null ? '<img src="' + TImg + '" style="float: left;">' : '') +
 			'' + TContent + '' +
 			'</div>';
 		ReplaceContent('ToolTip');
