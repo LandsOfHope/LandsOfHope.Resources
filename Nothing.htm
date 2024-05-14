@@ -1,0 +1,34 @@
+<HTML>
+
+    <HEAD>
+        <script language='JavaScript'>
+            var obj;
+            if (window.opener != null) {
+                obj = window.opener.parent;
+            } else {
+                obj = window;
+            }
+    
+            if (window.parent != null) {
+                obj = window.parent;
+                if (obj.window != null) {
+                    obj = window.parent;
+                    if (obj.parent != null) {
+                        obj = window.parent;
+                    }
+                }
+            } else {
+                obj = window.top;
+            }
+            if (obj.Theme != null) {
+                document.write('<link rel="stylesheet" type="text/css" href="https://lohcdn.com/css/' + obj.Theme + '.css">');
+            } else {
+                document.write('<link rel="stylesheet" type="text/css" href="https://lohcdn.com/forums/templates/english/images/loh.css">');
+            }
+        </script>
+        <title>Welcome</title>
+    
+    <body class='Zoom'>
+    </BODY>
+    
+    </HTML>
