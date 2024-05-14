@@ -1,6 +1,6 @@
 // Global variables
-var OX = OX - 1;
-var OY = OY - 1;
+var OX = OX;
+var OY = OY;
 var t = 1;
 var MapSrc = MapSrc;
 var GameID = GameID;
@@ -45,6 +45,10 @@ function Floors() {
 
 function MM(e) {
 	e = e || window.event;
+	
+	const map = getObj('map');
+	const mapPos = map.getBoundingClientRect();
+
 	if (e.pageX == null) {
 		X = e.clientX;
 		Y = e.clientY;
@@ -52,14 +56,14 @@ function MM(e) {
 		X = e.pageX;
 		Y = e.pageY;
 	}
-	X = (X) + 5;
-	Y = (Y) - 10;
-	if (X < 12) { X = 12 }
-	if (Y < 12) { Y = 12 }
-	if (X > 300) { X = 300 }
-	if (Y > 300) { Y = 300 }
+	X = (X) - mapPos.left;
+	Y = (Y) - mapPos.top;
+
+	X = Math.max(0, Math.min(X, mapPos.width));
+	Y = Math.max(0, Math.min(Y, mapPos.height));
+
 	X = ((Math.floor(X / 12)) + (OX));
-	Y = (Math.floor(Y / 12) + (OY))
+	Y = (Math.floor(Y / 12) + (OY));
 	if (lastx != X || lasty != Y) {
 		window.top.InfoTip('', '' + 'X: ' + X + ' Y:' + Y)
 	}

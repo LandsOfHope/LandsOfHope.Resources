@@ -1,7 +1,7 @@
 // Global variables
-var OX = OX - 1;
+var OX = OX;
 var t = 1;
-var OY = OY - 1;
+var OY = OY;
 var MapSrc = MapSrc;
 var GameID = GameID;
 var IPath = window.top.FHIPM;
@@ -32,18 +32,22 @@ function Plt(IType, Named, Color2, Picture, Picture2, Y, X) {
 		Picture2 = 'p2.gif';
 	}
 
-	//if (Picture.indexOf('/')!=-1) {} else {Picture = '' + IPath + Picture}
-	// mx=' + (X - OX) + ' my=' + (Y - OY) + ' t="' + Named + '"
-	//document.write('<img src=\'' + IPath + Picture + '\' style=\'position: absolute; width: 10; height: 10; cursor: pointer; border: 1 solid gold;left: ' + (((X - OX) * 12) - 8) + '; top: ' + (( (Y - OY) * 12) + 10) + ';\' onclick="Go(' +  IType + ')" OnMouseOver="smy(this);">')
-	//strYoyo += "<tr><td width=10 class='" +  Color2 + "' style='width: 10; height: 10'>" + (Picture != "" || Picture2 != "" ? "<img src=\"" + (Picture == "" && Picture2 != "" ? IPath + (Picture2 == "" ? "na.gif" : Picture2) : IPath + (Picture == "" ? "na.gif" : Picture)) + "\" style=\"" + (Picture2 != "" && Picture != "" ? "background-image: URL(" + IPath + (Picture2 == "" ? "na.gif" : Picture2) + ")" : "") + "\" width=10 height=10>" : "") + "<td onmouseover='PC(this)' onmouseout='RC(this)' c='white' style='color: white' xc='" + Color2 + "' p2='" + Picture2 +"' p='" + Picture +"' style='width: 100%' onclick=\"Go(" + IType + ")\">" + Named + "</td><tr>";
-
 	if (Markers[MC] == null) {
 		Markers[MC] = new Array();
 	}
 
 	Markers[MC] = new newMarker(IType, Named, Color2, Picture, Picture2, Y, X);
 
-	document.write('<img src=\'' + IPath + Picture + '\'  id=\'SM' + MC + '\' style=\'cursor: pointer; position: absolute; width: 10; height: 10; border: 1px solid ' + (Picture2 == 'ayou.gif' ? 'red' : 'gold') + ';left: ' + (((X - OX) * 12) - 8) + '; top: ' + (((Y - OY) * 12) + 10) + ';\' onclick="Go(' + IType + ')" OnMouseOver="smy(' + MC + ');">')
+    const tileSize = 12;
+    const relativeTile = {
+        x: X - OX,
+        y: Y - OY  
+    };
+    const tilePos = {
+        left: (relativeTile.x * tileSize),
+        top: (relativeTile.y * tileSize)
+    };
+	document.write('<img src=\'' + IPath + Picture + '\'  id=\'SM' + MC + '\' style=\'cursor: pointer; position: relative; width: ' + tileSize + 'px; height: ' + tileSize + 'px; border: 1px solid ' + (Picture2 == 'ayou.gif' ? 'red' : 'gold') + ';left: ' + tilePos.left + 'px; top: ' + tilePos.top + 'px;\' onclick="Go(' + IType + ')" OnMouseOver="smy(' + MC + ');">');
 	strYoyo += "<tr id=\'M" + MC + "\' onmouseover='PC(" + MC + ")' onmouseout='RC(" + MC + ")' onclick=\"Go(" + IType + ")\"><td width=10 class='c" + Color2 + "' style='width: 10; height: 10'><img src=\"" + IPath + Picture + "\" style=\"background-image: URL(" + IPath + Picture2 + ")\" width=10 height=10><td style='width: 100%'>" + Named + "</td><tr>";
 	MC = MC + 1;
 }
@@ -62,6 +66,10 @@ function newMarker(IType, Named, Color2, Picture, Picture2, Y, X) {
 
 function MM(e) {
 	e = e || window.event;
+    
+	const map = getObj('map');
+	const mapPos = map.getBoundingClientRect();
+
 	if (e.pageX == null) {
 		X = e.clientX;
 		Y = e.clientY;
@@ -69,12 +77,13 @@ function MM(e) {
 		X = e.pageX;
 		Y = e.pageY;
 	}
-	X = (X) + 5;
-	Y = (Y) - 10;
-	if (X < 12) { X = 12 }
-	if (Y < 12) { Y = 12 }
-	if (X > 300) { X = 300 }
-	if (Y > 300) { Y = 300 }
+
+	X = (X) - mapPos.left;
+	Y = (Y) - mapPos.top;
+
+	X = Math.max(0, Math.min(X, mapPos.width));
+	Y = Math.max(0, Math.min(Y, mapPos.height));
+
 	X = ((Math.floor(X / 12)) + (OX));
 	Y = (Math.floor(Y / 12) + (OY))
 	window.top.InfoTip('', 'X: ' + X + ' Y:' + Y)
