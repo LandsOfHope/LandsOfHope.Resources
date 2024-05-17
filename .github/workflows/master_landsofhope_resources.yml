@@ -25,6 +25,8 @@ jobs:
         working-directory: .build
       - run: node .build/generate_chat_colors_css.mjs
       - run: npx -y stylelint --config .build/node_modules/stylelint-config-recommended/index.js css/chat/chat-colors.css
+      - name: browserify analytics
+        run: npx --yes browserify@latest .build/analytics.js > js/current/analytics.js
       - run: pip install s3cmd
       - name: Publish
         run: s3cmd sync --no-mime-magic --guess-mime-type --access_key=${{ secrets.AWS_ACCESS_KEY_ID }} --secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY }} --host=${{ secrets.AWS_ENDPOINT_URL }} --host-bucket=${{ secrets.AWS_ENDPOINT_URL }} --bucket-location=auto --delete-removed --delete-after --no-preserve --recursive --rexclude "^\..*$" . 's3://lohimg'

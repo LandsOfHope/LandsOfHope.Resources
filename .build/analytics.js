@@ -1,4 +1,3 @@
-const api = require("@opentelemetry/api");
 const { WebTracerProvider, BatchSpanProcessor } = require("@opentelemetry/sdk-trace-web");
 const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-http');
 const { B3Propagator, B3InjectEncoding } = require('@opentelemetry/propagator-b3');
@@ -11,7 +10,7 @@ const { SemanticResourceAttributes } = require('@opentelemetry/semantic-conventi
 
 const provider = new WebTracerProvider({
     resource: new Resource({
-        [SemanticResourceAttributes.SERVICE_NAME]: 'landsofhope-legacy',
+        [SemanticResourceAttributes.SERVICE_NAME]: 'landsofhope-play-frontend',
         [SemanticResourceAttributes.SERVICE_VERSION]: 'v0',
     }),
 });
@@ -26,22 +25,21 @@ provider.register({
         ],
     })
 });
-
 registerInstrumentations({
     instrumentations: [
         getWebAutoInstrumentations(
             {
                 '@opentelemetry/instrumentation-document-load': {
-                    propagateTraceHeaderCorsUrls: [new RegExp("https:\/\/(.*\.)?landsofhope\.(com|internal)(\/.*)?$")]
+                    propagateTraceHeaderCorsUrls: [new RegExp("https:\/\/(.*\.)?landsofhope\.(com|dev|local)(\/.*)?$")]
                 },
                 '@opentelemetry/instrumentation-user-interaction': {
-                    propagateTraceHeaderCorsUrls: [new RegExp("https:\/\/(.*\.)?landsofhope\.(com|internal)(\/.*)?$")]
+                    propagateTraceHeaderCorsUrls: [new RegExp("https:\/\/(.*\.)?landsofhope\.(com|dev|local)(\/.*)?$")]
                 },
                 '@opentelemetry/instrumentation-xml-http-request': {
-                    propagateTraceHeaderCorsUrls: [new RegExp("https:\/\/(.*\.)?landsofhope\.(com|internal)(\/.*)?$")]
+                    propagateTraceHeaderCorsUrls: [new RegExp("https:\/\/(.*\.)?landsofhope\.(com|dev|local)(\/.*)?$")]
                 },
                 '@opentelemetry/instrumentation-fetch': {
-                    propagateTraceHeaderCorsUrls: [new RegExp("https:\/\/(.*\.)?landsofhope\.(com|internal)(\/.*)?$")]
+                    propagateTraceHeaderCorsUrls: [new RegExp("https:\/\/(.*\.)?landsofhope\.(com|dev|local)(\/.*)?$")]
                 }
             }
         )
