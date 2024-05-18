@@ -30,16 +30,16 @@ registerInstrumentations({
         getWebAutoInstrumentations(
             {
                 '@opentelemetry/instrumentation-document-load': {
-                    propagateTraceHeaderCorsUrls: [new RegExp("https:\/\/(.*\.)?landsofhope\.(com|dev|local)(\/.*)?$")]
+                    propagateTraceHeaderCorsUrls: [new RegExp("https:\/\/((?!data).*\.)?landsofhope\.(com|dev|local)(\/.*)?$")]
                 },
                 '@opentelemetry/instrumentation-user-interaction': {
-                    propagateTraceHeaderCorsUrls: [new RegExp("https:\/\/(.*\.)?landsofhope\.(com|dev|local)(\/.*)?$")]
+                    propagateTraceHeaderCorsUrls: [new RegExp("https:\/\/((?!data).*\.)?landsofhope\.(com|dev|local)(\/.*)?$")]
                 },
                 '@opentelemetry/instrumentation-xml-http-request': {
-                    propagateTraceHeaderCorsUrls: [new RegExp("https:\/\/(.*\.)?landsofhope\.(com|dev|local)(\/.*)?$")]
+                    propagateTraceHeaderCorsUrls: [new RegExp("https:\/\/((?!data).*\.)?landsofhope\.(com|dev|local)(\/.*)?$")]
                 },
                 '@opentelemetry/instrumentation-fetch': {
-                    propagateTraceHeaderCorsUrls: [new RegExp("https:\/\/(.*\.)?landsofhope\.(com|dev|local)(\/.*)?$")]
+                    propagateTraceHeaderCorsUrls: [new RegExp("https:\/\/((?!data).*\.)?landsofhope\.(com|dev|local)(\/.*)?$")]
                 }
             }
         )
