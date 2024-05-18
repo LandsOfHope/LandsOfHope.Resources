@@ -49,7 +49,6 @@ function loadwindow2(url, width, height, windowname, windowtitle) {
 		if (window.frames[windowname + 'f'] == null) {
 			window.top.SendCommand('Window Error: Could not find ' + windowname + 'f, action aborted.');
 		} else {
-			window.frames[windowname + 'f'].document.body.innerHTML = '<table width="100%" height="100%" class="weakcell"><tr><td><center>Loading ...</center></td></tr></table>'
 			if (width > 0) {
 				getObj(windowname + 'title').innerHTML = windowtitle;
 				getObj(windowname).style.width = initialwidth = width + "px";
