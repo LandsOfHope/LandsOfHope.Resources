@@ -90,27 +90,29 @@ function getDaylightBrightness(time) {
     const totalMinutes = time.getHours() * 60 + time.getMinutes();
 
     // Convert 5AM and 8PM to minutes
-    const morningThreshold = 5 * 60; // 5AM in minutes
-    const eveningThreshold = 20 * 60; // 8PM in minutes
-    const noon = 12 * 60; // 12 noon in minutes
+    const morningThresholdStart = 5 * 60; // 5AM in minutes
+    const morningThresholdEnd = 8 * 60; // 8AM in minutes
+
+    const eveningThresholdStart = 17 * 60; // 5PM in minutes
+    const eveningThresholdEnd = 20 * 60; // 8PM in minutes
 
     // Before 5AM or after 8PM, brightness is 0
-    if (totalMinutes < morningThreshold || totalMinutes > eveningThreshold) {
+    if (totalMinutes < morningThresholdStart || totalMinutes > eveningThresholdEnd) {
         return 0;
     }
-    // At 12 noon, brightness is 1
-    else if (totalMinutes === noon) {
+    // Between 8AM and 5PM, brightness is 1
+    else if (totalMinutes > morningThresholdEnd && totalMinutes < eveningThresholdStart) {
         return 1;
     }
-    // Calculate brightness for times between 5AM and 12 noon
-    else if (totalMinutes > morningThreshold && totalMinutes < noon) {
+    // Calculate brightness for times between 5AM and 8AM
+    else if (totalMinutes >= morningThresholdStart || totalMinutes <= morningThresholdEnd) {
         // Linearly increase from 0 to 1 as time goes from 5AM to 12 noon
-        return (totalMinutes - morningThreshold) / (noon - morningThreshold);
+        return (totalMinutes - morningThresholdStart) / (morningThresholdEnd - morningThresholdStart);
     }
-    // Calculate brightness for times between 12 noon and 8PM
-    else if (totalMinutes > noon && totalMinutes <= eveningThreshold) {
-        // Linearly decrease from 1 to 0 as time goes from 12 noon to 8PM
-        return (eveningThreshold - totalMinutes) / (eveningThreshold - noon);
+    // Calculate brightness for times between 5PM and 8PM
+    else if (totalMinutes >= eveningThresholdStart && totalMinutes <= eveningThresholdEnd) {
+        // Linearly decrease from 1 to 0 as time goes from 5PM to 8PM
+        return 1 - ((totalMinutes - eveningThresholdStart) / (eveningThresholdEnd - eveningThreshold));
     }
     // Default case to handle any unexpected input
     else {
@@ -134,7 +136,7 @@ function refreshTime() {
 	}
 
 	const daylightBrightness = getDaylightBrightness(getfhtime());
-	window.top.getObj("Map2").style.setProperty("--mapTimeFilter", `sepia(${daylightBrightness * 100}%) brightness(${(1 - daylightBrightness) * 70}%)`);
+	window.top.getObj("Map2").style.setProperty("--mapTimeFilter", `sepia(${(1 - daylightBrightness) * 30}%) brightness(${Math.max(60, daylightBrightness * 100)}%)`);
 
 	if (tmok == 1) {
 		timer = setTimeout(refreshTime, 10000);
