@@ -50,5 +50,5 @@ function Tipsfor(v) {
 function DC(v) {
 	getObj('Stuff2').innerHTML = Tipsfor(v)
 	getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + "'>";
-	getObj('Buttons').innerHTML = Adr('window.top.loadwindow2(\'imi.asp?Test=' + Infos[v].v + '\',300,300,\'iwindow\',\'' + Infos[v].m + '\');', 'View item information', 'View') + Adr('if (Processing == 0) {window.location.replace(\'fhiidv.asp?CharsAt=' + Infos[v].v + '&Type=' + MT + '\');}', 'Edit this items text description, requires GM Approval', 'Description');
+	getObj('Buttons').innerHTML = Adr('window.top.loadwindow2(\'imi.asp?Test=' + Infos[v].v + '\',300,300,\'iwindow\',\'' + Infos[v].m + '\');', 'View item information', 'View');
 }
