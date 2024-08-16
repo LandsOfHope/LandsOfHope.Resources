@@ -6,9 +6,10 @@
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
                 // User has scrolled to the bottom of the page
                 // Raise an event on the parent window
-                window.top.postMessage('privacy_scroll_end', "https://landsofhope.com");
-                window.top.postMessage('privacy_scroll_end', "https://landsofhope.dev");
-                window.top.postMessage('privacy_scroll_end', "https://landsofhope.local");
+                for(var domain of ["landsofhope.com", "landsofhope.dev", "landsofhope.local"]) {
+                    window.top.postMessage('privacy_scroll_end', `https://${domain}`);
+                    window.top.postMessage('privacy_scroll_end', `https://idp.${domain}`);
+                }
             }
         });
     </script>
