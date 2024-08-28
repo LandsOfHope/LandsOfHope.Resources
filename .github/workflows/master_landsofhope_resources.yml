@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+      - develop
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -28,7 +31,10 @@ jobs:
       - name: browserify analytics
         run: npx --yes browserify@latest .build/analytics.js > js/current/analytics.js
       - run: pip install s3cmd
+        if: ${{ github.ref == 'refs/heads/master' }}
       - name: Publish
         run: s3cmd sync --no-mime-magic --guess-mime-type --access_key=${{ secrets.AWS_ACCESS_KEY_ID }} --secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY }} --host=${{ secrets.AWS_ENDPOINT_URL }} --host-bucket=${{ secrets.AWS_ENDPOINT_URL }} --bucket-location=auto --delete-removed --delete-after --no-preserve --recursive --rexclude "^\..*$" . 's3://lohimg'
+        if: ${{ github.ref == 'refs/heads/master' }}
       - name: Purge cache
         run: 'curl -X POST https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_TOKEN }}" -H "Content-Type: application/json" --data "{\"purge_everything\":true}"'
+        if: ${{ github.ref == 'refs/heads/master' }}
