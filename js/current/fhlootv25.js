@@ -25,7 +25,7 @@ function GetAT(aa) {
 //getObj('Stuff2').innerHTML = '<b>' + LootItems[v].n + '</b>' + (LootItems[v].i == 'True' ? (LootItems[v].s != '' ? '<br>Needs: ' + LootItems[v].s : '' ) + '<br>Rarity: <b>' + LootItems[v].l + '</b><br>Value: ' + window.top.BSGM(LootItems[v].b) + '' :  (LootItems[v].a != '' ? '<br>Appraisal: ' + LootItems[v].a : '' ));
 
 function DoLoot(currentitem, actionid, v, b) {
-	window.location.replace('?CharsAt=' + CharID + '&ItemID=1&P=' + PageNo + '&InventoryItemID=' + currentitem + '&B=' + b + '&n=' + LootItems[v].n + '');
+	window.location.replace('?CharsAt=' + CharID + '&ItemID=1&P=' + PageNo + '&InventoryItemID=' + currentitem + '&B=' + b + '');
 }
 
 function DoLoot2(actionid) {
