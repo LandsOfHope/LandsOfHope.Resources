@@ -79,16 +79,6 @@ function setTutorial() {
 
 }
 
-function setTos() {
-	if (getObj('tosx').checked == true) {
-		getObj('Tos').value = 1;
-	} else {
-		getObj('Tos').value = 0;
-	}
-	DC2();
-
-}
-
 function DrawFooters(vn, p) {
 	var strTest = '';
 	strTest = "<td valign=bottom></td><td style='background-image: URL(https://lohcdn.com/images/blankbutton2.png); background-position: bottom; background-color: transparent; width:100px' align=center><a class='tab' href=\"javascript: window.top.hidePopWin(true);\" title=\"Close this window\">Close</a></td>";
@@ -123,7 +113,7 @@ function DC(stuff) {
 function DC2() {
 	if (getObj('Results') != undefined) {
 		getObj('PreviewPic').innerHTML = (getObj('thepic').value == '' ? '' : '<img src=\'' + IPath + getObj('thepic').value + '\' onerror=\'this.src="https://lohcdn.com/na.gif"\'>');
-		getObj('Results').innerHTML = '<table class=\'specialcell\' cellpadding=1 cellspacing=1><tr><td colspan=3><b>Checklist</b></td></tr><tr><td><b>Step 1</b></td><td>Profession ' + (lastp3 != '' ? '' + lastp3 + '</td><td><img src="https://lohcdn.com/game/icons/tick.png" alt="Complete">' : '</td><td><img src="https://lohcdn.com/game/icons/cross.png" alt="Incomplete">') + '</td></tr><tr><td><b>Step 2</b></td><td>Sex ' + (getObj('Sex').value != '' ? '' + (getObj('Sex').value == 'M' ? 'Male' : 'Female') + '</td><td><img src="https://lohcdn.com/game/icons/tick.png" alt="Complete">' : '</td><td><img src="https://lohcdn.com/game/icons/cross.png" alt="Incomplete">') + '</td></tr><tr><td></td><td>Picture' + (getObj('thepic').value != '' ? '</td><td><img src="https://lohcdn.com/game/icons/tick.png" alt="Complete">' : '</td><td><img src="https://lohcdn.com/game/icons/cross.png" alt="Incomplete">') + '</td></tr><tr><tr><td></td><td>Player Name' + (getObj('CharacterName').value != '' ? '</td><td><img src="https://lohcdn.com/game/icons/tick.png" alt="Complete">' : '</td><td><img src="https://lohcdn.com/game/icons/cross.png" alt="Incomplete">') + '</td></tr><tr><td></td><td>TOS' + (getObj('Tos').value == 1 ? '</td><td><img src="https://lohcdn.com/game/icons/tick.png" alt="Complete">' : '</td><td><img src="https://lohcdn.com/game/icons/cross.png" alt="Incomplete">') + '</td></tr></table>';
+		getObj('Results').innerHTML = '<table class=\'specialcell\' cellpadding=1 cellspacing=1><tr><td colspan=3><b>Checklist</b></td></tr><tr><td><b>Step 1</b></td><td>Profession ' + (lastp3 != '' ? '' + lastp3 + '</td><td><img src="https://lohcdn.com/game/icons/tick.png" alt="Complete">' : '</td><td><img src="https://lohcdn.com/game/icons/cross.png" alt="Incomplete">') + '</td></tr><tr><td><b>Step 2</b></td><td>Sex ' + (getObj('Sex').value != '' ? '' + (getObj('Sex').value == 'M' ? 'Male' : 'Female') + '</td><td><img src="https://lohcdn.com/game/icons/tick.png" alt="Complete">' : '</td><td><img src="https://lohcdn.com/game/icons/cross.png" alt="Incomplete">') + '</td></tr><tr><td></td><td>Picture' + (getObj('thepic').value != '' ? '</td><td><img src="https://lohcdn.com/game/icons/tick.png" alt="Complete">' : '</td><td><img src="https://lohcdn.com/game/icons/cross.png" alt="Incomplete">') + '</td></tr><tr><tr><td></td><td>Player Name' + (getObj('CharacterName').value != '' ? '</td><td><img src="https://lohcdn.com/game/icons/tick.png" alt="Complete">' : '</td><td><img src="https://lohcdn.com/game/icons/cross.png" alt="Incomplete">') + '</td></tr></table>';
 		if (PageNo == 3) {
 			if (getObj('Results').innerHTML.indexOf('cross.png') != -1) {
 				returnVal = null;
