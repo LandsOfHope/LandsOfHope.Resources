@@ -3,7 +3,7 @@ var ChatLoaded = 0;
 var ChatDelayed = '';
 
 var ChatArray = new Array(50)
-var StartupMessage = 'Welcome to Lands of Hope , this Status window is where you will see various responses from your Interactions with the world of Myzan.<br><br>If you have any questions please use the Shoutbox or Character > Messages (Message Support) screen to contact someone to help you!';
+var StartupMessage = 'Welcome to Lands of Hope, this Status window is where you will see various responses from your Interactions with the world of Myzan.<br><br>If you have any questions please use the Shoutbox or Character > Messages (Message Support) screen to contact someone to help you!';
 
 function ShowStartup() {
 	var ctmp = 0;
