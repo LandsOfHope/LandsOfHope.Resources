@@ -22,7 +22,7 @@ var gPopupContainer = null;
 var gPopFrame = null;
 var gReturnFunc;
 var gPopupIsShown = false;
-var gDefaultPage = "/Nothing.htm";
+var gDefaultPage = "about:blank";
 var gHideSelects = false;
 var gReturnVal = null;
 var gReturnVal2 = null;
@@ -34,8 +34,6 @@ var gTabbableTags = new Array("A", "BUTTON", "TEXTAREA", "INPUT", "IFRAME");
 if (!document.all) {
 	document.onkeypress = keyDownHandler;
 }
-
-
 
 /**
  * Initializes popup code on load.	
