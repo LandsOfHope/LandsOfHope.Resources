@@ -40,7 +40,6 @@ async function sendRequest(doc) {
 	}).then(async response => {
 		if (response.ok) {
             const responseText = await response.text();
-            console.log(responseText);
 			eval(responseText);
 		} else {
 			ajaxerror(doc, response.status, response.statusText, 'Routine 1b');
