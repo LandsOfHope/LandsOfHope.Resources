@@ -43,7 +43,7 @@ function newInfo(Color, d, b, c2, i, p, e, n, l, f) {
 
 function DC(v) {
 	getObj('Stuff2').innerHTML = '<b>' + Infos[v].n + '</b><br><a href=\'mailto:' + Infos[v].e + '?subject=RE: Your Lands of Hope Account\'>' + Infos[v].e + '</a><br>Password: ' + Infos[v].p + '<br>IP Address: ' + Infos[v].i + '<Br>Logged: ' + Infos[v].l + '<br>Accounts on IP: ' + Infos[v].f + (Infos[v].c2 == 0 ? '<br>Unchecked' : '<br>Checked');
-	getObj('Buttons').innerHTML = Adr('window.location.replace(\'gmEA.asp?Mask=' + Infos[v].i + '\');', 'View Accounts', 'View Accounts') + (Infos[v].c2 == 0 ? Adr('window.location.replace(\'gmEAT.asp?Mask=' + Mask + '&CharsAt=' + Infos[v].d + '&Action=1\');', 'Set Checked', 'Checked') : '') + Adr('window.location.replace(\'gmEAT.asp?Mask=' + Mask + '&CharsAt=' + Infos[v].d + '&Action=2\');', 'Delete', 'Delete');
+	getObj('Buttons').innerHTML = Adr('window.location.replace(\'/gm/gmEA.asp?Mask=' + Infos[v].i + '\');', 'View Accounts', 'View Accounts') + (Infos[v].c2 == 0 ? Adr('window.location.replace(\'/gm/gmEAT.asp?Mask=' + Mask + '&CharsAt=' + Infos[v].d + '&Action=1\');', 'Set Checked', 'Checked') : '') + Adr('window.location.replace(\'/gm/gmEAT.asp?Mask=' + Mask + '&CharsAt=' + Infos[v].d + '&Action=2\');', 'Delete', 'Delete');
 }
 
 

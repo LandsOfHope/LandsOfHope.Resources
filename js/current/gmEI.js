@@ -40,7 +40,7 @@ function conf(message1, default1, forward1) {
 function DC(v) {
 	getObj('Stuff2').innerHTML = Infos[v].t + '<br>' + Infos[v].d;
 	getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == null ? 'na.gif' : Infos[v].p) + "'>";
-	getObj('Buttons').innerHTML = Adr('conf(\'Please enter a new item name\',\'' + Infos[v].t + '\',\'gmEI.asp?Mask=' + Mask + '&P=' + PageNo + '&CharsAt=' + Infos[v].v + '&Name=\');', 'Rename', 'Rename') + Adr('window.open(\'gmEI2.asp?CharsAt=' + Infos[v].v + '\', \'EI\');', 'More', 'More') + Adr('window.top.loadwindow2(\'gmEI3.asp?CharsAt=' + Infos[v].v + '\',400,300,\'iwindow\',\'' + Infos[v].t + ' Stats\');', 'Stats', 'Stats');
+	getObj('Buttons').innerHTML = Adr('conf(\'Please enter a new item name\',\'' + Infos[v].t + '\',\'/gm/gmEI.asp?Mask=' + Mask + '&P=' + PageNo + '&CharsAt=' + Infos[v].v + '&Name=\');', 'Rename', 'Rename') + Adr('window.open(\'/gm/gmEI2.asp?CharsAt=' + Infos[v].v + '\', \'EI\');', 'More', 'More') + Adr('window.top.loadwindow2(\'/gm/gmEI3.asp?CharsAt=' + Infos[v].v + '\',400,300,\'iwindow\',\'' + Infos[v].t + ' Stats\');', 'Stats', 'Stats');
 }
 
 function GoP(PageNo) {

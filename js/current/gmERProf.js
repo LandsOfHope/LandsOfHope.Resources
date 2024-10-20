@@ -28,7 +28,7 @@ function newInfo(Color, p, pn, ok) {
 
 function DC(v) {
 	getObj('Stuff2').innerHTML = Infos[v].pn + ' (' + Infos[v].p + ')';
-	getObj('Buttons').innerHTML = '' + '<form method=\'post\' id=editform name=editform style=\'margin: 0px;\' action=\'gmERProf.asp\'><input type=\'hidden\' name=\'PropertyName\' value=\'' + Infos[v].p + '\'>' + (Infos[v].ok == 0 ? '<input type=\'hidden\' name=\'New\' value=\'1\'>' : '') + '<input type=\'hidden\' name=\'CharsAt\' value=\'' + CharID + '\'>Enabled: <input type=checkbox ' + (Infos[v].ok != 0 ? 'checked' : '') + ' name=Skillactive value=\'1\'><br>' + Adr('getObj(\'editform\').submit();', 'Save', 'Save') + '</form>';
+	getObj('Buttons').innerHTML = '' + '<form method=\'post\' id=editform name=editform style=\'margin: 0px;\' action=\'/gm/gmERProf.asp\'><input type=\'hidden\' name=\'PropertyName\' value=\'' + Infos[v].p + '\'>' + (Infos[v].ok == 0 ? '<input type=\'hidden\' name=\'New\' value=\'1\'>' : '') + '<input type=\'hidden\' name=\'CharsAt\' value=\'' + CharID + '\'>Enabled: <input type=checkbox ' + (Infos[v].ok != 0 ? 'checked' : '') + ' name=Skillactive value=\'1\'><br>' + Adr('getObj(\'editform\').submit();', 'Save', 'Save') + '</form>';
 }
 
 

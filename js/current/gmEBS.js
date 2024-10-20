@@ -28,7 +28,7 @@ function newInfo(Color, pn, pv, skillid, limit) {
 
 function DC(v) {
 	getObj('Stuff2').innerHTML = Infos[v].pn + ' (' + Infos[v].s + ')';
-	getObj('Buttons').innerHTML = '' + '<form method=\'post\' action=\'gmEBS.asp\' style=\'margin: 0px;\'><input type=\'hidden\' name=\'PropertyName\' value=\'' + Infos[v].s + '\'>' + (Infos[v].s == 0 ? '<input type=\'hidden\' name=\'New\' value=\'1\'>' : '') + '<input type=\'hidden\' name=\'CharsAt\' value=\'' + CharID + '\'>Value: <input name=PropertyValue value=\'' + Infos[v].pv + '\'><br>Limit: <input name=Limit value=\'' + Infos[v].l + '\'><br>' + Adr('this.form.submit();', 'Save changes', 'Save') + '</form>';
+	getObj('Buttons').innerHTML = '' + '<form method=\'post\' action=\'/gm/gmEBS.asp\' style=\'margin: 0px;\'><input type=\'hidden\' name=\'PropertyName\' value=\'' + Infos[v].s + '\'>' + (Infos[v].s == 0 ? '<input type=\'hidden\' name=\'New\' value=\'1\'>' : '') + '<input type=\'hidden\' name=\'CharsAt\' value=\'' + CharID + '\'>Value: <input name=PropertyValue value=\'' + Infos[v].pv + '\'><br>Limit: <input name=Limit value=\'' + Infos[v].l + '\'><br>' + Adr('this.form.submit();', 'Save changes', 'Save') + '</form>';
 }
 
 

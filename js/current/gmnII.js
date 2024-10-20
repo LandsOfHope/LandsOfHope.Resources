@@ -32,7 +32,7 @@ function GoP(PageNo) {
 function DC(v) {
 	getObj('Stuff2').innerHTML = '<b>' + Infos[v].t + '</b> (' + Infos[v].v + ')<br>Material Type: ' + Infos[v].d + '<br>ID: ' + Infos[v].v;
 	getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + "'>";
-	getObj('Buttons').innerHTML = '<' + strClicky + ' onclick="window.location.replace(\'gmNII2.asp?M=' + Infos[v].d + '&I=' + Infos[v].v + '&IN=' + Infos[v].t + '\')">Use</button><' + strClicky1 + ' onclick="window.top.loadwindow2(\'imi.asp?Test=' + Infos[v].v + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].t + '\');" style=\'width: 85\'>Info</button>'
+	getObj('Buttons').innerHTML = '<' + strClicky + ' onclick="window.location.replace(\'/gm/gmNII2.asp?M=' + Infos[v].d + '&I=' + Infos[v].v + '&IN=' + Infos[v].t + '\')">Use</button><' + strClicky1 + ' onclick="window.top.loadwindow2(\'imi.asp?Test=' + Infos[v].v + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].t + '\');" style=\'width: 85\'>Info</button>'
 }
 
 

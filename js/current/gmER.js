@@ -38,7 +38,7 @@ function PC(v) {
 function DC(v) {
 	getObj('Stuff2').innerHTML = '<b>' + Infos[v].i + '</b><br>Classification: ' + Infos[v].rm;
 	getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + "'>";
-	getObj('Buttons').innerHTML = Adr('window.top.loadwindow2(\'gmERD.asp?CharsAt=' + Infos[v].v + '\',460,300,\'iwindow\',\'' + Infos[v].i + ' Description\');', 'Description', 'Description') + Adr('window.top.loadwindow2(\'gmERP.asp?CharsAt=' + Infos[v].v + '\',400,300,\'iwindow\',\'' + Infos[v].i + ' Stats\');', 'Stats', 'Stats') + Adr('window.top.loadwindow2(\'gmERS.asp?CharsAt=' + Infos[v].v + '\',400,300,\'iwindow\',\'' + Infos[v].i + ' Skills\');', 'Skills', 'Skills') + Adr('window.top.loadwindow2(\'gmERProf.asp?CharsAt=' + Infos[v].v + '\',400,300,\'iwindow\',\'' + Infos[v].i + ' Professions\');', 'Professions', 'Professions');
+	getObj('Buttons').innerHTML = Adr('window.top.loadwindow2(\'/gm/gmERD.asp?CharsAt=' + Infos[v].v + '\',460,300,\'iwindow\',\'' + Infos[v].i + ' Description\');', 'Description', 'Description') + Adr('window.top.loadwindow2(\'/gm/gmERP.asp?CharsAt=' + Infos[v].v + '\',400,300,\'iwindow\',\'' + Infos[v].i + ' Stats\');', 'Stats', 'Stats') + Adr('window.top.loadwindow2(\'/gm/gmERS.asp?CharsAt=' + Infos[v].v + '\',400,300,\'iwindow\',\'' + Infos[v].i + ' Skills\');', 'Skills', 'Skills') + Adr('window.top.loadwindow2(\'/gm/gmERProf.asp?CharsAt=' + Infos[v].v + '\',400,300,\'iwindow\',\'' + Infos[v].i + ' Professions\');', 'Professions', 'Professions');
 
 }
 

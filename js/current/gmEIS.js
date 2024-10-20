@@ -66,7 +66,7 @@ function newSource(Color, AP, ItemID, ItemName, PictureID, pp) {
 
 
 function DC2(v) {
-	window.location.replace('gmEIS.asp?I=' + Source[v].z + '&P=' + PageNo);
+	window.location.replace('/gm/gmEIS.asp?I=' + Source[v].z + '&P=' + PageNo);
 }
 
 function GoP(p) {

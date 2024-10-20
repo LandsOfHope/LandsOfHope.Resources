@@ -70,11 +70,11 @@ function PromptReturn(returnVal, postback) {
 		if (returnVal != false) {
 			if (postback == 1) {
 				if (returnVal != null) {
-					window.top.Interface.location.replace('gmcharxz.asp?ItemTypeID=' + ItemTypeID + '&P=' + PageNo + '&ItemID=3&ItemName=' + returnVal + '&InventoryItemID=' + II.z + '&CharsAt=' + II.cid);
+					window.top.Interface.location.replace('/gm/gmcharxz.asp?ItemTypeID=' + ItemTypeID + '&P=' + PageNo + '&ItemID=3&ItemName=' + returnVal + '&InventoryItemID=' + II.z + '&CharsAt=' + II.cid);
 				}
 			} else if (postback == 2) {
 				if (returnVal == true) {
-					window.top.Interface.location.replace('gmcharxz.asp?ItemTypeID=' + ItemTypeID + '&P=' + PageNo + '&ItemID=5&InventoryItemID=' + II.z + '&CharsAt=' + II.cid);
+					window.top.Interface.location.replace('/gm/gmcharxz.asp?ItemTypeID=' + ItemTypeID + '&P=' + PageNo + '&ItemID=5&InventoryItemID=' + II.z + '&CharsAt=' + II.cid);
 				}
 			}
 		}

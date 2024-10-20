@@ -27,7 +27,7 @@ function PC(v) {
 function GS(in3, in2) {
 	if (Processing == 0) {
 		Processing = 1;
-		window.top.Interface.location.replace('gmBuildings.asp?CharsAt=' + in2 + '&P=' + PageNo + '&Type=' + in3 + '&Mask=' + Mask)
+		window.top.Interface.location.replace('/gm/gmBuildings.asp?CharsAt=' + in2 + '&P=' + PageNo + '&Type=' + in3 + '&Mask=' + Mask)
 	}
 }
 

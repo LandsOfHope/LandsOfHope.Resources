@@ -30,7 +30,7 @@ function newInfo(Color, pn, pv, PictureID) {
 function DC(v) {
 	getObj('Stuff2').innerHTML = '<b>' + Infos[v].i + '</b><br>';
 	getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == null ? 'na.gif' : Infos[v].p) + "'>";
-	getObj('Buttons').innerHTML = '' + '<form method=\'post\' action=\'gmEBP.asp\' id=EditStat name=EditStat style=\'margin: 0px;\'><input type=\'hidden\' name=\'PropertyName\' value=\'' + Infos[v].i + '\'>' + (Math.abs(Infos[v].v) == 0 ? '<input type=\'hidden\' name=\'New\' value=\'1\'>' : '') + '<input type=\'hidden\' name=\'CharsAt\' value=\'' + ItemID + '\'><input name=PropertyValue value=\'' + Infos[v].v + '\'>' + Adr('this.form.submit();', 'Save changes', 'Save') + '</form>'
+	getObj('Buttons').innerHTML = '' + '<form method=\'post\' action=\'/gm/gmEBP.asp\' id=EditStat name=EditStat style=\'margin: 0px;\'><input type=\'hidden\' name=\'PropertyName\' value=\'' + Infos[v].i + '\'>' + (Math.abs(Infos[v].v) == 0 ? '<input type=\'hidden\' name=\'New\' value=\'1\'>' : '') + '<input type=\'hidden\' name=\'CharsAt\' value=\'' + ItemID + '\'><input name=PropertyValue value=\'' + Infos[v].v + '\'>' + Adr('this.form.submit();', 'Save changes', 'Save') + '</form>'
 }
 
 

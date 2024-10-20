@@ -27,7 +27,7 @@ function newInfo(Color, ip, lu, nt) {
 
 function DC(v) {
 	getObj('Stuff2').innerHTML = '<b>' + Infos[v].ip + '</b><br>Added: ' + Infos[v].l + '<br>Note: ' + Infos[v].n;
-	getObj('Buttons').innerHTML = Adr('window.location.replace(\'gmEA.asp?Mask=' + Infos[v].i + '\');', 'Accounts', 'Accounts') + Adr('window.location.replace(\'gmEIPB.asp?Mask=' + Mask + '&CharsAt=' + Infos[v].i + '&Action=1&Name=\');', 'Remove IP Ban', 'Remove');
+	getObj('Buttons').innerHTML = Adr('window.location.replace(\'/gm/gmEA.asp?Mask=' + Infos[v].i + '\');', 'Accounts', 'Accounts') + Adr('window.location.replace(\'/gm/gmEIPB.asp?Mask=' + Mask + '&CharsAt=' + Infos[v].i + '&Action=1&Name=\');', 'Remove IP Ban', 'Remove');
 }
 
 function RC(v) {

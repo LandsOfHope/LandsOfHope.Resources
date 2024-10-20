@@ -688,15 +688,15 @@ function PF(id, varin) {
 		return 0;
 	}
 	if (varin == 68) {
-		strfile = 'gmEC.asp';
+		strfile = '/gm/gmEC.asp';
 	}
 	if (varin == 54) {
-		InWin.replace('gmEC.asp?CharsAt=' + id + '&Mask=*');
+		InWin.replace('/gm/gmEC.asp?CharsAt=' + id + '&Mask=*');
 		PFING = 0;
 		return 0;
 	}
 	if (varin == 69) {
-		InWin.replace('gmECI.asp?CharsAt=' + id + '');
+		InWin.replace('/gm/gmECI.asp?CharsAt=' + id + '');
 		PFING = 0;
 		return 0;
 	}
@@ -994,7 +994,7 @@ function PF(id, varin) {
 		return 0;
 	}
 	if (varin == 262) {
-		InWin.replace('gmev2.asp?CharsAt=' + id);
+		InWin.replace('/gm/gmev2.asp?CharsAt=' + id);
 		PFING = 0;
 		return 0;
 	}
@@ -1074,10 +1074,10 @@ function PF(id, varin) {
 		return 0;
 	}
 	if (varin == 84) {
-		strfile = 'gmEIS.asp';
+		strfile = '/gm/gmEIS.asp';
 	}
 	if (varin == 94) {
-		strfile = 'gmEB.asp';
+		strfile = '/gm/gmEB.asp';
 	}
 	if (varin == 127) {
 		strfile = 'fhaut.asp';
@@ -1086,7 +1086,7 @@ function PF(id, varin) {
 		strfile = 'fhbug.asp?url=' + window.top.Interface.location.href;
 	}
 	if (varin == 126) {
-		InWin.replace('gmEB.asp?Mask=' + id + '');
+		InWin.replace('/gm/gmEB.asp?Mask=' + id + '');
 		PFING = 0;
 		return 0;
 	}
@@ -1142,7 +1142,7 @@ function PF(id, varin) {
 		strfile = 'fhaup2.asp';
 	}
 	if (varin == 95) {
-		strfile = 'gmSpeak.asp';
+		strfile = '/gm/gmSpeak.asp';
 	}
 	if (varin == 78) {
 		strfile = 'fhmlm.asp';

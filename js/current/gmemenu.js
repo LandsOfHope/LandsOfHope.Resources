@@ -30,7 +30,7 @@ function newInfo(Color, m, d, p2, Itty, a) {
 function DC(v) {
 	getObj('Stuff2').innerHTML = '<b>' + Infos[v].t + '</b><br>Author: ' + Infos[v].a;
 	getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p2 == '' ? 'na.gif' : Infos[v].p2) + "'>";
-	getObj('Buttons').innerHTML = Adr('window.location.replace(\'gmEmenu.asp?Action=1&Mask=' + Mask + '&CharsAt=' + Infos[v].d + '\');', 'Save', 'Save');
+	getObj('Buttons').innerHTML = Adr('window.location.replace(\'/gm/gmEmenu.asp?Action=1&Mask=' + Mask + '&CharsAt=' + Infos[v].d + '\');', 'Save', 'Save');
 }
 
 function RC(v) {

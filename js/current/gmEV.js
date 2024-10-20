@@ -37,8 +37,8 @@ function PC(v) {
 function DC(v) {
 	getObj('Stuff2').innerHTML = '<b>' + Infos[v].i + '</b>';
 	getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + "'>";
-	getObj('Buttons').innerHTML = Adr('window.top.loadwindow2(\'gmEVS.asp?CharsAt=' + Infos[v].v + '\',600,300,\'iwindow\',\'' + Infos[v].i + ' Skills\');', 'Skills', 'Skills')
-	//Adr('window.open(\'gmEVS.asp?CharsAt=' +Infos[v].v + '\', \'EVS\');', 'Skills', 'Skills');
+	getObj('Buttons').innerHTML = Adr('window.top.loadwindow2(\'/gm/gmEVS.asp?CharsAt=' + Infos[v].v + '\',600,300,\'iwindow\',\'' + Infos[v].i + ' Skills\');', 'Skills', 'Skills')
+	//Adr('window.open(\'/gm/gmEVS.asp?CharsAt=' +Infos[v].v + '\', \'EVS\');', 'Skills', 'Skills');
 }
 
 function GoP(P) {

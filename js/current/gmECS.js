@@ -30,7 +30,7 @@ function newInfo(pn, pv, skillid, limit, sa, bv, Color) {
 
 function DC(v) {
 	getObj('Stuff2').innerHTML = Infos[v].pn + ' (' + Infos[v].s + ')';
-	getObj('Buttons').innerHTML = '' + '<form method=\'post\' id=statform name=statform action=\'gmECS.asp\' style=\'margin: 0px;\'><input type=\'hidden\' name=\'PropertyName\' value=\'' + Infos[v].s + '\'>' + (Infos[v].s == 0 ? '<input type=\'hidden\' name=\'New\' value=\'1\'>' : '') + '<input type=\'hidden\' name=\'CharsAt\' value=\'' + CharID + '\'>Value: <input name=PropertyValue value=\'' + Infos[v].pv + '\'><br>Bonus Value: <input name=BonusValue value=\'' + Infos[v].bv + '\'><br>Limit: <input name=Limit value=\'' + Infos[v].l + '\'><br>Active: <input type=checkbox ' + (Infos[v].sa != 0 ? 'checked' : '') + ' name=Skillactive value=\'1\'><br>' + Adr('getObj(\'statform\').submit();', 'Set stat', 'Set') + '</form>';
+	getObj('Buttons').innerHTML = '' + '<form method=\'post\' id=statform name=statform action=\'/gm/gmECS.asp\' style=\'margin: 0px;\'><input type=\'hidden\' name=\'PropertyName\' value=\'' + Infos[v].s + '\'>' + (Infos[v].s == 0 ? '<input type=\'hidden\' name=\'New\' value=\'1\'>' : '') + '<input type=\'hidden\' name=\'CharsAt\' value=\'' + CharID + '\'>Value: <input name=PropertyValue value=\'' + Infos[v].pv + '\'><br>Bonus Value: <input name=BonusValue value=\'' + Infos[v].bv + '\'><br>Limit: <input name=Limit value=\'' + Infos[v].l + '\'><br>Active: <input type=checkbox ' + (Infos[v].sa != 0 ? 'checked' : '') + ' name=Skillactive value=\'1\'><br>' + Adr('getObj(\'statform\').submit();', 'Set stat', 'Set') + '</form>';
 }
 
 function RC(v) {

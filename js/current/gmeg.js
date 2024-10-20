@@ -39,7 +39,7 @@ function newInfo(Color, PictureID, d, c, i, p, e, Itty) {
 function DC(v) {
 	LastV = v;
 	getObj('Stuff2').innerHTML = Infos[v].n + '<br>' + Infos[v].e + '<br>' + Infos[v].p + '<br>Leader:' + Infos[v].i + '<br>Members:' + Infos[v].c + '';
-	getObj('Buttons').innerHTML = Adr('conf(\'Please enter a new name for this account.\', \'' + Infos[v].n + '\', \'gmEG.asp?Mask=' + Mask + '&Action=11&CharsAt=' + Infos[v].d + '&Name=\');', 'Rename', 'Rename') + Adr('window.location.replace(\'gmEG.asp?Mask=' + Mask + '&Action=10&CharsAt=' + Infos[v].d + '&Type=' + Type2 + '&Name=\');', 'Delete', 'Delete');
+	getObj('Buttons').innerHTML = Adr('conf(\'Please enter a new name for this account.\', \'' + Infos[v].n + '\', \'/gm/gmEG.asp?Mask=' + Mask + '&Action=11&CharsAt=' + Infos[v].d + '&Name=\');', 'Rename', 'Rename') + Adr('window.location.replace(\'/gm/gmEG.asp?Mask=' + Mask + '&Action=10&CharsAt=' + Infos[v].d + '&Type=' + Type2 + '&Name=\');', 'Delete', 'Delete');
 }
 
 function RC(v) {

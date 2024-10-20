@@ -27,7 +27,7 @@ function newInfo(Color, pn, pv, ev) {
 
 function DC(v) {
 	getObj('Stuff2').innerHTML = Infos[v].pn;
-	getObj('Buttons').innerHTML = '' + '<form method=\'post\' id=editform name=editform style=\'margin: 0px;\' action=\'gmERP.asp\'><input type=\'hidden\' name=\'PropertyName\' value=\'' + Infos[v].pn + '\'><input type=\'hidden\' name=\'CharsAt\' value=\'' + CharID + '\'>Value: <input name=PropertyValue value=\'' + Infos[v].pv + '\'><br>Evolve Value: <input name=EvolveValue value=\'' + Infos[v].ev + '\'><br>' + Adr('getObj(\'editform\').submit();', 'Save', 'Save') + '</form>';
+	getObj('Buttons').innerHTML = '' + '<form method=\'post\' id=editform name=editform style=\'margin: 0px;\' action=\'/gm/gmERP.asp\'><input type=\'hidden\' name=\'PropertyName\' value=\'' + Infos[v].pn + '\'><input type=\'hidden\' name=\'CharsAt\' value=\'' + CharID + '\'>Value: <input name=PropertyValue value=\'' + Infos[v].pv + '\'><br>Evolve Value: <input name=EvolveValue value=\'' + Infos[v].ev + '\'><br>' + Adr('getObj(\'editform\').submit();', 'Save', 'Save') + '</form>';
 }
 
 function RC(v) {

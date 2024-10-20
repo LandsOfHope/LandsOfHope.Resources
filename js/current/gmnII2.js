@@ -32,7 +32,7 @@ function GoP(PageNo) {
 
 function DC(v) {
 	getObj('Stuff2').innerHTML = '<b>' + Infos[v].t + '</b> (' + Infos[v].l + ')<br>Level: ' + Infos[v].l;
-	getObj('Buttons').innerHTML = '<' + strClicky + ' onclick="window.location.replace(\'gmNII3.asp?M=' + Infos[v].t + '&I=' + CharsAt + '&IN=' + IN + '\')">Use</button>'
+	getObj('Buttons').innerHTML = '<' + strClicky + ' onclick="window.location.replace(\'/gm/gmNII3.asp?M=' + Infos[v].t + '&I=' + CharsAt + '&IN=' + IN + '\')">Use</button>'
 }
 
 function RC(v) {

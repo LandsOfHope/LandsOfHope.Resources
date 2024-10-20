@@ -68,7 +68,7 @@ function GoP(PageNo) {
 }
 
 function DC(v) {
-	window.frames['ResultsOfit'].location.replace('gmECQ2.asp?P=' + PageNo + '&CharsAt=' + CharsAt + '&QuestID=' + Infos[v].q);
+	window.frames['ResultsOfit'].location.replace('/gm/gmECQ2.asp?P=' + PageNo + '&CharsAt=' + CharsAt + '&QuestID=' + Infos[v].q);
 }
 
 function GetRow(v) {

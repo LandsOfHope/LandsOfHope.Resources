@@ -26,7 +26,7 @@ function newInfo(Color, pn, pv) {
 
 function DC(v) {
 	getObj('Stuff2').innerHTML = Infos[v].pn;
-	getObj('Buttons').innerHTML = '' + '<form method=\'post\' id=editform name=editform style=\'margin: 0px;\' action=\'gmEPP.asp\'><input type=\'hidden\' name=\'PropertyName\' value=\'' + Infos[v].pn + '\'><input type=\'hidden\' name=\'CharsAt\' value=\'' + CharID + '\'>Value: <input name=PropertyValue value=\'' + Infos[v].pv + '\'><br>' + Adr('getObj(\'editform\').submit();', 'Save', 'Save') + '</form>';
+	getObj('Buttons').innerHTML = '' + '<form method=\'post\' id=editform name=editform style=\'margin: 0px;\' action=\'/gm/gmEPP.asp\'><input type=\'hidden\' name=\'PropertyName\' value=\'' + Infos[v].pn + '\'><input type=\'hidden\' name=\'CharsAt\' value=\'' + CharID + '\'>Value: <input name=PropertyValue value=\'' + Infos[v].pv + '\'><br>' + Adr('getObj(\'editform\').submit();', 'Save', 'Save') + '</form>';
 }
 
 function RC(v) {

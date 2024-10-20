@@ -30,7 +30,7 @@ function PC(v) {
 }
 
 function AH(SkillGroup) {
-	document.write("<tr><td colspan=2 style=\"" + strButtonz + "\" " + strClicksns + "  onclick=\"window.location.replace(\'gmoption.asp?CharsAt=" + CharsAt + "&Group=" + SkillGroup + "\');\">" + SkillGroup + "</td></tr>");
+	document.write("<tr><td colspan=2 style=\"" + strButtonz + "\" " + strClicksns + "  onclick=\"window.location.replace(\'/gm/gmoption.asp?CharsAt=" + CharsAt + "&Group=" + SkillGroup + "\');\">" + SkillGroup + "</td></tr>");
 }
 
 

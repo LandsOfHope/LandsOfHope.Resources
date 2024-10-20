@@ -25,7 +25,7 @@ function newInfo(Color, ItemID, ItemName, PictureID) {
 }
 
 function DC(v) {
-	window.location.replace('gmblmef.asp?I=' + Infos[v].z + '&CharsAt=' + CharsAt);
+	window.location.replace('/gm/gmblmef.asp?I=' + Infos[v].z + '&CharsAt=' + CharsAt);
 }
 
 

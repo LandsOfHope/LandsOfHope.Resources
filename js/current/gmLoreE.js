@@ -41,5 +41,5 @@ function PC(v) {
 function DC(v) {
 	getObj('Stuff2').innerHTML = '<b>' + Infos[v].i + '</b>';
 	getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + "'>";
-	getObj('Buttons').innerHTML = Adr('window.top.loadwindow2(\'gmLoreE2.asp?InventoryItemID=' + Infos[v].v + '\',400,300,\'iwindow\',\'' + Infos[v].i + ' Edit\');', 'Edit', 'Edit');
+	getObj('Buttons').innerHTML = Adr('window.top.loadwindow2(\'/gm/gmLoreE2.asp?InventoryItemID=' + Infos[v].v + '\',400,300,\'iwindow\',\'' + Infos[v].i + ' Edit\');', 'Edit', 'Edit');
 }

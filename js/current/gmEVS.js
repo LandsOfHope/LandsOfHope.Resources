@@ -30,7 +30,7 @@ function newInfo(Color, pn, pv, pmv, skillid, sa) {
 
 function DC(v) {
 	getObj('Stuff2').innerHTML = Infos[v].pn + ' (' + Infos[v].s + ')';
-	getObj('Buttons').innerHTML = '' + '<form method=\'post\' id=skillform name=skillform style=\'margin: 0px;\' action=\'gmEVS.asp\'><input type=\'hidden\' name=\'PropertyName\' value=\'' + Infos[v].s + '\'>' + (Infos[v].s == 0 ? '<input type=\'hidden\' name=\'New\' value=\'1\'>' : '') + '<input type=\'hidden\' name=\'CharsAt\' value=\'' + CharID + '\'>Value: <input name=PropertyValue size=3 maxlength=3 value=\'' + Infos[v].pv + '\'>Max: <input name=PropertyMaxValue size=3 maxlength=3 value=\'' + Infos[v].pmv + '\'><br>Active: <input type=checkbox ' + (Infos[v].sa != 0 ? 'checked' : '') + ' name=Skillactive value=\'1\'>' + Adr('getObj(\'skillform\').submit();', 'Save', 'Save') + '</form>';
+	getObj('Buttons').innerHTML = '' + '<form method=\'post\' id=skillform name=skillform style=\'margin: 0px;\' action=\'/gm/gmEVS.asp\'><input type=\'hidden\' name=\'PropertyName\' value=\'' + Infos[v].s + '\'>' + (Infos[v].s == 0 ? '<input type=\'hidden\' name=\'New\' value=\'1\'>' : '') + '<input type=\'hidden\' name=\'CharsAt\' value=\'' + CharID + '\'>Value: <input name=PropertyValue size=3 maxlength=3 value=\'' + Infos[v].pv + '\'>Max: <input name=PropertyMaxValue size=3 maxlength=3 value=\'' + Infos[v].pmv + '\'><br>Active: <input type=checkbox ' + (Infos[v].sa != 0 ? 'checked' : '') + ' name=Skillactive value=\'1\'>' + Adr('getObj(\'skillform\').submit();', 'Save', 'Save') + '</form>';
 }
 
 

@@ -21,7 +21,7 @@ function newInfo(n, v, Color) {
 
 function DC(v) {
 	getObj('Stuff2').innerHTML = Infos[v].n;
-	getObj('Buttons').innerHTML = '' + '<form method=\'post\' id=statform name=statform action=\'gmECP.asp\' style=\'margin: 0px;\'><input type=\'hidden\' name=\'PropertyName\' value=\'' + Infos[v].n + '\'>' + (Math.round(Infos[v].v) == 0 ? '<input type=\'hidden\' name=\'New\' value=\'1\'>' : '') + '<input type=\'hidden\' name=\'CharsAt\' value=\'' + CharsAt + '\'><input name=PropertyValue value=\'' + Infos[v].v + '\'>' + Adr('getObj(\'statform\').submit();', 'Set stat', 'Set') + '</form>';
+	getObj('Buttons').innerHTML = '' + '<form method=\'post\' id=statform name=statform action=\'/gm/gmECP.asp\' style=\'margin: 0px;\'><input type=\'hidden\' name=\'PropertyName\' value=\'' + Infos[v].n + '\'>' + (Math.round(Infos[v].v) == 0 ? '<input type=\'hidden\' name=\'New\' value=\'1\'>' : '') + '<input type=\'hidden\' name=\'CharsAt\' value=\'' + CharsAt + '\'><input name=PropertyValue value=\'' + Infos[v].v + '\'>' + Adr('getObj(\'statform\').submit();', 'Set stat', 'Set') + '</form>';
 }
 
 function RC(v) {

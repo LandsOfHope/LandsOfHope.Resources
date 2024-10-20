@@ -43,6 +43,6 @@ function PC(v) {
 function DC(v) {
 	getObj('Stuff2').innerHTML = '<font class="weakcell" style="color:' + Infos[v].c + '"><b>' + Infos[v].t + '</b> (' + Infos[v].v + ')<br>' + (Infos[v].npc != 0 ? 'NPC Only Profession' : '');
 	getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + "'>";
-	getObj('Buttons').innerHTML = Adr('window.top.loadwindow2(\'gmEPP.asp?CharsAt=' + Infos[v].v + '\',400,300,\'iwindow\',\'' + Infos[v].t + ' Stats\');', 'Stats', 'Stats') + Adr('window.top.loadwindow2(\'gmEPS.asp?CharsAt=' + Infos[v].v + '\',400,300,\'iwindow\',\'' + Infos[v].t + ' Skills\');', 'Skills', 'Skills') + Adr('window.top.loadwindow2(\'gmEPI.asp?CharsAt=' + Infos[v].v + '\',400,300,\'iwindow\',\'' + Infos[v].t + ' Items\');', 'Items', 'Items');
+	getObj('Buttons').innerHTML = Adr('window.top.loadwindow2(\'/gm/gmEPP.asp?CharsAt=' + Infos[v].v + '\',400,300,\'iwindow\',\'' + Infos[v].t + ' Stats\');', 'Stats', 'Stats') + Adr('window.top.loadwindow2(\'/gm/gmEPS.asp?CharsAt=' + Infos[v].v + '\',400,300,\'iwindow\',\'' + Infos[v].t + ' Skills\');', 'Skills', 'Skills') + Adr('window.top.loadwindow2(\'/gm/gmEPI.asp?CharsAt=' + Infos[v].v + '\',400,300,\'iwindow\',\'' + Infos[v].t + ' Items\');', 'Items', 'Items');
 
 }
