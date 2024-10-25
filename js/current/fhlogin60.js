@@ -361,12 +361,6 @@ function DoMacroOff(e) {
 	}
 }
 
-function ToggleDragResize() {
-	var r = (dragresize.enabled == true ? false : true);
-	dragresize.enabled = r;
-	window.top.SendCommand('Window Resizing turned ' + (r == true ? 'on' : 'off'));
-}
-
 function TogglePlotLevels() {
 	var r = (PlotLevels == true ? false : true);
 	PlotLevels = r;
@@ -2117,7 +2111,7 @@ function ShowElements() {
 						CharImage2 = CharImage2 + '<img title="Possessed" width=20 height=20 src="' + FHIPR + (b.ap2 != '' ? b.ap2 : 'na.gif') + '">'
 					}
 
-					var CharTD = '<td ' + (b.nmc > 0 ? 'style="border: 1px dotted gold;"' : (b.nmc < 0 ? 'style="border: 1px dotted orange;"' : (b.m != 0 ? 'style="border: 1px dotted red;"' : ''))) + '><img src="' + p3 + '" ' + (b.h != '' ? ' class="trans"' : '') + '></td>'
+					var CharTD = '<td ' + (b.nmc > 0 ? 'style="border: 1px dotted gold;"' : (b.nmc < 0 ? 'style="border: 1px dotted orange;"' : (b.m != 0 ? 'style="border: 1px dotted red;"' : ''))) + '><img style="width: 50px; height: 50px" src="' + p3 + '" ' + (b.h != '' ? ' class="trans"' : '') + '></td>'
 
 					var Itty2 = b.Itty.substr(0, 30);
 					var Extra = b.Extra.substr(0, 30);
