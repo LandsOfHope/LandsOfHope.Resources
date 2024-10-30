@@ -198,9 +198,8 @@ function DrawMMenu(MenuNum, DivIn, PageNum) {
 
 	if (getObj(DivIn) == null) {
 	} else {
-
-		getObj(DivIn).innerHTML = '' + strout + '<div id=Hand1 style="float: left; height: 30; width: 30px;"></div><div id=Hand2 style="float: left; height: 30; width: 30px;"></div><div id=Hand3 style="float: left; height: 30; width: 30px;"></div>';
-
+		const dragHandle = "<table width='100%' cellpadding=0 cellspacing=0 class='navborderx'><tr style='height: 22px;'><td class='menul'>&nbsp;&nbsp;&nbsp;</td><td class='title' style='padding-left: 0px;' nowrap width='100%'></td><td></td><td class='menur'>&nbsp;&nbsp;&nbsp;</td></tr></table>";
+		getObj(DivIn).innerHTML = '' + strout + '<div id=Hand1 style="float: left; height: 30; width: 30px;"></div><div id=Hand2 style="float: left; height: 30; width: 30px;"></div><div id=Hand3 style="float: left; height: 30; width: 30px;"></div>' + dragHandle;
 	}
 }
 
