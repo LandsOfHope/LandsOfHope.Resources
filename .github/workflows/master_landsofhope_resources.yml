@@ -24,15 +24,22 @@ jobs:
       - uses: actions/checkout@v3
         with:
           lfs: true
-      - name: npm i
-        run: npm i
+      - uses: cardinalby/export-env-action@v2
+        id: env
+        with:
+          envFile: ".env"
+          export: false
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: ${{ steps.env.outputs.BUN_VERSION }}
+          no-cache: true
+      - name: bun install
+        run: bun install
         working-directory: .build
       - run: node .build/generate_chat_colors_css.mjs
-      - run: npx -y stylelint --config .build/node_modules/stylelint-config-recommended/index.js css/chat/chat-colors.css
-      - name: browserify analytics
-        run: |
-          npx --yes browserify -p common-shakeify analytics.js > $GITHUB_WORKSPACE/js/current/analytics.js
-          npx --yes uglify-js --compress --mangle -- $GITHUB_WORKSPACE/js/current/analytics.js
+      - run: bunx -y stylelint --config .build/node_modules/stylelint-config-recommended/index.js css/chat/chat-colors.css
+      - name: bundle analytics
+        run: bun build ./analytics.js --target browser --minify --outdir $GITHUB_WORKSPACE/js/current/
         working-directory: .build
       - run: pip install s3cmd
         if: ${{ github.ref == 'refs/heads/master' }}

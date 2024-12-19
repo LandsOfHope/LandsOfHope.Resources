@@ -3,12 +3,10 @@
     "@opentelemetry/auto-instrumentations-web": "^0.45.0",
     "@opentelemetry/context-zone": "^1.30.0",
     "@opentelemetry/exporter-trace-otlp-http": "^0.57.0",
+    "@opentelemetry/otlp-exporter-base": "^0.57.0",
     "@opentelemetry/propagator-b3": "^1.30.0",
     "@opentelemetry/sdk-trace-web": "^1.30.0",
-    "browserify": "^17.0.1",
-    "common-shakeify": "^1.1.2",
     "node-fetch": "^3.3.2",
-    "stylelint-config-recommended": "^14.0.1",
-    "uglify-js": "^3.19.3"
+    "stylelint-config-recommended": "^14.0.1"
   }
 }
