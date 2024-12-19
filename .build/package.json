@@ -3,7 +3,6 @@
     "@opentelemetry/auto-instrumentations-web": "^0.45.0",
     "@opentelemetry/context-zone": "^1.30.0",
     "@opentelemetry/exporter-trace-otlp-http": "^0.57.0",
-    "@opentelemetry/otlp-exporter-base": "^0.57.0",
     "@opentelemetry/propagator-b3": "^1.30.0",
     "@opentelemetry/sdk-trace-web": "^1.30.0",
     "node-fetch": "^3.3.2",
