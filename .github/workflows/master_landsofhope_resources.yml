@@ -31,8 +31,8 @@ jobs:
       - run: npx -y stylelint --config .build/node_modules/stylelint-config-recommended/index.js css/chat/chat-colors.css
       - name: browserify analytics
         run: |
-          npx --yes browserify -p common-shakeify analytics.js > ${{ github.workspace }}/js/current/analytics.js
-          npx --yes uglify-js --compress --mangle -- ${{ github.workspace }}/js/current/analytics.js
+          npx --yes browserify -p common-shakeify analytics.js > $GITHUB_WORKSPACE/js/current/analytics.js
+          npx --yes uglify-js --compress --mangle -- $GITHUB_WORKSPACE/js/current/analytics.js
         working-directory: .build
       - run: pip install s3cmd
         if: ${{ github.ref == 'refs/heads/master' }}
