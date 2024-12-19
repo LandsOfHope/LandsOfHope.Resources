@@ -6,15 +6,17 @@ const { getWebAutoInstrumentations } = require('@opentelemetry/auto-instrumentat
 const { ZoneContextManager } = require('@opentelemetry/context-zone');
 const { Resource } = require('@opentelemetry/resources');
 const { registerInstrumentations } = require('@opentelemetry/instrumentation');
-const { SemanticResourceAttributes } = require('@opentelemetry/semantic-conventions');
+const { ATTR_SERVICE_NAME, ATTR_SERVICE_VERSION } = require('@opentelemetry/semantic-conventions');
 
 const provider = new WebTracerProvider({
     resource: new Resource({
-        [SemanticResourceAttributes.SERVICE_NAME]: 'landsofhope-play-frontend',
-        [SemanticResourceAttributes.SERVICE_VERSION]: 'v0',
+        [ATTR_SERVICE_NAME]: 'landsofhope-play-frontend',
+        [ATTR_SERVICE_VERSION]: 'v0',
     }),
+    spanProcessors: [
+        new BatchSpanProcessor(new OTLPTraceExporter({ url: TRACING_URL }))
+    ]
 });
-provider.addSpanProcessor(new BatchSpanProcessor(new OTLPTraceExporter({ url: TRACING_URL })));
 
 provider.register({
     contextManager: new ZoneContextManager(),

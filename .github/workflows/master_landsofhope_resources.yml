@@ -30,7 +30,7 @@ jobs:
       - run: node .build/generate_chat_colors_css.mjs
       - run: npx -y stylelint --config .build/node_modules/stylelint-config-recommended/index.js css/chat/chat-colors.css
       - name: browserify analytics
-        run: npx --yes browserify@latest .build/analytics.js > js/current/analytics.js
+        run: npx --yes browserify@latest -p common-shakeify .build/analytics.js > js/current/analytics.js
       - run: pip install s3cmd
         if: ${{ github.ref == 'refs/heads/master' }}
       - name: Publish
