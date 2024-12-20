@@ -153,5 +153,6 @@ function GoXY(xx, yy) {
 }
 
 function Go(xx, yy) {
-	window.location.replace('fh.asp?Redraw=1&MapNum=' + GameID + '&x=' + xx + '&y=' + yy);
+	window.top.HideInterface();
+	window.top.Ninja.location.replace('fh.asp?Redraw=1&MapNum=' + GameID + '&x=' + xx + '&y=' + yy);
 }
