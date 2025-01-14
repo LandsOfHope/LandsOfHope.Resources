@@ -11,7 +11,7 @@ function DC(v) {
 	var fr0 = window.parent.fr0;
 
 	if (Processing == 0) {
-		window.top.PGS('necksnap.wav');
+		// window.top.PGS('necksnap.wav');
 		Processing = 1;
 		window.parent.OKDOKE = 0;
 		window.parent.location.replace('fhfturn' + (fs == 0 ? '' : '2') + '.asp?type=200&s2=' + fs2 + '&s=' + fs + '&left=' + fr0 + '&right=' + fr1 + '&iid=' + Choices[v].v);

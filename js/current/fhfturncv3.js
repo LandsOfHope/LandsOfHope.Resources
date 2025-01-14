@@ -16,7 +16,7 @@ function DC(v) {
 	}
 
 	if (Processing == 0) {
-		window.top.PGS(Choices[v].se);
+		// window.top.PGS(Choices[v].se);
 		Processing = 1;
 		window.parent.OKDOKE = 0;
 		window.parent.location.replace('fhfturn' + (fs == 0 ? '' : '2') + '.asp?type=2&s=' + fs + '&s2=' + fs2 + '&left=' + fr0 + '&right=' + fr1 + '&iid=' + Choices[v].v);

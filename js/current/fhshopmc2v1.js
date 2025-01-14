@@ -93,7 +93,7 @@ function SelectIngredient(s, m, Value, Quantity, l, Named) {
 	getObj('I' + s).style.color = '#66ff66';
 
 	if (GoN() == 0) {
-		getObj('Buttons').innerHTML = Adr('window.top.PGS(\'drop.wav\'); window.location.replace(\'fhshopmc3.asp?CharsAt=' + CharsAt + '&Material=' + materialx + '&l=' + levelx + '&InventoryItemID=2' + varxx + '\');', 'Assemble', 'Assemble');
+		getObj('Buttons').innerHTML = Adr('/*window.top.PGS(\'drop.wav\');*/ window.location.replace(\'fhshopmc3.asp?CharsAt=' + CharsAt + '&Material=' + materialx + '&l=' + levelx + '&InventoryItemID=2' + varxx + '\');', 'Assemble', 'Assemble');
 	} else {
 		getObj('Buttons').innerHTML = 'To assemble this item all of the Ingredients on the left must be in green.';
 	}

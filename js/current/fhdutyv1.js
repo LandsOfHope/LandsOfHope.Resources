@@ -137,7 +137,7 @@ function Search(stuff, t) {
 			stuff.innerHTML = "<img src='" + blank + "'  style=\"background-Image: URL('" + marker + "')\" width=20 height=20>"
 			prizesfound = prizesfound + 1;
 			prizes[t] = -1
-			window.top.PGS('beep.wav');
+			// window.top.PGS('beep.wav');
 			charges = charges - 1;
 			stuff.onclick = '';
 		} else if (prizes[t] == -1) {
@@ -145,7 +145,7 @@ function Search(stuff, t) {
 		} else {
 			charges = charges - 1;
 			stuff.innerHTML = "<img src='" + blank + "'  style=\"background-Image: URL('" + IPath3 + digspot + "')\" width=20 height=20>"
-			window.top.PGS('miss.wav');
+			// window.top.PGS('miss.wav');
 			stuff.onclick = '';
 		}
 

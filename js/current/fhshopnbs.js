@@ -45,7 +45,7 @@ function DC(v) {
 	}
 	getObj('Stuff2').innerHTML = Infos[v].t + '<br>Level: ' + Infos[v].l + '<br>Worth: ' + Infos[v].v + ' * <b>' + Infos[v].si + '</b>';
 	getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + "'>";
-	getObj('Buttons').innerHTML = '' + (q3 <= 1000 ? Adr('if (Processing == 0) {Processing = 1; window.top.PGS(\'money.wav\');window.location.replace(\'?CharsAt=' + CharsAt + '&ItemTypeID=' + ItemTypeID + '&ItemID=' + Infos[v].z + '\');}', 'Sell', 'Sell') : Adr('if (Processing == 0) {Processing = 1; window.location.replace(\'?CharsAt=' + CharsAt + '&aok=1000&ItemTypeID=' + ItemTypeID + '&ItemID=' + Infos[v].z + '\');}', 'Sell', 'Sell')) + (Infos[v].t.indexOf('(?)') == -1 ? Adr('window.top.loadwindow2(\'im4.asp?Test=' + Infos[v].z + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].t + '\');', 'Info', 'Info') : '');
+	getObj('Buttons').innerHTML = '' + (q3 <= 1000 ? Adr('if (Processing == 0) {Processing = 1; /*window.top.PGS(\'money.wav\');*/ window.location.replace(\'?CharsAt=' + CharsAt + '&ItemTypeID=' + ItemTypeID + '&ItemID=' + Infos[v].z + '\');}', 'Sell', 'Sell') : Adr('if (Processing == 0) {Processing = 1; window.location.replace(\'?CharsAt=' + CharsAt + '&aok=1000&ItemTypeID=' + ItemTypeID + '&ItemID=' + Infos[v].z + '\');}', 'Sell', 'Sell')) + (Infos[v].t.indexOf('(?)') == -1 ? Adr('window.top.loadwindow2(\'im4.asp?Test=' + Infos[v].z + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].t + '\');', 'Info', 'Info') : '');
 }
 
 function AM(Color, Named, ShopID, value, q2, Picture, Level, at, si) {

@@ -14,7 +14,7 @@ function GoP(PageNo) {
 }
 
 function DC(v) {
-	getObj('Stuff2').innerHTML = '<b>' + Infos[v].i + (Infos[v].n == '' ? '' : ' of ' + Infos[v].n) + '</b>' + (Infos[v].at > 0 ? '<br>Armor: ' + GetAT(Infos[v].at) : '') + '<br>Cost: <img src=\'' + IPath + Infos[v].sip + '\' width=12 height=12>' + Infos[v].v + ' * ' + Infos[v].sin + '<br>' + Adr('if (Processing == 0) {Processing = 1; window.top.PGS(\'money.wav\');window.location.replace(\'?CharsAt=' + CharsAt + '&ItemID=' + Infos[v].value + '&NamesID=' + Infos[v].namesid + '&P=' + PageNo + '\');}', 'Buy ' + Infos[v].i, 'Buy') + Adr('window.top.loadwindow2(\'imi.asp?Test=' + Infos[v].itemid + '&Bonus=0&Material=&nid=' + Infos[v].namesid + '\',300,300,\'iwindow\',\'' + Infos[v].i + '\');', 'Info', 'Info');
+	getObj('Stuff2').innerHTML = '<b>' + Infos[v].i + (Infos[v].n == '' ? '' : ' of ' + Infos[v].n) + '</b>' + (Infos[v].at > 0 ? '<br>Armor: ' + GetAT(Infos[v].at) : '') + '<br>Cost: <img src=\'' + IPath + Infos[v].sip + '\' width=12 height=12>' + Infos[v].v + ' * ' + Infos[v].sin + '<br>' + Adr('if (Processing == 0) {Processing = 1; /*window.top.PGS(\'money.wav\');*/ window.location.replace(\'?CharsAt=' + CharsAt + '&ItemID=' + Infos[v].value + '&NamesID=' + Infos[v].namesid + '&P=' + PageNo + '\');}', 'Buy ' + Infos[v].i, 'Buy') + Adr('window.top.loadwindow2(\'imi.asp?Test=' + Infos[v].itemid + '&Bonus=0&Material=&nid=' + Infos[v].namesid + '\',300,300,\'iwindow\',\'' + Infos[v].i + '\');', 'Info', 'Info');
 	getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + "'>";
 }
 

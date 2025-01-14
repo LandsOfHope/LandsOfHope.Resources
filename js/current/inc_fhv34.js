@@ -400,7 +400,7 @@ function MMB2(s) {
 
 function MB2(BuildingID2, xx, yy, zz) {
 	window.top.XYBox(0, 0);
-	PGS2('istep' + rand(3) + '.wav', 'istep' + rand(3) + '.wav', 300);
+	// PGS2('istep' + rand(3) + '.wav', 'istep' + rand(3) + '.wav', 300);
 	window.top.LastBuildingID = BuildingID;
 	window.top.LastBX = mx;
 	window.top.LastBY = my;

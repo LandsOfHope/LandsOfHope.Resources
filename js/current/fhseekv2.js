@@ -140,13 +140,13 @@ function Search(stuff, t) {
 			prizesfound = prizesfound + 1;
 			prizes[t] = -1
 			//stuff.t = 0;
-			window.top.PGS('beep.wav');
+			// window.top.PGS('beep.wav');
 			charges = charges - 1;
 		} else if (prizes[t] == -1) {
 		} else {
 			charges = charges - 1;
 			stuff.innerHTML = "<img src='" + blank + "'  style=\"background-Image: URL('" + IPath3 + "ayou.gif')\" width=20 height=20>"
-			window.top.PGS('miss.wav');
+			// window.top.PGS('miss.wav');
 			//stuff.t = 0;
 		}
 

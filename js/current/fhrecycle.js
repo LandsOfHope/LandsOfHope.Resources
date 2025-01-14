@@ -72,7 +72,7 @@ function DC(v) {
 	}
 	getObj('Stuff2').innerHTML = Infos[v].i + '<br>Quantity: ' + q2 + (q3 > Math.abs(q2) ? ' of ' + q3 + '<br>Maximum you can recycle: ' + q2 : '') + '<br>Value: ' + window.top.BSGM(Infos[v].v) + (q3 > 1 ? ' (<b>ea</b> ' + (window.top.BSGM((Infos[v].v / q3))) + ')' : '');
 	getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + "'>";
-	getObj('Buttons').innerHTML = '' + (q3 <= 1000 ? Adr('if (Processing == 0) {Processing = 1; window.top.PGS(\'money.wav\');window.location.replace(\'fhrecycle.asp?CharsAt=' + CharsAt + '&ItemID=' + Infos[v].z + '\');}', 'Recycle', 'Recycle') : Adr('if (Processing == 0) {Processing = 1; window.location.replace(\'fhrecycle.asp?CharsAt=' + CharsAt + '&aok=1000&ItemID=' + Infos[v].z + '\');', 'Recycle', 'Recycle')) + (Infos[v].i.indexOf('(?)') == -1 ? Adr('window.top.loadwindow2(\'im4.asp?Test=' + Infos[v].z + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].i + '\');', 'Info', 'Info') : '');
+	getObj('Buttons').innerHTML = '' + (q3 <= 1000 ? Adr('if (Processing == 0) {Processing = 1; /*window.top.PGS(\'money.wav\');*/ window.location.replace(\'fhrecycle.asp?CharsAt=' + CharsAt + '&ItemID=' + Infos[v].z + '\');}', 'Recycle', 'Recycle') : Adr('if (Processing == 0) {Processing = 1; window.location.replace(\'fhrecycle.asp?CharsAt=' + CharsAt + '&aok=1000&ItemID=' + Infos[v].z + '\');', 'Recycle', 'Recycle')) + (Infos[v].i.indexOf('(?)') == -1 ? Adr('window.top.loadwindow2(\'im4.asp?Test=' + Infos[v].z + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].i + '\');', 'Info', 'Info') : '');
 }
 
 function AM(Color, Named, ShopID, value, q2, Picture) {
@@ -112,7 +112,7 @@ function PromptReturn(returnVal, pb) {
 			if (pb == 2) {
 				window.top.Interface.location.replace('fhrecycle.asp?ItemID=-1');
 			} else {
-				window.top.PGS('money.wav');
+				// window.top.PGS('money.wav');
 				getObj('Selly').submit();
 			}
 		}

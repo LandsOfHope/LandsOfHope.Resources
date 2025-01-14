@@ -45,7 +45,7 @@ function DC(v) {
 	getObj('Stuff2').innerHTML = '<b>' + Infos[v].t + '</b><br>Bejewel Skill: ' + Infos[v].sv + '<br>' + Infos[v].e + (Infos[v].rid > 0 ? '<br>Requirements:<br>' + (Infos[v].rc > 0 ? '<font id=tgreen>' : '<font id=tred>') + '' + Infos[v].rq + ' * ' + Infos[v].rn + '</font>' : '');
 	getObj('Pic').style.backgroundColor = Infos[v].c;
 	getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == null ? 'na.gif' : Infos[v].p) + "'>";
-	getObj('Buttons').innerHTML = (Infos[v].rc > 0 || Infos[v].rid == 0 ? '<' + strClicky3 + ' onclick="if (Processing == 0) {Processing = 1; window.top.PGS(\'paper.wav\'); window.location.replace(\'?CharsAt2=' + Infos[v].v + '&aok=' + Infos[v].sv + '&P=' + PageNo + '\'); this.disabled=true;}" style=\'width: 85\'>Assemble</button>' : '');
+	getObj('Buttons').innerHTML = (Infos[v].rc > 0 || Infos[v].rid == 0 ? '<' + strClicky3 + ' onclick="if (Processing == 0) {Processing = 1; /*window.top.PGS(\'paper.wav\');*/ window.location.replace(\'?CharsAt2=' + Infos[v].v + '&aok=' + Infos[v].sv + '&P=' + PageNo + '\'); this.disabled=true;}" style=\'width: 85\'>Assemble</button>' : '');
 }
 
 function RC(v) {

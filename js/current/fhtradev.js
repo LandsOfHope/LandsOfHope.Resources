@@ -46,7 +46,7 @@ function DC(v) {
 	LastID = v;
 	getObj('Stuff2').innerHTML = Infos[v].t + '<br>Quantity: ' + q2 + '<br>' + window.top.PSGM(Infos[v].v) + '';
 	getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + "'>";
-	getObj('Buttons').innerHTML = Adr('if (Processing == 0) {Processing = 1; window.top.PGS(\'money.wav\');window.location.replace(\'?CharsAt=' + CharsAt + '&ItemTypeID=' + ItemTypeID + '&ItemID=' + Infos[v].z + '\');}', 'Trade', 'Trade') + (Infos[v].t.indexOf('(?)') == -1 ? Adr('window.top.loadwindow2(\'imivh.asp?Test=' + Infos[v].z + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].t + '\');', 'Info', 'Info') + Adr('window.top.sendRequest(\'fhlink.asp?Type=U&CharsAt=' + Infos[v].z + '&Name=' + Infos[v].t + '&c=' + encodeURIComponent(Infos[v].c) + '&l1=i&l2=' + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + '\');', 'Link', 'Link') : '');
+	getObj('Buttons').innerHTML = Adr('if (Processing == 0) {Processing = 1; /*window.top.PGS(\'money.wav\');*/ window.location.replace(\'?CharsAt=' + CharsAt + '&ItemTypeID=' + ItemTypeID + '&ItemID=' + Infos[v].z + '\');}', 'Trade', 'Trade') + (Infos[v].t.indexOf('(?)') == -1 ? Adr('window.top.loadwindow2(\'imivh.asp?Test=' + Infos[v].z + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].t + '\');', 'Info', 'Info') + Adr('window.top.sendRequest(\'fhlink.asp?Type=U&CharsAt=' + Infos[v].z + '&Name=' + Infos[v].t + '&c=' + encodeURIComponent(Infos[v].c) + '&l1=i&l2=' + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + '\');', 'Link', 'Link') : '');
 }
 
 function AM(Color, Named, ShopID, value, q2, Picture, vid) {
@@ -85,7 +85,7 @@ function PromptReturn(returnVal, pb) {
 		if (pb != null) {
 			if (pb == 1) {
 				Processing = 1;
-				window.top.PGS('money.wav');
+				// window.top.PGS('money.wav');
 				getObj('sellitems').submit();
 			}
 		}

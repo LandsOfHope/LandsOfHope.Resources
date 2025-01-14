@@ -13,9 +13,9 @@ function DC(v) {
 
 	if (Processing == 0) {
 		if (Type2 != 33) {
-			window.top.PGS('attack.wav');
+			// window.top.PGS('attack.wav');
 		} else {
-			window.top.PGS('attackr.wav');
+			// window.top.PGS('attackr.wav');
 		}
 		Processing = 1;
 		window.parent.OKDOKE = 0;

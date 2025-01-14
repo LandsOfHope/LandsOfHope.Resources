@@ -2080,7 +2080,7 @@ function BBBS(number, PictureID, desc, GC, t, url, size, c) {
 function ShowElements() {
 	var y = 0;
 
-	var strout = '<table cellpadding=0 cellspacing=0 style=\'width: 180px;\'><tr><td>' + Adac('ChangeElements(1, 1, 1, 1);', 'Show All', '', 'buttonc2', null, null, 'bar_button_all.png') + '</td><td>' + Adac('ChangeElements(-1);', 'Toggle NPCs', '', 'buttonc2', null, null, 'bar_npcs.png') + '</td><td>' + Adac('ChangeElements(null, -1);', 'Toggle Players', '', 'buttonc2', null, null, 'bar_players.png') + '</td><td>' + Adac('ChangeElements(null, null, -1);', 'Toggle Pets', '', 'buttonc2', null, null, 'bar_pets.png') + '</td><td>' + Adac('ChangeElements(null, null, null, -1);', 'Toggle Buildings', '', 'buttonc2', null, null, 'bar_building.png') + '</td><td></td></tr></table>';
+	var strout = '<table cellpadding=0 cellspacing=0 style=\'width: 180px; position: sticky; top: 0;\'><tr><td>' + Adac('ChangeElements(1, 1, 1, 1);', 'Show All', '', 'buttonc2', null, null, 'bar_button_all.png') + '</td><td>' + Adac('ChangeElements(-1);', 'Toggle NPCs', '', 'buttonc2', null, null, 'bar_npcs.png') + '</td><td>' + Adac('ChangeElements(null, -1);', 'Toggle Players', '', 'buttonc2', null, null, 'bar_players.png') + '</td><td>' + Adac('ChangeElements(null, null, -1);', 'Toggle Pets', '', 'buttonc2', null, null, 'bar_pets.png') + '</td><td>' + Adac('ChangeElements(null, null, null, -1);', 'Toggle Buildings', '', 'buttonc2', null, null, 'bar_building.png') + '</td><td></td></tr></table>';
 	var monster = '';
 	LastMonsterID = -1;
 	if (NPCsShown + PlayersShown + PetsShown > 0) {

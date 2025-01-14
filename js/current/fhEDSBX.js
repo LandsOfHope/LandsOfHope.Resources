@@ -50,7 +50,7 @@ function PromptReturn(returnVal, pb) {
 		if (pb != null) {
 			if (pb == 1) {
 				Processing = 1;
-				window.top.PGS('money.wav');
+				// window.top.PGS('money.wav');
 				getObj('editform').submit();
 			} else if (pb == 2) {
 				Processing = 1;

@@ -16,7 +16,7 @@ function GoP(PageNo) {
 }
 
 function DC(v) {
-	getObj('Stuff2').innerHTML = '<b>' + Infos[v].i + '</b>' + (Infos[v].sn != '' ? '<br>Skill: ' + Infos[v].sn : '') + '<br>Level: ' + Infos[v].l + (Infos[v].at > 0 ? '<br>Armor: ' + GetAT(Infos[v].at) : '') + '<br>Rarity: ' + Infos[v].q + '<br>Quantity: ' + Infos[v].q2 + '<br>Cost: ' + Infos[v].v + 'tokens<br>' + Adr('if (Processing == 0) {Processing = 1; window.top.PGS(\'money.wav\');window.location.replace(\'?CharsAt=' + CharsAt + '&ItemID=' + Infos[v].value + '&P=' + PageNo + '\');}', 'Buy the selected item', 'Buy') + Adr('window.top.loadwindow2(\'imi.asp?Test=' + Infos[v].value + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].i + '\');', 'Info', 'Info');
+	getObj('Stuff2').innerHTML = '<b>' + Infos[v].i + '</b>' + (Infos[v].sn != '' ? '<br>Skill: ' + Infos[v].sn : '') + '<br>Level: ' + Infos[v].l + (Infos[v].at > 0 ? '<br>Armor: ' + GetAT(Infos[v].at) : '') + '<br>Rarity: ' + Infos[v].q + '<br>Quantity: ' + Infos[v].q2 + '<br>Cost: ' + Infos[v].v + 'tokens<br>' + Adr('if (Processing == 0) {Processing = 1; /*window.top.PGS(\'money.wav\');*/ window.location.replace(\'?CharsAt=' + CharsAt + '&ItemID=' + Infos[v].value + '&P=' + PageNo + '\');}', 'Buy the selected item', 'Buy') + Adr('window.top.loadwindow2(\'imi.asp?Test=' + Infos[v].value + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].i + '\');', 'Info', 'Info');
 	getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + "'>";
 }
 

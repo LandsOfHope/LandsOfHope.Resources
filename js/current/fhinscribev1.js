@@ -42,7 +42,7 @@ function DC(v) {
 	getObj('Stuff2').innerHTML = '<b>' + Infos[v].t + '</b><br>Inscription Skill: ' + Infos[v].s + '<br>Minimum Item Level: ' + Math.floor(Infos[v].s / 5) + '<br>Trigger Chance: ' + Infos[v].cm + '%<br>Damage: ' + Infos[v].d + '<br>' + Infos[v].mt + ' ' + Infos[v].e;
 	getObj('Pic').style.backgroundColor = Infos[v].c;
 	getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == null ? 'na.gif' : Infos[v].p) + "'>";
-	getObj('Buttons').innerHTML = '<' + strClicky3 + ' onclick="if (Processing == 0) {Processing = 1; window.top.PGS(\'paper.wav\'); window.location.replace(\'?CharsAt2=' + Infos[v].v + '&aok=' + Infos[v].s + '&P=' + PageNo + '\'); this.disabled=true;}" style=\'width: 85\'>Make</button>';
+	getObj('Buttons').innerHTML = '<' + strClicky3 + ' onclick="if (Processing == 0) {Processing = 1; /*window.top.PGS(\'paper.wav\');*/ window.location.replace(\'?CharsAt2=' + Infos[v].v + '&aok=' + Infos[v].s + '&P=' + PageNo + '\'); this.disabled=true;}" style=\'width: 85\'>Make</button>';
 }
 
 function RC(v) {
