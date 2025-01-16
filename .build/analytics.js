@@ -10,13 +10,13 @@ const { OTLPLogExporter } = require('@opentelemetry/exporter-logs-otlp-proto');
 const { LoggerProvider, BatchLogRecordProcessor } = require('@opentelemetry/sdk-logs');
 
 // Configuration validation
-if (!TRACING_URL) {
+if (!window.TRACING_URL) {
     console.error('TRACING_URL is required for analytics');
     return;
 }
 
-const serviceName = TRACING_SERVICE_NAME ?? 'landsofhope-play-frontend';
-const serviceVersion = TRACING_SERVICE_VERSION ?? 'v0';
+const serviceName = window.TRACING_SERVICE_NAME ?? 'landsofhope-play-frontend';
+const serviceVersion = window.TRACING_SERVICE_VERSION ?? 'v0';
 
 // Cache regex patterns for performance
 const corsUrlPattern = new RegExp("https:\/\/((?!data).*\.)?landsofhope\.(com|dev|local)(\/.*)?$");
@@ -40,7 +40,7 @@ const initializeProviders = () => {
             environment: window.location.hostname
         }),
         spanProcessors: [
-            new BatchSpanProcessor(new OTLPTraceExporter({ url: `${TRACING_URL}/v1/traces` }))
+            new BatchSpanProcessor(new OTLPTraceExporter({ url: `${window.TRACING_URL}/v1/traces` }))
         ]
     });
 
@@ -74,7 +74,7 @@ const initializeProviders = () => {
 
     loggerProvider = new LoggerProvider();
     const logExporter = new OTLPLogExporter({ 
-        url: `${TRACING_URL}/v1/logs`,
+        url: `${window.TRACING_URL}/v1/logs`,
         timeoutMillis: 5000
     });
     loggerProvider.addLogRecordProcessor(new BatchLogRecordProcessor(logExporter));
