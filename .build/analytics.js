@@ -28,12 +28,14 @@ let isShuttingDown = false;
 const initializeProviders = () => {
     if (provider || isShuttingDown) return;
 
+    const resource = new Resource({
+        [ATTR_SERVICE_NAME]: serviceName,
+        [ATTR_SERVICE_VERSION]: serviceVersion,
+        environment: window.location.hostname
+    });
+
     provider = new WebTracerProvider({
-        resource: new Resource({
-            [ATTR_SERVICE_NAME]: serviceName,
-            [ATTR_SERVICE_VERSION]: serviceVersion,
-            environment: window.location.hostname
-        }),
+        resource,
         spanProcessors: [
             new BatchSpanProcessor(new OTLPTraceExporter({ url: `${window.TRACING_URL}/v1/traces` }))
         ]
@@ -67,8 +69,8 @@ const initializeProviders = () => {
         ],
     });
 
-    loggerProvider = new LoggerProvider();
-    const logExporter = new OTLPLogExporter({ 
+    loggerProvider = new LoggerProvider({ resource });
+    const logExporter = new OTLPLogExporter({
         url: `${window.TRACING_URL}/v1/logs`,
         timeoutMillis: 5000
     });
@@ -92,12 +94,12 @@ const setupConsoleOverrides = () => {
             if (isDebugMode) {
                 config.original.apply(console, ['[Analytics]', ...args]);
             }
-            
+
             try {
-                const body = args.map(arg => 
+                const body = args.map(arg =>
                     typeof arg === 'object' ? JSON.stringify(arg) : String(arg)
                 ).join(' ');
-                
+
                 logger.emit({
                     body,
                     severityText: config.severity,
@@ -109,7 +111,7 @@ const setupConsoleOverrides = () => {
             } catch (e) {
                 config.original.call(console, '[Analytics Error]', e);
             }
-            
+
             config.original.apply(console, args);
         };
     });
@@ -118,14 +120,14 @@ const setupConsoleOverrides = () => {
 const performCleanup = async () => {
     if (isShuttingDown || !provider) return;
     isShuttingDown = true;
-    
+
     try {
         await provider.shutdown();
         await loggerProvider.shutdown();
         provider = null;
         loggerProvider = null;
         logger = null;
-        
+
         if (isDebugMode) {
             console.log('Analytics shutdown complete');
         }
