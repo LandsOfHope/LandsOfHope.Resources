@@ -9,7 +9,6 @@ const { ATTR_SERVICE_NAME, ATTR_SERVICE_VERSION } = require('@opentelemetry/sema
 const { OTLPLogExporter } = require('@opentelemetry/exporter-logs-otlp-proto');
 const { LoggerProvider, BatchLogRecordProcessor } = require('@opentelemetry/sdk-logs');
 
-// Configuration validation
 if (!window.TRACING_URL) {
     console.error('TRACING_URL is required for analytics');
     return;
@@ -18,13 +17,9 @@ if (!window.TRACING_URL) {
 const serviceName = window.TRACING_SERVICE_NAME ?? 'landsofhope-play-frontend';
 const serviceVersion = window.TRACING_SERVICE_VERSION ?? 'v0';
 
-// Cache regex patterns for performance
 const corsUrlPattern = new RegExp("https:\/\/((?!data).*\.)?landsofhope\.(com|dev|local)(\/.*)?$");
-
-// Add debug mode
 const isDebugMode = localStorage.getItem('DEBUG_ANALYTICS') === 'true';
 
-// Create providers with shutdown capability
 let provider = null;
 let loggerProvider = null;
 let logger = null;
@@ -141,10 +136,12 @@ const performCleanup = async () => {
     }
 };
 
-// Only cleanup on actual page hide
 window.addEventListener('pagehide', performCleanup, { capture: true });
 
-// Initialize on load and when page becomes visible
+window.addEventListener('error', (event) => {
+    console.error('Uncaught Error', event.error);
+});
+
 initializeProviders();
 
 document.addEventListener('visibilitychange', () => {
