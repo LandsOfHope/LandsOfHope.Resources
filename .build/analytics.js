@@ -1,5 +1,5 @@
 const { WebTracerProvider, BatchSpanProcessor } = require("@opentelemetry/sdk-trace-web");
-const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-http');
+const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-proto');
 const { CompositePropagator, W3CTraceContextPropagator } = require('@opentelemetry/core');
 const { getWebAutoInstrumentations } = require('@opentelemetry/auto-instrumentations-web');
 const { ZoneContextManager } = require('@opentelemetry/context-zone');
