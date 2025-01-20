@@ -83,7 +83,7 @@ function newInfo(Color, s, Skill, Value, IBonus, SBonus, mx, sv, a, tn, favskill
 }
 
 function GetRow(v) {
-	return '<tr id="I' + v + '" onmouseover="PC(' + v + ')" onmouseout="OC(' + v + ')" onclick="DC(' + v + ')"><td width="225" style="color: ' + Infos[v].c + ';">' + (Infos[v].favskill != 0 ? '<b>' : '') + Infos[v].i + (Infos[v].favskill != 0 ? '</b>' : '') + '</td><td width=150>' + PercentBoxX(150, Infos[v].perc, Infos[v].pb, Infos[v].v + (Infos[v].b != 0 ? ' (' + Infos[v].b + ')' : '') + (Infos[v].mx >= 0 ? '/' + Infos[v].mx : '')) + '</center></td></tr>';
+	return '<tr id="I' + v + '" onmouseover="PC(' + v + ')" onmouseout="OC(' + v + ')" onclick="DC(' + v + ')"><td width="225" style="color: ' + Infos[v].c + ';">' + (Infos[v].favskill != 0 ? '<b>' : '') + Infos[v].i + (Infos[v].favskill != 0 ? '</b>' : '') + '</td><td width=150>' + PercentBoxX(150, Infos[v].perc, Infos[v].pb, Infos[v].v + (Infos[v].b != 0 ? ' (' + (Infos[v].v - Infos[v].b) + " + " + Infos[v].b + ')' : '') + (Infos[v].mx >= 0 ? '/' + Infos[v].mx : '')) + '</center></td></tr>';
 }
 
 
