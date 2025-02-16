@@ -1,4 +1,4 @@
-const originalWindowConfirm = window.confirm;
+window.originalWindowConfirm = window.originalWindowConfirm ?? window.confirm;
 
 /**
  * X-browser event handler attachment and detachment
