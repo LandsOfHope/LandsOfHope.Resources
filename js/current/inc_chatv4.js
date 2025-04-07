@@ -39,7 +39,6 @@ function SendCommand(strMessage) {
 	getObj('Readout').innerHTML = '' + ChatOut + '';
 }
 
-
 function ClearCommand() {
 	var x = 0;
 	for (x = 1; x <= 50; x++) {
@@ -50,16 +49,6 @@ function ClearCommand() {
 
 function Converturls(strin) {
 	return strin;
-}
-
-function ClipboardCopy() {
-	if (getObj('holdtext') == null) {
-		alert('Can not copy text.');
-	} else {
-		getObj('holdtext').innerText = getObj('Readout').innerText;
-		Copied = getObj('holdtext').createTextRange();
-		Copied.execCommand("Copy");
-	}
 }
 
 function ChatSend(strSend) {
