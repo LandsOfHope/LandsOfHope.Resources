@@ -42,14 +42,10 @@ function initPopUp() {
 	theBody = document.getElementsByTagName('BODY')[0];
 	popmask = document.createElement('div');
 	popmask.id = 'popupMask';
-	popcont = document.createElement('div');
+	popcont = document.createElement('dialog');
 	popcont.id = 'popupContainer';
 
-	popcont.innerHTML = '' +
-		'<div id="popupInner">' +
-		'<table width="100%" cellpadding=0 cellspacing=0 class="navborderx" id="popupTitleBar"><tr style="height: 22px;"><td class="menul">&nbsp;&nbsp;&nbsp;</td><td class="title" width="100%" id="popupTitle"></td><td><img src="https://lohcdn.com/game/icons/cancel.png" border=0 onclick="hidePopWin(false);" id="popCloseBox" style="cursor: pointer;"></td><td class="menur">&nbsp;&nbsp;&nbsp;</td></tr></table>' +
-		'<iframe src="' + gDefaultPage + '" style="width:100%;height:100%;background-color:transparent;" scrolling="auto" frameborder="0" allowtransparency="true" id="popupFrame" name="popupFrame" width="100%" height="100%"></iframe>' +
-		'</div>';
+	popcont.innerHTML = `<div id="popupInner"><table width="100%" cellpadding=0 cellspacing=0 class="navborderx" id="popupTitleBar"><tr style="height: 22px;"><td class="menul">&nbsp;&nbsp;&nbsp;</td><td class="title" width="100%" id="popupTitle"></td><td><img src="${new URL(document.currentScript.src).hostname}/game/icons/cancel.png" border=0 onclick="hidePopWin(false);" id="popCloseBox" style="cursor: pointer;"></td><td class="menur">&nbsp;&nbsp;&nbsp;</td></tr></table><iframe src="${gDefaultPage}" style="width:100%;height:100%;background-color:transparent;" scrolling="auto" frameborder="0" allowtransparency="true" id="popupFrame" name="popupFrame" width="100%" height="100%"></iframe></div>`;
 	theBody.appendChild(popmask);
 	theBody.appendChild(popcont);
 
@@ -63,7 +59,7 @@ function initPopUp() {
 	}
 
 }
-addEvent(window, "load", initPopUp);
+window.addEventListener('load', initPopUp, false);
 
 /**
    * @argument width - int in pixels
@@ -155,8 +151,8 @@ function ResizeDivs() {
 	// 	}
 	// }
 }
-addEvent(window, "resize", centerPopWin);
-addEvent(window, "scroll", centerPopWin);
+window.addEventListener("resize", centerPopWin);
+window.addEventListener("scroll", centerPopWin);
 window.onscroll = centerPopWin;
 
 
@@ -212,6 +208,36 @@ function hidePopWin(callReturnFunc) {
 			gReturnVal2 = null;
 		}
 		window.setTimeout(() => gReturnFunc(gReturnVal, gPostBack, gReturnVal2), 1);
+	}
+	gPopFrame.src = gDefaultPage;
+	// display all select boxes
+	if (gHideSelects == true) {
+		displaySelectBoxes();
+	}
+}
+
+function hidePopWinFrontend(callReturnFunc, args) {
+	gPopupIsShown = false;
+	var theBody = document.getElementsByTagName("BODY")[0];
+	theBody.style.overflow = "hidden";
+	restoreTabIndexes();
+	if (gPopupMask == null) {
+		return;
+	}
+	gPopupMask.style.display = "none";
+	gPopupContainer.style.display = "none";
+	if (callReturnFunc == true && gReturnFunc != null) {
+		gReturnFunc(...args.splice(1, 0, gPostBack));
+
+		// Set the return code to run in a timeout.
+		// Was having issues using with an Ajax.Request();
+		// gReturnVal = window.frames["popupFrame"].returnVal;
+		// if (window.frames["popupFrame"].returnVal2 != null) {
+		// 	gReturnVal2 = window.frames["popupFrame"].returnVal2;
+		// } else {
+		// 	gReturnVal2 = null;
+		// }
+		// window.setTimeout(() => gReturnFunc(gReturnVal, gPostBack, gReturnVal2), 1);
 	}
 	gPopFrame.src = gDefaultPage;
 	// display all select boxes
