@@ -43,19 +43,17 @@ function AH(SkillGroup) {
 function AddExtra(PR, P, Group, PV) {
 	//v
 	ExtraH(100, PR, P, Group, PV);
-	AddOp('None', 0, 'na.gif', '', '');
-	AddOp('Change Character', 4, 'na.gif', '', '');
-	AddOp('Favourites - All', 9, 'na.gif', '', '');
-	AddOp('Favourites - Yours', 10, 'na.gif', '', '');
-	AddOp('Fellowship', 7, 'na.gif', '', '');
-	AddOp('Filters', 8, 'na.gif', '', '');
-	AddOp('Friends', 2, 'na.gif', '', '');
-	AddOp('Getting Started', 12, 'na.gif', '', '');
-	AddOp('Message Inbox', 1, 'na.gif', '', '');
-	AddOp('Pets', 5, 'na.gif', '', '');
-	AddOp('Shortcuts (Single bar)', 14, 'na.gif', '', '');
-	AddOp('Tips and Info', 13, 'na.gif', '', '');
-	AddOp('Travel', 3, 'na.gif', '', '');
+	AddOp('None', 'none', 'na.gif', '', '');
+	AddOp('Change Character', 'change-character', 'na.gif', '', '');
+	AddOp('Fellowship', 'fellowship', 'na.gif', '', '');
+	AddOp('Filters', 'filters', 'na.gif', '', '');
+	AddOp('Friends', 'friends', 'na.gif', '', '');
+	AddOp('Getting Started', 'getting-started', 'na.gif', '', '');
+	AddOp('Message Inbox', 'messages', 'na.gif', '', '');
+	AddOp('Pets', 'pets', 'na.gif', '', '');
+	AddOp('Shortcuts (Single bar)', 'shortcuts', 'na.gif', '', '');
+	AddOp('Tips and Info', 'tips-and-info', 'na.gif', '', '');
+	AddOp('Travel', 'travel', 'na.gif', '', '');
 	ExtraF();
 }
 
