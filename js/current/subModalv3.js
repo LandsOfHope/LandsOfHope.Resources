@@ -27,6 +27,7 @@ var gHideSelects = false;
 var gReturnVal = null;
 var gReturnVal2 = null;
 var gPostBack = null;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
 var gTabIndexes = new Array();
 var gTabbableTags = new Array("A", "BUTTON", "TEXTAREA", "INPUT", "IFRAME");
@@ -45,7 +46,7 @@ function initPopUp() {
 	popcont = document.createElement('dialog');
 	popcont.id = 'popupContainer';
 
-	popcont.innerHTML = `<div id="popupInner"><table width="100%" cellpadding=0 cellspacing=0 class="navborderx" id="popupTitleBar"><tr style="height: 22px;"><td class="menul">&nbsp;&nbsp;&nbsp;</td><td class="title" width="100%" id="popupTitle"></td><td><img src="${new URL(document.currentScript.src).hostname}/game/icons/cancel.png" border=0 onclick="hidePopWin(false);" id="popCloseBox" style="cursor: pointer;"></td><td class="menur">&nbsp;&nbsp;&nbsp;</td></tr></table><iframe src="${gDefaultPage}" style="width:100%;height:100%;background-color:transparent;" scrolling="auto" frameborder="0" allowtransparency="true" id="popupFrame" name="popupFrame" width="100%" height="100%"></iframe></div>`;
+	popcont.innerHTML = `<div id="popupInner"><table width="100%" cellpadding=0 cellspacing=0 class="navborderx" id="popupTitleBar"><tr style="height: 22px;"><td class="menul">&nbsp;&nbsp;&nbsp;</td><td class="title" width="100%" id="popupTitle"></td><td><img src="${CDN_RESOURCES_URL}/game/icons/cancel.png" border=0 onclick="hidePopWin(false);" id="popCloseBox" style="cursor: pointer;"></td><td class="menur">&nbsp;&nbsp;&nbsp;</td></tr></table><iframe src="${gDefaultPage}" style="width:100%;height:100%;background-color:transparent;" scrolling="auto" frameborder="0" allowtransparency="true" id="popupFrame" name="popupFrame" width="100%" height="100%"></iframe></div>`;
 	theBody.appendChild(popmask);
 	theBody.appendChild(popcont);
 
