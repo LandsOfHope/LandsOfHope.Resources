@@ -26,8 +26,40 @@ var FHIPPR = `${FHIP}p/`;
 
 var AllowMove = 0;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+const ACTION_CHARACTER_ATTACK = 1;
+const ACTION_CHARACTER_TALK = 4;
+const ACTIONS_CHARACTER_BEG = 20;
+const ACTION_CHARACTER_CAPTURE = 79;
+const ACTION_CHARACTER_APPRAISE = 5;
+const ACTION_CHARACTER_EMOTE = 300;
 
+const ACTION_BUILDING_ENTER = 51;
+const ACTION_BUILDING_LOCKPICK = 48;
+const ACTION_BUILDING_SIEGE = 57;
+const ACTION_BUILDING_TINKER = 28;
+const ACTION_BUILDING_APPRAISE = 83;
+const ACTIONS_BUILDINGS_DETECT_HIDDEN = 207;
+
+const ACTION_BUILDING_ROOM_MANAGE = 53;
+const ACTION_BUILDING_ROOM_MANAGE_SPAWNS = 82;
+const ACTION_BUILDING_ROOM_FURNISH = 127;
+
+const ACTION_TILE_MANAGE = 200;
+const ACTION_TILE_MANAGE_BUILDINGS = 201;
+const ACTION_TILE_MANAGE_NPCS = 202;
+const ACTION_TILE_MANAGE_ITEMS = 203;
+const ACTION_TILE_MANAGE_FRIENDS = 244;
+const ACTION_TILE_APPRAISE = 241;
+
+const ACTION_TILEORBUILDING_MARK = 87;
+
+const ACTION_MAP_ITEM_LOCK = 47;
+const ACTION_MAP_ITEM_USE = 60;
+const ACTION_MAP_ITEM_EDIT = 70;
+
+const ACTION_ITEM_USE = 119;
+
+const ACTION_VESSEL_MANAGE = 263;
 
 rnd.today = new Date();
 rnd.seed = rnd.today.getTime();
@@ -248,11 +280,11 @@ function MM2(i, s) {
 
 function XYBox(xc, yc) {
 	if (window.top.Jailed != 0) {
-		window.top.getObj("Map3").innerHTML = "<table width=420 cellpadding=0 cellspacing=0 class='weakercell'><tr><td align=left>" + ASCII("Jailed", 1) + "</td><td style='background-image: URL(https://lohcdn.com/game/icons/bar_tab3.png); width: 80px; text-align: center;font-weight: bold; cursor: pointer;' onclick='RefreshWindow();' title='Refresh Game Window'>" + ASCII("Refresh", 2) + "</td><td id=actionlist style='background-image: URL(https://lohcdn.com/game/icons/bar_tab3.png); width: 120px; text-align: center;font-weight: bold; cursor: pointer;' title='World Action Choices' onclick='ActionList();'>" + ASCII("World Actions", 6) + "</td><td id=OptionCog style='background-image: URL(https://lohcdn.com/game/icons/bar_tab3.png); width: 20px; text-align: center;font-weight: bold; cursor: pointer;' onclick='OptionCogMenu();' title='Option Menu'><img src='https://lohcdn.com/game/icons/cog.png'></td></tr></table></form>"
+		window.top.getObj("Map3").innerHTML = `<table width=420 cellpadding=0 cellspacing=0 class='weakercell'><tr><td align=left>${ASCII("Jailed", 1)}</td><td style='background-image: URL(${CDN_RESOURCES_URL}/game/icons/bar_tab3.png); width: 80px; text-align: center;font-weight: bold; cursor: pointer;' onclick='RefreshWindow();' title='Refresh Game Window'>${ASCII("Refresh", 2)}</td><td id=actionlist style='background-image: URL(${CDN_RESOURCES_URL}/game/icons/bar_tab3.png); width: 120px; text-align: center;font-weight: bold; cursor: pointer;' title='World Action Choices' onclick='ActionList();'>${ASCII("World Actions", 6)}</td><td id=OptionCog style='background-image: URL(${CDN_RESOURCES_URL}/game/icons/bar_tab3.png); width: 20px; text-align: center;font-weight: bold; cursor: pointer;' onclick='OptionCogMenu();' title='Option Menu'><img src='${CDN_RESOURCES_URL}/game/icons/cog.png'></td></tr></table></form>`
 	} else if (xc == 0 && yc == 0) {
-		window.top.getObj("Map3").innerHTML = "<table width=420 cellpadding=0 cellspacing=0 class='weakercell'><tr><td align=left>" + Adir("window.top.Interface.location.replace(\"fhrest.asp\");", "Rest to regenerate health/mana/stamina", "heart", "") + "</td><td align=right>" + Adir("window.top.Ninja.location.replace(\"fh.asp?Redraw=1&BuildingID=-1&R=41\");", "Exit the current building", "world_go", "") + "</td><td style='background-image: URL(https://lohcdn.com/game/icons/bar_tab3.png); width: 80px; text-align: center;font-weight: bold; cursor: pointer;' onclick='RefreshWindow();' title='Refresh Game Window'>" + ASCII("Refresh", 2) + "</td><td id=actionlist style='background-image: URL(https://lohcdn.com/game/icons/bar_tab3.png); width: 120px; text-align: center;font-weight: bold; cursor: pointer;' title='World Action Choices' onclick='ActionList();'>" + ASCII("World Actions", 6) + "</td><td id=OptionCog style='background-image: URL(https://lohcdn.com/game/icons/bar_tab3.png); width: 20px; text-align: center;font-weight: bold; cursor: pointer;' onclick='OptionCogMenu();' title='Option Menu'><img src='https://lohcdn.com/game/icons/cog.png'></td></tr></table></form>"
+		window.top.getObj("Map3").innerHTML = `<table width=420 cellpadding=0 cellspacing=0 class='weakercell'><tr><td align=left>${Adir("window.top.Interface.location.replace(\"fhrest.asp\");", "Rest to regenerate health/mana/stamina", "heart", "")}</td><td align=right>${Adir("window.top.Ninja.location.replace(\"fh.asp?Redraw=1&BuildingID=-1&R=41\");", "Exit the current building", "world_go", "")}</td><td style='background-image: URL(${CDN_RESOURCES_URL}/game/icons/bar_tab3.png); width: 80px; text-align: center;font-weight: bold; cursor: pointer;' onclick='RefreshWindow();' title='Refresh Game Window'>${ASCII("Refresh", 2)}</td><td id=actionlist style='background-image: URL(${CDN_RESOURCES_URL}/game/icons/bar_tab3.png); width: 120px; text-align: center;font-weight: bold; cursor: pointer;' title='World Action Choices' onclick='ActionList();'>${ASCII("World Actions", 6)}</td><td id=OptionCog style='background-image: URL(${CDN_RESOURCES_URL}/game/icons/bar_tab3.png); width: 20px; text-align: center;font-weight: bold; cursor: pointer;' onclick='OptionCogMenu();' title='Option Menu'><img src='${CDN_RESOURCES_URL}/game/icons/cog.png'></td></tr></table></form>`
 	} else {
-		window.top.getObj("Map3").innerHTML = "<form name=Goto id=Goto ACTION='fh.asp?Redraw=1' METHOD='post' target='Ninja' style='margin: 0px;'><table width=420 cellpadding=0 cellspacing=0 class='weakercell'><tr><td>x:</td><td><input class='input' name=x id=x value='" + xc + "'  autocomplete='off'  length=2 size=2 onkeypress='return fxkp(event);' maxlength=3 style='width:25px'>y:</td><td><input class='input' name=y id=y value='" + yc + "' onkeypress='return fxkp(event);' length=2 size=2 maxlength=3 autocomplete='off'  style='width:25px'></td><td class='bottombuttons'>" + Adirf("Goto x/y coordinates", "house_go", "") + Adir("window.top.Interface.location.replace(\"map.asp\");", "Map", "world", "") + Adir("window.top.Interface.location.replace(\"fhrest.asp\");", "Rest to regenerate health/mana/stamina", "heart", "") + Adir("PF(0, 121)", "Explore the tile", "Explore", "Explore") + Adir("PF(0, 241)", "Appraise this tile", "info", "i") + "</td><td style='background-image: URL(https://lohcdn.com/game/icons/bar_tab3.png); width: 80px; text-align: center;font-weight: bold; cursor: pointer;' title='Refresh Game Window' onclick='RefreshWindow();'>" + ASCII("Refresh", 2) + "</td><td id=actionlist title='World Action Choices' style='background-image: URL(https://lohcdn.com/game/icons/bar_tab3.png); width: 120px; text-align: center;font-weight: bold; cursor: pointer;' onclick='ActionList();'>" + ASCII("World Actions", 6) + "</td><td id=OptionCog style='background-image: URL(https://lohcdn.com/game/icons/bar_tab3.png); width: 20px; text-align: center;font-weight: bold; cursor: pointer;' onclick='OptionCogMenu();' title='Option Menu'><img src='https://lohcdn.com/game/icons/cog.png'></td></tr></table></form>"
+		window.top.getObj("Map3").innerHTML = `<form name=Goto id=Goto ACTION='fh.asp?Redraw=1' METHOD='post' target='Ninja' style='margin: 0px;'><table width=420 cellpadding=0 cellspacing=0 class='weakercell'><tr><td>x:</td><td><input class='input' name=x id=x value='${xc}'  autocomplete='off'  length=2 size=2 onkeypress='return fxkp(event);' maxlength=3 style='width:25px'>y:</td><td><input class='input' name=y id=y value='${yc}' onkeypress='return fxkp(event);' length=2 size=2 maxlength=3 autocomplete='off'  style='width:25px'></td><td class='bottombuttons'>${Adirf("Goto x/y coordinates", "house_go", "")}${Adir("window.top.Interface.location.replace(\"map.asp\");", "Map", "world", "")}${Adir("window.top.Interface.location.replace(\"fhrest.asp\");", "Rest to regenerate health/mana/stamina", "heart", "")}${Adir("PF(0, 121)", "Explore the tile", "Explore", "Explore")}${Adir("PF(0, 241)", "Appraise this tile", "info", "i")}</td><td style='background-image: URL(${CDN_RESOURCES_URL}/game/icons/bar_tab3.png); width: 80px; text-align: center;font-weight: bold; cursor: pointer;' title='Refresh Game Window' onclick='RefreshWindow();'>${ASCII("Refresh", 2)}</td><td id=actionlist title='World Action Choices' style='background-image: URL(${CDN_RESOURCES_URL}/game/icons/bar_tab3.png); width: 120px; text-align: center;font-weight: bold; cursor: pointer;' onclick='ActionList();'>${ASCII("World Actions", 6)}</td><td id=OptionCog style='background-image: URL(${CDN_RESOURCES_URL}/game/icons/bar_tab3.png); width: 20px; text-align: center;font-weight: bold; cursor: pointer;' onclick='OptionCogMenu();' title='Option Menu'><img src='${CDN_RESOURCES_URL}/game/icons/cog.png'></td></tr></table></form>`
 	}
 }
 
@@ -437,23 +469,22 @@ function PF(id, varin) {
 	var strfile = '';
 	PFING = 1;
 	var InWin = window.top.Interface.location;
-	if (varin == 2) {
-		strword = 'Fight';
-		strfile = 'fhf.cgi';
-	}
-	if (varin == 1) {
+	if (varin == ACTION_CHARACTER_ATTACK) {
 		strfile = 'fhpref.asp';
 	}
-	if (varin == 79) {
+	if (varin == ACTION_CHARACTER_CAPTURE) {
 		strfile = 'fhprec.asp';
+	}
+	if (varin == ACTION_CHARACTER_EMOTE) {
+		strfile = `fh.asp?EmoteID=${id.emoteId}&other=${id.otherId}`;
 	}
 	if (varin == 3) {
 		strfile = 'fhshopq2.asp';
 	}
-	if (varin == 4) {
+	if (varin == ACTION_CHARACTER_TALK) {
 		strfile = 'fhtalk.asp';
 	}
-	if (varin == 5) {
+	if (varin == ACTION_CHARACTER_APPRAISE) {
 		strfile = 'fhstat2.asp';
 	}
 	if (varin == 6) {
@@ -520,7 +551,7 @@ function PF(id, varin) {
 		strword = 'Mine3';
 		strfile = 'fhres.asp';
 	}
-	if (varin == 20) {
+	if (varin == ACTIONS_CHARACTER_BEG) {
 		strfile = 'fhbeg.asp';
 	}
 	if (varin == 121) {
@@ -576,10 +607,10 @@ function PF(id, varin) {
 	if (varin == 27) {
 		strfile = 'fhlp.asp';
 	}
-	if (varin == 28) {
+	if (varin == ACTION_BUILDING_TINKER) {
 		strfile = 'fhlocks.asp';
 	}
-	if (varin == 47) {
+	if (varin == ACTION_MAP_ITEM_LOCK) {
 		strfile = 'fhilocks.asp';
 	}
 	if (varin == 80) {
@@ -591,7 +622,7 @@ function PF(id, varin) {
 		strfile = 'fhshopq2.asp';
 	}
 
-	if (varin == 51) {
+	if (varin == ACTION_BUILDING_ENTER) {
 		InWin = window.top.Ninja.location;
 		InWin.replace('fh.asp?Redraw=1&BuildingID=' + id);
 		PFING = 0;
@@ -603,17 +634,17 @@ function PF(id, varin) {
 		PFING = 0;
 		return 0;
 	}
-	if (varin == 48) {
+	if (varin == ACTION_BUILDING_LOCKPICK) {
 		strfile = 'fhlp.asp';
 	}
 
-	if (varin == 53) {
+	if (varin == ACTION_BUILDING_ROOM_MANAGE) {
 		InWin.replace('fhbup.asp?ItemID=' + id + '&Type=-1');
 		PFING = 0;
 		return 0;
 	}
-	if (varin == 82) {
-		InWin.replace('fhbups.asp?ItemID=' + id + '&Type=-1');
+	if (varin == ACTION_BUILDING_ROOM_MANAGE_SPAWNS) {
+		InWin.replace('fhblm.asp?Deffun=20');
 		PFING = 0;
 		return 0;
 	}
@@ -630,7 +661,7 @@ function PF(id, varin) {
 		PFING = 0;
 		return 0;
 	}
-	if (varin == 57) {
+	if (varin == ACTION_BUILDING_SIEGE) {
 		InWin.replace('fhsiege.asp?CharsAt=' + id + '&Type=4');
 		PFING = 0;
 		return 0;
@@ -643,7 +674,7 @@ function PF(id, varin) {
 	if (varin == 71) {
 		strfile = 'fhaup.asp';
 	}
-	if (varin == 60) {
+	if (varin == ACTION_MAP_ITEM_USE) {
 		strfile = 'fhwuse.asp';
 	}
 	if (varin == 61) {
@@ -688,7 +719,7 @@ function PF(id, varin) {
 		PFING = 0;
 		return 0;
 	}
-	if (varin == 70) {
+	if (varin == ACTION_MAP_ITEM_EDIT) {
 		strfile = 'fhBuD.asp';
 	}
 	if (varin == 72) {
@@ -721,19 +752,19 @@ function PF(id, varin) {
 	if (varin == 181) {
 		strfile = 'fhcare2.asp';
 	}
-	if (varin == 83) {
+	if (varin == ACTION_BUILDING_APPRAISE) {
 		strfile = 'fhstat3.asp';
 	}
-	if (varin == 200) {
-		strfile = 'fhtm.asp';
+	if (varin == ACTION_TILE_MANAGE) {
+		strfile = 'fhmlm.asp';
 	}
-	if (varin == 201) {
+	if (varin == ACTION_TILE_MANAGE_BUILDINGS) {
 		strfile = 'fhtbm.asp';
 	}
-	if (varin == 202) {
+	if (varin == ACTION_TILE_MANAGE_NPCS) {
 		strfile = 'fhtnpc.asp';
 	}
-	if (varin == 203) {
+	if (varin == ACTION_TILE_MANAGE_ITEMS) {
 		strfile = 'fhtia.asp';
 	}
 	if (varin == 204) {
@@ -857,7 +888,7 @@ function PF(id, varin) {
 		PFING = 0;
 		return 0;
 	}
-	if (varin == 241) {
+	if (varin == ACTION_TILE_APPRAISE) {
 		strfile = 'fhtileinfo.asp';
 	}
 	if (varin == 242) {
@@ -868,7 +899,7 @@ function PF(id, varin) {
 		PFING = 0;
 		return 0;
 	}
-	if (varin == 244) {
+	if (varin == ACTION_TILE_MANAGE_FRIENDS) {
 		strfile = 'fhtif.asp';
 	}
 	if (varin == 245) {
@@ -986,7 +1017,7 @@ function PF(id, varin) {
 		PFING = 0;
 		return 0;
 	}
-	if (varin == 263) {
+	if (varin == ACTION_VESSEL_MANAGE) {
 		strfile = 'fhvm.asp';
 	}
 	if (varin == 264) {
@@ -995,7 +1026,7 @@ function PF(id, varin) {
 	if (varin == 265) {
 		strfile = 'fhcraft.asp';
 	}
-	if (varin == 207) {
+	if (varin == ACTIONS_BUILDINGS_DETECT_HIDDEN) {
 		InWin.replace('fhbsm.asp?Special=1&CharsAt=' + id);
 		PFING = 0;
 		return 0;
@@ -1016,7 +1047,7 @@ function PF(id, varin) {
 	if (varin == 86) {
 		strfile = 'fhfav.asp';
 	}
-	if (varin == 87) {
+	if (varin == ACTION_TILEORBUILDING_MARK) {
 		InWin = window.top.Ninja.location;
 		InWin.replace('fh.asp?Mark=1');
 		PFING = 0;
@@ -1045,7 +1076,7 @@ function PF(id, varin) {
 		strfile = 'fhder.asp';
 	}
 
-	if (varin == 119) {
+	if (varin == ACTION_ITEM_USE) {
 		InWin.replace('fhuse.asp?InventoryItemID=' + id);
 		PFING = 0;
 		return 0;
@@ -1067,8 +1098,8 @@ function PF(id, varin) {
 	if (varin == 94) {
 		strfile = '/gm/gmEB.asp';
 	}
-	if (varin == 127) {
-		strfile = 'fhaut.asp';
+	if (varin == ACTION_BUILDING_ROOM_FURNISH) {
+		strfile = 'fhblm.asp?Special=10';
 	}
 	if (varin == 128) {
 		strfile = 'fhbug.asp?url=' + window.top.Interface.location.href;
