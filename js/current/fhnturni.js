@@ -7,8 +7,9 @@ var fs2 = s2;
 var fr0 = fr0;
 var IC = 0;
 var Infos = new Array();
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function DC(v) {
 	window.parent.Sides[fs][fr0].Action = "" + Infos[v].i;

@@ -3,7 +3,9 @@ var Infos = new Array();
 var PageNo = PageNo;
 var IPath = window.top.FHIPI;
 var CN = '<b>' + CN + '</b>: ';
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 
 function AC(clnid, t, tt) {
@@ -44,6 +46,5 @@ function PC(v) {
 function DC(v) {
 	getObj('Level').value = Infos[v].t;
 	getObj('ItemID').value = Infos[v].v;
-	tinyMCE.get('Message').setContent(Infos[v].tt);
-	getObj('Buttons').innerHTML = Adr('getObj(\'Message\').value = tinyMCE.get(\'Message\').getContent();getObj(\'Resp\').submit();', 'Save changes', 'Save');
+	getObj('Buttons').innerHTML = Adr('getObj(\'Resp\').submit();', 'Save changes', 'Save');
 }

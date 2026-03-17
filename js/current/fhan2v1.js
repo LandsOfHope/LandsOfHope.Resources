@@ -1,10 +1,10 @@
-var PageNo = PageNo;
 var county = 0;
 var IPath = window.top.FHIPR;
 var Processing = 0;
 var ac = 0;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AvC(a, ad, ad2, PictureID, an) {
 	var Color = 'gold';

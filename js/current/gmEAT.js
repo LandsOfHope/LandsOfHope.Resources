@@ -6,7 +6,9 @@ var IC = 0;
 var Infos = new Array();
 var LastV = -1;
 var Processing = 0;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AC(d, b, c2, i, p, e, n, l, f) {
 	//response.write "AC(" & rstChat("ViolatorID") & ", " & rstChat("Violation") & ", " & rstChat("Checked") & ", '" & RTRIM(rstChat("IP")) & "', '" & RTRIM(rstChat("Password")) & "', '" & RTRIM(rstChat("Email")) & "', '" & Replace(rstChat("Name"), "'","`") & "', '" & rstChat("Logged") & "', " & rstChat("Expr1") & ");" & vbcrlf

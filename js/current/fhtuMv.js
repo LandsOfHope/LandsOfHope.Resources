@@ -4,9 +4,10 @@ var AM = AM;
 var CharsAt = CharsAt;
 var IPath = window.top.FHIPR;
 var IC = 0;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
 var Processing = 0;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AH(ShopC, SkillGroup, Message, MD, MessageID, CharID, PictureID) {
 	counteri = counteri + 1

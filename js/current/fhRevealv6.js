@@ -4,8 +4,9 @@ var Processing = 0;
 var PageNo = PageNo;
 var CC = 0;
 var Characters = new Array();
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function DC(v) {
 	getObj('Stuff2').innerHTML = '<b>' + Characters[v].t + '</b><br>Level: ' + Characters[v].l + (Math.abs(Characters[v].a) > 0 ? '<br>Allegiance: ' + window.top.GetAName(Characters[v].a) : '') + (Characters[v].b > 0 ? '<br>Bounty: <b>' + window.top.BSGM2(Characters[v].b) + '</b>' : '') + (Characters[v].i == 0 ? '<br>This player has been revealed.' : '' + '<br>Detect Hidden: ' + Characters[v].i);

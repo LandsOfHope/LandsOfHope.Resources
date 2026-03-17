@@ -4,7 +4,9 @@ var IC = 0;
 var Infos = new Array();
 var CharsAt = CharsAt;
 var IPath = window.top.FHIPR;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function DC(v) {
 	window.frames['ResultsOfit'].location.replace('fhevolve2.asp?CharsAt=' + CharsAt + '&ItemID=' + Infos[v].value + '&p=' + Infos[v].p + '&n=' + Infos[v].i);

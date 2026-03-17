@@ -7,7 +7,9 @@ var Bags = new Array();
 var BC = 0;
 var LastID = -1;
 var Processing = 0;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function GoP(PageNo) {
 	window.location.replace('?ItemTypeID=' + ItemTypeID + '&P=' + PageNo + '');
@@ -66,7 +68,6 @@ function DCB(v) {
 	//
 	if (Processing == 0 && LastID >= 0) {
 		Processing = 1;
-		// window.top.PGS('SlideWoodLong.wav');
 		window.location.replace('?ItemTypeID=' + ItemTypeID + '&ItemID=' + Infos[LastID].z + '&Dest=' + Bags[v].n);
 	}
 }
@@ -93,7 +94,7 @@ function DC(v) {
 	LastID = v;
 	getObj('Stuff2').innerHTML = Infos[v].t + '<br>Quantity: ' + q2 + '<br>' + window.top.PSGM(Infos[v].v) + '';
 	getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + "'>";
-	getObj('Buttons').innerHTML = Adr('if (Processing == 0) {Processing = 1; /*window.top.PGS(\'money.wav\');*/ window.location.replace(\'?ItemTypeID=' + ItemTypeID + '&ItemID=' + Infos[v].z + '\');}', 'Drop', 'Drop') + (Infos[v].t.indexOf('(?)') == -1 ? Adr('window.top.loadwindow2(\'imivh.asp?Test=' + Infos[v].z + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].t + '\');', 'Info', 'Info') + Adr('window.top.sendRequest(\'fhlink.asp?Type=U&CharsAt=' + Infos[v].z + '&Name=' + Infos[v].t + '&c=' + encodeURIComponent(Infos[v].c) + '&l1=i&l2=' + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + '\');', 'Link', 'Link') : '') + '<br><b>Transfer Cargo</b><br>Destination:';
+	getObj('Buttons').innerHTML = Adr('if (Processing == 0) {Processing = 1; window.location.replace(\'?ItemTypeID=' + ItemTypeID + '&ItemID=' + Infos[v].z + '\');}', 'Drop', 'Drop') + (Infos[v].t.indexOf('(?)') == -1 ? Adr('window.top.loadwindow2(\'imivh.asp?Test=' + Infos[v].z + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].t + '\');', 'Info', 'Info') + Adr('window.top.sendRequest(\'fhlink.asp?Type=U&CharsAt=' + Infos[v].z + '&Name=' + Infos[v].t + '&c=' + encodeURIComponent(Infos[v].c) + '&l1=i&l2=' + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + '\');', 'Link', 'Link') : '') + '<br><b>Transfer Cargo</b><br>Destination:';
 	getObj('Vessels').innerHTML = GetVessels(ItemTypeID);
 }
 
@@ -133,7 +134,6 @@ function PromptReturn(returnVal, pb) {
 		if (pb != null) {
 			if (pb == 1) {
 				Processing = 1;
-				// window.top.PGS('money.wav');
 				getObj('sellitems').submit();
 			}
 		}

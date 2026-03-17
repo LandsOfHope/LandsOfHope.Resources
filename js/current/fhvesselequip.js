@@ -12,7 +12,9 @@ var Pictures = new Array();
 var Equipping = '';
 var IPath = window.top.FHIPI;
 var LPath = window.top.FHIPL;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function tgl(ShopNum) {
 	if (Processing == 0) {
@@ -115,5 +117,5 @@ function AdC(n, Names, Color, PictureID) {
 	if (PictureID == '') { PictureID = 'ship.gif' };
 	var Titles2 = 'Open your ' + Names;
 	//style="filter: ' + (n == VesselID ? 'Gray()' : '') + '"
-	document.write('<tr><td style=\'cursor: pointer\'><table align=center cellspacing=0 class="weakercell" cellpadding=1><tr><td class="menucell" title="' + Titles2 + '" style="width: 30px; color: ' + Color + '; background-color:' + Color + '" onmouseover="this.style.backgroundColor=\'' + BGCOLOR_S + '\';window.top.InfoTip(\'https://lohcdn.com/game/v/' + PictureID + '\', \'<b>' + Names + '</b><br>' + Titles2 + '\');" onmouseout="this.style.backgroundColor=\'' + Color + '\';"><img width=30 height=30 id=Bag' + n + ' src="https://lohcdn.com/game/v/' + (PictureID == '' || PictureID == '0' ? 'na.gif' : PictureID) + '" onclick="FBI(' + n + ',\'' + Names + '\');"></td></tr></table></td></tr>');
+	document.write(`<tr><td style=\'cursor: pointer\'><table align=center cellspacing=0 class="weakercell" cellpadding=1><tr><td class="menucell" title="${Titles2}" style="width: 30px; color: ${Color}; background-color:${Color}" onmouseover="this.style.backgroundColor=\'${BGCOLOR_S}\';window.top.InfoTip(\'${CDN_RESOURCES_URL}/game/v/${PictureID}\', \'<b>${Names}</b><br>${Titles2}\');" onmouseout="this.style.backgroundColor=\'${Color}\';"><img width=30 height=30 id=Bag${n} src="${CDN_RESOURCES_URL}/game/v/${PictureID == '' || PictureID == '0' ? 'na.gif' : PictureID}" onclick="FBI(${n},\'${Names}\');"></td></tr></table></td></tr>`);
 }

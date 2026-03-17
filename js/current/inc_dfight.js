@@ -22,7 +22,9 @@ var FightCounter = 0;
 var lngsel0 = -1;
 var lngsel1 = -1;
 var AbilityCount = 0;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 var OKDOKE = 1;
 var CheckTurnTimer = 0;
@@ -177,9 +179,9 @@ function GetPower(f, p) {
 	var w = 16;
 	w = 10;
 	for (x = 0; x < p; x++) {
-		ret = ret + '<div style=\'float: left; width:' + w + 'px; height: ' + w + 'px;\'><img src=\'https://lohcdn.com/game/h/' + f + '.gif\' width=' + w + ' height=' + w + '></div>';
+		ret = `${ret}<div style=\'float: left; width:${w}px; height: ${w}px;\'><img src=\'${CDN_RESOURCES_URL}/game/h/${f}.gif\' width=${w} height=${w}></div>`;
 		if (x > 40) {
-			ret = ret + '<div style=\'float: left; width:60px; height: ' + w + 'px;\'><img src=\'https://lohcdn.com/game/h/' + f + '.gif\' width=' + w + ' height=' + w + '> * ' + (p - 40) + '</div>';
+			ret = `${ret}<div style=\'float: left; width:60px; height: ${w}px;\'><img src=\'${CDN_RESOURCES_URL}/game/h/${f}.gif\' width=${w} height=${w}> * ${p - 40}</div>`;
 			break;
 		}
 	}
@@ -189,7 +191,7 @@ function GetPower(f, p) {
 function GetPower2(f, p) {
 	var ret = '';
 	var w = 10;
-	ret = ret + '<div class=\'weakercell\'><center><b>' + p + '</b><img src=\'https://lohcdn.com/game/h/' + f + '.gif\' width=' + w + ' height=' + w + '></center></div>';
+	ret = `${ret}<div class=\'weakercell\'><center><b>${p}</b><img src=\'${CDN_RESOURCES_URL}/game/h/${f}.gif\' width=${w} height=${w}></center></div>`;
 	return ret;
 }
 
@@ -247,11 +249,11 @@ function GetAbilities(f) {
 	var x = 0;
 	var retVal = '';
 	if (Fighters[f].s == Side && f == 0) {
-		retVal = retVal + '<div class="btn" onclick="FAC(' + f + ', -10)" style="float: left; width: 34px; height: 40px; background-image: URL(https://lohcdn.com/game/s/meat.png); background-repeat: no-repeat; background-position: top center;" title="Consume Healing item" onmouseover="PC3(this)" onmouseout="RC2(this)" align=bottom>&nbsp;</div>'
-		retVal = retVal + '<div class="btn" onclick="FAC(' + f + ', -20)" style="float: left; width: 34px; height: 40px; background-image: URL(https://lohcdn.com/game/s/potion.png); background-repeat: no-repeat; background-position: top center;" title="Consume Power item" onmouseover="PC3(this)" onmouseout="RC2(this)" align=bottom>&nbsp;</div>'
+		retVal = `${retVal}<div class="btn" onclick="FAC(${f}, -10)" style="float: left; width: 34px; height: 40px; background-image: URL(${CDN_RESOURCES_URL}/game/s/meat.png); background-repeat: no-repeat; background-position: top center;" title="Consume Healing item" onmouseover="PC3(this)" onmouseout="RC2(this)" align=bottom>&nbsp;</div>`
+		retVal = `${retVal}<div class="btn" onclick="FAC(${f}, -20)" style="float: left; width: 34px; height: 40px; background-image: URL(${CDN_RESOURCES_URL}/game/s/potion.png); background-repeat: no-repeat; background-position: top center;" title="Consume Power item" onmouseover="PC3(this)" onmouseout="RC2(this)" align=bottom>&nbsp;</div>`
 
 		for (x = 0; x < Fighters[f].abilities.length; x++) {
-			retVal = retVal + '<div class="btn" onclick="FAC(' + f + ', ' + Fighters[f].abilities[x].id + ')" style="float: left; width: 34px; height: 40px; color: white;" title="' + Fighters[f].abilities[x].name + '" onmouseover="PC2(this,' + f + ',' + x + ')" onmouseout="RC2(this)" align=center valign=bottom><table cellpadding=0 cellspacing=0 width="32"><tr><td><center><img src="https://lohcdn.com/game/dp/' + Fighters[f].abilities[x].pp + '" width=20 height=20></center></td></tr><tr><td>' + GetPower2(Fighters[f].cf, Fighters[f].abilities[x].cost) + '</td></tr></table></div>'
+			retVal = `${retVal}<div class="btn" onclick="FAC(${f}, ${Fighters[f].abilities[x].id})" style="float: left; width: 34px; height: 40px; color: white;" title="${Fighters[f].abilities[x].name}" onmouseover="PC2(this, ${f}, ${x})" onmouseout="RC2(this)" align=center valign=bottom><table cellpadding=0 cellspacing=0 width="32"><tr><td><center><img src="${CDN_RESOURCES_URL}/game/dp/${Fighters[f].abilities[x].pp}" width=20 height=20></center></td></tr><tr><td>${GetPower2(Fighters[f].cf, Fighters[f].abilities[x].cost)}</td></tr></table></div>`;
 		}
 	}
 	return retVal;
@@ -292,7 +294,7 @@ function RC2(stuff) {
 }
 
 function PC2(stuff, f, x) {
-	window.top.InfoTip('https://lohcdn.com/game/dp/' + Fighters[f].abilities[x].pp + '', '<table class="weakercell" style="padding-left: 3px" cellpadding=0 cellspacing=0><tr><td><b>' + Fighters[f].abilities[x].name + ' (' + Fighters[f].abilities[x].sub + ')</b></td></tr><tr><td>Cost: ' + Fighters[f].abilities[x].cost + ' ' + Fighters[f].abilities[x].powertype + '</td></tr></table>');
+	window.top.InfoTip(`${CDN_RESOURCES_URL}/game/dp/${Fighters[f].abilities[x].pp}`, '<table class="weakercell" style="padding-left: 3px" cellpadding=0 cellspacing=0><tr><td><b>' + Fighters[f].abilities[x].name + ' (' + Fighters[f].abilities[x].sub + ')</b></td></tr><tr><td>Cost: ' + Fighters[f].abilities[x].cost + ' ' + Fighters[f].abilities[x].powertype + '</td></tr></table>');
 	stuff.style.cursor = 'pointer';
 	stuff.style.backgroundColor = BGCOLOR_S
 }

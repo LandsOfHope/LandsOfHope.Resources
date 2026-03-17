@@ -2,8 +2,9 @@ var IPath = window.top.FHIPR;
 var FHIPO = window.top.FHIPO;
 var p2 = 'na.gif';
 var Countt = 0;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AC(ItemName, ItemID, s, t, p, su) {
 	var Color = LITE;

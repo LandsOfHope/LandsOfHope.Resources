@@ -2,7 +2,8 @@ var PageNo = PageNo;
 var IPath = window.top.FHIPR;
 var IC = 0;
 var Infos = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AvC(rid, rc, Itty, PictureID, t, b, m, ep, hm) {
 	var Color = LITE;
@@ -21,7 +22,7 @@ function AvC(rid, rc, Itty, PictureID, t, b, m, ep, hm) {
 		Infos[IC] = new Array();
 	}
 	Infos[IC] = new newInfo(Color, rid, rc, Itty, PictureID, t, b, m, ep, hm);
-	document.write('<tr  id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')"  onclick="DC(' + IC + ')" style="color: ' + Color + '"><td width=15><img width=15 height=15 src="' + IPath + (PictureID == '' || PictureID == '0' ? 'na.gif' : PictureID) + '"></td><td>' + Itty + '</td><td style="width: 16px;">' + (hm != 0 ? '<img src="https://lohcdn.com/game/i/mil.gif" width=14 height=14 title="Milkable">' : '') + '</td><td color="gold">' + (ep > 0 ? '$' : '') + '</td></tr>');
+	document.write(`<tr  id="I${IC}" onmouseover="PC(${IC})" onmouseout="RC(${IC})"  onclick="DC(${IC})" style="color: ${Color}"><td width=15><img width=15 height=15 src="${IPath}${PictureID == '' || PictureID == '0' ? 'na.gif' : PictureID}"></td><td>${Itty}</td><td style="width: 16px;">${hm != 0 ? `<img src="${CDN_RESOURCES_URL}/game/i/mil.gif" width=14 height=14 title="Milkable">` : ''}</td><td color="gold">${ep > 0 ? '$' : ''}</td></tr>`);
 
 	IC = IC + 1;
 }

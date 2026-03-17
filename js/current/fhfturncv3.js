@@ -2,7 +2,9 @@ var sc = 0;
 var IPath = window.top.FHIPS;
 var Processing = 0;
 var Choices = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function DC(v) {
 	var fr1 = window.parent.fr1;
@@ -16,7 +18,6 @@ function DC(v) {
 	}
 
 	if (Processing == 0) {
-		// window.top.PGS(Choices[v].se);
 		Processing = 1;
 		window.parent.OKDOKE = 0;
 		window.parent.location.replace('fhfturn' + (fs == 0 ? '' : '2') + '.asp?type=2&s=' + fs + '&s2=' + fs2 + '&left=' + fr0 + '&right=' + fr1 + '&iid=' + Choices[v].v);

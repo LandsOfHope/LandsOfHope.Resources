@@ -16,8 +16,9 @@ var Skill = Skill;
 
 var MC = 0;
 var Markers = new Array();
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function Floors() {
 	var strTest = '';

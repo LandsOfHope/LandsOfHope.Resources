@@ -12,7 +12,8 @@ var week = new Array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
 var monthz = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
 var monthdays = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
 var Dayz = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 if (DHOL == 1) {
 	AddHoliday(25, 12, 'Christmas Day', 0);
 	AddHoliday(24, 12, 'Christmas Eve', 0);

@@ -5,7 +5,9 @@ var Type = Type;
 var IPath = window.top.FHIPI;
 var IC = 0;
 var Infos = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function KP(stuff) {
 	return false;
@@ -46,6 +48,5 @@ function PC(v) {
 
 
 function DC(v) {
-	window.setTimeout(function () { tinyMCE.get('SkillDescription').setContent(Infos[v].d); }, 0);
-	getObj('Buttons').innerHTML = Adr('if (Processing == 0) {Processing = 1; getObj(\'SkillDescription\').value = tinyMCE.get(\'SkillDescription\').getContent();getObj(\'Type\').value = ' + Infos[v].v + ';getObj(\'Flag\').value = 1; getObj(\'eskill\').submit()};', 'Save', 'Save')
+	getObj('Buttons').innerHTML = Adr('if (Processing == 0) {Processing = 1; getObj(\'Type\').value = ' + Infos[v].v + ';getObj(\'Flag\').value = 1; getObj(\'eskill\').submit()};', 'Save', 'Save')
 }

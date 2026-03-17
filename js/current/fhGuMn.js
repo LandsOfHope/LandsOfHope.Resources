@@ -3,11 +3,13 @@ var DefaultShop = 0;
 var IPath = window.top.FHIPR;
 var GuildLeader = GuildLeader;
 var RSL = new Array();
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
 if (GuildLeader != 0) {
 	AR(GuildLeader, 'Guild Leader', 'na.gif')
 }
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function KP2() {
 	if (getObj('Message').value.length >= 3500) {

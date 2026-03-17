@@ -10,7 +10,9 @@ var Y = 0;
 var strclickys = ' onmouseover=\"this.style.backgroundColor=\'#333333\';this.style.border=\'1px outset rgb(85, 98, 106)\'\" class=\'menucell\' onmouseout=\"this.style.backgroundColor=\'\';this.style.border=\'1px solid #333333\'\"';
 var MC = 0;
 var Markers = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function smy(v) {
 	if (getObj('TitleOf') != null) {

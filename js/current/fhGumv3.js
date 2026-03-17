@@ -2,7 +2,9 @@ var Menu = 0;
 var counter = 0;
 var Menus = new Array();
 var SPath = window.top.FHIP + 'pi/';
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function tgl(MenuNum) {
 	if (getObj('Menu' + MenuNum).innerHTML == '') {

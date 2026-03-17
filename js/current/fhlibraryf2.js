@@ -5,7 +5,9 @@ var Processing = 0;
 var MT = MT;
 var MC = 0;
 var Markers = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AvC(rid, rt, rn, rpp, rp, rf, rc, rl, ru, rq) {
 	var PictureID = IPath + rpp + '/' + rp;

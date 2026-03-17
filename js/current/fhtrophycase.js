@@ -1,10 +1,11 @@
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 var CharsAt = CharsAt;
 var PageNo = PageNo;
 var IPath = window.top.FHIPI;
 var Processing = 0;
 var TC = 0;
 var Infos = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 
 function AvC(tid, tin, tip, tpc, tag) {
@@ -18,9 +19,7 @@ function AvC(tid, tin, tip, tpc, tag) {
 	} else {
 		Color = '#006600';
 	}
-	document.write('<div id="T' + TC + '" onmouseover="PC(' + TC + ');" onclick="DC(' + TC + ')"  onmouseout="RC(this)" style="float: left; width: 50px; height: 50px; padding: 3px; margin: 1px; border: 1px dotted ' + Color + '; background-color: ' + Color + ';" align=center><img src="https://lohcdn.com/game/i/' + tip + '" width=40 height=40></div>');
-	//document.write('<div id="T' + TC + '" onmouseover="PC(' + TC + ');" onclick="DC(' + TC + ')"  onmouseout="RC(this)" style="color:' + Color +'; float: left; width: 50px; height: 50px; padding: 1px; margin: 1px; border: 1px dotted yellow; background-color: ' + (tpc > 0 ? '#006600' : '#660000') + ';"><table class="weakcell" cellpadding=1 cellspacing=1 width="100%"><tr><td width="15"><img src="https://lohcdn.com/game/i/' + tip + '" width=40 height=40></td><td width="100%" valign=top><b>' + tin + '</b></td></tr></table></div>');
-	//
+	document.write(`<div id="T${TC}" onmouseover="PC(${TC});" onclick="DC(${TC})"  onmouseout="RC(this)" style="float: left; width: 50px; height: 50px; padding: 3px; margin: 1px; border: 1px dotted ${Color}; background-color: ${Color};" align=center><img src="${CDN_RESOURCES_URL}/game/i/${tip}" width=40 height=40></div>`);
 	TC = TC + 1;
 }
 
@@ -38,7 +37,7 @@ function RC(stuff) {
 }
 
 function PC(v) {
-	window.top.InfoTip('https://lohcdn.com/game/i/' + Infos[v].tip, '<b>' + Infos[v].tin + '</b>' + (Infos[v].tpc == 0 ? '<br>Missing piece' : '') + '<br>' + Infos[v].tag);
+	window.top.InfoTip(`${CDN_RESOURCES_URL}/game/i/${Infos[v].tip}`, `<b>${Infos[v].tin}</b>` + (Infos[v].tpc == 0 ? '<br>Missing piece' : '') + '<br>' + Infos[v].tag);
 	getObj('T' + v).style.cursor = 'pointer';
 }
 

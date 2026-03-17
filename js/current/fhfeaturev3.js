@@ -4,8 +4,9 @@ var Infos = new Array();
 var IPath = window.top.FHIPR;
 var Processing = 0;
 var Type2 = Type2;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AvC(adt, m, mt, PictureID, cn, ad, fc, sp, accepted) {
 	var Color = '#66ff66';

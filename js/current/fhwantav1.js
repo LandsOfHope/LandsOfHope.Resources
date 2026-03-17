@@ -5,7 +5,8 @@ var Processing = 0;
 var MT = MT;
 var IC = 0;
 var Infos = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 
 //response.write "AvC(" & rstChat("WantType") & ",'" & rstChat("WantURL") & "','" & rstChat("WantPictureID") & "','" & rstChat("WantPicturePath") & "', '" & rstChat("WantHeader") & "'," & rstChat("WantCount") & ");" & vbcrlf

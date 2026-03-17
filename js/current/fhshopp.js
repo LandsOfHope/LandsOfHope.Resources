@@ -4,9 +4,9 @@ var IPath = window.top.FHIPR;
 var Processing = 0;
 var CharsAt = CharsAt;
 var PageNo = PageNo;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
-
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function DC(v) {
 	getObj('Stuff2').innerHTML = '<b>' + Infos[v].t + '</b><br>Level: ' + Infos[v].l + '<br>Racename: ' + Infos[v].r + '<br>Profession: ' + Infos[v].p2 + '<br>Value: ' + window.top.BSGM(Infos[v].v);

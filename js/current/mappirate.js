@@ -3,10 +3,11 @@ var OX = OX - 1;
 var OY = OY - 1;
 var t = 1;
 var Type2 = Type2;
-var IPath = "https://lohcdn.com/game/flags/";
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+var IPath = `${CDN_RESOURCES_URL}/game/flags/`;
 var IC = 0;
 var Infos = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 var X = 0;
 var Y = 0;

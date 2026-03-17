@@ -1,10 +1,10 @@
 var IC = 0;
 var Infos = new Array();
-var PageNo = PageNo;
-var ItemID = ItemID;
 var IPath = window.top.FHIPI;
 var Processing = 0;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AvC(v, PictureID, Itty, skilly, e) {
 	var Color = '#D9FB96';

@@ -1,8 +1,9 @@
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 var IPath = window.top.FHIPI;
 var LPath = window.top.FHIPL;
 var RPath = window.top.FHIPR;
-var VPath = "https://lohcdn.com/game/v/"
-var FPath = "https://lohcdn.com/game/flags/"
+var VPath = `${CDN_RESOURCES_URL}/game/v/`;
+var FPath = `${CDN_RESOURCES_URL}/game/flags/`;
 var OPath = window.top.FHIPO;
 var fr1 = 0;
 var rix = 0;
@@ -18,7 +19,7 @@ var Sides = new Array(1);
 Sides[0] = new Array();
 Sides[1] = new Array();
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 
 var OKDOKE = 1;
@@ -66,7 +67,7 @@ function Go2(strURL) {
 
 function Statty(ss) {
 	window.frames['ResultsOfit'].document.open();
-	window.frames['ResultsOfit'].document.write("<HTML><HEAD><TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='https://lohcdn.com/css/" + window.top.Theme + ".css'></HEAD><body class='fight' leftmargin=0 topmargin=0 style='padding-left: 0px;'><table class='fight' id='theal' style='padding-left: 0px;'>" + ss + "</table><div id=Info></div></body></HTML>");
+	window.frames['ResultsOfit'].document.write(`<HTML><HEAD><TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='${CDN_RESOURCES_URL}/css/${window.top.Theme}.css'></HEAD><body class='fight' leftmargin=0 topmargin=0 style='padding-left: 0px;'><table class='fight' id='theal' style='padding-left: 0px;'>${ss}</table><div id=Info></div></body></HTML>`);
 	window.frames['ResultsOfit'].document.close();
 }
 
@@ -233,7 +234,7 @@ function DrawSides() {
 
 function ChangeBack(newback) {
 	window.top.sbattle = newback;
-	getObj('fightwindow').style.background = 'URL(https://lohcdn.com/game/v/' + window.top.sbattle + ')';
+	getObj('fightwindow').style.background = `URL(${CDN_RESOURCES_URL}/game/v/${window.top.sbattle})`;
 }
 
 function SideVars(sidex, i, VesselName, d, x, Picture, FlagPicture, FlagColor, Integrity, hpm, selected, cm, lc, mc, hc) {

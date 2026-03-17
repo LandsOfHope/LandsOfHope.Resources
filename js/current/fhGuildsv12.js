@@ -8,7 +8,9 @@ var Processing = 0;
 var IPath = window.top.FHIP + 'pi/';
 var IC = 0;
 var Infos = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AC(Color, PictureID, t, s, v, x, y, g, m, b, f, w, l, ItemName, gd, ga) {
 	if (Color == '') {

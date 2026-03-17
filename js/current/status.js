@@ -1,5 +1,6 @@
-var FHIP = 'https://lohcdn.com/game/';
-var strFunc = ' class=\'btn\' onmouseover="this.className=\'btn btnhov\';" onmouseout="this.className =\'btn\';""'
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+var FHIP = `${CDN_RESOURCES_URL}/game/`;
+var strFunc = ' class=\'btn\' onmouseover="this.className=\'btn btnhov\';" onmouseout="this.className =\'btn\';"'
 
 
 function SM(s, A, Named, Value, PictureID, Action, Number) {
@@ -9,7 +10,7 @@ function SM(s, A, Named, Value, PictureID, Action, Number) {
 		Color = 'yellow';
 	}
 	var PictureID2 = GetAImg(A);
-	document.write('<tr width="100%" height=40 ' + strFunc + ' onclick="" style="color: ' + Color + '; border: 1px solid black; padding-left: 2px; padding-top: 2px"><td style="width: 50px">' + Number + '</td><td width=40 style=\'background-repeat: no-repeat; background-Image: URL(' + FHIP + '' + (Action == 3 ? 's' : 'r') + '/' + PictureID + ')\' valign=bottom halign=right>' + (PictureID2 == '' ? '&nbsp;' : '<img src=\'' + PictureID2 + '\' valign=bottom halign=right onerror="this.src=\'https://lohcdn.com/na.gif\'">') + '</td><td width="300"><b>' + Named + '</b><br>' + GetAName(A) + '<br>Server: ' + s + '</td><td align=right width="100">' + Value + '</td></tr>');
+	document.write(`<tr width="100%" height=40 ${strFunc} onclick="" style="color: ${Color}; border: 1px solid black; padding-left: 2px; padding-top: 2px"><td style="width: 50px">${Number}</td><td width=40 style=\'background-repeat: no-repeat; background-Image: URL(${FHIP}${Action == 3 ? 's' : 'r'}/${PictureID})\' valign=bottom halign=right>${PictureID2 == '' ? '&nbsp;' : `<img src=\'${PictureID2}\' valign=bottom halign=right onerror="this.src=\'${CDN_RESOURCES_URL}/na.gif\'">`}</td><td width="300"><b>${Named}</b><br>${GetAName(A)}<br>Server: ${s}</td><td align=right width="100">${Value}</td></tr>`);
 }
 
 

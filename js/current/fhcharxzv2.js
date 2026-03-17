@@ -8,8 +8,9 @@ var BagCount = 0;
 var IPath = window.top.FHIPI;
 var LastClickedItem = -1;
 var OPath = window.top.FHIPO;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AvC(Color, z, PictureID, Itty, It) {
 	if (Color == '#D9FB96') { Itty = '<b>' + Itty + '</b>' }

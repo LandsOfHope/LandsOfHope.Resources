@@ -13,7 +13,9 @@ var ECT = ECT;
 var strword = strword;
 var IPath = window.top.FHIPI;
 var Processing = 0;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AC(Level, PictureID, ItemName, ItemID, Special, Quantity) {
 	if (PictureID == '0') { PictureID = '' }

@@ -1,6 +1,7 @@
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 var HideGameMenu = -1;
 var Theme = Theme;
-var ThemeP = 'https://lohcdn.com/images/' + Theme + '/';
+var ThemeP = `${CDN_RESOURCES_URL}/images/${Theme}/`;
 var lastmenu = 0;
 var mymenu = new Array();
 var verticalmenu = 0;
@@ -105,8 +106,8 @@ function GetMenu(menu) {
 	var mmenuw = (menu.popup == 0 ? (menu.nodename.length * 7) : '120');
 
 	menuwidth = menuwidth + mmenuw;
-	var OnStuff = ' onclick="HM3(0,0, 0);' + clickurl + '" ' + (menu.nodename != '' ? ' onmouseover="SM(this, ' + menu.lm + ', ' + menu.popup + ',' + (menu.popup != 0 ? menu.nodeparent : menu.lm) + ');" onmouseout="HM(this, ' + menu.lm + ');"' : '') + ' id="mnu' + menu.lm + '" style="color: ' + COLOR1_S + ';' + (menu.nodename == '' ? 'background-image: URL(https://lohcdn.com/images/' + Theme + '/top.gif);' : '') + 'width: ' + mmenuw + 'px;"'; // filter: glow(color=' + ShadowColor + ', strength=2)
-	tmp = (menu.popup != 0 ? '<tr ' + (menu.nodename != '' ? '' : 'style="height:3px;font-size: 1px;"') + '><td colspan=2' : '<td') + '' + OnStuff + '>' + (menu.nodename == '' ? '' : window.top.ASCII(menu.nodename, 1)) + '</td>' + (menu.nc != 0 ? '<td width=15><img src="https://lohcdn.com/images/' + Theme + '/' + (menu.nodeparent == null ? 'test_m1iad.gif' : 'test_m1ia.gif') + '"></td>' : '') + (menu.popup != 0 ? '<tr>' : '');
+	var OnStuff = ` onclick="HM3(0,0, 0);${clickurl}" ${menu.nodename != '' ? ' onmouseover="SM(this, ' + menu.lm + ', ' + menu.popup + ',' + (menu.popup != 0 ? menu.nodeparent : menu.lm) + ');" onmouseout="HM(this, ' + menu.lm + ');"' : ''} id="mnu${menu.lm}" style="color: ${COLOR1_S};${menu.nodename == '' ? `background-image: URL(${CDN_RESOURCES_URL}/images/${Theme}/top.gif);` : ''}width: ${mmenuw}px;"`; // filter: glow(color=' + ShadowColor + ', strength=2)
+	tmp = (menu.popup != 0 ? `<tr ${menu.nodename != '' ? '' : 'style="height:3px;font-size: 1px;"'}><td colspan=2` : '<td') + '' + OnStuff + '>' + (menu.nodename == '' ? '' : window.top.ASCII(menu.nodename, 1)) + '</td>' + (menu.nc != 0 ? `<td width=15><img src="${CDN_RESOURCES_URL}/images/${Theme}/${menu.nodeparent == null ? 'test_m1iad.gif' : 'test_m1ia.gif'}"></td>` : '') + (menu.popup != 0 ? '<tr>' : '');
 	return tmp;
 }
 

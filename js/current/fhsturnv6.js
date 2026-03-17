@@ -14,7 +14,9 @@ var fn = 0;
 var aa = 0;
 var Processing = 0;
 var OKDOKE = 1;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function SelE() {
 	var r = GetFirstFighter(0)
@@ -103,7 +105,7 @@ function FAC(v, action) {
 
 function Statty(ss) {
 	window.frames['ResultsOfit'].document.open();
-	window.frames['ResultsOfit'].document.write("<HTML><HEAD><TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='https://lohcdn.com/css/" + window.parent.parent.Theme + ".css'></HEAD><body class='fight' leftmargin=0 topmargin=0>" + ss + "<div id=Info></div></body></HTML>");
+	window.frames['ResultsOfit'].document.write(`<HTML><HEAD><TITLE></TITLE><LINK REL='stylesheet' TYPE='text/css' HREF='${CDN_RESOURCES_URL}/css/${window.parent.parent.Theme}.css'></HEAD><body class='fight' leftmargin=0 topmargin=0>${ss}<div id=Info></div></body></HTML>`);
 	window.frames['ResultsOfit'].document.close();
 }
 

@@ -2,6 +2,7 @@ var Theme = Theme;
 var lastmenu = 0;
 var mymenu = new Array();
 var verticalmenu = 1;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
 function UnloadMenu() {
 	if (document.getElementById("menubar_m1") != null) {
@@ -89,13 +90,13 @@ function GetMenu(menu) {
 	} else if (menu.nodeurl != "") {
 		clickurl = "window.location.replace('" + menu.nodeurl + "');"
 	}
-	var OnStuff = ' onclick="' + clickurl + '" ' + (menu.nodename != '' ? ' onmouseover="SM(this);" onmouseout="HM(this);"' : '') + ' id="mnu' + menu.lm + '" p="' + (menu.popup != 0 ? menu.nodeparent : menu.lm) + '" style="background-image: URL(https://lohcdn.com/dot.gif); color: ' + menu.c + '"';
-	tmp = '<tr ' + (menu.nodename != '' ? '' : 'style="height:1px"') + OnStuff + '><td colspan=2 width="150px">' + (menu.nodename == '' ? '' : '' + menu.nodename) + '</td>' + (menu.nc != 0 ? '<td width=15><img src="https://lohcdn.com/images/' + Theme + '/test_m1ia.gif"></td>' : '') + '<tr>';
+	var OnStuff = ` onclick="${clickurl}" ${menu.nodename != '' ? ' onmouseover="SM(this);" onmouseout="HM(this);"' : ''} id="mnu${menu.lm}" p="${menu.popup != 0 ? menu.nodeparent : menu.lm}" style="background-image: URL(${CDN_RESOURCES_URL}/dot.gif); color: ${menu.c}"`;
+	tmp = `<tr ${menu.nodename != '' ? '' : 'style="height:1px"'}${OnStuff}><td colspan=2 width="150px">${menu.nodename == '' ? '' : '' + menu.nodename}</td>${menu.nc != 0 ? `<td width=15><img src="${CDN_RESOURCES_URL}/images/${Theme}/test_m1ia.gif"></td>` : ''}<tr>`;
 	return tmp;
 }
 
 function MenuBox(content, width, height) {
-	return "<table border='0' align='center' cellpadding='0' cellspacing='0' style=' width: " + width + ";" + (height != '' ? "height: " + height : "") + "'><tr><td valign=top>" + content + "</td></tr></table>";
+	return `<table border='0' align='center' cellpadding='0' cellspacing='0' style=' width: ${width};${height != '' ? "height: " + height : ""}'><tr><td valign=top>${content}</td></tr></table>`;
 }
 
 function admi(nodename, nodeurl, nodeframe, nodeparent, nodeimage, c) {

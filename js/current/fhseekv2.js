@@ -1,9 +1,10 @@
 var FID = FID;
 var CharsAt = CharsAt;
-var FHIP = 'https://lohcdn.com/game/'
-var IPath = FHIP + "r/"
-var IPath2 = FHIP + "i/"
-var IPath4 = FHIP + "m/"
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+var FHIP = `${CDN_RESOURCES_URL}/game/`;
+var IPath = `${FHIP}r/`;
+var IPath2 = `${FHIP}i/`;
+var IPath4 = `${FHIP}m/`;
 var IPath3 = ""
 var height = 0; //height of the game area
 var width = 0;	//width of the game area
@@ -36,8 +37,9 @@ var terrain2 = '';
 var terrainx = '';
 var tilecx = 1280602;
 var terrainx2 = '';
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 function InitGame(gamename, IPathM, headx, markerx, blankx, terrainx1, terrain2x1, tilecx1, terrainx, terrain2x, tilecx2, w, h) {
 	window.top.getObj('framedivtitle').innerHTML = gamename;
 	//getObj("Bob").rows[0].cells[0].innerHTML = "<table width='100%' cellpadding=0 cellspacing=0><tr><td class='menul'>&nbsp;&nbsp;&nbsp;</td><td class='title' width='100%'>" + gamename + "</td><td class='menur'>&nbsp;&nbsp;&nbsp;</td></tr></table>";
@@ -135,19 +137,14 @@ function Search(stuff, t) {
 	//Search
 	if (charges > 0 && t != 0) {
 		if (prizes[t] == 1) {
-			//alert('You found a Prize !')
-			stuff.innerHTML = "<img src='" + blank + "'  style=\"background-Image: URL('" + marker + "')\" width=20 height=20>"
+			stuff.innerHTML = "<img src='" + blank + "'  style=\"background-Image: URL('" + marker + "')\" width=20 height=20>";
 			prizesfound = prizesfound + 1;
-			prizes[t] = -1
-			//stuff.t = 0;
-			// window.top.PGS('beep.wav');
+			prizes[t] = -1;
 			charges = charges - 1;
 		} else if (prizes[t] == -1) {
 		} else {
 			charges = charges - 1;
-			stuff.innerHTML = "<img src='" + blank + "'  style=\"background-Image: URL('" + IPath3 + "ayou.gif')\" width=20 height=20>"
-			// window.top.PGS('miss.wav');
-			//stuff.t = 0;
+			stuff.innerHTML = "<img src='" + blank + "'  style=\"background-Image: URL('" + IPath3 + "ayou.gif')\" width=20 height=20>";
 		}
 
 	}
@@ -156,10 +153,10 @@ function Search(stuff, t) {
 	if (charges <= 0 && prizesfound > 0) {
 		//Submit
 		getObj("score").value = prizesfound;
-		getObj("info").submit()
+		getObj("info").submit();
 	} else if (charges <= 0) {
 		getObj("score").value = -1;
-		getObj("info").submit()
+		getObj("info").submit();
 	}
 }
 

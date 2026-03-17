@@ -18,8 +18,9 @@ var Level = Level;
 var InvItems = new Array(50);
 var InvItemsC = 0;
 var LastSelectedItem = -1;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function tgl(ShopNum) {
 	LastSelectedItem = -1;

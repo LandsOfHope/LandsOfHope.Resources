@@ -13,7 +13,8 @@ var Infos2 = new Array();
 var ACC = 0;
 var Actuals = new Array();
 var LastV = -1;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AC(PictureID, sn, ItemName, PName, ItemID, Level, Skill2, a, rm) {
 	if (PictureID == '0') { PictureID = '' }

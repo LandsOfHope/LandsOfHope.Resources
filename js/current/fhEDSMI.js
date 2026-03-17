@@ -5,8 +5,9 @@ var IPath = window.top.FHIPM;
 var Processing = 0;
 var IC = 0;
 var Infos = new Array();
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AC(PictureID, c2, ItemName, ItemID, ic) {
 	if (PictureID == '0') { PictureID = '' }

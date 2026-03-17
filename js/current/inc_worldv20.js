@@ -1,31 +1,20 @@
 var FHSP = '';
-var FHIP = FHIP;
 var UseAdvanced = 0;
 var LastSelectedCharacter = -1;
 
-
-var FHIPI = FHIP + 'i/';
-var FHIPO = FHIP + 'icons/';
-var FHIPM = FHIP + 'm/';
-var FHIPB = FHIP + 'b/';
-var FHIPR = FHIP + 'r/';
-var FHIPV = FHIP + 'v/';
-var FHIPP = FHIPP;
-
-var mainx = mainx;
-var Tiles = Tiles;
-var mainy = mainy;
-var mainz = mainz;
-var mx = mx;
-var my = my;
-var mz = mz;
-var BuildingID = BuildingID;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+var FHIP = `${CDN_RESOURCES_URL}/game/`;
+var FHIPI = `${FHIP}i/`;
+var FHIPO = `${FHIP}icons/`;
+var FHIPM = `${FHIP}m/`;
+var FHIPB = `${FHIP}b/`;
+var FHIPR = `${FHIP}r/`;
+var FHIPV = `${FHIP}v/`;
 
 function O(stuff) {
 	stuff.style.cursor = '';
 	stuff.style.backgroundColor = '';
 }
-
 
 function NewChar(m, ag, s, d, k, h, f, t, o, p, Color, v, Itty, Extra, ll, FC1, FN1, FS1, ap, ap2, r, as, prof, pl, l, afid, p2, agct, haspets, pvp, agc, nmc) {
 	this.m = m;
@@ -65,9 +54,6 @@ function AFC(m, ag, s, d, k, h, f, t, o, p, Color, v, Itty, Extra, ll, FC1, FN1,
 	var p2 = '';
 	var Color3 = '';
 
-	var u = 0;
-	var FontIndex = 0;
-
 	if (FC1 != '') {
 		Color3 = FC1;
 	}
@@ -80,12 +66,10 @@ function AFC(m, ag, s, d, k, h, f, t, o, p, Color, v, Itty, Extra, ll, FC1, FN1,
 		Extra = '* ' + Extra;
 	}
 
-
 	if (p2 == '') { p2 = p };
 	if (p2 == '') { p2 = 'na.gif' };
 	var agc = GetAImg(ag);
 	var agct = GetAName(ag);
-
 
 	if (window.top.Chars[window.top.FHCC] == null) {
 		window.top.Chars[window.top.FHCC] = new Array();
@@ -97,7 +81,7 @@ function AFC(m, ag, s, d, k, h, f, t, o, p, Color, v, Itty, Extra, ll, FC1, FN1,
 
 function StrToPath(thestr) {
 	var strout = '';
-	strout = 'https://lohcdn.com/game/' + thestr + '/'
+	strout = `${CDN_RESOURCES_URL}/game/${thestr}/`
 	return strout;
 }
 function NewItem(p, n, s, l, v, ad, d, ml, pp) {

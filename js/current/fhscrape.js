@@ -7,7 +7,9 @@ var IC = 0;
 var Infos = new Array();
 var IPath = window.top.FHIPI;
 var OPath = window.top.FHIPO;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function GoP(PageNo) {
 	window.location.replace('?MT=' + MT + '&P=' + PageNo + '');
@@ -54,6 +56,5 @@ function newInfo(Color, z, ud, Itty, u, o, st) {
 function DC(v) {
 	getObj("SN").value = Infos[v].u;
 	getObj("UN").value = Infos[v].t;
-	tinyMCE.get('UD').setContent(Infos[v].ud);
 	getObj('Buttons2').innerHTML = Adr('if (Processing == 0) {Processing = 1; getObj(\'CharsAt\').value = -' + Infos[v].z + '; getObj(\'scrapform\').submit()};', 'Edit Entry', 'Edit') + Adr('if (Processing == 0) {Processing = 1; getObj(\'SN\').value = \'\';getObj(\'CharsAt\').value = -' + Infos[v].z + ';getObj(\'scrapform\').submit()};', 'Delete Entry', 'Delete');
 }

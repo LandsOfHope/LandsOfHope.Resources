@@ -7,7 +7,8 @@ var IPath = window.top.FHIPS;
 var IPath2 = window.top.FHIPR;
 var Infos = new Array();
 var PetID = PetID;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function GoP(PageNo) {
 	window.location.replace('?CharsAt=' + CharsAt + '&PetID=' + PetID + '&P=' + PageNo + '&SN=' + SN);
@@ -18,7 +19,7 @@ function SMM(Color, v, i, mc, d, h, t, b, Named, n, sv, dot) {
 		Infos[IC] = new Array();
 	}
 	Infos[IC] = new newInfo(Color, v, i, mc, d, h, t, b, Named, n, sv, dot);
-	document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')" onclick="DC(' + IC + ')"><td width=15 height=15><img border=0 width=15 height=15 src="' + IPath + Piccy + '"></td><td width=250 style="color: ' + Color + '">' + Named + '</td><td>' + (dot != 0 ? '<img src=\'https://lohcdn.com/game/icons/clock_add.png\' title=\'Effect over Time\'>' : '') + '</td><td>' + (t == 3 ? '<img src=\'https://lohcdn.com/game/icons/group.png\' title=\'Area Effect\'>' : '') + '</td></tr>');
+	document.write(`<tr id="I${IC}" onmouseover="PC(${IC})" onmouseout="RC(${IC})" onclick="DC(${IC})"><td width=15 height=15><img border=0 width=15 height=15 src="${IPath}${Piccy}"></td><td width=250 style="color: ${Color}">${Named}</td><td>${dot != 0 ? `<img src='${CDN_RESOURCES_URL}/game/icons/clock_add.png' title='Effect over Time'>` : ''}</td><td>${t == 3 ? `<img src='${CDN_RESOURCES_URL}/game/icons/group.png' title='Area Effect'>` : ''}</td></tr>`);
 	IC = IC + 1;
 }
 

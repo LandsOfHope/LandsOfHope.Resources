@@ -3,7 +3,9 @@ var IPath2 = window.top.FHIPR;
 var BuildingCount = BuildingCount;
 var IC = 0;
 var Infos = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function DC(v) {
 	if (BuildingCount == 0 || (BuildingCount > 0 && BuildingCount <= Math.round(Infos[v].bc))) {

@@ -10,8 +10,9 @@ var IC = 0;
 var Infos = new Array();
 var Processing = 0;
 var LastV = -1;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AddP(Cost, PackageID, PackageName, PackageDesc) {
 	PackagesFF[PackageCount] = new Array()
@@ -59,7 +60,6 @@ function DC2(stuff, lngTotal, packagex) {
 	var x = 0;
 	getObj('Dest').value = Infos[LastV].value;
 	getObj('Package').value = packagex;
-	//getObj('Note').value = tinyMCE.getContent();
 	confirm('Send package ' + packagex + ' to ' + Infos[LastV].t + ' at a cost of ' + window.top.BSGM2(lngTotal) + '?', 1);
 }
 

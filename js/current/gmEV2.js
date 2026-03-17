@@ -8,8 +8,9 @@ var Processing = 0;
 var LastV = -1;
 var LastDefault = '';
 var LastForward = '';
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AC(m, v, p, server, vl, vt, vn, a, vtid, vc, vcp, vb, x, y) {
 	var Color = GetAColor(a)

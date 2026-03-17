@@ -3,7 +3,8 @@ var Infos = new Array();
 var CharsAt = CharsAt;
 var IPath = window.top.FHIPI;
 var Processing = 0;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function GoP(PageNo) {
 	window.location.replace('?CharsAt=' + CharsAt + '&P=' + PageNo + '');
@@ -50,7 +51,6 @@ function PromptReturn(returnVal, pb) {
 		if (pb != null) {
 			if (pb == 1) {
 				Processing = 1;
-				// window.top.PGS('money.wav');
 				getObj('editform').submit();
 			} else if (pb == 2) {
 				Processing = 1;

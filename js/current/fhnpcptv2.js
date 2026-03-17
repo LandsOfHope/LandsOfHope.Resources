@@ -3,7 +3,9 @@ var Infos = new Array();
 var PageNo = PageNo;
 var IPath = window.top.FHIPI;
 var CN = '<b>' + CN + '</b>: ';
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 
 function AC(Color, t, tt) {
@@ -42,8 +44,6 @@ function PC(v) {
 function DC(v) {
 	getObj('RT').value = Infos[v].t;
 	getObj('Stuff2').innerHTML = '<font class="weakcell" style="color:' + Infos[v].c + '"><b>' + Infos[v].t + '</b></font>';
-	//getObj('Message').value = Infos[v].tt;
-	tinyMCE.get('Message').setContent(Infos[v].tt);
-	getObj('Buttons').innerHTML = Adr('getObj(\'Message\').value = tinyMCE.get(\'Message\').getContent();getObj(\'Resp\').submit();', 'Save changes', 'Save') + Adr('window.top.SendCommand(tinyMCE.getContent());', 'Preview text', 'Preview');
+	getObj('Buttons').innerHTML = Adr('getObj(\'Resp\').submit();', 'Save changes', 'Save') + Adr('window.top.SendCommand(getObj(\'Message\').value);', 'Preview text', 'Preview');
 	//OtherStuff();
 }

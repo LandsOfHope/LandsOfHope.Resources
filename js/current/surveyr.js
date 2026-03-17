@@ -4,8 +4,9 @@ var AccountID = AccountID;
 var Processing = 0;
 var LastTab = 0;
 var QCount = 1;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AvC(z, Itty, rc, rp) {
 	if (rp >= 90) {
@@ -34,7 +35,7 @@ function ShowTab(tabno) {
 
 function DrawFooters(tp) {
 	var strTest = '';
-	strTest = "<td valign=bottom></td><td style='background-image: URL(https://lohcdn.com/game/pirate/piratetab.png); background-position: bottom; background-color: transparent; width:100px' align=center><a class='tab' href=\"javascript:window.close();\">Cancel</a></td><td width=100>&nbsp;</td><td style='background-image: URL(https://lohcdn.com/game/pirate/piratetab.png); background-position: bottom; background-color: transparent; width:100px' align=center><a class='tab' href=\"javascript:getObj(\'p\').value = " + (PageNo - 1) + "; getObj(\'questions\').submit();\"" + (PageNo > 1 ? "" : " disabled") + ">Previous</a></td><td style='background-image: URL(https://lohcdn.com/game/pirate/piratetab.png); background-position: bottom; background-color: transparent; width:100px' align=center><a class='tab' href=\"javascript:getObj(\'p\').value = " + (PageNo + 1) + "; getObj(\'questions\').submit();\"" + (PageNo < tp ? "" : " disabled") + ">Next</a></td>";
+	strTest = `<td valign=bottom></td><td style='background-image: URL(${CDN_RESOURCES_URL}/game/pirate/piratetab.png); background-position: bottom; background-color: transparent; width:100px' align=center><a class='tab' href=\"javascript:window.close();\">Cancel</a></td><td width=100>&nbsp;</td><td style='background-image: URL(${CDN_RESOURCES_URL}/game/pirate/piratetab.png); background-position: bottom; background-color: transparent; width:100px' align=center><a class='tab' href=\"javascript:getObj(\'p\').value = ${PageNo - 1}; getObj(\'questions\').submit();\"${PageNo > 1 ? "" : " disabled"}>Previous</a></td><td style='background-image: URL(${CDN_RESOURCES_URL}/game/pirate/piratetab.png); background-position: bottom; background-color: transparent; width:100px' align=center><a class='tab' href=\"javascript:getObj(\'p\').value = ${PageNo + 1}; getObj(\'questions\').submit();\"${PageNo < tp ? "" : " disabled"}>Next</a></td>`;
 	return "<table cellpadding=1 cellspacing=1 border=0 height='25px'><tr><td width=140>&nbsp;</td>" + strTest + "<td valign=bottom></td></tr></table>";
 }
 
@@ -42,5 +43,5 @@ function PercentBoxX(pwidth, PercentValue, Color, caption) {
 	if (caption == '') {
 		caption = PercentValue + '%';
 	}
-	return '<div style="width: ' + pwidth + 'px; height: 15px; position: relative; background: URL(https://lohcdn.com/images/black.gif) repeat-x"><div style="width: ' + ((pwidth / 100) * PercentValue) + 'px;height: 15px; position: static; background: URL(https://lohcdn.com/images/' + Color + '.gif) repeat-x"><div class=perc2 style="position: absolute; width:' + pwidth + 'px">' + caption + '</div></div></div>';
+	return `<div style="width: ${pwidth}px; height: 15px; position: relative; background: URL(${CDN_RESOURCES_URL}/images/black.gif) repeat-x"><div style="width: ${(pwidth / 100) * PercentValue}px;height: 15px; position: static; background: URL(${CDN_RESOURCES_URL}/images/${Color}.gif) repeat-x"><div class=perc2 style="position: absolute; width:${pwidth}px">${caption}</div></div></div>`;
 }

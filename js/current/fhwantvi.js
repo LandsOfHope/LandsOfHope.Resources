@@ -1,3 +1,4 @@
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 var IC = 0;
 var Infos = new Array();
 var PageNo = PageNo;
@@ -8,7 +9,7 @@ var IPath = window.top.FHIPI;
 var Processing = 0;
 var LastV = -1;
 var turnin = turnin;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AC(IID, ItemName, PictureID, q, l) {
 	if (PictureID == '0') { PictureID = '' }

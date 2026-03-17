@@ -2,7 +2,8 @@ var PageNo = PageNo;
 var IC = 0;
 var Infos = new Array();
 var IPath = window.top.FHIPI;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AvC(tid, tin, tip, tii, ti) {
 	var Color = 'white';
@@ -45,6 +46,6 @@ function Tipsfor(v) {
 
 function DC(v) {
 	getObj('Stuff2').innerHTML = '<b>' + Infos[v].tin + '</b><br>' + Infos[v].ti + '<br><br><center><b>Requirements</b></center><br>' + Infos[v].tii
-	getObj('Pic').innerHTML = "<img src='https://lohcdn.com/game/i/" + Infos[v].p + "'>";
+	getObj('Pic').innerHTML = `<img src='${CDN_RESOURCES_URL}/game/i/${Infos[v].p}'>`;
 	getObj('Buttons').innerHTML = Adr('window.parent.loadwindow2(\'troz.asp?Test=' + Infos[v].tid + '\',300,300,\'iwindow\',\'' + Infos[v].tin + '\');', 'More Info', 'More Info');
 }

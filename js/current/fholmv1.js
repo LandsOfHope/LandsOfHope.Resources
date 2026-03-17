@@ -16,19 +16,12 @@ var server = server;
 var Special = Special;
 var Processing = 0;
 var MapT = new Array(50);
-var FHIP = window.top.FHIP;
-var FHIPI = FHIP + 'i/';
-var FHIPH = FHIP + 'h/';
-var FHIPO = window.top.FHIPO;;
-var FHIPM = FHIP + 'm/';
-var OPath = window.top.FHIPO;;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+var FHIP = `${CDN_RESOURCES_URL}/game/`;
+var FHIPM = `${FHIP}m/`;
+var OPath = `${FHIP}icons/`;
 
-var FHIPB = FHIP + 'b/';
-var FHIPR = FHIP + 'r/';
-var FHIPS = FHIP + 's/';
-//var FHIPP = FHIPP;
-
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function mMenu(MS, ForSale, MapID, ts, ColorM, CaptionM, PictureM, ObjectM, MapXm, MapYm) {
 	this.Sale = ForSale;
@@ -173,7 +166,7 @@ function DrawTile(x, y, z, e, p) {
 		}
 		strmap += " align=center valign=center>"
 
-		strmap += (MapT[x][y].ObjectM != "" ? "<img src='" + FHIPM + MapT[x][y].ObjectM + "'>" : "")
+		strmap += (MapT[x][y].ObjectM != "" ? `<img src='${FHIPM}${MapT[x][y].ObjectM}'>` : "")
 		strmap += "</td>";
 	}
 	return strmap;

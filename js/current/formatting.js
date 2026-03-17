@@ -4,6 +4,7 @@ var FormatCount = 0;
 var Welcome = 'Welcome to <b>Lands of Hope</b><br><br><b>Links:</b><br>None';
 var ButtonDirty = 0;
 var FC = new Array(20);
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
 if (window.top.Tip == null) {
 	var ToolTipOn = 0;
@@ -41,9 +42,9 @@ if (window.top.BGCOLOR != null) {
 	var DARK = 'black';
 }
 
-document.write('<script src="https://lohcdn.com/js/current/tooltip.js" language="JavaScript"></script>');
-document.write('<script src="https://lohcdn.com/js/current/keystroke.js" language="JavaScript"></script>');
-document.write('<script src="https://lohcdn.com/js/current/prompts.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/tooltip.js" language="JavaScript"></script>`);
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/keystroke.js" language="JavaScript"></script>`);
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/prompts.js" language="JavaScript"></script>`);
 
 var strButtonF = "font-weight: normal; font-family: Helvetica; font-size: 11px; vertical-align:top"
 var strButtonx = "cursor: pointer; " + strButtonF;
@@ -344,7 +345,7 @@ function PFormMoney(fin, mmin) {
 	var harhar = mmin;
 	var m = Math.floor(harhar)
 
-	return "<img src=\"https://lohcdn.com/game/pirate/c4.png\"><input title=\"Doubloons\" name=cpd" + fin + " id=cpd" + fin + " value=" + m + " size=3 maxlength=10 style=\"width: 30px;\" onkeypress=\"return fxkp(event);\" onpaste=\"event.returnValue = false;\" onkeyup=\"CalcM('" + fin + "', this)\">";
+	return `<img src=\"${CDN_RESOURCES_URL}/game/pirate/c4.png\"><input title=\"Doubloons\" name=cpd${fin} id=cpd${fin} value=${m} size=3 maxlength=10 style=\"width: 30px;\" onkeypress=\"return fxkp(event);\" onpaste=\"event.returnValue = false;\" onkeyup=\"CalcM('${fin}', this)\">`;
 }
 
 function CalcM(fin, stuff) {
@@ -390,11 +391,11 @@ function RF(in1, in2) {
 }
 
 function DrawImage(imgpath, imgw, imgh) {
-	return '<img src=\'' + imgpath + '\' onerror=\'this.src="https://lohcdn.com/na.gif"\'>';
+	return `<img src=\'${imgpath}\' onerror='this.src="${CDN_RESOURCES_URL}/na.gif"'>`;
 }
 
 function DrawImage2(imgpath, imgw, imgh) {
-	return "<img src='" + imgpath + "' onerror='this.src=\"https://lohcdn.com/na.gif\"'>";
+	return `<img src='${imgpath}' onerror='this.src="${CDN_RESOURCES_URL}/na.gif"'>`;
 }
 
 function PopupMonsterInfo(MID) {

@@ -16,7 +16,9 @@ var EC = 0;
 var Equipping = '';
 var IPath = window.top.FHIPI;
 var LPath = window.top.FHIPI;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function tgl(ShopNum) {
 	DrawShop(ShopNum);

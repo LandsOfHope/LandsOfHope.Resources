@@ -9,7 +9,9 @@ var sx = sz;
 var sy = sy;
 var Infos = new Array();
 var IC = 0;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AM(Color, Named, ItemID, MX, MY, PictureID) {
 	if (PictureID == '0') { PictureID = '' }

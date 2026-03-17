@@ -5,8 +5,9 @@ var Type2 = Type2;
 var Processing = 0;
 var IPath = window.top.FHIPM;
 var IPath2 = window.top.FHIPI;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AM(Color, v, f, Itty, PictureID, y, x, g) {
 	if (Infos[IC] == null) {

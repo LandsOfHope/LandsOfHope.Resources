@@ -1,18 +1,14 @@
 var IC = 0;
 var VC = 0;
-var CharsAt = CharsAt;
-var PageNo = PageNo;
-var PageNo2 = PageNo2;
 var SC = 0;
-var AA = AA;
-var Monster = Monster;
 var Items = new Array();
 var MIC = 0;
 var SKC = 0;
-var FHIPPER = "https://lohcdn.com/game/";
-var CPath = FHIPPER + "r/"
-var IPath = FHIPPER + "i/"
-var BPath = FHIPPER + "b/"
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+const FHIPPER = `${CDN_RESOURCES_URL}/game/`;
+var CPath = `${FHIPPER}r/`;
+var IPath = `${FHIPPER}i/`;
+var BPath = `${FHIPPER}b/`;
 var CC = 0;
 var CharItems = new Array();
 var Vessels = new Array();
@@ -20,13 +16,13 @@ var PetSkills = new Array();
 var Skills = new Array();
 var Chars = new Array();
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function PercentBoxX(pwidth, PercentValue, Color, caption) {
 	if (caption == '') {
 		caption = PercentValue + '%';
 	}
-	return '<div style="width: ' + pwidth + 'px; height: 15px; position: relative; background: URL(https://lohcdn.com/images/black.gif) repeat-x"><div style="width: ' + ((pwidth / 100) * PercentValue) + 'px;height: 15px; position: static; background: URL(https://lohcdn.com/images/' + Color + '.gif) repeat-x"><div class=perc2 style="position: absolute; width:' + pwidth + 'px">' + caption + '</div></div></div>';
+	return `<div style="width: ${pwidth}px; height: 15px; position: relative; background: URL(${CDN_RESOURCES_URL}/images/black.gif) repeat-x"><div style="width: ${(pwidth / 100) * PercentValue}px;height: 15px; position: static; background: URL(${CDN_RESOURCES_URL}/images/${Color}.gif) repeat-x"><div class=perc2 style="position: absolute; width:${pwidth}px">${caption}</div></div></div>`;
 }
 
 function GetPerc(MaxP, CurP) {
@@ -171,14 +167,12 @@ function PetSkill(Statty, sv, v, PictureID, Color) {
 
 function AV(v, PictureID, VesselName, VesselFlagID, VesselFlagColor, VesselVictories, VesselLosses, Captain, CaptainPictureID) {
 	var Color = LITE;
-	//document.write('<tr width="255" v=' + v + ' p="' + PictureID + '" onclick="DC5(this)" onmouseover="PC5(this)" onmouseout="RC(this)"><td width=40 style=\'background-image: URL(https://lohcdn.com/game/v/' + PictureID+ '); background-repeat: no-repeat\'><table cellpadding=0 cellspacing=0><tr height=20><td colspan=2></td></tr><tr><td width=20></td><td bgcolor=\'' + VesselFlagColor + '\'><img src=\'game/flags/' + VesselFlagID+ '\' width=20 height=20></td></tr></table></td><td width=40><img src=\'game/r/' + CaptainPictureID + '\'></td><td width="205" style="color: ' + Color + '; padding-left: 5px;"><b>' + VesselName + '</b><br>Captain: ' + Captain + '<br>Victories: ' + VesselVictories + '&nbsp;Losses: ' + VesselLosses + '</td></tr>');
-
 	if (Vessels[VC] == null) {
 		Vessels[VC] = new Array();
 	}
 	Vessels[VC] = new Vessel(v, PictureID, VesselName, VesselFlagID, VesselFlagColor, VesselVictories, VesselLosses, Captain, CaptainPictureID, Color);
 
-	document.write('<div width="42" height="42" style="padding: 1px; margin: 1px;float: left; " id="CI' + VC + '" onclick="DC5(' + VC + ')" onmouseover="PC5(' + VC + ');" onmouseout="RC(this);"><img width=40 height=40 src="https://lohcdn.com/game/v/' + PictureID + '"></div>');
+	document.write(`<div width="42" height="42" style="padding: 1px; margin: 1px;float: left; " id="CI${VC}" onclick="DC5(${VC})" onmouseover="PC5(${VC});" onmouseout="RC(this);"><img width=40 height=40 src="${CDN_RESOURCES_URL}/game/v/${PictureID}"></div>`);
 	VC = VC + 1;
 }
 
@@ -220,7 +214,7 @@ function newChar(v, PictureID, CharacterName, l, Color) {
 
 function AFV(PictureID, CharacterName, Color, fv, fb) {
 	Color = LITE;
-	document.write('<tr width="255"><td><img src=\'https://lohcdn.com/images/' + PictureID + '\' alt=\'' + CharacterName + '\'></td><td width="205" style="color: ' + Color + '; padding-left: 5px; background-color: ' + BGCOLOR_S + '" valign=top>' + CharacterName + '<br>Faction: <b>' + fv + '</b>' + (fb > 0 ? '<br>This Challenge: <i>' + fb + '</i>' : '') + '</td></tr>');
+	document.write(`<tr width="255"><td><img src=\'${CDN_RESOURCES_URL}/images/${PictureID}\' alt=\'${CharacterName}\'></td><td width="205" style="color: ${Color}; padding-left: 5px; background-color: ${BGCOLOR_S}" valign=top>${CharacterName}<br>Faction: <b>${fv}</b>${fb > 0 ? '<br>This Challenge: <i>' + fb + '</i>' : ''}</td></tr>`);
 }
 
 function AI(PictureID, CharacterName, bt) {
@@ -285,7 +279,7 @@ function PC2(v) {
 }
 
 function PC5(v) {
-	window.top.InfoTip('https://lohcdn.com/game/v/' + Vessels[v].p, '<b>' + Vessels[v].VesselName + '</b>');
+	window.top.InfoTip(`${CDN_RESOURCES_URL}/game/v/${Vessels[v].p}`, `<b>${Vessels[v].VesselName}</b>`);
 	getObj('CI' + v).style.cursor = 'pointer';
 	getObj('CI' + v).style.backgroundColor = BGCOLOR_S
 }
@@ -333,5 +327,5 @@ function SendLinkC(lvalue, lpp, ln, lc) {
 
 function AvT(tid, tin, tip, ot, ts) {
 	var Color = LITE;
-	document.write('<tr style="color:' + Color + '"><td width="40"><img src="https://lohcdn.com/game/i/' + tip + '"></td><td width="260" valign=top><b>' + tin + '</b><br><font id=tmagenta>' + ot + '</font></td><td>Rank ' + ts + '</td></tr>');
+	document.write(`<tr style="color:${Color}"><td width="40"><img src="${CDN_RESOURCES_URL}/game/i/${tip}"></td><td width="260" valign=top><b>${tin}</b><br><font id=tmagenta>${ot}</font></td><td>Rank ${ts}</td></tr>`);
 }

@@ -3,7 +3,9 @@ var Infos = new Array();
 var CN = CN;
 var IPath = window.top.FHIPR;
 var IPath2 = window.top.FHIPS;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function GoP(GoP) {
 	window.location.replace('?P=' + GoP + '');

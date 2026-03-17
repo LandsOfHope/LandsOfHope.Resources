@@ -7,8 +7,9 @@ var l2 = l2;
 var ln = ln;
 var MC = 0;
 var Markers = new Array();
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AC(ItemName, ItemID, GameID, mapx, mapy, level, level2, r, e, pd, a, t, PictureID) {
 	var Color = GetAColor(a);

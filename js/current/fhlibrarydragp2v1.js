@@ -4,7 +4,9 @@ var Infos = new Array();
 var IPath = window.top.FHIPI;
 var Processing = 0;
 var MT = MT;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AvC(dpid, dpn, dpc, dpt, PictureID, dpfv, dpsg) {
 	if (PictureID == '' || PictureID == '0') { PictureID = 'na.gif' }
@@ -12,7 +14,7 @@ function AvC(dpid, dpn, dpc, dpt, PictureID, dpfv, dpsg) {
 		Infos[IC] = new Array();
 	}
 	Infos[IC] = new newInfo(dpid, dpn, dpc, dpt, PictureID, dpfv, dpsg);
-	document.write('<tr id="I' + IC + '" onmouseover="PC(' + IC + ')" onmouseout="RC(' + IC + ')" onclick="DC(' + IC + ')"><td width=15><img width=15 height=15 src="https://lohcdn.com/game/dp/' + (PictureID == '' || PictureID == '0' ? 'na.gif' : PictureID) + '"></td><td>' + dpn + ' (' + dpsg + ')</td><td>' + GetPower(dpid, dpc) + '</td></tr>');
+	document.write(`<tr id="I${IC}" onmouseover="PC(${IC})" onmouseout="RC(${IC})" onclick="DC(${IC})"><td width=15><img width=15 height=15 src="${CDN_RESOURCES_URL}/game/dp/${PictureID == '' || PictureID == '0' ? 'na.gif' : PictureID}"></td><td>${dpn} (${dpsg})</td><td>${GetPower(dpid, dpc)}</td></tr>`);
 	IC = IC + 1;
 }
 
@@ -36,7 +38,7 @@ function RC(v) {
 }
 
 function PC(v) {
-	window.top.InfoTip('https://lohcdn.com/game/dp/' + Infos[v].p, Tipsfor(v));
+	window.top.InfoTip(`${CDN_RESOURCES_URL}/game/dp/${Infos[v].p}`, Tipsfor(v));
 	getObj('I' + v).style.cursor = 'pointer';
 	getObj('I' + v).style.backgroundColor = BGCOLOR_S
 }
@@ -47,7 +49,7 @@ function Tipsfor(v) {
 
 function DC(v) {
 	getObj('Stuff2').innerHTML = Tipsfor(v)
-	getObj('Pic').innerHTML = "<img src='https://lohcdn.com/game/dp/" + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + "'>";
+	getObj('Pic').innerHTML = `<img src='${CDN_RESOURCES_URL}/game/dp/${(Infos[v].p == '' ? 'na.gif' : Infos[v].p)}'>`;
 	getObj('Buttons').innerHTML = ''; //Adr('window.top.loadwindow2(\'imi.asp?Test=' + Infos[v].v + '\',300,300,\'iwindow\',\'' + Infos[v].m + '\');','View item information','View');
 }
 
@@ -57,7 +59,7 @@ function GetPower(f, p) {
 	var w = 16;
 	w = 10;
 	for (x = 0; x < p; x++) {
-		ret = ret + '<div style=\'float: left; width:' + w + 'px; height: ' + w + 'px;\'><img src=\'https://lohcdn.com/game/h/' + MT + '.gif\' width=' + w + ' height=' + w + '></div>';
+		ret = ret + `<div style='float: left; width:${w}px; height: ${w}px;'><img src='${CDN_RESOURCES_URL}/game/h/${MT}.gif' width=${w} height=${w}></div>`;
 	}
 	return ret;
 }

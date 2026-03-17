@@ -7,7 +7,9 @@ var BountyLimit = BountyLimit;
 var IC = 0;
 var LastV = -1;
 var Infos = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AM(v, PictureID, l2, b, Named) {
 	var Color = '#66ff66';

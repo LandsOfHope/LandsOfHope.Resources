@@ -1,8 +1,9 @@
 var PageNo = PageNo;
 var county = 0;
-var EPath = "https://lohcdn.com/game/images/"
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+var EPath = `${CDN_RESOURCES_URL}/game/images/`;
 var Processing = 0;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AvC(e, ea, en, sd) {
 	var Color = LITE;

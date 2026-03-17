@@ -7,7 +7,8 @@ var LastI = 0;
 var PageNo = PageNo;
 var Bag = Bag;
 var IPath = window.top.FHIPI;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function GoP(p) {
 	window.location.replace('fhtrade.asp?B=' + Bag + '&CharsAt=' + CharsAt + '&P=' + p)
@@ -211,7 +212,6 @@ function PromptReturn(returnVal, pb) {
 		if (pb != null) {
 			Processing = 1;
 			if (pb == 1) {
-				//window.top.PGS('drop.wav');
 				getObj('Trade').submit();
 			} else if (pb == 2) {
 				Processing = 0;

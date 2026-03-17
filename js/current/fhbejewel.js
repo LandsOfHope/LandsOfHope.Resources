@@ -5,7 +5,9 @@ var IPath = window.top.FHIPI;
 var Processing = 0;
 var Infos = new Array();
 var IC = 0;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AC(PictureID, ItemName, ItemID, Skill2, s, sn, e, rid, rn, rp, rq, rc) {
 	if (PictureID == '0') { PictureID = '' }
@@ -45,7 +47,7 @@ function DC(v) {
 	getObj('Stuff2').innerHTML = '<b>' + Infos[v].t + '</b><br>Bejewel Skill: ' + Infos[v].sv + '<br>' + Infos[v].e + (Infos[v].rid > 0 ? '<br>Requirements:<br>' + (Infos[v].rc > 0 ? '<font id=tgreen>' : '<font id=tred>') + '' + Infos[v].rq + ' * ' + Infos[v].rn + '</font>' : '');
 	getObj('Pic').style.backgroundColor = Infos[v].c;
 	getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == null ? 'na.gif' : Infos[v].p) + "'>";
-	getObj('Buttons').innerHTML = (Infos[v].rc > 0 || Infos[v].rid == 0 ? '<' + strClicky3 + ' onclick="if (Processing == 0) {Processing = 1; /*window.top.PGS(\'paper.wav\');*/ window.location.replace(\'?CharsAt2=' + Infos[v].v + '&aok=' + Infos[v].sv + '&P=' + PageNo + '\'); this.disabled=true;}" style=\'width: 85\'>Assemble</button>' : '');
+	getObj('Buttons').innerHTML = (Infos[v].rc > 0 || Infos[v].rid == 0 ? '<' + strClicky3 + ' onclick="if (Processing == 0) {Processing = 1; window.location.replace(\'?CharsAt2=' + Infos[v].v + '&aok=' + Infos[v].sv + '&P=' + PageNo + '\'); this.disabled=true;}" style=\'width: 85\'>Assemble</button>' : '');
 }
 
 function RC(v) {

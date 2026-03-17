@@ -13,8 +13,9 @@ Wms[6] = '%name% No, all i know is the Baron wishes to see you right away.';
 Wms[7] = '%you2% Forgive me, but where am i supposed to go ?';
 Wms[8] = '%name% Follow the path to the big house by the lake you cant miss it.';
 Wms[9] = '%you2% Thank you for your help i will be right there.';
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function ShowStoryx() {
 	var strS = '';

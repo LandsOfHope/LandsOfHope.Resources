@@ -5,19 +5,20 @@ var PageNo = PageNo;
 var SC = 0;
 var AA = AA;
 var Monster = Monster;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-var FHIPPER = "https://lohcdn.com/game/";
+var FHIPPER = `${CDN_RESOURCES_URL}/game/`;
 var CPath = FHIPPER + "r/"
 var IPath = FHIPPER + "i/"
 var BPath = FHIPPER + "b/"
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function PercentBoxX(pwidth, PercentValue, Color, caption) {
 	if (caption == '') {
 		caption = PercentValue + '%';
 	}
-	return '<div style="width: ' + pwidth + 'px; height: 15px; position: relative; background: URL(https://lohcdn.com/images/black.gif) repeat-x"><div style="width: ' + ((pwidth / 100) * PercentValue) + 'px;height: 15px; position: static; background: URL(https://lohcdn.com/images/' + Color + '.gif) repeat-x"><div class=perc2 style="position: absolute; width:' + pwidth + 'px">' + caption + '</div></div></div>';
+	return `<div style="width: ${pwidth}px; height: 15px; position: relative; background: URL(${CDN_RESOURCES_URL}/images/black.gif) repeat-x"><div style="width: ${((pwidth / 100) * PercentValue)}px;height: 15px; position: static; background: URL(${CDN_RESOURCES_URL}/images/${Color}.gif) repeat-x"><div class=perc2 style="position: absolute; width:${pwidth}px">${caption}</div></div></div>`;
 }
 
 function GetPerc(MaxP, CurP) {
@@ -42,19 +43,19 @@ function DrawHeaders(hn, pc) {
 		v = v + 1;
 
 		var tn = TabName(i);
-		strTest += ("<td valign=bottom></td><td style='background-image: URL(https://lohcdn.com/game/pirate/piratetab.png); background-position: bottom; background-color: transparent; width:100px' align=center><a class='tab' href='javascript:GoP(" + i + ");'>" + tn + "</a></td>")
+		strTest += (`<td valign=bottom></td><td style='background-image: URL(${CDN_RESOURCES_URL}/game/pirate/piratetab.png); background-position: bottom; background-color: transparent; width:100px' align=center><a class='tab' href='javascript:GoP(${i});'>${tn}</a></td>`)
 		if (v >= 20) {
 			strTest += "</tr><tr>";
 			v = 0;
 		}
 	}
-	return "<table cellpadding=1 cellspacing=1 border=0 height='25px'><tr><td width=240 class=title nowrap>" + hn + "</td>" + strTest + "<td valign=bottom></td></tr></table>";
+	return `<table cellpadding=1 cellspacing=1 border=0 height='25px'><tr><td width=240 class=title nowrap>${hn}</td>${strTest}<td valign=bottom></td></tr></table>`;
 }
 
 function DrawFooters(vn, p) {
 	var strTest = '';
-	strTest = "<td valign=bottom></td><td style='background-image: URL(https://lohcdn.com/game/pirate/piratetab.png); background-position: bottom; background-color: transparent; width:100px' align=center><a class='tab' href=\"?Type=R&CharsAt=" + CharsAt + "&l2=" + p + "&name=" + vn + "\">Link</a></td>";
-	return "<table cellpadding=1 cellspacing=1 border=0 height='25px'><tr><td width=240>&nbsp;</td>" + strTest + "<td valign=bottom></td></tr></table>";
+	strTest = `<td valign=bottom></td><td style='background-image: URL(${CDN_RESOURCES_URL}/game/pirate/piratetab.png); background-position: bottom; background-color: transparent; width:100px' align=center><a class='tab' href=\"?Type=R&CharsAt=${CharsAt}&l2=${p}&name=${vn}\">Link</a></td>`;
+	return `<table cellpadding=1 cellspacing=1 border=0 height='25px'><tr><td width=240>&nbsp;</td>${strTest}<td valign=bottom></td></tr></table>`;
 }
 
 
@@ -76,7 +77,7 @@ function ACSI(LN, VHII, VIN, VIP) {
 
 function ACSI2(VHII, VIN, VIP, VC, VV, VQ) {
 	var Color = VC;
-	document.write('<tr width="300"><td><img src="https://lohcdn.com/game/i/' + VIP + '" width=15 height=15></td><td width="170" c="' + Color + '" style="color: ' + Color + '; padding-left: 5px" class="specialcell">' + (VQ + ' * ') + VIN + '</td><td>' + window.top.PSGM(VV) + '</td></tr>');
+	document.write(`<tr width="300"><td><img src="${CDN_RESOURCES_URL}/game/i/${VIP}" width=15 height=15></td><td width="170" c="${Color}" style="color: ${Color}; padding-left: 5px" class="specialcell">${VQ + ' * '}${VIN}</td><td>${window.top.PSGM(VV)}</td></tr>`);
 }
 
 
@@ -106,9 +107,9 @@ function PSGMX(mmin, moneyformat) {
 
 	var strout = "";
 	if (moneyformat == 0) {
-		strout = "<table class=\"weakercell\" cellpadding=0 cellspacing=0 style=\"padding-left:0px; width: 150px\"><tr><td style=\"border: 1px inset " + BORDER1 + "; background-color: black;\" width=\"40\">" + addCommas(m) + "</td><td width=14><img src=\"https://lohcdn.com/game/pirate/c4.png\" title=\"Doubloons\"></td></tr></table>";
-	} else {
-		strout = "" + (m > 0 ? "" + addCommas(m) + "<img src=\"https://lohcdn.com/game/pirate/c4.png\" title=\"Doubloons\">" : "");
+		strout = `<table class="weakercell" cellpadding=0 cellspacing=0 style="padding-left:0px; width: 150px"><tr><td style="border: 1px inset ${BORDER1}; background-color: black;" width="40">${addCommas(m)}</td><td width=14><img src="${CDN_RESOURCES_URL}/game/pirate/c4.png" title="Doubloons"></td></tr></table>`;
+	} else if(m > 0) {
+		strout = `${addCommas(m)}<img src="${CDN_RESOURCES_URL}/game/pirate/c4.png" title="Doubloons">`;
 	}
 	return strout;
 }

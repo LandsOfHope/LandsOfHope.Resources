@@ -3,7 +3,9 @@ var IPath = window.top.FHIPR;
 var Processing = 0;
 var IC = 0;
 var Infos = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AC(ItemID, PictureID, Itty, q) {
 	if (PictureID == '0') { PictureID = '' }
@@ -34,7 +36,6 @@ function PromptReturn(returnVal, pb) {
 	if (returnVal != null) {
 		if (pb != null && Processing == 0) {
 			Processing = 1;
-			getObj('Note').value = tinyMCE.get('Note').getContent();;
 			getObj('Dest').value = Infos[pb].value;
 			getObj('editform').submit();
 		}

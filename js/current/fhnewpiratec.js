@@ -9,10 +9,11 @@ var RaceID;
 var p2 = '';
 var Profs = new Array();
 var PageNo = PageNo;
-var IPath = 'https://lohcdn.com/game/r/';
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+var IPath = `${CDN_RESOURCES_URL}/game/r/`;
 var returnVal = null;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function TabName(i) {
 	return (i == 1 ? "Step 1" : (i == 2 ? "Step 2" : (i == 3 ? "Step 3" : "Finish")))
@@ -32,7 +33,7 @@ function DrawHeaders(hn, pc) {
 		v = v + 1;
 
 		var tn = TabName(i);
-		strTest += ("<td valign=bottom></td><td style='background-image: URL(https://lohcdn.com/game/pirate/piratetab.png); background-position: bottom; background-color: transparent; width:100px;' align=center><a class='tab' href='javascript:GoP(" + i + ");' style='" + (i < PageNo ? "color: #66ff66;" : (i == PageNo ? "color: yellow;" : "")) + "' title='" + tn + "'>" + tn + "</a></td>")
+		strTest += (`<td valign=bottom></td><td style='background-image: URL(${CDN_RESOURCES_URL}/game/pirate/piratetab.png); background-position: bottom; background-color: transparent; width:100px;' align=center><a class='tab' href='javascript:GoP(${i});' style='${i < PageNo ? "color: #66ff66;" : (i == PageNo ? "color: yellow;" : "")}' title='${tn}'>${tn}</a></td>`)
 		if (v >= 20) {
 			strTest += "</tr><tr>";
 			v = 0;
@@ -55,8 +56,8 @@ function updatevn() {
 
 function DrawFooters(vn, p) {
 	var strTest = '';
-	strTest = "<td valign=bottom></td><td style='background-image: URL(https://lohcdn.com/game/pirate/piratetab.png); background-position: bottom; background-color: transparent; width:100px' align=center><a class='tab' href=\"javascript: window.top.hidePopWin(true);\" title=\"Close this window\">Close</a></td>";
-	return "<table cellpadding=1 cellspacing=1 border=0 height='25px'><tr><td width=240>&nbsp;</td>" + strTest + "<td valign=bottom></td></tr></table>";
+	strTest = `<td valign=bottom></td><td style='background-image: URL(${CDN_RESOURCES_URL}/game/pirate/piratetab.png); background-position: bottom; background-color: transparent; width:100px' align=center><a class='tab' href=\"javascript: window.top.hidePopWin(true);\" title=\"Close this window\">Close</a></td>`;
+	return `<table cellpadding=1 cellspacing=1 border=0 height='25px'><tr><td width=240>&nbsp;</td>${strTest}<td valign=bottom></td></tr></table>`;
 }
 
 function AM(IID, PictureID, Itty, p2p, pt) {
@@ -88,9 +89,9 @@ function DC(stuff) {
 
 function DC2() {
 	if (getObj('Results') != undefined) {
-		getObj('PreviewPic').innerHTML = (getObj('thepic').value == '' ? '' : '<img src=\'' + IPath + getObj('thepic').value + '\' onerror=\'this.src="https://lohcdn.com/na.gif"\'>');
+		getObj('PreviewPic').innerHTML = (getObj('thepic').value == '' ? '' : `<img src=\'${IPath}${getObj('thepic').value}\' onerror=\'this.src="${CDN_RESOURCES_URL}/na.gif"\'>`);
 		getObj('PreviewPic').style.backgroundColor = getObj('FlagColor').value;
-		getObj('Results').innerHTML = '<table class=\'specialcell\' cellpadding=1 cellspacing=1><tr><td colspan=3><b>Checklist</b></td></tr><tr><td><b>Step 1</b></td><td>Profession ' + (lastp3 != '' ? '' + lastp3 + '</td><td><img src="https://lohcdn.com/game/icons/tick.png" alt="Complete">' : '</td><td><img src="https://lohcdn.com/game/icons/cross.png" alt="Incomplete">') + '</td></tr><tr><td><b>Step 2</b></td><td>Sex ' + (getObj('Sex').value != '' ? '' + (getObj('Sex').value == 'M' ? 'Male' : 'Female') + '</td><td><img src="https://lohcdn.com/game/icons/tick.png" alt="Complete">' : '</td><td><img src="https://lohcdn.com/game/icons/cross.png" alt="Incomplete">') + '</td></tr><tr><td></td><td>Picture' + (getObj('thepic').value != '' ? '</td><td><img src="https://lohcdn.com/game/icons/tick.png" alt="Complete">' : '</td><td><img src="https://lohcdn.com/game/icons/cross.png" alt="Incomplete">') + '</td></tr><tr><tr><td></td><td>Character Name' + (getObj('CharacterName').value != '' ? '</td><td><img src="https://lohcdn.com/game/icons/tick.png" alt="Complete">' : '</td><td><img src="https://lohcdn.com/game/icons/cross.png" alt="Incomplete">') + '</td></tr><tr><td><b>Step 3</b></td><td>Vessel Name' + (getObj('VesselName').value != '' ? '</td><td><img src="https://lohcdn.com/game/icons/tick.png" alt="Complete">' : '</td><td><img src="https://lohcdn.com/game/icons/cross.png" alt="Incomplete">') + '</td></tr><tr><td></td><td>Bonus' + (getObj('Bonus').value != -1 ? '</td><td><img src="https://lohcdn.com/game/icons/tick.png" alt="Complete">' : '</td><td><img src="https://lohcdn.com/game/icons/cross.png" alt="Incomplete">') + '</td></tr><tr></table>';
+		getObj('Results').innerHTML = `<table class=\'specialcell\' cellpadding=1 cellspacing=1><tr><td colspan=3><b>Checklist</b></td></tr><tr><td><b>Step 1</b></td><td>Profession ${lastp3 != '' ? '' + lastp3 + `</td><td><img src="${CDN_RESOURCES_URL}/game/icons/tick.png" alt="Complete">` : `</td><td><img src="${CDN_RESOURCES_URL}/game/icons/cross.png" alt="Incomplete">`}</td></tr><tr><td><b>Step 2</b></td><td>Sex ${getObj('Sex').value != '' ? '' + (getObj('Sex').value == 'M' ? 'Male' : 'Female') + `</td><td><img src="${CDN_RESOURCES_URL}/game/icons/tick.png" alt="Complete">` : `</td><td><img src="${CDN_RESOURCES_URL}/game/icons/cross.png" alt="Incomplete">`}</td></tr><tr><td></td><td>Picture${getObj('thepic').value != '' ? `</td><td><img src="${CDN_RESOURCES_URL}/game/icons/tick.png" alt="Complete">` : `</td><td><img src="${CDN_RESOURCES_URL}/game/icons/cross.png" alt="Incomplete">`}</td></tr><tr><tr><td></td><td>Character Name${getObj('CharacterName').value != '' ? `</td><td><img src="${CDN_RESOURCES_URL}/game/icons/tick.png" alt="Complete">` : `</td><td><img src="${CDN_RESOURCES_URL}/game/icons/cross.png" alt="Incomplete">`}</td></tr><tr><td><b>Step 3</b></td><td>Vessel Name${getObj('VesselName').value != '' ? `</td><td><img src="${CDN_RESOURCES_URL}/game/icons/tick.png" alt="Complete">` : `</td><td><img src="${CDN_RESOURCES_URL}/game/icons/cross.png" alt="Incomplete">`}</td></tr><tr><td></td><td>Bonus${getObj('Bonus').value != -1 ? `</td><td><img src="${CDN_RESOURCES_URL}/game/icons/tick.png" alt="Complete">` : `</td><td><img src="${CDN_RESOURCES_URL}/game/icons/cross.png" alt="Incomplete">`}</td></tr><tr></table>`;
 		if (PageNo == 4) {
 			if (getObj('Results').innerHTML.indexOf('cross.png') != -1) {
 				//Failed
@@ -98,7 +99,7 @@ function DC2() {
 				returnVal = null;
 			} else {
 				//Success
-				getObj('Buttons').innerHTML = "Please click the button below to make your character and enter the Shrouded Isles!<br><table width=100><tr><td style='background-image: URL(https://lohcdn.com/game/pirate/piratetab.png); background-position: bottom; background-color: transparent; width:100px;' align=center><a class='tab' href='javascript:GoP(5);' style='color: gold'>Finish</a></td></tr></table>";
+				getObj('Buttons').innerHTML = `Please click the button below to make your character and enter the Shrouded Isles!<br><table width=100><tr><td style='background-image: URL(${CDN_RESOURCES_URL}/game/pirate/piratetab.png); background-position: bottom; background-color: transparent; width:100px;' align=center><a class='tab' href='javascript:GoP(5);' style='color: gold'>Finish</a></td></tr></table>`;
 			}
 		}
 	}
@@ -120,10 +121,10 @@ function DrawProfs() {
 	var strout = '';
 	var y = 0;
 	for (y = 0; y < counter; y++) {
-		strout = strout + '<td><table height=180><tr><td width=120 id="p' + y + '" onclick="DC(' + y + ')" onmouseover="PC(this)" onmouseout="RC(this)" style=\'color: white\' title=\'Pick a ' + Profs[y][2] + '\'><table><tr><td><img src=\'https://lohcdn.com/images/' + Profs[y][1] + '\' alt=\'Click to pick ' + Profs[y][2] + '\'></td><td><img src=\'https://lohcdn.com/game/icons/info.png\'><a href=\'pesd.asp?CharsAt=' + Profs[y][0] + '\' target=\'_new\'>Info</a></td></tr></table></td></tr><tr><td class=\'specialcell\'><div style=\'height: 130; overflow: auto\'>' + Profs[y][4] + '</div></td></tr></table></td>';
+		strout = `${strout}<td><table height=180><tr><td width=120 id="p${y}" onclick="DC(${y})" onmouseover="PC(this)" onmouseout="RC(this)" style=\'color: white\' title=\'Pick a ${Profs[y][2]}\'><table><tr><td><img src='${CDN_RESOURCES_URL}/images/${Profs[y][1]}' alt='Click to pick ${Profs[y][2]}'> </td><td><img src='${CDN_RESOURCES_URL}/game/icons/info.png'><a href='pesd.asp?CharsAt=${Profs[y][0]}' target=\'_new\'>Info</a></td></tr></table></td></tr><tr><td class='specialcell'><div style=\'height: 130; overflow: auto\'>${Profs[y][4]}</div></td></tr></table></td>`;
 	}
 	if (getObj('ProfBox') != undefined) {
-		getObj('ProfBox').innerHTML = '<table width="100%" class=\'itemText\' valign=top><tr>' + strout + '</tr></table>';
+		getObj('ProfBox').innerHTML = `<table width="100%" class='itemText' valign=top><tr>${strout}</tr></table>`;
 		if (lastp >= 0) {
 			getObj('p' + lastp).click();
 		}

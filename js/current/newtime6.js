@@ -9,9 +9,10 @@ var ticktock = 0;
 var cpuo = cpuo;
 var nowstatic;
 var nowdynamic;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
 function getfhtime() {
-	var now2 = new Date(2005,03, 1, fhh, fhm, fhs);
+	var now2 = new Date(2005, 3, 1, fhh, fhm, fhs);
 	now2.setSeconds(fhs + ticktock);
 	return now2;
 }
@@ -121,7 +122,7 @@ function getDaylightBrightness(time) {
 }
 
 function TimeTip() {
-	window.top.InfoTip('https://lohcdn.com/game/icons/' + gethourpic() + '.png', '' + getstime() + ' ' + gethour());
+	window.top.InfoTip(`${CDN_RESOURCES_URL}/game/icons/${gethourpic()}.png`, `${getstime()} ${gethour()}`);
 }
 
 function refreshTime() {
@@ -131,8 +132,8 @@ function refreshTime() {
 	}
 	var tmok = 1;
 	if (getObj('timebar') != null) {
-		window.top.getObj('timebar').style.backgroundImage = "URL(https://lohcdn.com/game/icons/" + gethourpic() + "s.png)";
-		window.top.getObj('timebar').innerHTML = '' + window.top.ASCII('<small>Myzan Time:</small>', 1) + ' ' + window.top.ASCII('<b>' + getstime() + '</b>', 1);
+		window.top.getObj('timebar').style.backgroundImage = `URL(${CDN_RESOURCES_URL}/game/icons/${gethourpic()}s.png)`;
+		window.top.getObj('timebar').innerHTML = `${window.top.ASCII('<small>Myzan Time:</small>', 1)} ${window.top.ASCII('<b>' + getstime() + '</b>', 1)}`;
 	}
 
 	const daylightBrightness = getDaylightBrightness(getfhtime());

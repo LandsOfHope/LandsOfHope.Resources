@@ -1,5 +1,6 @@
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 var Theme = Theme;
-var ThemeP = 'https://lohcdn.com/images/' + Theme + '/';
+var ThemeP = `${CDN_RESOURCES_URL}/images/${Theme}/`;
 var lastmenu = 0;
 var mymenu = new Array();
 var verticalmenu = 0;
@@ -101,8 +102,8 @@ function GetMenu(menu) {
 	var mmenuw = (menu.popup == 0 ? (menu.nodename.length * 8) : '150');
 
 	menuwidth = menuwidth + mmenuw;
-	var OnStuff = ' onclick="HM3(0,0, 0);' + clickurl + '" ' + (menu.nodename != '' ? ' onmouseover="SM(this, ' + menu.lm + ', ' + menu.popup + ',' + (menu.popup != 0 ? menu.nodeparent : menu.lm) + ');" onmouseout="HM(this, ' + menu.lm + ');"' : '') + ' id="mnu' + menu.lm + '" style="background-image: URL(dot.gif); color: ' + COLOR1_S + (menu.nodename != '' ? '' : '; background-color: ' + COLOR1) + '; width: ' + mmenuw + 'px;"'; // filter: glow(color=' + ShadowColor + ', strength=2)
-	tmp = (menu.popup != 0 ? '<tr ' + (menu.nodename != '' ? '' : 'style="height:1px"') + OnStuff + '><td colspan=2' : '<td') + '' + OnStuff + '>' + (menu.nodename == '' ? '' : '' + menu.nodename) + '</td>' + (menu.nc != 0 ? '<td width=15><img src="https://lohcdn.com/images/' + Theme + '/' + (menu.nodeparent == null ? 'test_m1iad.gif' : 'test_m1ia.gif') + '"></td>' : '') + (menu.popup != 0 ? '<tr>' : '');
+	var OnStuff = ` onclick="HM3(0,0, 0);${clickurl}" ${menu.nodename != '' ? ` onmouseover="SM(this, ${menu.lm}, ${menu.popup},${menu.popup != 0 ? menu.nodeparent : menu.lm});" onmouseout="HM(this, ${menu.lm});"` : ''} id="mnu${menu.lm}" style="background-image: URL(dot.gif); color: ${COLOR1_S}${menu.nodename != '' ? '' : `; background-color: ${COLOR1}`}; width: ${mmenuw}px;"`;
+	tmp = (menu.popup != 0 ? `<tr ${menu.nodename != '' ? '' : 'style="height:1px"'}${OnStuff}><td colspan=2` : '<td') + '' + OnStuff + '>' + (menu.nodename == '' ? '' : '' + menu.nodename) + '</td>' + (menu.nc != 0 ? `<td width=15><img src="${CDN_RESOURCES_URL}/images/${Theme}/${menu.nodeparent == null ? 'test_m1iad.gif' : 'test_m1ia.gif'}"></td>` : '') + (menu.popup != 0 ? '<tr>' : '');
 	return tmp;
 }
 
@@ -174,7 +175,7 @@ function HM2(lm) {
 }
 
 function MenuBox(content, width, height) {
-	return "<table border='0' align='center' cellpadding='0' cellspacing='0' style='background-image: URL(https://lohcdn.com/" + ThemeP + "darkback.gif); width: " + width + ";" + (height != '' ? "height: " + height : "") + "'><tr height=11 valign=top><td colspan=3 width='100%'><table cellpadding='0' cellspacing='0' style='background-image: URL(https://lohcdn.com/" + ThemeP + "top.gif); height: 11px; width: 100%; background-repeat: repeat-x;'><td><img src='https://lohcdn.com/" + ThemeP + "tlc.gif'></td><td width='100%' colspan=3></td><td align=right><img src='" + ThemeP + "trc.gif'></td></tr></table></td></tr><tr><td style='background-image: URL(https://lohcdn.com/" + ThemeP + "left.gif); width: 11px;background-repeat: repeat-y; background-position: left;'></td><td valign=top>" + content + "</td><td style='background-image: URL(https://lohcdn.com/" + ThemeP + "right.gif); width: 11px;background-repeat: repeat-y; background-position: right;'></td></tr><tr height=11 valign=bottom><td colspan=3><table style='background-image: URL(https://lohcdn.com/" + ThemeP + "bottom.gif); height: 11px; width: 100%; background-repeat: repeat-x;background-position: bottom;' cellpadding='0' cellspacing='0'><td><img src='https://lohcdn.com/" + ThemeP + "blc.gif'></td><td width='100%'></td><td><img src='" + ThemeP + "brc.gif'></td></tr></table></td></tr></table>";
+	return `<table border='0' align='center' cellpadding='0' cellspacing='0' style='background-image: URL(${CDN_RESOURCES_URL}/${ThemeP}darkback.gif); width: ${width};${height != '' ? "height: " + height : ""}'><tr height=11 valign=top><td colspan=3 width='100%'><table cellpadding='0' cellspacing='0' style='background-image: URL(${CDN_RESOURCES_URL}/${ThemeP}top.gif); height: 11px; width: 100%; background-repeat: repeat-x;'><td><img src='${CDN_RESOURCES_URL}/${ThemeP}tlc.gif'></td><td width='100%' colspan=3></td><td align=right><img src='${CDN_RESOURCES_URL}/${ThemeP}trc.gif'></td></tr></table></td></tr><tr><td style='background-image: URL(${CDN_RESOURCES_URL}/${ThemeP}left.gif); width: 11px;background-repeat: repeat-y; background-position: left;'></td><td valign=top>${content}</td><td style='background-image: URL(${CDN_RESOURCES_URL}/${ThemeP}right.gif); width: 11px;background-repeat: repeat-y; background-position: right;'></td></tr><tr height=11 valign=bottom><td colspan=3><table style='background-image: URL(${CDN_RESOURCES_URL}/${ThemeP}bottom.gif); height: 11px; width: 100%; background-repeat: repeat-x;background-position: bottom;' cellpadding='0' cellspacing='0'><td><img src='${CDN_RESOURCES_URL}/${ThemeP}blc.gif'></td><td width='100%'></td><td><img src='${CDN_RESOURCES_URL}/${ThemeP}brc.gif'></td></tr></table></td></tr></table>`;
 }
 
 function admi(nodename, nodeurl, nodeframe, nodeparent, nodeimage) {

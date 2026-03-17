@@ -23,7 +23,8 @@ var RC = 1;
 
 var IPath = window.top.FHIPIM;
 var IPath2 = window.top.FHIPI;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AI(Quantity, Value, m, l, Named) {
 	if (Items[IC] == null) {
@@ -96,7 +97,7 @@ function SelectIngredient(s, m, Value, Quantity, l, Named) {
 	getObj('I' + s).style.color = '#66ff66';
 
 	if (GoN() == 0) {
-		getObj('Buttons').innerHTML = '<' + strClicky3 + ' onclick="/*window.top.PGS(\'drop.wav\');*/ window.location.replace(\'fhmake3.asp?ItemID=' + ItemID + '&Material=' + materialx + '&l=' + levelx + '&ML=' + ML + '&CharsAt=' + CharsAt + '&InventoryItemID=2' + varxx + '\');this.disabled=true;">Assemble</button>';
+		getObj('Buttons').innerHTML = '<' + strClicky3 + ' onclick="window.location.replace(\'fhmake3.asp?ItemID=' + ItemID + '&Material=' + materialx + '&l=' + levelx + '&ML=' + ML + '&CharsAt=' + CharsAt + '&InventoryItemID=2' + varxx + '\');this.disabled=true;">Assemble</button>';
 	} else {
 		getObj('Buttons').innerHTML = 'To assemble this item all of the Ingredients on the left must be in green.';
 	}

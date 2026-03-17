@@ -1,4 +1,5 @@
-var FHIP = 'https://lohcdn.com/game/';
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+var FHIP = `${CDN_RESOURCES_URL}/game/`;
 
 function SM(s, A, Named, Value, PictureID, Action, Number, fn, fc, fs) {
 	if (PictureID == '') { PictureID = 'na.gif' }
@@ -7,7 +8,7 @@ function SM(s, A, Named, Value, PictureID, Action, Number, fn, fc, fs) {
 		Color = 'yellow';
 	}
 	var PictureID2 = GetAImg(A);
-	document.write('<tr width="100%" height=40><td style="width: 100px" class="box3">' + Number + 'days</td><td width=40 class="box2" style=\'background-repeat: no-repeat; background-Image: URL(' + FHIP + '' + (Action == 3 ? 's' : 'r') + '/' + PictureID + ')\' valign=bottom halign=right>' + (PictureID2 == '' ? '&nbsp;' : '<img src=\'' + PictureID2 + '\' valign=bottom halign=right onerror="this.src=\'https://lohcdn.com/na.gif\'">') + '</td><td width="300" class="box3"><font style="border: 0px;' + (fn != '' ? 'font-family: ' + fn + ';' : '') + (fs != 0 ? 'font-size: ' + fs + 'pt;' : '') + (fc != '' ? 'color: ' + fc + ';' : '') + '">' + Named + '</font><br><font color="' + Color + '">' + GetAName(A) + '</font></td><td class="box2"><a href="#" onclick="ZP(' + s + ');" ><img src="https://lohcdn.com/game/icons/info.png" alt="More information on ' + Named + '" border=0></a></td><td align=right width="50" class="box3">' + Value + '</td></tr>');
+	document.write(`<tr width="100%" height=40><td style="width: 100px" class="box3">${Number}days</td><td width=40 class="box2" style=\'background-repeat: no-repeat; background-Image: URL(${FHIP}${Action == 3 ? 's' : 'r'}/${PictureID})\' valign=bottom halign=right>${PictureID2 == '' ? '&nbsp;' : `<img src='${PictureID2}' valign=bottom halign=right onerror="this.src='${CDN_RESOURCES_URL}/na.gif'"`}</td><td width="300" class="box3"><font style="border: 0px;${fn != '' ? 'font-family: ' + fn + ';' : ''}${fs != 0 ? 'font-size: ' + fs + 'pt;' : ''}${fc != '' ? 'color: ' + fc + ';' : ''}">${Named}</font><br><font color="${Color}">${GetAName(A)}</font></td><td class="box2"><a href="#" onclick="ZP(${s});" ><img src="${CDN_RESOURCES_URL}/game/icons/info.png" alt="More information on ${Named}" border=0></a></td><td align=right width="50" class="box3">${Value}</td></tr>`);
 }
 
 function ZP(c) {

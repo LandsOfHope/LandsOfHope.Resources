@@ -110,8 +110,7 @@ function ClearQueueTimer() {
 
 function ShowQueue() {
 	var y = 0;
-	Spells[y][7] = 0
-	// window.top.PGS('beep.wav');
+	Spells[y][7] = 0;
 	window.top.SendCommand('<font style=\'color: #FF9933;\'><b>Queue Notice</b>: All items you had queued are now ready for retrieval, go to the Inventory > Queue screen to place them in your Inventory.</font>')
 	var objsm = getObj("SM" + y);
 	if (objsm != null) {

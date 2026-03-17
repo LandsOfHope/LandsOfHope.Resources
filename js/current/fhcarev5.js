@@ -9,8 +9,9 @@ var carexp = carexp;
 var s = s;
 var IC = 0;
 var Infos = new Array();
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function DC(v) {
 	getObj('Stuff2').innerHTML = '<b>' + Infos[v].y + '</b><br>' + (Infos[v].d == 0 ? 'Repeatable' : '<font id=tred>Kills/Destroys Animal</font>') + '<br>Material Type: ' + Infos[v].m + '<br><b>' + Infos[v].t + '</b><br>Skill Required: ' + Skill + ' ' + SkillName + '<br>Current Skill: ' + SkillValue + ' ' + SkillName + '<br>Experience: ' + carexp;

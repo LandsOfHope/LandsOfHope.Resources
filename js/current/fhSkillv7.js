@@ -15,8 +15,9 @@ var Infos = new Array();
 
 var Processing = 0;
 var IPath = window.top.FHIPO;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function tgl(ShopNum) {
 	if (getObj('Shop' + ShopNum).innerHTML == '') {
@@ -52,7 +53,7 @@ function PercentBoxX(pwidth, PercentValue, Color, caption) {
 	if (caption == '') {
 		caption = PercentValue + '%';
 	}
-	return '<div style="width: ' + pwidth + 'px; height: 15px; position: relative; background: URL(https://lohcdn.com/images/black.gif) repeat-x"><div style="width: ' + ((pwidth / 100) * PercentValue) + 'px;height: 15px; position: static; background: URL(https://lohcdn.com/images/' + Color + '.gif) repeat-x"><div class=perc2 style="position: absolute; width:' + pwidth + 'px">' + caption + '</div></div></div>';
+	return `<div style="width: ${pwidth}px; height: 15px; position: relative; background: URL(${CDN_RESOURCES_URL}/images/black.gif) repeat-x"><div style="width: ${(pwidth / 100) * PercentValue}px;height: 15px; position: static; background: URL(${CDN_RESOURCES_URL}/images/${Color}.gif) repeat-x"><div class=perc2 style="position: absolute; width:${pwidth}px">${caption}</div></div></div>`;
 }
 
 function AM(Color, s, Skill, Value, IBonus, SBonus, mx, sv, a, tn, favskill) {

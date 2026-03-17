@@ -5,8 +5,10 @@ var IPath = window.parent.FHIP + "r/"
 var OPath = window.parent.FHIP + "icons/"
 var Processing = 0;
 var Characters = new Array();
-var CC = 0
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CC = 0;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AM(Color, v, l, n, xy, r, Named, Picture, stuff, pr, cm, sn, um, hm, lsu, qm, pvp) {
 	hm = window.top.BSGM2(hm)

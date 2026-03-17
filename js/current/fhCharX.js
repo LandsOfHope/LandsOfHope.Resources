@@ -1,6 +1,7 @@
-
 var IPath = window.top.FHIP
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AM(PictureID, Color, URL, Named, URL2) {
 	document.write('<tr><td width="40" onmouseover="PC(this)" onmouseout="RC(this)"  onclick="' + (URL2 != '' ? 'window.location.replace(\'fhcharx' + URL2 + '.asp\');' : '') + ';" style="background-color: ' + Color + '"><img src=\'' + IPath + URL + '/' + PictureID + '\' width=40 height=40></td><td onclick="' + (URL2 != '' ? 'window.location.replace(\'fhcharx' + URL2 + '.asp\');' : '') + '" c="" onmouseover="PC(this)" onmouseout="RC(this)">' + Named + '</td></tr>');

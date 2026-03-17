@@ -10,7 +10,9 @@ var IPath = window.top.FHIPM;
 var Processing = 0;
 var IC = 0;
 var Infos = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AC(PictureID, c2, SpawnName, ItemName, PName, ItemID, Level, RName, a) {
 	if (PictureID == '0') { PictureID = '' }

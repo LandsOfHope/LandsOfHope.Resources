@@ -4,7 +4,9 @@ var IPath = window.top.FHIPB;
 var Processing = 0;
 var Search = Search;
 var MT = MT;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AvC(q, m, mt, PictureID, a) {
     var Color = LITE;

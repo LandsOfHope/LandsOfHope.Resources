@@ -1,7 +1,8 @@
 var FID = FID;
-var IPath = "https://lohcdn.com/game/r/"
-var IPath2 = "https://lohcdn.com/game/i/"
-var IPath4 = "https://lohcdn.com/game/m/"
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+var IPath = `${CDN_RESOURCES_URL}/game/r/`;
+var IPath2 = `${CDN_RESOURCES_URL}/game/i/`;
+var IPath4 = `${CDN_RESOURCES_URL}/game/m/`;
 var IPath3 = ""
 var height = 0; //height of the game area
 var width = 0;	//width of the game area
@@ -30,10 +31,10 @@ var tilec = 1280602;
 var terrain2 = '';
 
 //document.onkeydown= function anonymous() {keyDown()};
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 function InitGame(gamename, IPathM, headx, markerx, blankx, terrainx, terrain2x, tilecx) {
 	getObj("Bob").rows[0].cells[0].innerHTML = "<font class='title'>" + gamename + "</font>";
-	IPath3 = "https://lohcdn.com/game/" + IPathM + "/";
+	IPath3 = `${CDN_RESOURCES_URL}/game/${IPathM}/`;
 	head = IPath3 + headx;
 	marker = IPath3 + markerx;
 	blank = IPath3 + blankx;

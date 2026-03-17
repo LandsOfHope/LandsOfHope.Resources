@@ -4,7 +4,9 @@ var LPath = window.top.FHIPL;
 var RPath = window.top.FHIPR;
 var OPath = window.top.FHIPO;
 var outty = '';
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function ClearStuff() {
 	window.top.Interface.setFight1('');

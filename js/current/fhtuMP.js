@@ -3,8 +3,9 @@ var counteri = 0;
 var AM = AM;
 var CharsAt = CharsAt;
 var Processing = 0;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AH(ShopC, SkillGroup, Message, MD, MessageID, CharID, o1, or1, o2, or2, o3, or3) {
 	counteri = counteri + 1

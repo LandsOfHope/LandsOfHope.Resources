@@ -7,11 +7,13 @@ var Level = Level;
 var Money = Money;
 var Fame = Fame;
 var BagCount = 0;
-var VPath = "https://lohcdn.com/game/v/"
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+var VPath = `${CDN_RESOURCES_URL}/game/v/`;
 var CharsAt = CharsAt;
 var IC = 0;
 var Infos = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AvC(rid, rt, rn, rpp, rp, rf, rc, rl, ru, rq) {
 	var PictureID = rp;

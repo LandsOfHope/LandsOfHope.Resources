@@ -17,7 +17,9 @@ var OPath = window.top.FHIPO;
 var LPath = window.top.FHIPL;
 var eqcolor1 = eqcolor1;
 var eqcolor2 = eqcolor2;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function tgl(ShopNum) {
 	if (Processing == 0) {

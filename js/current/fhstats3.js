@@ -4,12 +4,13 @@ var CharsAt = CharsAt;
 var PageNo = PageNo;
 var SC = 0;
 var AA = AA;
-var FHIPPER = 'https://lohcdn.com/game/';
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+var FHIPPER = `${CDN_RESOURCES_URL}/game/`;
 var CPath = FHIPPER + "r/"
 var IPath = FHIPPER + "i/"
 var BPath = FHIPPER + "b/"
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function ACS(Statty, sv, sv2, bonus, mv) {
 	var Color = LITE;

@@ -18,8 +18,9 @@ var Level = Level;
 var DrawStyle = 1;
 var LastClickedItem = -1;
 var Waiting = 0;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/inc_inventory.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/inc_inventory.js" language="JavaScript"></script>`);
 
 function ItemClick(v) {
 	LastClickedItem = v;

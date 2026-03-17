@@ -6,8 +6,9 @@ var P = '';
 var Group = '';
 var OC = 0;
 var Options = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function CheckValue(Val1, Val2) {
 	if (Val1 > Val2) {

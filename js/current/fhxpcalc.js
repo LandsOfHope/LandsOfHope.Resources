@@ -1,5 +1,7 @@
 var Level = Level;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function Calc1() {
 	document.write('<table valign=top><tr><td colspan=2 class=\'boldcell\'>Level to XP Calculator</td></tr><tr><td>Start Level:</td><td><input size=4 maxlength=4 value=1 id=Calc1Box1 name=Calc1Box1></td></tr><tr><td>End Level:</td><td><input size=4 maxlength=4 value=' + Level + ' id=Calc1Box2 name=Calc1Box2></td></tr><tr><td><' + strClicky + ' onclick="document.getElementById(\'Calc1Results\').innerHTML = \'XP Required:<br>\' + GETLEVELXP(document.getElementById(\'Calc1Box1\').value, document.getElementById(\'Calc1Box2\').value)" style=\'width: 100\'>Calculate</button></td></tr><tr><td colspan=2 id=Calc1Results name=Calc1Results></td></tr></table>');

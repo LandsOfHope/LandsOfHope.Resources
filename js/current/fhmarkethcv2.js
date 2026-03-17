@@ -1,6 +1,7 @@
 var PageNo = PageNo;
 var SN = SN;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function fx1(stuff) {
 	var re = /^\$|,|'|"|%|@|#/g;
@@ -30,7 +31,7 @@ function AC(at, IID, ItemName, mv, mp, yp) {
 		BColor = BGCOLOR_S;
 	}
 
-	document.write('<tr style="cursor: pointer; color: ' + Color + '; background-color: ' + BColor + '; padding-left: 5px"><td width=\'300\' valign=top><b>' + ItemName + '</b>' + '</td><td width=\'120\' valign=top>' + (at == 0 ? 'Buying ' : 'Selling ') + '<b>' + mv + '</b>HC</td><td id=\'tgold\' width=\'90\' valign=top>' + window.top.BSGM(mp) + '</td><td>' + (yp == 1 ? '<img src="https://lohcdn.com/game/icons/comment_delete.png" title="Delete" style="cursor: pointer;" class="xbtn" onclick="javascript:window.location.replace(\'?SN=' + SN + '&Type2=2&Type3=' + IID + '&P=' + PageNo + '\');">' : '<img src="https://lohcdn.com/game/icons/arrow_redo.png" title="Complete" style="cursor: pointer;" class="xbtn" onclick="javascript:confirm(\'Are you sure you wish to complete this job?\', ' + IID + ');">') + '</td></tr>');
+	document.write(`<tr style="cursor: pointer; color: ${Color}; background-color: ${BColor}; padding-left: 5px"><td width=\'300\' valign=top><b>${ItemName}</b></td><td width=\'120\' valign=top>${at == 0 ? 'Buying ' : 'Selling '}<b>${mv}</b>HC</td><td id=\'tgold\' width=\'90\' valign=top>${window.top.BSGM(mp)}</td><td>${yp == 1 ? `<img src="${CDN_RESOURCES_URL}/game/icons/comment_delete.png" title="Delete" style="cursor: pointer;" class="xbtn" onclick="javascript:window.location.replace(\'?SN=${SN}&Type2=2&Type3=${IID}&P=${PageNo}\');">` : `<img src="${CDN_RESOURCES_URL}/game/icons/arrow_redo.png" title="Complete" style="cursor: pointer;" class="xbtn" onclick="javascript:confirm(\'Are you sure you wish to complete this job?\', ${IID});">`}</td></tr>`);
 }
 
 

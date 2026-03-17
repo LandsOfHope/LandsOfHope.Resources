@@ -4,8 +4,9 @@ var IPath = window.top.FHIPM;
 var OPath = window.top.FHIPO;
 var Markers = new Array();
 var MC = 0;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function Plt(Named, gid, X, Y, xx, yy, ml) {
 	X = X + 5

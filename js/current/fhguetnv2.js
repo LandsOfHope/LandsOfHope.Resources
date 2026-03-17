@@ -2,7 +2,8 @@ var counter = 0;
 var GoPage = GoPage;
 var GT = GT;
 var IPath = window.top.FHIP;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function GoP(pageno) {
 	window.location.replace('?GT=' + GT + '&P=' + pageno)

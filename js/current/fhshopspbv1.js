@@ -8,8 +8,8 @@ var PageNo = PageNo;
 var IPath = window.top.FHIP
 var IC = 0;
 var Infos = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
-
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function GoP(PageNo) {
 	window.location.replace('?CharsAt=' + CharsAt + '&P=' + PageNo + '');

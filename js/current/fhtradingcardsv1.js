@@ -1,10 +1,9 @@
-var CharsAt = CharsAt;
-var PageNo = PageNo;
 var IPath = window.top.FHIPI;
 var Processing = 0;
 var TC = 0;
 var Cards = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 
 function AvC(cid, cardname, cardtype, cardtypeid, cardtext, cc) {
@@ -62,6 +61,6 @@ function PC(v) {
 }
 
 function DC(v) {
-	getObj('Stuff2').innerHTML = '<table width=250 height=151 cellpadding=0 cellspacing=0 style="background-image: URL(https://lohcdn.com/images/cards/card' + Cards[v].cid + '.jpg)" class="weakercell"><tr height="40px"><td colspan=3></td></tr><tr height="90px"><td width=112></td><td width="114" style="color: ' + Cards[v].c + '" valign=top>' + Cards[v].ctt + '</font></td><td></td></tr><tr height="100%"><td colspan=3></td></tr></table>'
-	getObj('Buttons').innerHTML = "<" + strClicky2 + " onclick=\"if (Processing == 0) {Processing = 1; window.location.replace('?CharsAt=" + Cards[v].cid + "&P=" + PageNo + "');}\" title=\"Remove this card (send it to your Inventory)\">Remove</button>";
+	getObj('Stuff2').innerHTML = `<table width=250 height=151 cellpadding=0 cellspacing=0 style="background-image: URL(${CDN_RESOURCES_URL}/images/cards/card${Cards[v].cid}.jpg)" class="weakercell"><tr height="40px"><td colspan=3></td></tr><tr height="90px"><td width=112></td><td width="114" style="color: ${Cards[v].c}" valign=top>${Cards[v].ctt}</font></td><td></td></tr><tr height="100%"><td colspan=3></td></tr></table>`
+	getObj('Buttons').innerHTML = `<${strClicky2} onclick="if (Processing == 0) {Processing = 1; window.location.replace('?CharsAt=${Cards[v].cid}&P=${PageNo}');}" title="Remove this card (send it to your Inventory)">Remove</button>`;
 }

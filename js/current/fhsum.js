@@ -5,8 +5,9 @@ var Infos = new Array();
 var Processing = 0;
 var CharsAt = CharsAt;
 var PageNo = PageNo;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function DC(v) {
 	getObj('Stuff2').innerHTML = '<b>' + Infos[v].t + '</b><br>Ammo Status: ' + Infos[v].q + ' * ' + Infos[v].inx + '<br>' + (Math.abs(Infos[v].q) <= 200 ? 'Critical' : (Math.abs(Infos[v].q) <= 500 ? 'Low' : (Math.abs(Infos[v].q) < 1000 ? 'Okay' : 'Full'))) + (Infos[v].a == 0 ? '<br>Building Type: ' + Infos[v].r + '<br>Location: ' + Infos[v].p2 + '' : '<br><font id=tred>In Enemy Hands</font>');

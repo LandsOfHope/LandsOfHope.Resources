@@ -8,7 +8,9 @@ var PN = PN;
 var PB = PB;
 var IPath = window.top.FHIPI;
 var LastPatchClick = -1;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AvC(v, PictureID, Itty, e, pv) {
 	var Color = LITE;

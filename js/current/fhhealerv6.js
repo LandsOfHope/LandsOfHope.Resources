@@ -4,7 +4,9 @@ var IPath = window.top.FHIPR;
 var Processing = 0;
 var Targets = new Array();
 var TC = 0;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function GoP(PageNo) {
 	window.location.replace('fhhealer.asp?CharsAt=' + CharsAt + '&P=' + PageNo + '');

@@ -2,39 +2,28 @@ var LastCharacter = '';
 var UseArrow = 1;
 var FHSP = '';
 var SH = 1;
-var ME = ME;
-var DA = DA;
 var MH = 1;
 var TR = 1;
-var SR = SR;
 var PFING = 0;
-var FHIP = FHIP;
 var UseAdvanced = 0;
 var UseSounds = 0;
 
-var FHIPI = FHIP + 'i/';
-var FHIPO = FHIP + 'icons/';
-var FHIPM = FHIP + 'm/';
-var FHIPB = FHIP + 'b/';
-var FHIPR = FHIP + 'r/';
-var FHIPH = FHIP + 'h/';
-var FHIPIM = FHIP + 'images/';
-var FHIPV = FHIP + 'v/';
-var FHIPF = FHIP + 'flags/';
-var FHIPL = FHIP + 'l/';
-var FHIPS = FHIP + 's/';
-var FHIPA = FHIP + 'a/';
-var FHIPPR = FHIP + 'p/';
-var FHIPP = FHIPP;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-var mainx = mainx;
-var Tiles = Tiles;
-var mainy = mainy;
-var mainz = mainz;
-var mx = mx;
-var my = my;
-var mz = mz;
-var BuildingID = BuildingID;
+var FHIP = `${CDN_RESOURCES_URL}/game/`;
+var FHIPI = `${FHIP}i/`;
+var FHIPO = `${FHIP}icons/`;
+var FHIPM = `${FHIP}m/`;
+var FHIPB = `${FHIP}b/`;
+var FHIPR = `${FHIP}r/`;
+var FHIPH = `${FHIP}h/`;
+var FHIPIM = `${FHIP}images/`;
+var FHIPV = `${FHIP}v/`;
+var FHIPL = `${FHIP}l/`;
+var FHIPS = `${FHIP}s/`;
+var FHIPA = `${FHIP}a/`;
+var FHIPPR = `${FHIP}p/`;
+
 var AllowMove = 0;
 
 document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
@@ -400,7 +389,6 @@ function MMB2(s) {
 
 function MB2(BuildingID2, xx, yy, zz) {
 	window.top.XYBox(0, 0);
-	// PGS2('istep' + rand(3) + '.wav', 'istep' + rand(3) + '.wav', 300);
 	window.top.LastBuildingID = BuildingID;
 	window.top.LastBX = mx;
 	window.top.LastBY = my;

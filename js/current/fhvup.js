@@ -7,7 +7,9 @@ var PageNo = PageNo;
 var BuildingID = BuildingID;
 var IPath = window.top.FHIPR;
 var Processing = 0;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AM(z, v, o, l, m, f, t, s, e, b, Named, Picture, g, tok, u) {
 	if (u < 200) {

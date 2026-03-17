@@ -2,7 +2,8 @@ var PageNo = PageNo;
 var SPath = window.top.FHIPS;
 var IPath = window.top.FHIPI;
 var Countt = 0;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function DrawImages(currentimage) {
 	var x = 0;

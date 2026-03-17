@@ -15,8 +15,9 @@ var Shop = 0;
 var IC = 0;
 var Infos = new Array();
 var OPath = window.top.FHIPO;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function tgl(ShopNum) {
 	if (getObj('Shop' + ShopNum).innerHTML == '') {
@@ -116,6 +117,6 @@ function DC(v) {
 	if (Processing == 0) {
 		getObj('Stuff2').innerHTML = '<font class="weakcell" style="color:' + Infos[v].c + '"><b>' + (Infos[v].t.length > 28 ? Infos[v].t.substr(0, 28) + '..' : Infos[v].t) + '</b></font><br>Rarity: ' + Infos[v].l + '<br>Required Skill: ' + (Infos[v].v * 5) + '<br>Current Skill: ' + Skill;
 		getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + "'>";
-		getObj('Buttons').innerHTML = '' + (Skill >= Math.abs(Infos[v].v * 5) && Processing == 0 ? '<' + strClicky3 + ' onclick="if (Processing == 0) {Processing = 1; /*window.top.PGS(\'drop.wav\');*/ window.location.replace(\'?P=' + PageNo + '&ItemTypeID=' + ItemTypeID + '&ItemID=1&Type=' + Type2 + '&L=' + (Infos[v].v * 5) + '&InventoryItemID=' + Infos[v].z + '\');}" style=\'width: 85\'>Fast Dismantle</button><' + strClicky3 + ' onclick="if (Processing == 0) {Processing = 1; /*window.top.PGS(\'drop.wav\');*/ window.location.replace(\'?P=' + PageNo + '&ItemTypeID=' + ItemTypeID + '&ItemID=1&Type=' + Type2 + '&L=' + (Infos[v].v * 5) + '&distype=1&InventoryItemID=' + Infos[v].z + '\');}" style=\'width: 85\'>Slow Dis.</button>' : '') + (Infos[v].t.indexOf('?') == -1 ? Adr('window.top.loadwindow2(\'im4.asp?Test=' + Infos[v].z + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].t + '\');', 'Info', 'Info') : '');
+		getObj('Buttons').innerHTML = '' + (Skill >= Math.abs(Infos[v].v * 5) && Processing == 0 ? '<' + strClicky3 + ' onclick="if (Processing == 0) {Processing = 1; window.location.replace(\'?P=' + PageNo + '&ItemTypeID=' + ItemTypeID + '&ItemID=1&Type=' + Type2 + '&L=' + (Infos[v].v * 5) + '&InventoryItemID=' + Infos[v].z + '\');}" style=\'width: 85\'>Fast Dismantle</button><' + strClicky3 + ' onclick="if (Processing == 0) {Processing = 1; window.location.replace(\'?P=' + PageNo + '&ItemTypeID=' + ItemTypeID + '&ItemID=1&Type=' + Type2 + '&L=' + (Infos[v].v * 5) + '&distype=1&InventoryItemID=' + Infos[v].z + '\');}" style=\'width: 85\'>Slow Dis.</button>' : '') + (Infos[v].t.indexOf('?') == -1 ? Adr('window.top.loadwindow2(\'im4.asp?Test=' + Infos[v].z + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].t + '\');', 'Info', 'Info') : '');
 	}
 }

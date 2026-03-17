@@ -7,7 +7,9 @@ var IC = 0;
 var Infos = new Array();
 
 var Processing = 0;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function GoP(PageNo) {
 	window.location.replace('?CharsAt=' + CharsAt + '&ItemTypeID=' + ItemTypeID + '&P=' + PageNo + '');
@@ -49,7 +51,7 @@ function DC(v) {
 
 	getObj('Stuff2').innerHTML = Infos[v].t + '<br>Quantity: ' + q2 + '<br>' + window.top.PSGM(Infos[v].v) + '<br>Price Modifier: ' + Infos[v].bp + '%' + (Math.round(Infos[v].pf) > 0 ? '<br>Fame Needed: ' + Infos[v].pf : '');
 	getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + "'>";
-	getObj('Buttons').innerHTML = (q3 <= 1000 ? Adr('if (Processing == 0) {Processing = 1; /*window.top.PGS(\'money.wav\');*/window.location.replace(\'?CharsAt=' + CharsAt + '&ItemTypeID=' + ItemTypeID + '&ItemID=' + Infos[v].z + '\');}', 'Buy', 'Buy') : Adr('if (Processing == 0) {Processing = 1; window.location.replace(\'?CharsAt=' + CharsAt + '&aok=1000&ItemTypeID=' + ItemTypeID + '&ItemID=' + Infos[v].z + '\');', 'Buy', 'Buy')) + Adr('window.top.loadwindow2(\'imiv.asp?Test=' + Infos[v].z + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].t + '\');', 'Info', 'Info');
+	getObj('Buttons').innerHTML = (q3 <= 1000 ? Adr('if (Processing == 0) {Processing = 1; window.location.replace(\'?CharsAt=' + CharsAt + '&ItemTypeID=' + ItemTypeID + '&ItemID=' + Infos[v].z + '\');}', 'Buy', 'Buy') : Adr('if (Processing == 0) {Processing = 1; window.location.replace(\'?CharsAt=' + CharsAt + '&aok=1000&ItemTypeID=' + ItemTypeID + '&ItemID=' + Infos[v].z + '\');', 'Buy', 'Buy')) + Adr('window.top.loadwindow2(\'imiv.asp?Test=' + Infos[v].z + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].t + '\');', 'Info', 'Info');
 }
 
 function AM(Color, Named, ShopID, value, q2, Picture, bp, pf) {
@@ -90,7 +92,6 @@ function PromptReturn(returnVal, pb) {
 		if (pb != null) {
 			if (pb == 1) {
 				Processing = 1;
-				// window.top.PGS('money.wav');
 				getObj('sellitems').submit();
 			}
 		}

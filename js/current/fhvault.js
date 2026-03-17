@@ -11,11 +11,12 @@ var OPath = window.top.FHIPO;
 var GoPage = GoPage;
 var GoPage2 = GoPage2;
 var CharsAt = CharsAt;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
 var IC = 0;
 var Infos = new Array();
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function SA(how, Bag) {
 	var x = 0;
@@ -207,9 +208,9 @@ function ShowVault(x) {
 function DrawVaults() {
 	var x = 0;
 	var strout = '';
-	strout += '<td onclick=\'ShowVault(0);\' title=\'Main vault compartment\' style=\'cursor: pointer; border: 1px dotted gold; background-image: URL(https://lohcdn.com/game/i/bv1.gif); width: 26px; height: 58px; background-repeat: no-repeat; background-position: top middle;\' valign=bottom><b>0</b></td>';
+	strout += `<td onclick=\'ShowVault(0);\' title=\'Main vault compartment\' style=\'cursor: pointer; border: 1px dotted gold; background-image: URL(${CDN_RESOURCES_URL}/game/i/bv1.gif); width: 26px; height: 58px; background-repeat: no-repeat; background-position: top middle;\' valign=bottom><b>0</b></td>`;
 	for (x = 1; x < 10; x++) {
-		strout += '<td onclick=\'ShowVault(' + x + ');\' title=\'Vault compartment ' + roman(x, 1) + '\' style=\'cursor: pointer; border: 1px dotted gold; background-image: URL(https://lohcdn.com/game/i/bv1.gif); width: 26px; height: 58px; background-repeat: no-repeat; background-position: top middle;\' valign=bottom><b>' + roman(x, 1) + '</b></td>';
+		strout += `<td onclick=\'ShowVault(${x});\' title=\'Vault compartment ${roman(x, 1)}\' style=\'cursor: pointer; border: 1px dotted gold; background-image: URL(${CDN_RESOURCES_URL}/game/i/bv1.gif); width: 26px; height: 58px; background-repeat: no-repeat; background-position: top middle;\' valign=bottom><b>${roman(x, 1)}</b></td>`;
 	}
 	document.write('<table cellpadding=1 cellspacing=1><tr>' + strout + '</tr></table>');
 }

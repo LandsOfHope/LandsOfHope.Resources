@@ -4,7 +4,9 @@ var IPath = window.top.FHIPI;
 var Processing = 0;
 var TC = 0;
 var Infos = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 
 function AvC(tid, tin, tip, tpc, tpt) {
@@ -13,7 +15,7 @@ function AvC(tid, tin, tip, tpc, tpt) {
 		Infos[TC] = new Array();
 	}
 	Infos[TC] = new newInfo(Color, tid, tin, tip, tpc, tpt);
-	document.write('<tr id="T' + TC + '" style="color:' + Color + '" onclick="DC(' + TC + ')" onmouseover="PC(' + TC + ');" onmouseout="RC(this)"><td width="40"><img src="https://lohcdn.com/game/i/' + tip + '"></td><td width="260" valign=top><b>' + tin + '</b><br>' + tpt + '</td><td>' + tpc + '</td></tr>');
+	document.write(`<tr id="T${TC}" style="color:${Color}" onclick="DC(${TC})" onmouseover="PC(${TC});" onmouseout="RC(this)"><td width="40"><img src="${CDN_RESOURCES_URL}/game/i/${tip}"></td><td width="260" valign=top><b>${tin}</b><br>${tpt}</td><td>${tpc}</td></tr>`);
 	TC = TC + 1;
 
 }
@@ -37,7 +39,7 @@ function RC(stuff) {
 }
 
 function PC(v) {
-	window.top.InfoTip('https://lohcdn.com/game/i/' + Infos[v].tip, '<b>' + Infos[v].tin + '</b>');
+	window.top.InfoTip(`${CDN_RESOURCES_URL}/game/i/${Infos[v].tip}`, `<b>${Infos[v].tin}</b>`);
 	getObj('T' + v).style.cursor = 'pointer';
 	getObj('T' + v).style.backgroundColor = BGCOLOR_S
 }

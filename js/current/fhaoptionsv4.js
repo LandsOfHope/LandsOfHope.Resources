@@ -1,4 +1,5 @@
 var JW = JW;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
 function GetNotices() {
 	var strNew = "";
@@ -19,7 +20,7 @@ function Themes2(tx) {
 	var strSSClick = ' onmouseover="PC(this);" onmouseout="RC(this);"'
 	for (x = 0; x < dimarr.length; x++) {
 		var xw1 = dimarr[x];
-		strout += '<td ' + strSSClick + ' ' + (tx == xw1 ? 'style=\'border: 1px solid gold\'' : 'style=\'border: 1px solid RGB(115,102,86)\'') + ' align=center><img title="Theme: ' + xw1 + '" src="https://lohcdn.com/' + xw1 + '.gif" onclick="SetTheme(\'' + xw1 + '\');"></td>';
+		strout += `<td ${strSSClick} ${tx == xw1 ? 'style=\'border: 1px solid gold\'' : 'style=\'border: 1px solid RGB(115,102,86)\' '} align=center><img title="Theme: ${xw1}" src="${CDN_RESOURCES_URL}/${xw1}.gif" onclick="SetTheme('${xw1}');"></td>`;
 		y = y + 1;
 		if (y == 2) {
 			strout += '</tr><tr>';

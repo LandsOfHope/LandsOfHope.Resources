@@ -4,7 +4,9 @@ var IPath = window.top.FHIPB;
 var p2 = 'na.gif';
 var Countt = 0;
 var bp = 0;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AC(d, ItemName, ItemID, f, u, h, CharacterID, n, bpx) {
 	var p = 'na.gif';
@@ -21,7 +23,7 @@ function AC(d, ItemName, ItemID, f, u, h, CharacterID, n, bpx) {
 }
 
 function Buttons2() {
-	return Adr('presave();getObj(\'d\').value = tinyMCE.get(\'d\').getContent();getObj(\'editform\').submit()', 'Save', 'Save');
+	return Adr('presave();getObj(\'editform\').submit()', 'Save', 'Save');
 }
 
 function presave() {

@@ -17,8 +17,9 @@ var IPath = window.top.FHIPI;
 var strClicks = strClicks;
 var IC = 0;
 var Infos = new Array();
-var LastV = -1;;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var LastV = -1;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AC(IID, Level, ItemName, Quantity) {
 	if (PictureID == '0') { PictureID = '' }

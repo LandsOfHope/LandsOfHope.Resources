@@ -8,7 +8,9 @@ var IC = 0;
 var Infos = new Array();
 var OPath = window.top.FHIPO;
 var IPath = window.top.FHIPI;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AvC(Color, z, l, PictureID, Itty, d) {
 	if (l == 'C') { l = 'Common' }
@@ -133,7 +135,7 @@ function PC(v) {
 function DC(v) {
 	getObj('Stuff2').innerHTML = '<font class="weakcell" style="color:' + Infos[v].c + '"><b>' + (Infos[v].t.length > 28 ? Infos[v].t.substr(0, 28) + '..' : Infos[v].t) + '</b></font><br>' + (Infos[v].d != 0 ? '<font id=tred>This item is drop protected but will be dropped regardless using this screen.</font>' : '');
 	getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + "'>";
-	getObj('Buttons').innerHTML = '<' + strClicky2 + ' onclick="if (Processing == 0) {Processing = 1; /*window.top.PGS(\'drop.wav\');*/ window.location.replace(\'?InventoryItemID=' + InventoryItemID + '&ItemTypeID=' + ItemTypeID + '&P=' + PageNo + '&ItemID=' + Infos[v].z + '\');}" style=\'width: 85\'>Drop</button>' + (Infos[v].t.indexOf('(?)') == -1 ? Adr('window.top.loadwindow2(\'im4.asp?Test=' + Infos[v].z + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].t + '\');', 'Info', 'Info') : '');
+	getObj('Buttons').innerHTML = '<' + strClicky2 + ' onclick="if (Processing == 0) {Processing = 1; window.location.replace(\'?InventoryItemID=' + InventoryItemID + '&ItemTypeID=' + ItemTypeID + '&P=' + PageNo + '&ItemID=' + Infos[v].z + '\');}" style=\'width: 85\'>Drop</button>' + (Infos[v].t.indexOf('(?)') == -1 ? Adr('window.top.loadwindow2(\'im4.asp?Test=' + Infos[v].z + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].t + '\');', 'Info', 'Info') : '');
 }
 
 function PromptReturn(returnVal, pb) {
@@ -141,7 +143,6 @@ function PromptReturn(returnVal, pb) {
 		if (pb != null) {
 			Processing = 1;
 			if (pb == 1) {
-				// window.top.PGS('drop.wav');
 				getObj('Droppy').submit();
 			} else if (pb == 2) {
 				Processing = 0;

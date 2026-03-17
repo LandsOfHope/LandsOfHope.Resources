@@ -11,13 +11,13 @@ var FHIPP = FHIPP;
 var counter = 0;
 var Processing = 0;
 var skipmacro = 1;
-var Extra = Extra;
 var PageNo = PageNo;
 var PageNo2 = PageNo2;
 
 window.top.Quick = new Array();
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function Adirtemp(Actions, Titles, PictureID, Names) {
 	var returnx = '';

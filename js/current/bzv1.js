@@ -16,7 +16,8 @@ var AA = AA;
 
 var Processing = 0;
 var Bz = new Array(50);
-var FHIP = 'https://lohcdn.com/game/';
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+var FHIP = `${CDN_RESOURCES_URL}/game/`;
 
 var FHIPI = FHIP + 'i/';
 var FHIPH = FHIP + 'h/';
@@ -28,7 +29,9 @@ var FHIPR = FHIP + 'r/';
 var FHIPS = FHIP + 's/';
 //var FHIPP = FHIPP;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function bMenu(BID, NameB, ColorB, ImgB1, ImgB2, ObjectM, GoB, HiB, OB, dun, bowner, nc, nm, ls) {
 	this.Color = ColorB;

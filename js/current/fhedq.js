@@ -3,7 +3,8 @@ var Processing = 0;
 var IPath = window.top.FHIPI;
 var IC = 0;
 var CharsAt = CharsAt;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function DD(stuff) {
 	GS(6, stuff.v);

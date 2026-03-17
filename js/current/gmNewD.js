@@ -6,7 +6,9 @@ var Infos = new Array();
 var IPath = window.top.FHIP + 'p/';
 var LastV1 = -1;
 var LastV2 = -1;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AM(v, PictureID, PictureID2, Itty) {
 	var Color = LITE;

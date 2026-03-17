@@ -7,8 +7,9 @@ var PageNo = PageNo;
 var IC = 0;
 var Infos = new Array(50);
 var InfosC = 0;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function newInfo(Color, v, PictureID, Itty, q) {
 	this.c = Color;

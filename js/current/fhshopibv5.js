@@ -9,14 +9,15 @@ var ATX = ATX;
 var IPath = window.top.FHIPI;
 var IC = 0;
 var Infos = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function GoP(PageNo) {
 	window.location.replace('?CharsAt=' + CharsAt + '&P=' + PageNo + '');
 }
 
 function DC(v) {
-	getObj('Stuff2').innerHTML = '<b>' + Infos[v].i + '</b>' + (Infos[v].sn != '' ? '<br>Skill: ' + Infos[v].sn : '') + '<br>Level: ' + Infos[v].l + (Infos[v].at > 0 ? '<br>Armor: ' + GetAT(Infos[v].at) : '') + '<br>Rarity: ' + Infos[v].q + '<br>Quantity: ' + Infos[v].q2 + '<br>Cost: ' + window.top.BSGM(Infos[v].v * (pmc <= 0 ? Math.floor(Infos[v].q2) : 1)) + '<br>' + Adr('if (Processing == 0) {Processing = 1; /*window.top.PGS(\'money.wav\');*/ window.location.replace(\'?CharsAt=' + CharsAt + '&ItemID=' + Infos[v].value + '&Quantity=' + Infos[v].q2 + '&P=' + PageNo + '&Material=' + Infos[v].m + '\');}', 'Buy the selected item', 'Buy') + Adr('PopupCompare(' + Infos[v].value + ');', 'Compare', 'Compare') + Adr('window.top.loadwindow2(\'im4.asp?Test=' + Infos[v].value + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].i + '\');', 'Info', 'Info');
+	getObj('Stuff2').innerHTML = '<b>' + Infos[v].i + '</b>' + (Infos[v].sn != '' ? '<br>Skill: ' + Infos[v].sn : '') + '<br>Level: ' + Infos[v].l + (Infos[v].at > 0 ? '<br>Armor: ' + GetAT(Infos[v].at) : '') + '<br>Rarity: ' + Infos[v].q + '<br>Quantity: ' + Infos[v].q2 + '<br>Cost: ' + window.top.BSGM(Infos[v].v * (pmc <= 0 ? Math.floor(Infos[v].q2) : 1)) + '<br>' + Adr('if (Processing == 0) {Processing = 1; window.location.replace(\'?CharsAt=' + CharsAt + '&ItemID=' + Infos[v].value + '&Quantity=' + Infos[v].q2 + '&P=' + PageNo + '&Material=' + Infos[v].m + '\');}', 'Buy the selected item', 'Buy') + Adr('PopupCompare(' + Infos[v].value + ');', 'Compare', 'Compare') + Adr('window.top.loadwindow2(\'im4.asp?Test=' + Infos[v].value + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].i + '\');', 'Info', 'Info');
 	getObj('Pic').innerHTML = "<img src='" + IPath + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + "'>";
 }
 

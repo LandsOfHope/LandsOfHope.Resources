@@ -3,7 +3,9 @@ var IPath = window.top.FHIP
 var Infos = new Array();
 var ShopC = -1;
 var IC = 0;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AMX(PictureID, PP, Color, ItemName, Cost1, Cost2, v, Desc, x, t) {
 	if (PictureID == '') { PictureID = 'na.gif' }
@@ -39,13 +41,13 @@ function AHOLD(Header) {
 }
 
 function DC(v) {
-	getObj('Stuff2').innerHTML = '<b>' + Infos[v].s + '</b><Br>Points: ' + Infos[v].d2 + '<img src="https://lohcdn.com/game/icons/star.png" title="' + Infos[v].d2 + ' Paid referrals"> ' + Infos[v].d1 + '<img src="https://lohcdn.com/game/icons/status_offline.png" title="' + Infos[v].d1 + ' Standard referrals">';
+	getObj('Stuff2').innerHTML = `<b>${Infos[v].s}</b><Br>Points: ${Infos[v].d2}<img src="${CDN_RESOURCES_URL}/game/icons/star.png" title="${Infos[v].d2} Paid referrals"> ${Infos[v].d1}<img src="${CDN_RESOURCES_URL}/game/icons/status_offline.png" title="${Infos[v].d1} Standard referrals">`;
 	getObj('Stuff3').innerHTML = Infos[v].e;
-	getObj('Buttons').innerHTML = '<' + strClicky2 + ' onclick="window.location.replace(\'fhrefreward.asp?Reward=' + Infos[v].x + '\');" style=\'width: 85\'>Redeem</button>' + (Infos[v].t == 3 ? '<' + strClicky2 + ' onclick="window.parent.loadwindow2(\'im3.asp?Test=' + Infos[v].v + '&Bonus=0&Material=\',300,300,\'iwindow\',\'' + Infos[v].s + '\');" style=\'width: 85\'>Info</button>' : '');
+	getObj('Buttons').innerHTML = `<${strClicky2} onclick="window.location.replace('fhrefreward.asp?Reward=${Infos[v].x}');" style='width: 85'>Redeem</button>${Infos[v].t == 3 ? `<${strClicky2} onclick="window.parent.loadwindow2('im3.asp?Test=${Infos[v].v}&Bonus=0&Material=',300,300,'iwindow','${Infos[v].s}');" style='width: 85'>Info</button>` : ''}`;
 }
 
 function PC(v) {
-	window.top.InfoTip('' + IPath + Infos[v].p, '<b>' + Infos[v].s + '</b><Br>Points: ' + Infos[v].d2 + '<img src="https://lohcdn.com/game/icons/star.png" title="' + Infos[v].d2 + ' Paid referrals"> ' + Infos[v].d1 + '<img src="https://lohcdn.com/game/icons/status_offline.png" title="' + Infos[v].d1 + ' Standard referrals">');
+	window.top.InfoTip(`${IPath}${Infos[v].p}`, `<b>${Infos[v].s}</b><Br>Points: ${Infos[v].d2}<img src="${CDN_RESOURCES_URL}/game/icons/star.png" title="${Infos[v].d2} Paid referrals"> ${Infos[v].d1}<img src="${CDN_RESOURCES_URL}/game/icons/status_offline.png" title="${Infos[v].d1} Standard referrals">`);
 	getObj('I' + v).style.cursor = 'pointer';
 	getObj('I' + v).style.backgroundColor = BGCOLOR_S
 }
@@ -69,7 +71,7 @@ function DrawShop(ShopNum) {
 	var y = 0;
 	for (y = 0; y < Infos.length; y++) {
 		if (Infos[y].h == ShopNum) {
-			strout = strout + '<div id="I' + y + '" onmouseover="PC(' + y + ');" onmouseout="RC(' + y + ');" title="' + Infos[y].s + '"  onclick="DC(' + y + ');" style="float: left; padding: 1px; margin: 1px; border: 1px dotted ' + Infos[y].c + '; width: 70px; height: 40px; background-color:' + Infos[y].c + ';" valign=bottom><table class="weakercell" style="filter: Glow(Color=#000000, Strength=1);" width="70px" height="40"><tr height="40"><td width="40"><img src="' + IPath + Infos[y].p + '" width=40 height=40></td><td width="30">' + Infos[y].d2 + '<img src="https://lohcdn.com/game/icons/star.png" title="' + Infos[y].d2 + ' Paid referrals"> ' + Infos[y].d1 + '<img src="https://lohcdn.com/game/icons/status_offline.png" title="' + Infos[y].d1 + ' Standard referrals"></td></tr></table></div>';
+			strout = `${strout}<div id="I${y}" onmouseover="PC(${y});" onmouseout="RC(${y});" title="${Infos[y].s}"  onclick="DC(${y});" style="float: left; padding: 1px; margin: 1px; border: 1px dotted ${Infos[y].c}; width: 70px; height: 40px; background-color:${Infos[y].c};" valign=bottom><table class="weakercell" style="filter: Glow(Color=#000000, Strength=1);" width="70px" height="40"><tr height="40"><td width="40"><img src="${IPath}${Infos[y].p}" width=40 height=40></td><td width="30">${Infos[y].d2}<img src="${CDN_RESOURCES_URL}/game/icons/star.png" title="${Infos[y].d2} Paid referrals"> ${Infos[y].d1}<img src="${CDN_RESOURCES_URL}/game/icons/status_offline.png" title="${Infos[y].d1} Standard referrals"></td></tr></table></div>`;
 		}
 	}
 	getObj('Shop' + ShopNum).innerHTML = '' + strout + '';

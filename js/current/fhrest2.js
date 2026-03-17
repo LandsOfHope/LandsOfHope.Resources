@@ -1,7 +1,10 @@
 var IPath = window.top.FHIPR;
 var IIDs = 0; var Countt = 0;
 var Time2r = Time2r;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
+
 if (Time2r > 0) {
 	IIDs = window.setInterval(Rest, 1000);
 } else {

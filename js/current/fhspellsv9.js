@@ -14,8 +14,9 @@ var Specials = new Array();
 var SC = 0;
 var Processing = 0;
 var Spells = new Array();
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function GoP(PageNo) {
 	window.location.replace('?T=' + Type3 + '&Type=' + Type2 + '&P=' + PageNo + '');
@@ -49,7 +50,7 @@ function SMM(Color, v, i, mc, d, h, t, b, Named, n, dot) {
 	}
 	Spells[SC] = new Spell(Color, v, i, mc, d, h, t, b, Named, n, Piccy, PictureID, dot);
 
-	document.write('<tr id="S' + SC + '" onmouseover="PC(' + SC + ')" onmouseout="RC(this)" onclick="DC(' + SC + ')" style="cursor: pointer; color: ' + Color + ';"><td width=15 height=15><img border=0 width=15 height=15 src="' + IPath + Piccy + '"></td><td width=250 style="' + (mc > MeMana || mc > MeInt ? 'border: 1px dotted red' : '') + '">' + Named + '</td><td>' + (dot != 0 ? '<img src=\'https://lohcdn.com/game/icons/clock_add.png\' title=\'Effect over Time\'>' : '') + '</td><td>' + (t == 3 ? '<img src=\'https://lohcdn.com/game/icons/group.png\' title=\'Area Effect\'>' : '') + '</td></tr>');
+	document.write(`<tr id="S${SC}" onmouseover="PC(${SC})" onmouseout="RC(this)" onclick="DC(${SC})" style="cursor: pointer; color: ${Color};"><td width=15 height=15><img border=0 width=15 height=15 src="${IPath}${Piccy}"></td><td width=250 style="${mc > MeMana || mc > MeInt ? 'border: 1px dotted red' : ''}">${Named}</td><td>${dot != 0 ? `<img src='${CDN_RESOURCES_URL}/game/icons/clock_add.png' title='Effect over Time'>` : ''}</td><td>${t == 3 ? `<img src='${CDN_RESOURCES_URL}/game/icons/group.png' title='Area Effect'>` : ''}</td></tr>`);
 	SC = SC + 1;
 }
 

@@ -6,7 +6,9 @@ var P2 = P2;
 var Tutorial = Tutorial;
 var Type2 = Type2;
 var IPath = window.top.FHIPR;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AH(QN, Q) {
 	var Color = 'gold';

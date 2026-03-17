@@ -1,10 +1,8 @@
-var Pic = Pic;
-var KC = KC;
-var PageNo = PageNo;
 var IPath = window.top.FHIPH;
 var IC = 0;
 var Infos = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function DC(v) {
 	getObj('Stuff2').innerHTML = Infos[v].s + '<br>Keeps Required: ' + Infos[v].t + '<br>Keeps Held: ' + KC + '<br>Level Required: ' + Infos[v].l + (Infos[v].b == 0 ? '' : '<br>Duration: ' + Infos[v].b);

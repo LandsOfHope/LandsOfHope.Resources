@@ -3,8 +3,9 @@ var Infos = new Array();
 var Skill = Skill;
 var IPath = window.top.FHIP;
 var Processing = 0;
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AC(i, PictureID, ItemName, ItemID, Level, Skill2, sc) {
 	if (PictureID == '0') { PictureID = '' }

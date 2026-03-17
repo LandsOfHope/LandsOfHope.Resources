@@ -3,7 +3,8 @@ var Infos = new Array();
 var IC = 0;
 var IPath = window.top.FHIPI;
 var Processing = 0;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AvC(mc, m, PictureID, d, m2) {
 	var Color = LITE;

@@ -15,6 +15,7 @@ var LastVessel = '';
 var VC = 0;
 var LastSelectedVessel = -1;
 var Vessels = new Array();
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
 function VO(v) {
 	getObj('V' + v).style.cursor = '';
@@ -70,7 +71,7 @@ function AFV(a, vid, vpid, vcolor, vcid, vname, vlevel, vdisabled, vw, vb, nnpc,
 	var agct = GetAName(a);
 
 
-	var CharTD = '<td width="40" height="40" style="background-image: url(' + FHIPV + vpid + '); background-Position: left; background-Repeat: no-repeat; ' + (vdisabled != '' ? 'filter:gray' : '') + '">' + (vflag != 't.png' ? '<table><tr height=24><td colspan=2></td></tr><tr><td width=24></td><td width=16 bgcolor=\'' + vflagc + '\'><img src=\'https://lohcdn.com/game/flags/' + vflag + '\' width=16 height=16></td></table>' : '<table><tr><td width=40 heigh=40></td></tr></table>') + '</td>'
+	var CharTD = `<td width="40" height="40" style="background-image: url(${FHIPV}${vpid}); background-Position: left; background-Repeat: no-repeat; ${vdisabled != '' ? 'filter:gray' : ''}">${vflag != 't.png' ? `<table><tr height=24><td colspan=2></td></tr><tr><td width=24></td><td width=16 bgcolor=\'${vflagc}\'><img src=\'${CDN_RESOURCES_URL}/game/flags/${vflag}\' width=16 height=16></td></table>` : '<table><tr><td width=40 heigh=40></td></tr></table>'}</td>`
 
 	var Itty2 = vname.substr(0, 30);
 

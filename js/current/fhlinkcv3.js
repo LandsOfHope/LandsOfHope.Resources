@@ -2,7 +2,8 @@ var PageNo = PageNo;
 var IPath = window.top.FHIPR;
 var TC = 0;
 var Cards = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AvC(cid, cardname, cardtype, cardtypeid, cardtext, cc) {
 	var Color = 'RGB(153, 153, 153)';
@@ -60,5 +61,5 @@ function Tipsfor(v) {
 }
 
 function DC(v) {
-	getObj('Stuff2').innerHTML = '<table width=250 height=151 cellpadding=0 cellspacing=0 style="background-image: URL(https://lohcdn.com/images/cards/card' + Cards[v].cid + '.jpg)" class="weakercell"><tr height="40px"><td colspan=3></td></tr><tr height="90px"><td width=126></td><td width="110" style="color: ' + Cards[v].c + '" valign=top>' + Cards[v].ctt + '</font></td><td width=14></td></tr><tr height="100%"><td colspan=3></td></tr></table>'
+	getObj('Stuff2').innerHTML = `<table width=250 height=151 cellpadding=0 cellspacing=0 style="background-image: URL(${CDN_RESOURCES_URL}/images/cards/card${Cards[v].cid}.jpg)" class="weakercell"><tr height="40px"><td colspan=3></td></tr><tr height="90px"><td width=126></td><td width="110" style="color: ${Cards[v].c}" valign=top>${Cards[v].ctt}</font></td><td width=14></td></tr><tr height="100%"><td colspan=3></td></tr></table>`
 }

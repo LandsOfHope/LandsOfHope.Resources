@@ -2,8 +2,9 @@ var PageNo = PageNo;
 var IPath = window.top.FHIPR;
 var TC = 0;
 var Cards = new Array();
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AvC(cdid, carddeck, carddeckd, cardcount) {
 	var Color = 'white';

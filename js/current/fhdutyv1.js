@@ -1,8 +1,8 @@
 var FID = FID;
-var FHIP = 'https://lohcdn.com/game/'
-var IPath = FHIP + "r/"
-var IPath2 = FHIP + "i/"
-var IPath4 = FHIP + "m/"
+var FHIP = `${new URL(document.currentScript.src).origin}/game/`;
+var IPath = `${FHIP}r/`;
+var IPath2 = `${FHIP}i/`;
+var IPath4 = `${FHIP}m/`;
 var IPath3 = ""
 var height = 0; //height of the game area
 var width = 0;	//width of the game area
@@ -37,8 +37,9 @@ var tilecx = 1280602;
 var terrainx2 = '';
 var totalprizes = 0;
 var digspot = 'hole.gif';
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 function InitGame(IPathM, markerx, blankx, terrainx1, terrain2x1, tilecx1, terrainx, terrain2x, tilecx2, w, h, tries, tp, digp) {
 	charges = tries;
 	digspot = digp;
@@ -122,8 +123,8 @@ function Start(w, h) {
 
 		strout += "</tr>" //";
 	}
-	getObj("Inv").innerHTML = "<table cellspacing=0 align=center cellpadding=0 style=\"background-Image: URL(https://lohcdn.com/game/images/seafloor.png);\">" + strout + "</table>";
-	getObj("Stuff2").innerHTML = "<table cellpadding=1 cellspacing=1 class=weakcell><tr><td colspan=2 id=fakescore name=fakescore>" + charges + " attempts remain</td></tr><tr><td><img src='" + marker + "' width=15 height=15>:</td><td id=fakescore2 name=fakescore2>0 cargo found</td></tr><tr><td colspan=2><center>Click on any tile to start</center></td></tr><tr><td colspan=2><b>Objectives</b><br>Locate the sunken <img src='" + marker + "' width=15 height=15> by clicking on any tile in the central area of the map.</td></tr></table>";
+	getObj("Inv").innerHTML = `<table cellspacing=0 align=center cellpadding=0 style=\"background-Image: URL(${CDN_RESOURCES_URL}/game/images/seafloor.png);\">${strout}</table>`;
+	getObj("Stuff2").innerHTML = `<table cellpadding=1 cellspacing=1 class=weakcell><tr><td colspan=2 id=fakescore name=fakescore>${charges} attempts remain</td></tr><tr><td><img src='${marker}' width=15 height=15>:</td><td id=fakescore2 name=fakescore2>0 cargo found</td></tr><tr><td colspan=2><center>Click on any tile to start</center></td></tr><tr><td colspan=2><b>Objectives</b><br>Locate the sunken <img src='${marker}' width=15 height=15> by clicking on any tile in the central area of the map.</td></tr></table>`;
 	document.images[1].src = blank;
 	blank = document.images[1].src;
 }
@@ -133,11 +134,9 @@ function Search(stuff, t) {
 	var s = 0;
 	if (charges > 0 && t != 0) {
 		if (prizes[t] == 1) {
-			//alert('You found a Prize !')
 			stuff.innerHTML = "<img src='" + blank + "'  style=\"background-Image: URL('" + marker + "')\" width=20 height=20>"
 			prizesfound = prizesfound + 1;
 			prizes[t] = -1
-			// window.top.PGS('beep.wav');
 			charges = charges - 1;
 			stuff.onclick = '';
 		} else if (prizes[t] == -1) {
@@ -145,7 +144,6 @@ function Search(stuff, t) {
 		} else {
 			charges = charges - 1;
 			stuff.innerHTML = "<img src='" + blank + "'  style=\"background-Image: URL('" + IPath3 + digspot + "')\" width=20 height=20>"
-			// window.top.PGS('miss.wav');
 			stuff.onclick = '';
 		}
 
@@ -164,7 +162,7 @@ function Search(stuff, t) {
 		s = -1;
 	}
 	if (gameover == 1) {
-		getObj("Inv").innerHTML = "<table cellspacing=0 align=center cellpadding=0 style=\"background-Image: URL(https://lohcdn.com/game/images/seafloor.png);\"></table>";
+		getObj("Inv").innerHTML = `<table cellspacing=0 align=center cellpadding=0 style=\"background-Image: URL(${CDN_RESOURCES_URL}/game/images/seafloor.png);\"></table>`;
 		window.location.replace('fhduty.asp?FID=' + FID + '&score=' + s);
 	}
 }

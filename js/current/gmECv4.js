@@ -2,7 +2,8 @@ var PageNo = PageNo;
 var Type2 = Type2;
 var Mask = Mask;
 var CharacterName = CharacterName;
-var IPath = "https://lohcdn.com/game/r/"
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+var IPath = `${CDN_RESOURCES_URL}/game/r/`;
 var CharsAt = CharsAt;
 var IC = 0;
 var Infos = new Array();
@@ -11,7 +12,7 @@ var LastV = -1;
 var LastDefault = '';
 var LastForward = '';
 
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function AC(m, d, p2, c, v, b, l, r, p, Itty, a, ri, pi, z, la, type, hc) {
 	var Color = GetAColor(a)

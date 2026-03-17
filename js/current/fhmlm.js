@@ -26,7 +26,9 @@ var FHIPB = FHIP + 'b/';
 var FHIPR = FHIP + 'r/';
 var FHIPS = FHIP + 's/';
 var deffun = deffun;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function mMenu(MS, ForSale, MapID, ts, ColorM, CaptionM, PictureM, ObjectM, MapXm, MapYm) {
 	this.Sale = ForSale;

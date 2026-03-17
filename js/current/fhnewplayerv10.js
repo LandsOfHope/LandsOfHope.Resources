@@ -9,7 +9,8 @@ var RaceID;
 var p2 = '';
 var Profs = new Array(12);
 var PageNo = PageNo;
-var IPath = 'https://lohcdn.com/game/r/';
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+var IPath = `${CDN_RESOURCES_URL}/game/r/`;
 var FormProcessing = 0;
 var returnVal = null;
 
@@ -52,7 +53,7 @@ function DrawHeaders(hn, pc) {
         v = v + 1;
 
         var tn = TabName(i);
-        strTest += ("<td valign=bottom></td><td style='background-image: URL(https://lohcdn.com/images/blankbutton" + (i < PageNo ? "2" : "1") + ".png); background-position: bottom; background-color: transparent; width:100px;' align=center><a class='tab' href='javascript:GoP(" + i + ");' style='" + (i < PageNo ? "color: #66ff66;" : (i == PageNo ? "color: yellow;" : "")) + "' title='" + tn + "'>" + tn + "</a></td>")
+        strTest += (`<td valign=bottom></td><td style='background-image: URL(${CDN_RESOURCES_URL}/images/blankbutton${i < PageNo ? "2" : "1"}.png); background-position: bottom; background-color: transparent; width:100px;' align=center><a class='tab' href='javascript:GoP(${i});' style='${i < PageNo ? "color: #66ff66;" : (i == PageNo ? "color: yellow;" : "")}' title='${tn}'>${tn}</a></td>`)
         if (v >= 20) {
             strTest += "</tr><tr>";
             v = 0;
@@ -79,8 +80,8 @@ function setTutorial() {
 
 function DrawFooters(vn, p) {
     var strTest = '';
-    strTest = "<td valign=bottom></td><td style='background-image: URL(https://lohcdn.com/images/blankbutton2.png); background-position: bottom; background-color: transparent; width:100px' align=center><a class='tab' href=\"javascript: window.top.hidePopWin(true);\" title=\"Close this window\">Close</a></td>";
-    return "<table cellpadding=1 cellspacing=1 border=0 height='25px'><tr><td width=240>&nbsp;</td>" + strTest + "<td valign=bottom></td></tr></table>";
+    strTest = `<td valign=bottom></td><td style='background-image: URL(${CDN_RESOURCES_URL}/images/blankbutton2.png); background-position: bottom; background-color: transparent; width:100px' align=center><a class='tab' href=\"javascript: window.top.hidePopWin(true);\" title=\"Close this window\">Close</a></td>`;
+    return `<table cellpadding=1 cellspacing=1 border=0 height='25px'><tr><td width=240>&nbsp;</td>${strTest}<td valign=bottom></td></tr></table>`;
 }
 
 function AM(IID, PictureID, Itty, p2p, pt) {
@@ -110,14 +111,14 @@ function DC(stuff) {
 
 function DC2() {
     if (getObj('Results') != undefined) {
-        getObj('PreviewPic').innerHTML = (getObj('thepic').value == '' ? '' : '<img src=\'' + IPath + getObj('thepic').value + '\' onerror=\'this.src="https://lohcdn.com/na.gif"\'>');
-        getObj('Results').innerHTML = '<table class=\'specialcell\' cellpadding=1 cellspacing=1><tr><td colspan=3><b>Checklist</b></td></tr><tr><td><b>Step 1</b></td><td>Profession ' + (lastp3 != '' ? '' + lastp3 + '</td><td><img src="https://lohcdn.com/game/icons/tick.png" alt="Complete">' : '</td><td><img src="https://lohcdn.com/game/icons/cross.png" alt="Incomplete">') + '</td></tr><tr><td><b>Step 2</b></td><td>Sex ' + (getObj('Sex').value != '' ? '' + (getObj('Sex').value == 'M' ? 'Male' : 'Female') + '</td><td><img src="https://lohcdn.com/game/icons/tick.png" alt="Complete">' : '</td><td><img src="https://lohcdn.com/game/icons/cross.png" alt="Incomplete">') + '</td></tr><tr><td></td><td>Picture' + (getObj('thepic').value != '' ? '</td><td><img src="https://lohcdn.com/game/icons/tick.png" alt="Complete">' : '</td><td><img src="https://lohcdn.com/game/icons/cross.png" alt="Incomplete">') + '</td></tr><tr><tr><td></td><td>Player Name' + (getObj('CharacterName').value != '' ? '</td><td><img src="https://lohcdn.com/game/icons/tick.png" alt="Complete">' : '</td><td><img src="https://lohcdn.com/game/icons/cross.png" alt="Incomplete">') + '</td></tr></table>';
+        getObj('PreviewPic').innerHTML = (getObj('thepic').value == '' ? '' : `<img src=\'${IPath}${getObj('thepic').value}\' onerror=\'this.src="${CDN_RESOURCES_URL}/na.gif"\'>`);
+        getObj('Results').innerHTML = `<table class='specialcell' cellpadding=1 cellspacing=1><tr><td colspan=3><b>Checklist</b></td></tr><tr><td><b>Step 1</b></td><td>Profession ${lastp3 != '' ? '' + lastp3 + `</td><td><img src="${CDN_RESOURCES_URL}/game/icons/tick.png" alt="Complete">` : `</td><td><img src="${CDN_RESOURCES_URL}/game/icons/cross.png" alt="Incomplete">`}</td></tr><tr><td><b>Step 2</b></td><td>Sex ${getObj('Sex').value != '' ? '' + (getObj('Sex').value == 'M' ? 'Male' : 'Female') + `</td><td><img src="${CDN_RESOURCES_URL}/game/icons/tick.png" alt="Complete">` : `</td><td><img src="${CDN_RESOURCES_URL}/game/icons/cross.png" alt="Incomplete">`}</td></tr><tr><td></td><td>Picture${getObj('thepic').value != '' ? `</td><td><img src="${CDN_RESOURCES_URL}/game/icons/tick.png" alt="Complete">` : `</td><td><img src="${CDN_RESOURCES_URL}/game/icons/cross.png" alt="Incomplete">`}</td></tr><tr><tr><td></td><td>Player Name${getObj('CharacterName').value != '' ? `</td><td><img src="${CDN_RESOURCES_URL}/game/icons/tick.png" alt="Complete">` : `</td><td><img src="${CDN_RESOURCES_URL}/game/icons/cross.png" alt="Incomplete">`}</td></tr></table>`;
         if (PageNo == 3) {
             if (getObj('Results').innerHTML.indexOf('cross.png') != -1) {
                 returnVal = null;
                 getObj('Buttons').innerHTML = "Please review the following check list, if any steps show up incomplete please go back and complete them.";
             } else {
-                getObj('Buttons').innerHTML = "Congratulations, everything seems to be in order please click the server button below to make your character.<br><table width=500 cellpadding=2 cellspacing=2><tr><td class='box2'><table width=455 height='80px' cellpadding=1 cellspacing=1><tr><td>The Hope server is the main game server, there are currently no other servers (if you used to play you will notice there is no Hellsgate/Trollsgrove anymore just Hope).</td></tr><tr height='100%'><td></td></tr><tr><td align=center><a href='javascript:GoP2(4, 1);' style='color: green' valign=bottom><img src='https://lohcdn.com/images/server1.png' alt='Pick Hope' border=0></a></td></tr></table></td></tr></table></td></tr>";
+                getObj('Buttons').innerHTML = `Congratulations, everything seems to be in order please click the server button below to make your character.<br><table width=500 cellpadding=2 cellspacing=2><tr><td class='box2'><table width=455 height='80px' cellpadding=1 cellspacing=1><tr><td>The Hope server is the main game server, there are currently no other servers (if you used to play you will notice there is no Hellsgate/Trollsgrove anymore just Hope).</td></tr><tr height='100%'><td></td></tr><tr><td align=center><a href='javascript:GoP2(4, 1);' style='color: green' valign=bottom><img src='${CDN_RESOURCES_URL}/images/server1.png' alt='Pick Hope' border=0></a></td></tr></table></td></tr></table></td></tr>`;
             }
         }
     }
@@ -139,7 +140,7 @@ function DrawProfs() {
     var p = 0;
     for (y = 0; y < counter; y++) {
         p = p + 1
-        strout = strout + '<div style="float: left; width: 140; padding: 2px; height: 32px;" id="p' + y + '" onclick="DC(' + y + ')" onmouseover="PC(' + y + ')" onmouseout="RC(this)" title="Click to pick ' + Profs[y][2] + '" style=\'color: white;\'><img src=\'https://lohcdn.com/images/' + Profs[y][1] + '\' alt=\'Click to pick ' + Profs[y][2] + '\'></div>';
+        strout = `${strout}<div style="float: left; width: 140; padding: 2px; height: 32px;" id="p${y}" onclick="DC(${y})" onmouseover="PC(${y})" onmouseout="RC(this)" title="Click to pick ${Profs[y][2]}" style=\'color: white;\'><img src=\'${CDN_RESOURCES_URL}/images/${Profs[y][1]}\' alt=\'Click to pick ${Profs[y][2]}\'></div>`;
 
         //<tr><td class=\'specialcell\'><div style=\'height: 68; overflow: hidden;\'>' + Profs[y][4] + '<br><a href=\'pesd.asp?CharsAt=' + Profs[y][0] + '\' target=\'_blank\' title=\'More information on ' + Profs[y][2] + '\'>More Info...</a></div></td></tr>
 

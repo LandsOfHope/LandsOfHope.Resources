@@ -7,8 +7,9 @@ var Mat = '';
 var IPath = window.top.FHIPI;
 var IC = 0;
 var Infos = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function DC(v) {
 	getObj('Stuff2').innerHTML = '<b>' + Infos[v].i + '</b><br>Cost: ' + window.top.BSGM(Infos[v].v) + '<br>' + Adr('if (Processing ==0) {Processing = 1; window.location.replace(\'?CharsAt=' + CharsAt + '&ItemID=' + Infos[v].value + '\');}', 'Train', 'Train') + Adr('window.top.loadwindow2(\'skz.asp?test=' + Math.abs(Infos[v].value) + '\',300,300,\'iwindow\',\'' + Infos[v].i + '\');', 'Info', 'Info')

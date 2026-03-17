@@ -1,10 +1,10 @@
-var PageNo = PageNo;
-var CharsAt = CharsAt;
 var counterb = ((PageNo * 14) - 14);
 var counteri = 0;
 var IPath = window.top.FHIPR;
 var FHIPO = window.top.FHIPS;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function GoP(PageNo) {
 	window.location.replace('?CharsAt=' + CharsAt + '&P=' + PageNo);

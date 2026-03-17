@@ -1,14 +1,13 @@
-var InventoryItemID = InventoryItemID;
-var CharsAt = CharsAt;
-var PageNo = PageNo;
 var SelectedS = -1;
 var Highlighted = -1;
-var IPath = "https://lohcdn.com/game/v/"
-var RPath = "https://lohcdn.com/game/r/"
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+var IPath = `${CDN_RESOURCES_URL}/game/v/`;
+var RPath = `${CDN_RESOURCES_URL}/game/r/`;
 var IC = 0;
 var Infos = new Array();
 var Processing = 0;
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function tgl(ShopNum) {
 	Highlighted = -1;
@@ -25,7 +24,7 @@ function DS(ShopNum) {
 	var y = 0;
 	for (y = 0; y < IC; y++) {
 		if (Infos[y].h == ShopNum) {
-			strout = strout + '<tr id="I' + y + '" onmouseover="PC(' + y + ')" onmouseout="RC(' + y + ')"   onclick="DC(' + y + ')"><td><table width="100%" class="weakcell"><tr><td width=40 style="background-image: URL(https://lohcdn.com/' + (Infos[y].d != 0 ? 'game/a/flame.gif' : 'game/v/' + Infos[y].p + '') + '); background-repeat: no-repeat;"><table cellpadding=0 cellspacing=0><tr height=24><td colspan=2></td></tr><tr><td width=24></td><td bgcolor="' + Infos[y].vfc + '"><img width=16 height=16 src="https://lohcdn.com/game/flags/' + Infos[y].vfid + '" align=right valign=bottom></td></tr></table></td><td width="260" style="padding-left: 5px" valign=top><b style="' + (Infos[y].anchor != 0 ? 'color: #ff6666;' : 'color: ' + Infos[y].c) + '">' + Infos[y].Named + '</b><br>Last Position: ' + Infos[y].x + ', ' + Infos[y].y + '<br>Victories: ' + Infos[y].vv + ', Losses: ' + Infos[y].vl + '</td><td><img width=40 height=40 src="' + RPath + Infos[y].p2 + '"></td><td width="260" style="padding-left: 5px"><table cellpadding=0 cellspacing=0 class="weakcell"><tr><td colspan=2>' + Infos[y].Named2 + '</td></tr>' + (Infos[y].i > 0 ? '<tr><td width=\'50%\'>Status:</td><td style=\'color: red;\'><i>Impounded</i></td></tr></table></td></tr>' : '<tr><td>Bounty:</td><td class="nav3">' + window.top.PSGM(Infos[y].vb) + '</td></tr><tr><td>Worth:</td><td class="nav3">' + window.top.PSGM(Infos[y].vw) + '</td></tr></table></td></tr>') + '</table></td></tr>';
+			strout = `${strout}<tr id="I${y}" onmouseover="PC(${y})" onmouseout="RC(${y})"   onclick="DC(${y})"><td><table width="100%" class="weakcell"><tr><td width=40 style="background-image: URL(${CDN_RESOURCES_URL}/${Infos[y].d != 0 ? 'game/a/flame.gif' : 'game/v/' + Infos[y].p + ''}); background-repeat: no-repeat;"><table cellpadding=0 cellspacing=0><tr height=24><td colspan=2></td></tr><tr><td width=24></td><td bgcolor="${Infos[y].vfc}"><img width=16 height=16 src="${CDN_RESOURCES_URL}/game/flags/${Infos[y].vfid}" align=right valign=bottom></td></tr></table></td><td width="260" style="padding-left: 5px" valign=top><b style="${Infos[y].anchor != 0 ? 'color: #ff6666;' : 'color: ' + Infos[y].c}">${Infos[y].Named}</b><br>Last Position: ${Infos[y].x}, ${Infos[y].y}<br>Victories: ${Infos[y].vv}, Losses: ${Infos[y].vl}</td><td><img width=40 height=40 src="${RPath}${Infos[y].p2}"></td><td width="260" style="padding-left: 5px"><table cellpadding=0 cellspacing=0 class="weakcell"><tr><td colspan=2>${Infos[y].Named2}</td></tr>${Infos[y].i > 0 ? '<tr><td width=\'50%\'>Status:</td><td style=\'color: red;\'><i>Impounded</i></td></tr></table></td></tr>' : '<tr><td>Bounty:</td><td class="nav3">' + window.top.PSGM(Infos[y].vb) + '</td></tr><tr><td>Worth:</td><td class="nav3">' + window.top.PSGM(Infos[y].vw) + '</td></tr></table></td></tr>'}</table></td></tr>`;
 		}
 	}
 	getObj('Shop' + ShopNum).innerHTML = '<table id=Min' + ShopNum + ' cellspacing=0 cellpadding=1 width="100%" class=\'weakercell\'>' + strout + '</table>';

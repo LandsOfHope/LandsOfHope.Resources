@@ -3,8 +3,9 @@ var Processing = 0;
 var IPath = window.top.FHIPI;
 var IC = 0;
 var Infos = new Array();
-document.write('<script src="https://lohcdn.com/js/current/formatting.js" language="JavaScript"></script>');
+var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
+document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 var Scratches = 22;
 
@@ -13,7 +14,7 @@ function Scratch(v) {
 		Scratches = Scratches - 1;
 		getObj('I' + v).style.cursor = 'pointer';
 		Infos[v].image = Infos[v].image - 2;
-		getObj('I' + v).src = 'https://lohcdn.com/images/scratch' + Infos[v].image + '.gif';
+		getObj('I' + v).src = `${CDN_RESOURCES_URL}/images/scratch${Infos[v].image}.gif`;
 		if (Infos[v].image == 1) {
 			getObj('I' + v).style.cursor = '';
 			getObj('I' + v).title = Infos[v].t
@@ -32,7 +33,7 @@ function AM(Picture, Named) {
 	if (count == 0) {
 		document.write('<tr>');
 	}
-	document.write('<td id="IP' + IC + '"><img id="I' + IC + '" src=\'https://lohcdn.com/images/scratch5.gif\' style=\'cursor: pointer; background-image:URL(https://lohcdn.com/game/' + Picture + ');\' title=\'Scratch me!\' onclick=\'Scratch(' + IC + ')\'></td>');
+	document.write(`<td id="IP${IC}"><img id="I${IC}" src=\'${CDN_RESOURCES_URL}/images/scratch5.gif\' style=\'cursor: pointer; background-image:URL(${CDN_RESOURCES_URL}/game/${Picture});\' title=\'Scratch me!\' onclick=\'Scratch(${IC})\'></td>`);
 	count = count + 1
 	if (count == 5) {
 		document.write('</tr>');
