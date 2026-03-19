@@ -7,17 +7,14 @@ clearInterval(t_SpellsT);
 t_SpellsT = 0;
 t_SpellsT = setInterval(ASMC, refreshspeed * 1000)
 
-function DrawSpells(DivIn) {
+function DrawSpells() {
 	DivIn = 'Spells';
 	var strout = '';
 	var y = 0;
 	for (y = 0; y < Spells.length; y++) {
 		strout += '<div id="SM' + y + '" title="' + Spells[y][1] + '" onmouseover="window.top.InfoTip(\'' + Spells[y][4] + '\', \'<b>' + Spells[y][1] + '</b><br>\' + (' + y + ' == 1 ? (' + Spells[y][3] + ' <= 0 ? \'You are <b>not</b> in jail\' : \'You are in jail, sentance remaining:<br>\') : \'\') + (' + Spells[y][3] + ' >= 0 ? getdhm2(' + Spells[y][3] + ',0) : \'\') + \'\');" onclick="' + (Spells[y][6] != '' ? 'window.top.Interface.location.replace(\'' + Spells[y][6] + '\');' : (Spells[y][5] != '' ? 'Cl(' + Spells[y][5] + ');' : '')) + '" style=\'visibility: ' + Spells[y][8] + (Spells[y][8] == 'hidden' ? ';display: none' : '') + '; cursor: pointer; width: ' + (Spells[y][5].indexOf('-') != -1 && y > 1 ? '30px' : '30px') + '; height: 32px; font-size: 7pt; color: ' + (Spells[y][5] == '' ? '#ff6666' : 'gold') + '; vertical-Align: top; float: left;\' align=center><img src="' + Spells[y][4] + '" width=16 height=16><br>' + (Spells[y][3] < 0 ? '' : getdhm2(Spells[y][3], 1)) + '</div>';
 	}
-	if (getObj(DivIn) == null) {
-	} else {
-		getObj(DivIn).innerHTML = strout;
-	}
+	getObj(DivIn).innerHTML = strout;
 }
 
 function ASM(TimerType, URL, Named, PictureID, Mins, URL2) {

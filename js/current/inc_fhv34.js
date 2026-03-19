@@ -8,21 +8,7 @@ var PFING = 0;
 var UseAdvanced = 0;
 var UseSounds = 0;
 
-var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
-
-var FHIP = `${CDN_RESOURCES_URL}/game/`;
-var FHIPI = `${FHIP}i/`;
-var FHIPO = `${FHIP}icons/`;
-var FHIPM = `${FHIP}m/`;
-var FHIPB = `${FHIP}b/`;
-var FHIPR = `${FHIP}r/`;
-var FHIPH = `${FHIP}h/`;
-var FHIPIM = `${FHIP}images/`;
-var FHIPV = `${FHIP}v/`;
-var FHIPL = `${FHIP}l/`;
-var FHIPS = `${FHIP}s/`;
-var FHIPA = `${FHIP}a/`;
-var FHIPPR = `${FHIP}p/`;
+var CDN_RESOURCES_URL_inc_fhv34 = new URL(document.currentScript.src).origin;
 
 var AllowMove = 0;
 
@@ -100,8 +86,6 @@ function RDS2() {
 	clearTimeout(AllowMove);
 	window.top.DoingStuff = 0;
 }
-
-
 
 function mMenu(ColorM, CaptionM, PictureM, ObjectM, MapXm, MapYm, Levelm, SafeZonem) {
 	this.Color = ColorM;
@@ -280,11 +264,11 @@ function MM2(i, s) {
 
 function XYBox(xc, yc) {
 	if (window.top.Jailed != 0) {
-		window.top.getObj("Map3").innerHTML = `<table width=420 cellpadding=0 cellspacing=0 class='weakercell'><tr><td align=left>${ASCII("Jailed", 1)}</td><td style='background-image: URL(${CDN_RESOURCES_URL}/game/icons/bar_tab3.png); width: 80px; text-align: center;font-weight: bold; cursor: pointer;' onclick='RefreshWindow();' title='Refresh Game Window'>${ASCII("Refresh", 2)}</td><td id=actionlist style='background-image: URL(${CDN_RESOURCES_URL}/game/icons/bar_tab3.png); width: 120px; text-align: center;font-weight: bold; cursor: pointer;' title='World Action Choices' onclick='ActionList();'>${ASCII("World Actions", 6)}</td><td id=OptionCog style='background-image: URL(${CDN_RESOURCES_URL}/game/icons/bar_tab3.png); width: 20px; text-align: center;font-weight: bold; cursor: pointer;' onclick='OptionCogMenu();' title='Option Menu'><img src='${CDN_RESOURCES_URL}/game/icons/cog.png'></td></tr></table></form>`
+		window.top.getObj("Map3").innerHTML = `<table width=420 cellpadding=0 cellspacing=0 class='weakercell'><tr><td align=left>${ASCII("Jailed", 1)}</td><td style='background-image: URL(${CDN_RESOURCES_URL_inc_fhv34}/game/icons/bar_tab3.png); width: 80px; text-align: center;font-weight: bold; cursor: pointer;' onclick='RefreshWindow();' title='Refresh Game Window'>${ASCII("Refresh", 2)}</td><td id=actionlist style='background-image: URL(${CDN_RESOURCES_URL_inc_fhv34}/game/icons/bar_tab3.png); width: 120px; text-align: center;font-weight: bold; cursor: pointer;' title='World Action Choices' onclick='ActionList();'>${ASCII("World Actions", 6)}</td><td id=OptionCog style='background-image: URL(${CDN_RESOURCES_URL_inc_fhv34}/game/icons/bar_tab3.png); width: 20px; text-align: center;font-weight: bold; cursor: pointer;' onclick='OptionCogMenu();' title='Option Menu'><img src='${CDN_RESOURCES_URL_inc_fhv34}/game/icons/cog.png'></td></tr></table></form>`
 	} else if (xc == 0 && yc == 0) {
-		window.top.getObj("Map3").innerHTML = `<table width=420 cellpadding=0 cellspacing=0 class='weakercell'><tr><td align=left>${Adir("window.top.Interface.location.replace(\"fhrest.asp\");", "Rest to regenerate health/mana/stamina", "heart", "")}</td><td align=right>${Adir("window.top.Ninja.location.replace(\"fh.asp?Redraw=1&BuildingID=-1&R=41\");", "Exit the current building", "world_go", "")}</td><td style='background-image: URL(${CDN_RESOURCES_URL}/game/icons/bar_tab3.png); width: 80px; text-align: center;font-weight: bold; cursor: pointer;' onclick='RefreshWindow();' title='Refresh Game Window'>${ASCII("Refresh", 2)}</td><td id=actionlist style='background-image: URL(${CDN_RESOURCES_URL}/game/icons/bar_tab3.png); width: 120px; text-align: center;font-weight: bold; cursor: pointer;' title='World Action Choices' onclick='ActionList();'>${ASCII("World Actions", 6)}</td><td id=OptionCog style='background-image: URL(${CDN_RESOURCES_URL}/game/icons/bar_tab3.png); width: 20px; text-align: center;font-weight: bold; cursor: pointer;' onclick='OptionCogMenu();' title='Option Menu'><img src='${CDN_RESOURCES_URL}/game/icons/cog.png'></td></tr></table></form>`
+		window.top.getObj("Map3").innerHTML = `<table width=420 cellpadding=0 cellspacing=0 class='weakercell'><tr><td align=left>${Adir("window.top.Interface.location.replace(\"fhrest.asp\");", "Rest to regenerate health/mana/stamina", "heart", "")}</td><td align=right>${Adir("window.top.Ninja.location.replace(\"fh.asp?Redraw=1&BuildingID=-1&R=41\");", "Exit the current building", "world_go", "")}</td><td style='background-image: URL(${CDN_RESOURCES_URL_inc_fhv34}/game/icons/bar_tab3.png); width: 80px; text-align: center;font-weight: bold; cursor: pointer;' onclick='RefreshWindow();' title='Refresh Game Window'>${ASCII("Refresh", 2)}</td><td id=actionlist style='background-image: URL(${CDN_RESOURCES_URL_inc_fhv34}/game/icons/bar_tab3.png); width: 120px; text-align: center;font-weight: bold; cursor: pointer;' title='World Action Choices' onclick='ActionList();'>${ASCII("World Actions", 6)}</td><td id=OptionCog style='background-image: URL(${CDN_RESOURCES_URL_inc_fhv34}/game/icons/bar_tab3.png); width: 20px; text-align: center;font-weight: bold; cursor: pointer;' onclick='OptionCogMenu();' title='Option Menu'><img src='${CDN_RESOURCES_URL_inc_fhv34}/game/icons/cog.png'></td></tr></table></form>`
 	} else {
-		window.top.getObj("Map3").innerHTML = `<form name=Goto id=Goto ACTION='fh.asp?Redraw=1' METHOD='post' target='Ninja' style='margin: 0px;'><table width=420 cellpadding=0 cellspacing=0 class='weakercell'><tr><td>x:</td><td><input class='input' name=x id=x value='${xc}'  autocomplete='off'  length=2 size=2 onkeypress='return fxkp(event);' maxlength=3 style='width:25px'>y:</td><td><input class='input' name=y id=y value='${yc}' onkeypress='return fxkp(event);' length=2 size=2 maxlength=3 autocomplete='off'  style='width:25px'></td><td class='bottombuttons'>${Adirf("Goto x/y coordinates", "house_go", "")}${Adir("window.top.Interface.location.replace(\"map.asp\");", "Map", "world", "")}${Adir("window.top.Interface.location.replace(\"fhrest.asp\");", "Rest to regenerate health/mana/stamina", "heart", "")}${Adir("PF(0, 121)", "Explore the tile", "Explore", "Explore")}${Adir("PF(0, 241)", "Appraise this tile", "info", "i")}</td><td style='background-image: URL(${CDN_RESOURCES_URL}/game/icons/bar_tab3.png); width: 80px; text-align: center;font-weight: bold; cursor: pointer;' title='Refresh Game Window' onclick='RefreshWindow();'>${ASCII("Refresh", 2)}</td><td id=actionlist title='World Action Choices' style='background-image: URL(${CDN_RESOURCES_URL}/game/icons/bar_tab3.png); width: 120px; text-align: center;font-weight: bold; cursor: pointer;' onclick='ActionList();'>${ASCII("World Actions", 6)}</td><td id=OptionCog style='background-image: URL(${CDN_RESOURCES_URL}/game/icons/bar_tab3.png); width: 20px; text-align: center;font-weight: bold; cursor: pointer;' onclick='OptionCogMenu();' title='Option Menu'><img src='${CDN_RESOURCES_URL}/game/icons/cog.png'></td></tr></table></form>`
+		window.top.getObj("Map3").innerHTML = `<form name=Goto id=Goto ACTION='fh.asp?Redraw=1' METHOD='post' target='Ninja' style='margin: 0px;'><table width=420 cellpadding=0 cellspacing=0 class='weakercell'><tr><td>x:</td><td><input class='input' name=x id=x value='${xc}'  autocomplete='off'  length=2 size=2 onkeypress='return fxkp(event);' maxlength=3 style='width:25px'>y:</td><td><input class='input' name=y id=y value='${yc}' onkeypress='return fxkp(event);' length=2 size=2 maxlength=3 autocomplete='off'  style='width:25px'></td><td class='bottombuttons'>${Adirf("Goto x/y coordinates", "house_go", "")}${Adir("window.top.Interface.location.replace(\"map.asp\");", "Map", "world", "")}${Adir("window.top.Interface.location.replace(\"fhrest.asp\");", "Rest to regenerate health/mana/stamina", "heart", "")}${Adir("PF(0, 121)", "Explore the tile", "Explore", "Explore")}${Adir("PF(0, 241)", "Appraise this tile", "info", "i")}</td><td style='background-image: URL(${CDN_RESOURCES_URL_inc_fhv34}/game/icons/bar_tab3.png); width: 80px; text-align: center;font-weight: bold; cursor: pointer;' title='Refresh Game Window' onclick='RefreshWindow();'>${ASCII("Refresh", 2)}</td><td id=actionlist title='World Action Choices' style='background-image: URL(${CDN_RESOURCES_URL_inc_fhv34}/game/icons/bar_tab3.png); width: 120px; text-align: center;font-weight: bold; cursor: pointer;' onclick='ActionList();'>${ASCII("World Actions", 6)}</td><td id=OptionCog style='background-image: URL(${CDN_RESOURCES_URL_inc_fhv34}/game/icons/bar_tab3.png); width: 20px; text-align: center;font-weight: bold; cursor: pointer;' onclick='OptionCogMenu();' title='Option Menu'><img src='${CDN_RESOURCES_URL_inc_fhv34}/game/icons/cog.png'></td></tr></table></form>`
 	}
 }
 
@@ -321,7 +305,6 @@ function S2c(cstatus) {
 function MBg(s, x, y, p, v, z) {
 	var xm = mx //+ mainx;
 	var ym = my //+ mainy;
-	var MoveOK = 1;
 	var Dungy = 0;
 	if (Bz[xm] != null && Bz[xm][ym] != null && Bz[xm][ym][mz] != null) {
 		Dungy = window.top.Bz[xm][ym][mz].Dungeon;

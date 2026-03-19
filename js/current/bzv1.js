@@ -16,8 +16,9 @@ var AA = AA;
 
 var Processing = 0;
 var Bz = new Array(50);
-var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
-var FHIP = `${CDN_RESOURCES_URL}/game/`;
+
+const CDN_RESOURCES_URL_bzv1 = new URL(document.currentScript.src).origin;
+var FHIP = `${CDN_RESOURCES_URL_bzv1}/game/`;
 
 var FHIPI = FHIP + 'i/';
 var FHIPH = FHIP + 'h/';
@@ -27,11 +28,8 @@ var FHIPM = FHIP + 'm/';
 var FHIPB = FHIP + 'b/';
 var FHIPR = FHIP + 'r/';
 var FHIPS = FHIP + 's/';
-//var FHIPP = FHIPP;
 
-var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
-
-document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
+document.write(`<script src="${CDN_RESOURCES_URL_bzv1}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function bMenu(BID, NameB, ColorB, ImgB1, ImgB2, ObjectM, GoB, HiB, OB, dun, bowner, nc, nm, ls) {
 	this.Color = ColorB;

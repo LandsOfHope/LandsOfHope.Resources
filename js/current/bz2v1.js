@@ -1,4 +1,4 @@
-var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+const CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function Adix(Itty, PictureID, Itty2, Automation) {

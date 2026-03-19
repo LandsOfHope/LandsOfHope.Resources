@@ -189,9 +189,6 @@ function BBBS(number, PictureID, desc) {
 	if (ResCount == 0) {
 		strTest = '</tr>'
 	}
-	//' + desc + '
-
-	// p="' + PictureID + '" t="' + desc + '" filter: gray(); 
 	strTest += '<td id=\'G" + GC + "\' class="btn" ' + (number != Type2 ? 'onmouseover="rsmy(' + GC + ');this.className = \'btn btnhov\';" onmouseout="this.className = \'btn\'" style="width:21" onclick="GoP(' + number + ')"' : ' disabled style="width:21; background-Color: ' + BGCOLOR_S + '; border: 1px inset ' + BORDER1_S + '; font-weight: bold"') + '><img src=\'' + IPath + PictureID + '\' style=\'height: 20; width: 20\'></td>'
 	if (Groups[GC] == null) {
 		Groups[GC] = new Array();
