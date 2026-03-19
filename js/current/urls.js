@@ -1,0 +1,12 @@
+const CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+const FHIP = `${CDN_RESOURCES_URL}/game/`;
+const FHIPI = `${FHIP}i/`;
+const FHIPM = `${FHIP}m/`;
+const FHIPR = `${FHIP}r/`;
+const FHIPB = `${FHIP}b/`;
+const FHIPO = `${FHIP}o/`;
+const FHIPH = `${FHIP}h/`;
+const FHIPS = `${FHIP}s/`;
+const FHIPV = `${FHIP}v/`;
+const FHIPIC = `${FHIP}icons/`;
+const FHIPIMG = `${CDN_RESOURCES_URL}/images/`
