@@ -63,7 +63,7 @@ function DC(v) {
 		getObj('Stuff3').innerHTML = '<table class="weakcell" cellpadding=1 cellspacing=0><tr><td><input type=hidden name=CharsAt id=CharsAt value=\'' + Infos[v].z + '\'><input type=hidden id=Price name=Price value=\'' + wp + '\'><input type=hidden id=Fund name=Fund value=\'0\'><tr><td colspan=2>Change Price: </td></tr><tr><td colspan=2>' + FormMoney('Price', wp) + '</td></tr><tr><td colspan=2>Add to Fund: </td></tr><tr><td colspan=2>' + FormMoney('Fund', 0) + '</td></tr><tr><td colspan=2>Disable Completion Notices:<input type=checkbox value=1 id=Non name=Non ' + (Infos[v].won != 0 ? 'checked' : '') + '></td></tr><tr><td colspan=2>Short Note (255 characters):</td></tr><tr><td colspan=2><input name=WantDetails id=WantDetails size=50 maxlength=255 value=\'' + Infos[v].wd + '\'></td></tr><tr><td>Quantity:</td><td><input id=WantQuantity name=WantQuantity value=\'' + Infos[v].wq + '\' size=3 maxlength=3></td></tr></table>';
 	}
 	getObj('Pic').innerHTML = "<img src='" + IPath + Infos[v].ip + (Infos[v].p == '' ? 'na.gif' : Infos[v].p) + "' width=40 height=40>";
-	getObj('Buttons').innerHTML = '' + Adf2('', 'Save', 'Save') + Adr('confirm(\'Are you sure you wish to delete this Job?\', ' + Infos[v].z + ');', 'Delete this Job', 'Delete') + Adr('SendLink2(\'' + (Infos[v].wi2 > 0 ? 'L' : 'J') + '\',' + Infos[v].z + ',\'' + Infos[v].ip + '\',\'' + Infos[v].p + '\',1,\'' + Infos[v].i + ' Job\',\'#CC3399\',0);', 'Link', 'Link');
+	getObj('Buttons').innerHTML = '' + Adf2('', 'Save', 'Save') + Adr('confirm(\'Are you sure you wish to delete this Job?\', ' + Infos[v].z + ');', 'Delete this Job', 'Delete');
 }
 
 

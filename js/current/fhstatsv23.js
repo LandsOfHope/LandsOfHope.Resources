@@ -321,10 +321,6 @@ function TabName(i) {
 	return (i == 1 ? "Info" : (i == 2 ? "Social" : (i == 3 ? "Trophies" : (i == 4 ? "Other" : (i == 5 ? "Pets" : (i == 6 ? "Factions" : (i == 7 ? "Skills" : (i == 9 ? "History" : (i == 11 ? "Control" : (i == 12 ? "Status" : (i == 10 ? "Pirate" : "Equipment")))))))))))
 }
 
-function SendLinkC(lvalue, lpp, ln, lc) {
-	window.top.sendRequest('fhlink.asp?Type=C&CharsAt=' + lvalue + '&Name=' + ln + '&c=' + encodeURIComponent(lc) + '&l1=r&l2=' + lpp);
-}
-
 function AvT(tid, tin, tip, ot, ts) {
 	var Color = LITE;
 	document.write(`<tr style="color:${Color}"><td width="40"><img src="${CDN_RESOURCES_URL}/game/i/${tip}"></td><td width="260" valign=top><b>${tin}</b><br><font id=tmagenta>${ot}</font></td><td>Rank ${ts}</td></tr>`);

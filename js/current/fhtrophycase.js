@@ -44,7 +44,3 @@ function PC(v) {
 function DC(v) {
 	window.top.loadwindow2('imi.asp?Test=' + Infos[v].tid + '&Bonus=0&Material=', 300, 300, 'iwindow', Infos[v].tin);
 }
-
-function SendLinkTC(lvalue, lpp, ln, lc) {
-	window.top.sendRequest('fhlink.asp?Type=Y&CharsAt=' + lvalue + '&Name=' + ln + '&c=' + encodeURIComponent(lc) + '&l1=r&l2=' + lpp);
-}

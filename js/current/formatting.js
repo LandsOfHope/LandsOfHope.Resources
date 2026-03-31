@@ -6,6 +6,8 @@ var ButtonDirty = 0;
 var FC = new Array(20);
 
 const CDN_RESOURCES_URL_formatting = new URL(document.currentScript.src).origin;
+const FHIP_formatting = `${CDN_RESOURCES_URL_formatting}/game/`;
+const FHIPIC_formatting = `${FHIP_formatting}icons/`;
 
 if (window.top.Tip == null) {
 	var ToolTipOn = 0;
@@ -127,20 +129,20 @@ function Adin(Actions, Titles, PictureID, Names) {
 
 
 function Adi(Actions, Titles, PictureID, Names) {
-	document.write("<" + strClicky0 + " type=button id=FC" + FormatCount + " onclick=\"ButtonC(this, " + FormatCount + ");" + Actions + ";\" title=\"" + Titles + "\"><img src=\"" + window.top.FHIPO + PictureID.toLowerCase() + ".png\" border=0></button>");
+	document.write("<" + strClicky0 + " type=button id=FC" + FormatCount + " onclick=\"ButtonC(this, " + FormatCount + ");" + Actions + ";\" title=\"" + Titles + "\"><img src=\"" + FHIPIC_formatting + PictureID.toLowerCase() + ".png\" border=0></button>");
 	FormatCount = FormatCount + 1
 }
 
 function Adir(Actions, Titles, PictureID, Names) {
 	var returnx = '';
-	returnx = '<' + strClicky0 + ' type=button id=FC' + FormatCount + ' onclick=\'ButtonC(this, ' + FormatCount + ');' + Actions + ';\' title=\'' + Titles + '\'><img src=\'' + window.top.FHIPO + PictureID.toLowerCase() + '.png\'></button>';
+	returnx = '<' + strClicky0 + ' type=button id=FC' + FormatCount + ' onclick=\'ButtonC(this, ' + FormatCount + ');' + Actions + ';\' title=\'' + Titles + '\'><img src=\'' + FHIPIC_formatting + PictureID.toLowerCase() + '.png\'></button>';
 	FormatCount = FormatCount + 1
 	return returnx;
 }
 
 function Adirf(Titles, PictureID, Names) {
 	var returnx = '';
-	returnx = '<' + strClicky0 + ' type=submit id=FC' + FormatCount + ' title=\'' + Titles + '\'><img src=\'' + window.top.FHIPO + PictureID.toLowerCase() + '.png\'></button>';
+	returnx = '<' + strClicky0 + ' type=submit id=FC' + FormatCount + ' title=\'' + Titles + '\'><img src=\'' + FHIPIC_formatting + PictureID.toLowerCase() + '.png\'></button>';
 	FormatCount = FormatCount + 1
 	return returnx;
 }
@@ -151,7 +153,7 @@ function ActionList() {
 	for (y = 0; y < window.top.tmpMenuC; y++) {
 		var m = window.top.tmpMenu[y];
 		if (m != null) {
-			window.top.AddSubMenu(-3, m.Titles, '', '', m.Actions, window.top.FHIPO + m.PictureID.toLowerCase() + ".png");
+			window.top.AddSubMenu(-3, m.Titles, '', '', m.Actions, FHIPIC_formatting + m.PictureID.toLowerCase() + ".png");
 		}
 	}
 	//AddSubMenu(-3, Names, '', '', Actions);
@@ -339,7 +341,7 @@ function FormMoney(fin, mmin) {
 	var s = Math.floor(harhar / 100) - Math.floor(((g * 100) + (m * 10000)))
 	var b = Math.floor(harhar) - Math.floor(((s * 100) + (g * 10000) + (m * 1000000)))
 
-	return "<img src=\"" + window.top.FHIPO + "gkp.gif\"><input title=\"pp\" name=cpp" + fin + " id=cpp" + fin + " value=" + m + " size=3 maxlength=3 style=\"width: 30px;\" onkeypress=\"return fxkp(event);\" onpaste=\"event.returnValue = false;\" onkeyup=\"CalcM('" + fin + "', this)\"><img src=\"" + window.top.FHIPO + "gp.gif\"><input title=\"gp\" name=cg" + fin + " id=cg" + fin + " value=" + g + " size=2 maxlength=2 style=\"width: 30px;\" onkeypress=\"return fxkp(event);\" onpaste=\"event.returnValue = false;\" onkeyup=\"CalcM('" + fin + "', this)\"><img src=\"" + window.top.FHIPO + "sp.gif\"><input title=\"sp\" name=cs" + fin + " id=cs" + fin + " value=" + s + " size=2 maxlength=2 style=\"width: 30px;\" onkeypress=\"return fxkp(event);\" onpaste=\"event.returnValue = false;\" onkeyup=\"CalcM('" + fin + "', this)\"> <img src=\"" + window.top.FHIPO + "bp.gif\"><input title=\"bp\" name=cb" + fin + " id=cb" + fin + " value=" + b + " size=2 maxlength=2 style=\"width: 30px;\" onkeypress=\"return fxkp(event);\" onpaste=\"event.returnValue = false;\" onkeyup=\"CalcM('" + fin + "', this)\">";
+	return "<img src=\"" + FHIPIC_formatting + "gkp.gif\"><input title=\"pp\" name=cpp" + fin + " id=cpp" + fin + " value=" + m + " size=3 maxlength=3 style=\"width: 30px;\" onkeypress=\"return fxkp(event);\" onpaste=\"event.returnValue = false;\" onkeyup=\"CalcM('" + fin + "', this)\"><img src=\"" + FHIPIC_formatting + "gp.gif\"><input title=\"gp\" name=cg" + fin + " id=cg" + fin + " value=" + g + " size=2 maxlength=2 style=\"width: 30px;\" onkeypress=\"return fxkp(event);\" onpaste=\"event.returnValue = false;\" onkeyup=\"CalcM('" + fin + "', this)\"><img src=\"" + FHIPIC_formatting + "sp.gif\"><input title=\"sp\" name=cs" + fin + " id=cs" + fin + " value=" + s + " size=2 maxlength=2 style=\"width: 30px;\" onkeypress=\"return fxkp(event);\" onpaste=\"event.returnValue = false;\" onkeyup=\"CalcM('" + fin + "', this)\"> <img src=\"" + FHIPIC_formatting + "bp.gif\"><input title=\"bp\" name=cb" + fin + " id=cb" + fin + " value=" + b + " size=2 maxlength=2 style=\"width: 30px;\" onkeypress=\"return fxkp(event);\" onpaste=\"event.returnValue = false;\" onkeyup=\"CalcM('" + fin + "', this)\">";
 }
 
 function PFormMoney(fin, mmin) {
@@ -380,7 +382,7 @@ function GetAColor(alin) {
 	return (alin == 0 ? 'yellow' : (alin == 1 ? 'white' : (alin == 2 ? 'gold' : 'red')))
 }
 function GetAImg(alin) {
-	return (alin == 0 ? '' : window.top.FHIP + 'h/' + (alin == 1 ? '1' : (alin == 2 ? '2' : '3')) + '.gif')
+	return (alin == 0 ? '' : FHIP_formatting + 'h/' + (alin == 1 ? '1' : (alin == 2 ? '2' : '3')) + '.gif')
 }
 
 function GetAName(alin) {
@@ -423,13 +425,9 @@ function GetFColor(alin) {
 	return (alin == 167 ? 'blue' : (alin == 168 ? 'green' : (alin == 169 ? 'white' : (alin == 170 ? 'red' : (alin == 171 ? '#CC3333' : (alin == 172 ? '#3366FF' : (alin == 173 ? 'orange' : (alin == 174 ? 'purple' : 'white'))))))));
 }
 function GetFImg(alin) {
-	return (alin == 0 ? '' : window.top.FHIP + 'h/' + alin + '.gif');
+	return (alin == 0 ? '' : FHIP_formatting + 'h/' + alin + '.gif');
 }
 
 function GetFName(alin) {
 	return (alin == 167 ? 'Myzan Defenders' : (alin == 168 ? 'Dark Hollow Clan' : (alin == 169 ? 'Council of Truth' : (alin == 170 ? 'Tenth Legion' : (alin == 171 ? 'Pirate League' : (alin == 172 ? 'Myzan Navy' : (alin == 173 ? 'Traders Alliance' : (alin == 174 ? 'Drakgard' : 'No Faction'))))))));
-}
-
-function SendLink2(ltype, lvalue, lp, lpp, ls, ln, lc, la) {
-	window.top.sendRequest('fhlink2.asp?Type=' + ltype + '&CharsAt=' + lvalue + '&Name=' + ln + (ls != 0 ? '&s=' + ls : '') + (la != null ? '&a=' + la : '') + '&c=' + encodeURIComponent(lc) + '&l1=' + lp + '&l2=' + lpp);
 }

@@ -67,7 +67,7 @@ function Spell(Color, v, i, mc, d, h, t, b, Named, n, Piccy, PictureID, sv) {
 function DC(v) {
 	getObj('Stuff2').innerHTML = '<b>' + Spells[v].Named + '</b><br>' + IDD + ': ' + Spells[v].sv + '<br>Approximate Level: ' + Math.round(Spells[v].mc / 5) + '<br>Stamina Required: ' + Spells[v].mc + '<br>Stamina Used: ' + Math.round(Spells[v].mc / 2) + (Spells[v].d > 1 ? '<br>Damages for ' + Spells[v].d : '') + (Spells[v].h != 0 || Spells[v].d != 0 || Spells[v].b == 0 ? '<br><i>Instant Effect</i>' : '<br>Duration: ' + Spells[v].b);
 	getObj('Pic').innerHTML = "<img src='" + (Spells[v].p2 == '' && Spells[v].p != 'na.gif' ? IPath + Spells[v].p + '' : IPath2 + (Spells[v].p2 == '' ? 'na.gif' : Spells[v].p2)) + "'>";
-	getObj('Buttons').innerHTML = Adr('window.parent.loadwindow2(\'Sz.asp?test=' + Spells[v].v + '\',300, 250, \'iwindow\',\'' + Spells[v].Named + '\');', 'Info', 'Info') + Adr('SendLink2(\'S\',' + Spells[v].v + ',\'i\',\'' + Spells[v].p + '\',0,\'' + Spells[v].Named + '\',\'' + Spells[v].c + '\');', 'Link', 'Link');
+	getObj('Buttons').innerHTML = Adr('window.parent.loadwindow2(\'Sz.asp?test=' + Spells[v].v + '\',300, 250, \'iwindow\',\'' + Spells[v].Named + '\');', 'Info', 'Info');
 }
 
 function RC(stuff) {

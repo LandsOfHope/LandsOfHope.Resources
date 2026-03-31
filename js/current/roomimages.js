@@ -1,12 +1,11 @@
 var MyType = '';
 var Images = new Array();
-var IPath = '' + window.top.FHIPM;
 var ImageType = new Array();
 var ImageCount = 0;
 var ImageTypeCount = 0;
-var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
+const CDN_RESOURCES_URL_roomimages = new URL(document.currentScript.src).origin;
+const FHIPM_roomimages = `${CDN_RESOURCES_URL_roomimages}/game/m/`;
 
 function AIM(Iii) {
 	Images[ImageCount] = Iii;
@@ -49,13 +48,13 @@ function DrawImages(BuildingID, ImageTypex) {
 	strBG = " class='c" + window.parent.Bz[window.parent.lastx][window.parent.lasty].Color + "'";
 	document.write("<table height=265 width=\"100%\" cellspacing=0 cellpadding=1 " + strBG + ">");
 	v = 1
-	document.write("<tr><td><img onmousedown='return ChangeImage(event, -1)' src='" + IPath + "na.gif' title='No Image' width=20 height=20></td>");
+	document.write("<tr><td><img onmousedown='return ChangeImage(event, -1)' src='" + FHIPM_roomimages + "na.gif' title='No Image' width=20 height=20></td>");
 	var y = 0;
 	for (y = 0; y < ImageCount; y++) {
 		if (v == 0) {
 			document.write("<tr>");
 		}
-		document.write("<td><img onmousedown='return ChangeImage(event, " + y + ")' src='" + IPath + Images[y] + "' width=20 height=20 title='" + Images[y] + "'></td>");
+		document.write("<td><img onmousedown='return ChangeImage(event, " + y + ")' src='" + FHIPM_roomimages + Images[y] + "' width=20 height=20 title='" + Images[y] + "'></td>");
 		if (v == 9) {
 			document.write("<td width='100%'></td></tr>");
 			v = 0;
@@ -95,11 +94,11 @@ function ChangeImage(e, v) {
 	if (buttonx == 1) {
 		getObj("RIMG").value = strImg
 		window.parent.SetPicture(window.parent.lastx, window.parent.lasty, strImg);
-		getObj("PIMG").src = "" + IPath + strImg
+		getObj("PIMG").src = "" + FHIPM_roomimages + strImg
 	} else {
 		getObj("RIMG2").value = strImg
 		window.parent.SetPictureM(window.parent.lastx, window.parent.lasty, strImg);
-		getObj("PIMG2").src = "" + IPath + strImg
+		getObj("PIMG2").src = "" + FHIPM_roomimages + strImg
 	}
 	return false;
 }

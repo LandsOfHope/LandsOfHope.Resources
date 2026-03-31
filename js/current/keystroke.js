@@ -7,7 +7,6 @@ if (skipmacro == null) {
 	var skipmacro= 0;
 }
 
-
 if (window.Interface == null) {
 	if (window.parent.Interface == null) {
 		//'This is a window within the Interface window and should not apply

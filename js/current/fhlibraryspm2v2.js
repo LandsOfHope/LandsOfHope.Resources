@@ -47,7 +47,7 @@ function DC(v) {
 		getObj('Stuff2').innerHTML = '<b>' + Infos[v].sn + '</b><br>' + SN + ': ' + Infos[v].sv + '<br>Approximate Level: ' + Math.round(Infos[v].sv / 5) + '<br>Mana Cost: ' + Infos[v].mc + (Infos[v].d > 0 || Infos[v].h > 0 ? '<br>Intelligence: ' + Infos[v].mc + '' : '') + (Infos[v].dot != 0 ? '<br>Effect lasts: ' + Infos[v].b + ' rounds' : '') + (Infos[v].n != 0 && Infos[v].v != 1145 ? '<br>Other Target Level: ' + Math.round(Infos[v].mc / 5) : '') + (Infos[v].h > 0 ? '<br>Heals for ' + Infos[v].h : '') + (Infos[v].d > 1 && Infos[v].c != 'magenta' ? '<br>Damages for ' + Infos[v].d : '') + (Infos[v].h != 0 || Infos[v].d != 0 || Infos[v].b == 0 ? '<br><i>Instant Effect</i>' : '<br>Duration: ' + Infos[v].b) + (Infos[v].d > 0 || Infos[v].h > 0 ? '<br><i>Combat Spell</i>' : '') + (Infos[v].i != '' ? '<br>Item : ' + Infos[v].i : '');
 	}
 	getObj('Pic').innerHTML = "<img src='" + IPath + Infos[v].p + "'>";
-	getObj('Buttons').innerHTML = Adr('window.top.loadwindow2(\'Mz.asp?Test=' + Infos[v].v + '\',300,300,\'iwindow\',\'' + Infos[v].sn + '\');', 'View spell information', 'Info') + Adr('SendLink2(\'M\',' + Infos[v].v + ',\'s\',\'' + Infos[v].p + '\',0,\'' + Infos[v].sn + '\',\'' + Infos[v].c + '\');', 'Link', 'Link');
+	getObj('Buttons').innerHTML = Adr('window.top.loadwindow2(\'Mz.asp?Test=' + Infos[v].v + '\',300,300,\'iwindow\',\'' + Infos[v].sn + '\');', 'View spell information', 'Info');
 }
 
 function RC(v) {

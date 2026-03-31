@@ -1,8 +1,5 @@
 var Welcome2 = 0;
-var cn = cn;
-var yn = yn;
 var Wms = new Array()
-var CharsAt = CharsAt;
 Wms[0] = '%name% Hello young one, so you are awake at last i see. Welcome to the estate of Baron Drako you are its newest servant. I am sure you have a lot of questions as you arrived late last night in somewhat of a hurry by all accounts.';
 Wms[1] = '%you2% Who are you ?';
 Wms[2] = '%name% i am a servant of Baron Drako of course.';
@@ -17,9 +14,6 @@ Wms[10] = '%name% You are now the property of Baron Drako, this means you do not
 Wms[11] = '%you2% I get the picture, i am not sure how i got here but know i will find a way to free myself of this slavery!';
 Wms[12] = '%name% Good luck with that, i think you will find that Drako is not as mean as some masters and if you serve him well he will reward you.<br><br>Now that you are up to speed please equip the tools and items your master has seen to give you.<br><br>I have a task for you to do as well!';
 Wms[13] = '%you2% That would be great!';
-var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
-
-document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
 
 function ShowStoryx() {
 	var strS = '';

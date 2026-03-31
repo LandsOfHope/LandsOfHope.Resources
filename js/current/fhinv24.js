@@ -51,8 +51,8 @@ function PromptReturn(returnVal, postback) {
 				window.top.Interface.location.replace('fhinv.asp?P=' + PageNo + '&CharsAt=' + CharsAt + '&F=' + Filter + '&ItemTypeID=' + ItemTypeID + '&ItemID=7&InventoryItemID=' + II.InventoryItemID);
 			} else if (postback == 2) {
 				window.top.Interface.location.replace('fhinv.asp?P=' + PageNo + '&F=' + Filter + '&CharsAt=' + CharsAt + '&ItemTypeID=' + ItemTypeID + '&ItemID=2&InventoryItemID=' + II.InventoryItemID);
-			} else if (postback == 3) {
-				window.top.sendRequest('fhlink' + (II.Color == '#7CFC00' ? 's' : (II.Color == '#CCCCFF' ? 'tc' : '')) + '.asp?Type=I&CharsAt=' + II.InventoryItemID + '&Name=' + encodeURIComponent(II.ItemName2) + '&c=' + encodeURIComponent(II.Color) + '&l1=i&l2=' + (II.PictureID == '' ? 'na.gif' : II.PictureID));
+			// } else if (postback == 3) {
+			// 	window.top.sendRequest('fhlink' + (II.Color == '#7CFC00' ? 's' : (II.Color == '#CCCCFF' ? 'tc' : '')) + '.asp?Type=I&CharsAt=' + II.InventoryItemID + '&Name=' + encodeURIComponent(II.ItemName2) + '&c=' + encodeURIComponent(II.Color) + '&l1=i&l2=' + (II.PictureID == '' ? 'na.gif' : II.PictureID));
 			} else if (postback == 4) {
 				window.top.Interface.location.replace('fhinv.asp?ItemTypeID=' + ItemTypeID + '&F=' + Filter + '&CharsAt=' + CharsAt + '&P=' + PageNo + '&ItemID=3&ItemName=' + returnVal + '&InventoryItemID=' + II.InventoryItemID);
 			} else {

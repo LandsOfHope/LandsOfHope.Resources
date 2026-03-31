@@ -1,12 +1,11 @@
 var MyType = '';
 var Images = new Array();
-var IPath = '' + window.top.FHIP + 'p/';
 var ImageType = new Array();
 var ImageCount = 0;
 var ImageTypeCount = 0;
-var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
 
-document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
+const CDN_RESOURCES_URL_previewimages = new URL(document.currentScript.src).origin;
+const IPath = `${CDN_RESOURCES_URL_previewimages}/game/p/`;
 
 function AIM(Iii) {
 	Images[ImageCount] = Iii;

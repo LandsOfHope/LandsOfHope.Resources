@@ -56,10 +56,3 @@ function RC(stuff) {
 	stuff.style.cursor = '';
 	stuff.style.backgroundColor = '';
 }
-
-function sendLink(v, t) {
-	//fhlink.asp?Type=X&CharsAt=" & C2 & "&l1=r&l2=na.gif&name=" & Topic & "
-	var r = window.top.sendRequest('fhlink.asp?Type=X&CharsAt=' + v + '&Name=' + t + '&c=pink&l1=i&l2=na.gif');
-	window.top.ChatSend(window.top.xmlobj.responseText);
-
-}

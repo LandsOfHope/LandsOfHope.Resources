@@ -1,4 +1,3 @@
-var IPath = window.top.FHIPR;
 var oldprof = 0;
 var Skill = 1000000;
 var p2 = 'na.gif';
@@ -7,12 +6,10 @@ var laststuff = '';
 var lastid = 0;
 var IC = 0;
 var Infos = new Array();
-var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
-
-document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
+const CDN_RESOURCES_URL_fhmnpcr1 = new URL(document.currentScript.src).origin;
+const IPath = `${CDN_RESOURCES_URL_fhmnpcr1}/game/r/`;
 
 function AC(PictureID, ItemName, ItemID, s, t, r, p) {
-
 	if (PictureID == '0') { PictureID = '' }
 	var Color = LITE;
 	if (Infos[IC] == null) {
@@ -62,13 +59,13 @@ function DC(v) {
 			if (getObj('Draw2')[i].checked == true) {
 				x = getObj('Draw2')[i].value
 				if (x == 1) {
-					window.ResultsOfit.location.replace("fhnpcr.asp?CharsAt=" + npcid)
+					window.ResultsOfit.location.replace(`fhnpcr.asp?CharsAt=${npcid}`)
 				} else if (x == 2) {
-					window.ResultsOfit.location.replace("fhnpcp.asp?CharsAt=" + npcid)
+					window.ResultsOfit.location.replace(`fhnpcp.asp?CharsAt=${npcid}`)
 				} else if (x == 3) {
-					window.ResultsOfit.location.replace("fhnpcpt.asp?CharsAt=" + npcid)
+					window.ResultsOfit.location.replace(`fhnpcpt.asp?CharsAt=${npcid}`)
 				} else {
-					window.ResultsOfit.location.replace("fhnpce.asp?CharsAt=" + npcid)
+					window.ResultsOfit.location.replace(`fhnpce.asp?CharsAt=${npcid}`)
 				}
 			}
 		}
@@ -87,5 +84,5 @@ function Floors() {
 	strTest += '<tr height="100%" colspan=2><td><center>Race<br><input class="btn" name=Draw2 id=Draw2 type=radio value=1 style="width:15; background-Color: ' + BGCOLOR_S + '; border: 1px outset ' + BORDER1_S + '; font-weight: bold"></center></td></tr>';
 	strTest += '<tr height="100%" colspan=2><td><center>Prof<br><input class="btn" name=Draw2 id=Draw2 type=radio value=2 style="width:15; background-Color: ' + BGCOLOR_S + '; border: 1px outset ' + BORDER1_S + '; font-weight: bold"></center></td></tr>';
 
-	getObj('Pages2').innerHTML = '<table class="copyright" cellpadding=1 cellspacing=0 height="100%">' + strTest + '</table>';
+	getObj('Pages2').innerHTML = `<table class="copyright" cellpadding=1 cellspacing=0 height="100%">${strTest}</table>`;
 }

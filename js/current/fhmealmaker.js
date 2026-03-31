@@ -2,13 +2,10 @@ var MealMaker = MealMaker;
 var ID = ID;
 var Processing = 0;
 var PageNo = PageNo;
-var IPath = window.top.FHIPI;
-var FHIPO = window.top.FHIPO;
 var IC = 0;
 var Infos = new Array();
-var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
-
-document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
+const CDN_RESOURCES_URL_fhmealmaker = new URL(document.currentScript.src).origin;
+const IPath = `${CDN_RESOURCES_URL_fhmealmaker}/game/i/`;
 
 function GoP(PageNo) {
 	window.location.replace('?P=' + PageNo + '&ItemID=' + MealMaker + '');

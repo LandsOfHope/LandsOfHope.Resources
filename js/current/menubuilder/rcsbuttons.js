@@ -1,6 +1,6 @@
 var rcb = 0;
 var rcsbuttons = new Array();
-var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
+var CDN_RESOURCES_URL_rcsbuttons = new URL(document.currentScript.src).origin;
 
 function AddButton(bid, text, url, picture1) {
 	rcsbuttons[bid] = new Array();
@@ -60,7 +60,7 @@ function ShowSubMenu(b) {
 	var strout = '';
 	var x = 0;
 	for (x = 0; x < rcsbuttons[b].submenus.length; x++) {
-		strout += '<div title="' + rcsbuttons[b].submenus[x].text + '" id="rcssm' + x + '" style="color: white; margin: 1px; padding: 0px; border: 1px solid RGB(95, 77, 58); background-Color: RGB(95, 77, 58); cursor: pointer;" onmouseover="RCSSMOver(' + b + ',' + x + ');" onclick="RCSSMClick(' + b + ',' + x + ');" onmouseout="RCSSMOut(' + b + ',' + x + ');"><table cellpadding=0 cellspacing=0 style="font-family: Helvetica; font-size: 8pt; color: white;"><tr><td style="width: 20px;">' + (rcsbuttons[b].submenus[x].picture1 != '' ? `<img src="${CDN_RESOURCES_URL}/menubuilder/${rcsbuttons[b].submenus[x].picture1}" width=16 height=16>` : '') + '</td><td>' + rcsbuttons[b].submenus[x].text + '</td></tr></table></div>'
+		strout += '<div title="' + rcsbuttons[b].submenus[x].text + '" id="rcssm' + x + '" style="color: white; margin: 1px; padding: 0px; border: 1px solid RGB(95, 77, 58); background-Color: RGB(95, 77, 58); cursor: pointer;" onmouseover="RCSSMOver(' + b + ',' + x + ');" onclick="RCSSMClick(' + b + ',' + x + ');" onmouseout="RCSSMOut(' + b + ',' + x + ');"><table cellpadding=0 cellspacing=0 style="font-family: Helvetica; font-size: 8pt; color: white;"><tr><td style="width: 20px;">' + (rcsbuttons[b].submenus[x].picture1 != '' ? `<img src="${CDN_RESOURCES_URL_rcsbuttons}/menubuilder/${rcsbuttons[b].submenus[x].picture1}" width=16 height=16>` : '') + '</td><td>' + rcsbuttons[b].submenus[x].text + '</td></tr></table></div>'
 	}
 	strout += ''
 
