@@ -8,5 +8,6 @@ const FHIPO = `${FHIP}o/`;
 const FHIPH = `${FHIP}h/`;
 const FHIPS = `${FHIP}s/`;
 const FHIPV = `${FHIP}v/`;
+const FHIPL = `${FHIP}l/`
 const FHIPIC = `${FHIP}icons/`;
 const FHIPIMG = `${CDN_RESOURCES_URL}/images/`

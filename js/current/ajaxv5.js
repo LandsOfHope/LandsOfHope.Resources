@@ -1,7 +1,3 @@
-var xmlobj;
-var ajaxget;
-var ajaxsendpm;
-var ajaxgetpm;
 var chatrefresht = 0;
 var pmrefresht = 0;
 var lastpmrefresh = '';
@@ -17,17 +13,6 @@ function ajaxerror(url, e1, et, e3) {
 				window.top.SendCommand(`AJAX Error (${url}) at ${e3}: ${e1}, ${et}`);
 			}
 		}
-	}
-}
-
-function getXmlHttpRequestObject() {
-	if (window.XMLHttpRequest) {
-		return new XMLHttpRequest();
-	} else {
-		try { return new ActiveXObject("MSXML3.XMLHTTP") } catch (e) { }
-		try { return new ActiveXObject("MSXML2.XMLHTTP.3.0") } catch (e) { }
-		try { return new ActiveXObject("Msxml2.XMLHTTP") } catch (e) { }
-		try { return new ActiveXObject("Microsoft.XMLHTTP") } catch (e) { }
 	}
 }
 
