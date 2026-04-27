@@ -1,20 +1,13 @@
 
-var DefaultShop = 0;
-var Shop = 0;
-var strWhat = strWhat;
-var Skill = Skill;
-var Level = Level;
 var Processing = 0;
 var l2 = 0;
-var IPath = window.top.FHIPR;
 var l1 = 0;
 var IC = 0;
 var Infos = new Array();
 var Sel1 = -1;
 var Sel2 = -1;
-var CDN_RESOURCES_URL = new URL(document.currentScript.src).origin;
-
-document.write(`<script src="${CDN_RESOURCES_URL}/js/current/formatting.js" language="JavaScript"></script>`);
+var CDN_RESOURCES_URL_fhbreedv1 = new URL(document.currentScript.src).origin;
+var IPath = `${CDN_RESOURCES_URL_fhbreedv1}/game/r/`;
 
 function AC(CharacterID, CharacterName, Sex, RaceID, Level, PictureID, Diff2, RaceName, Profession) {
 	if (Infos[IC] == null) {
