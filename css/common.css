@@ -1,3 +1,121 @@
+@layer base {
+   :root {
+      --font-aboreto: "Aboreto", ui-sans-serif, system-ui, sans-serif, sans;
+      --font-radley: "Radley", ui-sans-serif, system-ui, sans-serif, sans;
+
+      font-family: var(--font-radley);
+   }
+
+   main.themed {
+      --bg: transparent;
+      --bg-image: none;
+
+      --highlight-bg: transparent;
+      --highlight-light: transparent;
+      --highlight-shade: transparent;
+
+      --button-border-top: var(--highlight-light);
+      --button-border-left: var(--highlight-light);
+      --button-border-right: var(--highlight-shade);
+      --button-border-bottom: var(--highlight-shade);
+
+      font-family: var(--font-radley);
+      font-size: 12px;
+   }
+
+   main.theme-ANewDawn {
+      --bg: #291c11;
+      --bg-image: url(/images/Hope/bg.jpg);
+
+      --highlight-bg: #4c3f2f;
+      --highlight-light: rgb(62, 44, 32);
+      --highlight-shade: rgb(48, 36, 22);
+
+      --button-border-top: var(--highlight-light);
+      --button-border-left: var(--highlight-light);
+      --button-border-right: var(--highlight-shade);
+      --button-border-bottom: var(--highlight-shade);
+      color: white;
+   }
+
+   main.theme-BlueSea {
+      --bg: rgb(14, 43, 61);
+      --bg-image: url(/images/BlueSea/bg.jpg);
+
+      --highlight-bg: rgb(100, 138, 161);
+      --highlight-light: rgb(127, 159, 179);
+      --highlight-shade: rgb(30, 54, 69);
+
+      --button-border-top: var(--highlight-light);
+      --button-border-left: var(--highlight-light);
+      --button-border-right: var(--highlight-shade);
+      --button-border-bottom: var(--highlight-shade);
+      color: white;
+   }
+
+   main.theme-Classic {
+      --bg: black;
+      --bg-image: url(/images/Classic/bg.jpg);
+
+      --highlight-bg: rgb(51, 51, 51);
+      --highlight-light: rgb(68, 68, 68);
+      --highlight-shade: rgb(34, 34, 34);
+
+      --button-border-top: var(--highlight-light);
+      --button-border-left: var(--highlight-light);
+      --button-border-right: var(--highlight-shade);
+      --button-border-bottom: var(--highlight-shade);
+      color: white;
+   }
+
+   main.theme-GreenForest {
+      --bg: rgb(21, 25, 19);
+      --bg-image: url(/images/GreenForest/bg.jpg);
+
+      --highlight-bg: rgb(40, 48, 36);
+      --highlight-light: rgb(91, 102, 84);
+      --highlight-shade: rgb(36, 41, 44);
+
+      --button-border-top: var(--highlight-light);
+      --button-border-left: var(--highlight-light);
+      --button-border-right: var(--highlight-shade);
+      --button-border-bottom: var(--highlight-shade);
+      color: white;
+   }
+
+   main.theme-RedDawn {
+      --bg: rgb(42, 12, 14);
+      --bg-image: url(/images/RedDawn/bg.jpg);
+
+      --highlight-bg: rgb(120, 55, 37);
+      --highlight-light: rgb(62, 44, 32);
+      --highlight-shade: rgb(48, 36, 22);
+
+      --button-border-top: var(--highlight-light);
+      --button-border-left: var(--highlight-light);
+      --button-border-right: var(--highlight-shade);
+      --button-border-bottom: var(--highlight-shade);
+      color: white;
+   }
+
+   main.theme-BigFont {
+      --bg: black;
+      --bg-image: url(/images/Classic/bg.jpg);
+
+      --highlight-bg: rgb(51, 51, 51);
+      --highlight-light: rgb(68, 68, 68);
+      --highlight-shade: rgb(34, 34, 34);
+
+      --button-border-top: var(--highlight-light);
+      --button-border-left: var(--highlight-light);
+      --button-border-right: var(--highlight-shade);
+      --button-border-bottom: var(--highlight-shade);
+
+      font-size: 14px;
+      color: white;
+   }
+}
+
 .hidden {
    display: none;
 }

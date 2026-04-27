@@ -1,0 +1,15 @@
+@font-face {
+    font-family: Aboreto;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./Aboreto-Regular.woff) format("woff")
+}
+
+@font-face {
+    font-family: Radley;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./Radley-Regular.woff2) format("woff2")
+}
