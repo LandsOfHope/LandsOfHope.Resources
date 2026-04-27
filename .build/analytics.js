@@ -17,7 +17,7 @@ if (!window.TRACING_URL) {
 const serviceName = window.TRACING_SERVICE_NAME ?? 'landsofhope-play-frontend';
 const serviceVersion = window.TRACING_SERVICE_VERSION ?? 'v0';
 
-const corsUrlPattern = new RegExp("https:\/\/((?!data).*\.)?landsofhope\.(com|dev|local)(\/.*)?$");
+const corsUrlPattern = new RegExp("https:\/\/((?!data).*\.)?landsofhope\.(com|dev|local|lan)(\/.*)?$");
 const isDebugMode = localStorage.getItem('DEBUG_ANALYTICS') === 'true';
 
 let provider = null;

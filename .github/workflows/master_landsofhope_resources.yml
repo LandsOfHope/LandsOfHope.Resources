@@ -36,7 +36,7 @@ jobs:
       - name: bun install
         run: bun install
         working-directory: .build
-      - run: node .build/generate_chat_colors_css.mjs
+      - run: bun .build/generate_chat_colors_css.ts
       - run: bunx -y stylelint --config .build/node_modules/stylelint-config-recommended/index.js css/chat/chat-colors.css
       - name: bundle analytics
         run: bun build ./analytics.js --target browser --minify --outdir $GITHUB_WORKSPACE/js/current/
