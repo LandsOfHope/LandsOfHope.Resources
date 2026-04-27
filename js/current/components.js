@@ -125,4 +125,139 @@ class MoneyComponent extends HTMLElement {
     };
 };
 
+class ImgComponent extends HTMLElement {
+    imgRelativeUrl = undefined;
+    imgExtension = undefined;
+    width = undefined;
+    height = undefined;
+    title = undefined;
+    slug = 'na';
+
+    static get observedAttributes() {
+        return ['slug', 'width', 'height', 'title'];
+    }
+
+    constructor(opts) {
+        super();
+
+        const { imgRelativeUrl, imgExtension = '.gif' } = opts;
+        if (imgRelativeUrl === undefined) {
+            throw new Error("imgRelativeUrl is required in ImgComponent constructor");
+        } else if (imgExtension === undefined) {
+            throw new Error("imgExtension cannot be undefined in ImgComponent constructor");
+        }
+        this.imgRelativeUrl = imgRelativeUrl;
+        this.imgExtension = imgExtension;
+    }
+
+    connectedCallback() {
+        if (this.slug === '' || this.slug === '0') {
+            this.slug = 'na';
+        }
+        if (!Number.isSafeInteger(this.width)) {
+            this.width = undefined;
+        }
+        if (!Number.isSafeInteger(this.height)) {
+            this.height = undefined;
+        }
+
+        const img = document.createElement('img');
+        img.setAttribute('src', `${CDN_RESOURCES_URL_components}/game/${this.imgRelativeUrl}/${this.slug}${this.imgExtension}`);
+        img.setAttribute('alt', this.title ?? this.slug);
+        img.setAttribute('title', this.title ?? this.slug);
+        if (this.width !== undefined) {
+            img.setAttribute('width', this.width);
+        }
+        if (this.height !== undefined) {
+            img.setAttribute('height', this.height);
+        }
+        this.appendChild(img);
+
+        this.updateImage();
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (name === 'slug') {
+            this.slug = newValue;
+            if (this.slug === '' || this.slug === '0') {
+                this.slug = 'na';
+            }
+            this.updateImage();
+        } else if (name === 'width') {
+            this.width = parseInt(newValue);
+            if (!Number.isSafeInteger(this.width)) {
+                this.width = undefined;
+            }
+            this.updateImage();
+        } else if (name === 'height') {
+            this.height = parseInt(newValue);
+            if (!Number.isSafeInteger(this.height)) {
+                this.height = undefined;
+            }
+            this.updateImage();
+        }
+    }
+
+    updateImage() {
+        const img = this.querySelector('img');
+        if (img) {
+            img.setAttribute('src', `${CDN_RESOURCES_URL_components}/game/${this.imgRelativeUrl}/${this.slug}${this.imgExtension}`);
+            img.setAttribute('alt', this.title ?? this.slug);
+            img.setAttribute('title', this.title ?? this.slug);
+            if (this.width !== undefined) {
+                img.setAttribute('width', this.width);
+            } else {
+                img.removeAttribute('width');
+            }
+            if (this.height !== undefined) {
+                img.setAttribute('height', this.height);
+            } else {
+                img.removeAttribute('height');
+            }
+        }
+    }
+}
+
+class RaceImgComponent extends ImgComponent {
+    constructor() {
+        super('r');
+    }
+}
+
+class IconImgComponent extends ImgComponent {
+    constructor() {
+        super('icons', 'png');
+    }
+}
+
+class BuildingImgComponent extends ImgComponent {
+    constructor() {
+        super('b');
+    }
+}
+
+class RoomImgComponent extends ImgComponent {
+    constructor() {
+        super('p');
+    }
+}
+
+class EquipLocationImgComponent extends ImgComponent {
+    constructor() {
+        super('l');
+    }
+}
+
+class ClassImgComponent extends ImgComponent {
+    constructor() {
+        super('dp');
+    }
+}
+
 customElements.define('landsofhope-money', MoneyComponent);
+customElements.define('landsofhope-race-img', RaceImgComponent);
+customElements.define('landsofhope-icon-img', IconImgComponent);
+customElements.define('landsofhope-building-img', BuildingImgComponent);
+customElements.define('landsofhope-room-img', RoomImgComponent);
+customElements.define('landsofhope-equip-location-img', EquipLocationImgComponent);
+customElements.define('landsofhope-class-img', ClassImgComponent);
