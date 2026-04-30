@@ -151,6 +151,7 @@ class ImgComponent extends HTMLElement {
     }
 
     connectedCallback() {
+        this.slug = this.slug?.replace(this.imgExtension, '') ?? '';
         if (this.slug === '' || this.slug === '0') {
             this.slug = 'na';
         }
@@ -178,7 +179,7 @@ class ImgComponent extends HTMLElement {
 
     attributeChangedCallback(name, oldValue, newValue) {
         if (name === 'slug') {
-            this.slug = newValue;
+            this.slug = newValue?.replace(this.imgExtension, '') ?? '';
             if (this.slug === '' || this.slug === '0') {
                 this.slug = 'na';
             }
