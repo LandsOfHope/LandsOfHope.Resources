@@ -220,37 +220,50 @@ class ImgComponent extends HTMLElement {
 
 class RaceImgComponent extends ImgComponent {
     constructor() {
-        super('r');
+        super({
+            imgRelativeUrl: 'r'
+        });
     }
 }
 
 class IconImgComponent extends ImgComponent {
     constructor() {
-        super('icons', 'png');
+        super({
+            imgRelativeUrl: 'icons',
+            imgExtension: '.png'
+        });
     }
 }
 
 class BuildingImgComponent extends ImgComponent {
     constructor() {
-        super('b');
+        super({
+            imgRelativeUrl: 'b'
+        });
     }
 }
 
 class RoomImgComponent extends ImgComponent {
     constructor() {
-        super('p');
+        super({
+            imgRelativeUrl: 'p'
+        });
     }
 }
 
 class EquipLocationImgComponent extends ImgComponent {
     constructor() {
-        super('l');
+        super({
+            imgRelativeUrl: 'l'
+        });
     }
 }
 
 class ClassImgComponent extends ImgComponent {
     constructor() {
-        super('dp');
+        super({
+            imgRelativeUrl: 'dp'
+        });
     }
 }
 
