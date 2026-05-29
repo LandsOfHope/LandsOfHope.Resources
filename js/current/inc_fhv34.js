@@ -18,6 +18,7 @@ const ACTIONS_CHARACTER_BEG = 20;
 const ACTION_CHARACTER_CAPTURE = 79;
 const ACTION_CHARACTER_APPRAISE = 5;
 const ACTION_CHARACTER_EMOTE = 300;
+const ACTION_CHARACTER_RESURRECT = 301;
 
 const ACTION_BUILDING_ENTER = 51;
 const ACTION_BUILDING_LOCKPICK = 48;
@@ -469,6 +470,9 @@ function PF(id, varin) {
 	}
 	if (varin == ACTION_CHARACTER_APPRAISE) {
 		strfile = 'fhstat2.asp';
+	}
+	if(varin == ACTION_CHARACTER_RESURRECT) {
+		strfile = 'fhhealer.asp';
 	}
 	if (varin == 6) {
 		strword = 'Mine';
