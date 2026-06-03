@@ -3,16 +3,32 @@ const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-proto'
 const { CompositePropagator, W3CTraceContextPropagator } = require('@opentelemetry/core');
 const { getWebAutoInstrumentations } = require('@opentelemetry/auto-instrumentations-web');
 const { ZoneContextManager } = require('@opentelemetry/context-zone');
-const { Resource } = require('@opentelemetry/resources');
 const { registerInstrumentations } = require('@opentelemetry/instrumentation');
 const { ATTR_SERVICE_NAME, ATTR_SERVICE_VERSION } = require('@opentelemetry/semantic-conventions');
 const { OTLPLogExporter } = require('@opentelemetry/exporter-logs-otlp-proto');
 const { LoggerProvider, BatchLogRecordProcessor } = require('@opentelemetry/sdk-logs');
 
+const { NavigationTimingInstrumentation } = require( '@opentelemetry/browser-instrumentation/experimental/navigation-timing');
+const { ResourceTimingInstrumentation } = require( '@opentelemetry/browser-instrumentation/experimental/resource-timing');
+const { UserActionInstrumentation } = require( '@opentelemetry/browser-instrumentation/experimental/user-action');
+const { WebVitalsInstrumentation } = require( '@opentelemetry/browser-instrumentation/experimental/web-vitals');
+const { resourceFromAttributes } = require( '@opentelemetry/resources');
+
 if (!window.TRACING_URL) {
     console.error('TRACING_URL is required for analytics');
     return;
 }
+
+// Intercept fetch to include credentials for cross-origin tracing requests
+const originalFetch = window.fetch;
+window.fetch = function(resource, config) {
+    const url = typeof resource === 'string' ? resource : resource.url;
+    if (url && url.startsWith(window.TRACING_URL)) {
+        config = config || {};
+        config.credentials = 'include';
+    }
+    return originalFetch.call(this, resource, config);
+};
 
 const serviceName = window.TRACING_SERVICE_NAME ?? 'landsofhope-play-frontend';
 const serviceVersion = window.TRACING_SERVICE_VERSION ?? 'v0';
@@ -28,7 +44,7 @@ let isShuttingDown = false;
 const initializeProviders = () => {
     if (provider || isShuttingDown) return;
 
-    const resource = new Resource({
+    const resource = resourceFromAttributes({
         [ATTR_SERVICE_NAME]: serviceName,
         [ATTR_SERVICE_VERSION]: serviceVersion,
         environment: window.location.hostname
@@ -37,7 +53,11 @@ const initializeProviders = () => {
     provider = new WebTracerProvider({
         resource,
         spanProcessors: [
-            new BatchSpanProcessor(new OTLPTraceExporter({ url: `${window.TRACING_URL}/v1/traces` }))
+            new BatchSpanProcessor(
+                new OTLPTraceExporter({ 
+                    url: `${window.TRACING_URL}/v1/traces`
+                })
+            )
         ]
     });
 
@@ -52,7 +72,18 @@ const initializeProviders = () => {
 
     registerInstrumentations({
         instrumentations: [
+            new NavigationTimingInstrumentation(),
+            new ResourceTimingInstrumentation(),
+            new UserActionInstrumentation(),
+            new WebVitalsInstrumentation(),
+
             getWebAutoInstrumentations({
+                '@opentelemetry/instrumentation-browser-navigation': {
+                    propagateTraceHeaderCorsUrls: [corsUrlPattern]
+                },
+                '@opentelemetry/instrumentation-web-exception': {
+                    propagateTraceHeaderCorsUrls: [corsUrlPattern]
+                },
                 '@opentelemetry/instrumentation-document-load': {
                     propagateTraceHeaderCorsUrls: [corsUrlPattern]
                 },
@@ -69,12 +100,16 @@ const initializeProviders = () => {
         ],
     });
 
-    loggerProvider = new LoggerProvider({ resource });
     const logExporter = new OTLPLogExporter({
         url: `${window.TRACING_URL}/v1/logs`,
         timeoutMillis: 5000
     });
-    loggerProvider.addLogRecordProcessor(new BatchLogRecordProcessor(logExporter));
+    loggerProvider = new LoggerProvider({
+        resource,
+        processors: [
+            new BatchLogRecordProcessor(logExporter)
+        ]
+    });
     logger = loggerProvider.getLogger(`${serviceName}-logger`);
 
     setupConsoleOverrides();

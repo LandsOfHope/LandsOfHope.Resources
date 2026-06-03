@@ -1,9 +1,11 @@
 {
   "dependencies": {
     "@opentelemetry/auto-instrumentations-web": "^0.63.0",
+    "@opentelemetry/browser-instrumentation": "^0.5.2",
     "@opentelemetry/context-zone": "^2.7.1",
     "@opentelemetry/exporter-logs-otlp-proto": "^0.218.0",
     "@opentelemetry/exporter-trace-otlp-proto": "^0.218.0",
+    "@opentelemetry/opentelemetry-browser-detector": "^0.218.0",
     "@opentelemetry/sdk-trace-web": "^2.7.1",
     "stylelint-config-recommended": "^18.0.0"
   }
