@@ -62,6 +62,12 @@
         }
       );
 
+      overlays = {
+        landsofhope-cdn-resources = final: prev: {
+          landsofhope-cdn-resources = final.packages.${final.system}.landsofhope-cdn-resources;
+        };
+      };
+
     };
 
 }
